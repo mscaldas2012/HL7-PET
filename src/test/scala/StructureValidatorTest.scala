@@ -24,7 +24,6 @@ class StructureValidatorTest extends FlatSpec {
                 allLines += line + "\n"
             }
         }
-        //val parser: HL7ParseUtils = new HL7ParseUtils(allLines)
         val validator:  StructureValidator = new StructureValidator(allLines, null, null)
         val errors = validator.validateMessage()
         println(errors)

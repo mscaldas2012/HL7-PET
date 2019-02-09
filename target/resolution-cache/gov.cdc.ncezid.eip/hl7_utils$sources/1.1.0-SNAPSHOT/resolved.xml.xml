@@ -4,7 +4,7 @@
 		module="hl7_utils$sources"
 		revision="1.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190208090103"
+		publication="20190208214555"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
