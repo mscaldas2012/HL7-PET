@@ -1,0 +1,6 @@
+MSH.*,"GONE"
+PID.*,"GONE"
+NK1.*,"GONE"
+ORC.*,"GONE"
+OBR.*,"GONE"
+OBX\|([0-9]?)\|TX\|19139\-5,"OBX|$GROUP(1)|GONE"

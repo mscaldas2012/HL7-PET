@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/marcelo/work/NCEZID/EIP/hl7-utils/src/main/resources/default_rules.txt,/Users/marcelo/work/NCEZID/EIP/hl7-utils/target/classes/default_rules.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/marcelo/work/NCEZID/EIP/hl7-utils/src/main/resources/DefaultBatchingProfile.json,/Users/marcelo/work/NCEZID/EIP/hl7-utils/target/classes/DefaultBatchingProfile.json)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/marcelo/work/NCEZID/EIP/hl7-utils/src/main/resources/DefaultFieldsProfile.json,/Users/marcelo/work/NCEZID/EIP/hl7-utils/target/classes/DefaultFieldsProfile.json)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/marcelo/work/NCEZID/EIP/hl7-utils/src/main/resources/DeIdentifierParams.yml,/Users/marcelo/work/NCEZID/EIP/hl7-utils/target/classes/DeIdentifierParams.yml)[0m
