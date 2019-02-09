@@ -1,4 +1,0 @@
-;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/03/39xwdgns7tn_hz3zg58cy0jr0000gp/T/sbt-structure.xml; session clear-all
-all {file:/Users/marcelo/work/NCEZID/EIP/hl7-utils/}hl7-utils/products {file:/Users/marcelo/work/NCEZID/EIP/hl7-utils/}hl7-utils/test:products
-"ORU^R01^OURR01".split("^")
-all {file:/Users/marcelo/work/NCEZID/EIP/hl7-utils/}hl7-utils/products {file:/Users/marcelo/work/NCEZID/EIP/hl7-utils/}hl7-utils/test:products
