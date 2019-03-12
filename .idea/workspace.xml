@@ -2,47 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_core_asl_1_9_13_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_mapper_asl_1_9_13_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_parser_combinators_2_12_1_0_4_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_12_1_0_5_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_reflect_2_12_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_12_3_0_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_12_3_0_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/hl7_utils-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/hl7_utils.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DeIdentifierParams.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/model/ValidationRules.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FDD_CAMP_TC01_ADD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FDD_CAMP_TC01_ADD.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -123,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -442,12 +404,13 @@
       <map>
         <entry key="$PROJECT_DIR$/../../nlpProject/learningPlayground/scala-akka" value="1486158509000" />
         <entry key="$PROJECT_DIR$/../../reactive-machine-learning-systems-master/chapter-4" value="1475437324000" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="402265222" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="532270828" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="3771982881" />
       </map>
     </option>
     <option name="projectSyncType">
       <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../nlp/Klasifikasyon/data" value="PREVIEW" />
         <entry key="$USER_HOME$/work/NCEZID/EIP/hl7-utils" value="PREVIEW" />
       </map>
@@ -465,7 +428,7 @@
       <updated>1549680316443</updated>
       <workItem from="1549680320722" duration="15079000" />
       <workItem from="1552076842509" duration="5936000" />
-      <workItem from="1552336014300" duration="622000" />
+      <workItem from="1552336014300" duration="709000" />
     </task>
     <servers />
   </component>
@@ -502,7 +465,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21637000" />
+    <option name="totallyTimeSpent" value="21724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1291" y="137" width="1827" height="1574" extended-state="0" />
@@ -525,7 +488,7 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.32967785" />
       <window_info anchor="bottom" id="SBT Console" order="8" weight="0.32899246" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" weight="0.32899246" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32899246" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32899246" />
       <window_info anchor="bottom" id="Docker" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32899246" />
@@ -536,7 +499,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32979798" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info active="true" anchor="right" id="sbt" order="5" visible="true" weight="0.12885155" />
+      <window_info anchor="right" id="sbt" order="5" visible="true" weight="0.12885155" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Clojure Deps" order="7" />
       <window_info anchor="right" id="Gradle" order="8" />
@@ -739,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="255">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
         </state>
       </provider>
     </entry>
