@@ -34,23 +34,25 @@ class ValidationErrors extends Serializable {
   def getEntries(): List[ErrorEntry] = entries.toList
 }
 
-class ErrorEntry (var line: Int, var column: Int, var path:  String, var classification: ClassificationEnum) extends Serializable {
+class ErrorEntry (val line: Int, val beginColumn: Int, val endColumn: Int, val path:  String, val classification: ClassificationEnum, val category: String) extends Serializable {
   var description: String = _
-  var category: String = "GENERIC_ERROR"
   var stacktrace: String = _
   //Methods used for serialization on java end.
   def getLine(): Int = { line}
-  def getColumn(): Int = { column }
+  def getBeginColumn(): Int = { beginColumn }
+  def getEndColumn(): Int = {endColumn }
   def getPath(): String = {path }
-  def getClassification(): String = {classification.toString()}
+  def getClassification(): String = {classification.toString}
   def getDescription(): String = {description }
   def getCategory(): String = {category}
   def getStackTrace(): String = {stacktrace}
 
   override def toString: String = {
-     s"$classification ==> Line: $line, Col: $column, Path: $path, Category: $category, Description: $description"
+     s"$classification ==> Loc: $line:$beginColumn-$endColumn, Path: $path, Category: $category, Description: $description"
   }
 }
+
+
 
 sealed trait ClassificationEnum
 case object ERROR extends ClassificationEnum

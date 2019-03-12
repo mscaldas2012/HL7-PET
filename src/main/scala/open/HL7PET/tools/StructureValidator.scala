@@ -3,7 +3,7 @@ package open.HL7PET.tools
 import java.text.ParseException
 import java.util.NoSuchElementException
 
-import model.{HL7SegmentField, Profile}
+import open.HL7PET.tools.model.{HL7SegmentField, Profile}
 import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
@@ -16,6 +16,7 @@ import scala.io.Source
   */
 class StructureValidator(message: String, var profile: Profile, var fieldDefinitions: Profile)  {
     val CARDINALITY_REGEX = "\\[([0-9]+)\\.\\.([0-9]+)\\]".r
+    val PREDICATE_REGEX = "C\\((RE?|O|X)\\/(RE?|O|X)\\)->(!)?([0-9]+)".r
 
     val parser: HL7ParseUtils = new HL7ParseUtils(message)
 
@@ -41,10 +42,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
             case (line, index) =>
                 var segmentLine = line.split(parser.HL7_FIELD_SEPARATOR)
                 try {
-                    validateSegment(s"${segmentLine(0)}[$index]", profile.segments(segmentLine(0)), segmentLine, index + 1, errors)
+                    validateSegment(s"${segmentLine(0)}[$index]", profile.segments(segmentLine(0)), segmentLine, index + 1, 1, errors)
                 } catch {
                     case e: NoSuchElementException =>
-                    val entry = new ErrorEntry(index, 0, segmentLine(0), ERROR)
+                    val entry = new ErrorEntry(index + 1, 1, segmentLine(0).length, segmentLine(0), ERROR, "INVALID_MESSAGE")
                         entry.description = s"Segment ${segmentLine(0)} not supported"
                         errors.addEntry(entry)
                 }
@@ -52,7 +53,18 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         errors
     }
 
-    private def validateSegment(segment: String, fields: Array[HL7SegmentField], line: Array[String], lineNumber: Int, errors: ValidationErrors): Unit = {
+     def getFieldLocation(line: Array[String], fieldNumber: Int, columnsBefore: Int): (Int, Int) = {
+        var beginCol = columnsBefore // where to start counting columns  for recursive calls.
+        for (idx <- 0 to fieldNumber-1) {
+            if (idx < line.length)
+                beginCol = beginCol + line(idx).length + 1 // +1 is the field delimiter, aka, the pipe ( \ )
+        }
+        if (fieldNumber < line.length)
+            (beginCol, beginCol  + line(fieldNumber).length + 1)
+        else //Field is missing.
+            (beginCol, beginCol + 1)
+    }
+     def validateSegment(segment: String, fields: Array[HL7SegmentField], line: Array[String], lineNumber: Int, columnsBefore: Int, errors: ValidationErrors): Unit = {
         var pathSeparator = "-"
         if (segment.contains("-")) {
             pathSeparator = "."
@@ -67,15 +79,17 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
             }
 
             try {
-                if (!validateUsage(fieldValue, field.usage, segment)) {
-                    val entry = new ErrorEntry(lineNumber, field.fieldNumber, path, ERROR)
+                if (!validateUsage(fieldValue, field.usage, segment, line)) {
+                    val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+                    val entry = new ErrorEntry(lineNumber,loc._1, loc._2, path, ERROR, "INVALID_USAGE")
                     entry.description = s"Required field $path (${field.name}) is missing."
                     errors.addEntry(entry)
 
                 }
             } catch {
                 case e: HL7ParseError =>
-                    val entry = new ErrorEntry(lineNumber, field.fieldNumber, path, ERROR)
+                    val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+                    val entry = new ErrorEntry(lineNumber, loc._1, loc._2, path, ERROR, "INVALID_SEGMENT")
                     entry.description = e.getMessage
                     errors.addEntry(entry)
             }
@@ -87,7 +101,9 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                     var fieldError = 1
                     if (resultsCardinality._2.contains("Multiple"))
                         fieldError = 2
-                    val entry = new ErrorEntry(lineNumber, field.fieldNumber, s"$segment$pathSeparator${field.fieldNumber}[$fieldError]", ERROR)
+                    val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+
+                    val entry = new ErrorEntry(lineNumber, loc._1, loc._2, s"$segment$pathSeparator${field.fieldNumber}[$fieldError]", ERROR, "INVALID_CARDINALITY")
                     entry.description = resultsCardinality._2
                     errors.addEntry(entry)
                 }
@@ -101,22 +117,30 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                         innerpath += s"[$answerIndex]"
                     }
                     //check Data Type:
-                    val resultsDataType = validateFieldType(aField, field, segment, answerIndex, lineNumber, errors)
+                    var loc =
+                        if ( segment.startsWith("MSH"))
+                            getFieldLocation(line, field.fieldNumber-1, columnsBefore)
+                        else
+                            getFieldLocation(line, field.fieldNumber, columnsBefore)
+                    val resultsDataType = validateFieldType(aField, field, segment, answerIndex, lineNumber, loc._1, errors)
                     if (!resultsDataType._1) {
-                        val entry = new ErrorEntry(lineNumber, field.fieldNumber, innerpath, ERROR)
+                        val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+                        val entry = new ErrorEntry(lineNumber, loc._1, loc._2, innerpath, ERROR, "INVALID_FIELD_TYPE")
                         entry.description = resultsDataType._2
                         errors.addEntry(entry)
                     }
                     //Check Max Length:
                     if (aField.length > field.maxLength) {
-                        val entry = new ErrorEntry(lineNumber, field.fieldNumber, innerpath, ERROR)
+                        val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+                        val entry = new ErrorEntry(lineNumber, loc._1, loc._2, innerpath, ERROR, "INVALID_FIELD_LENGTH")
                         entry.description = s"Field value too big for $innerpath (${field.name}). Maximum value allowed is ${field.maxLength}"
                         errors.addEntry(entry)
                     }
                     //Check default
                     if (!validateDefault(aField, field.default)) {
                         val defaultVal = field.default
-                        val entry = new ErrorEntry(lineNumber, field.fieldNumber, innerpath, ERROR)
+                        val loc = getFieldLocation(line, field.fieldNumber, columnsBefore)
+                        val entry = new ErrorEntry(lineNumber, loc._1, loc._2, innerpath, ERROR, "INVALID_DEFAULT_VALUE")
                         entry.description = s"Value for field $innerpath (${field.name}) must be $defaultVal"
                         errors.addEntry(entry)
                     }
@@ -126,7 +150,8 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         }
         //see if there are no extra fields...
         if (fields.length < line.length) {
-            val entry = new ErrorEntry(lineNumber, fields.length + 1, s"$segment", ERROR)
+            val loc = getFieldLocation(line, fields.length, columnsBefore)
+            val entry = new ErrorEntry(lineNumber, loc._1, loc._2, s"$segment", ERROR, "INVALID_SEGMENT")
             entry.description = s"Too many fields provided for segment $segment."
             errors.addEntry(entry)
         }
@@ -183,6 +208,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
             case "[0..*]" => //Not much to validate.. anything goes :-)
                 return (true, "all good")
             case  CARDINALITY_REGEX(min, max) =>
+                //TODO::Implement
                     println(s"validating card... $min to $max")
             case _ => //Invalid Profile
                 throw HL7ParseError(s"Invalid Cardinality ${field.cardinality} on Profile Definition!", segment)
@@ -191,18 +217,31 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     }
 
     @throws(classOf[HL7ParseError])
-    private def validateUsage(fieldValue: String, usage: String, segment: String): Boolean = {
+    private def validateUsage(fieldValue: String, usage: String, segment: String, line: Array[String]): Boolean = {
         usage match {
             case "R" =>
                 !Option(fieldValue).getOrElse("").isEmpty
             case "RE" | "O" | "X" =>
                 true
+            case PREDICATE_REGEX(iftrue, iffalse, absent, field) =>
+                val relatedField =  getFieldValue(segment, field.toInt, line)
+
+                val checkFirstCond =  (absent == null && relatedField != null && relatedField.trim().length > 0) ||
+                    ("!".equals(absent) && (relatedField == null || relatedField.trim().length == 0))
+
+                if (checkFirstCond) {
+                    validateUsage(fieldValue, iftrue, segment, line)
+                } else {
+                    validateUsage(fieldValue, iffalse, segment, line)
+                }
+
+
             case _ =>
                 throw HL7ParseError(s"Invalid Usage $usage on Profile Definition!", segment)
         }
     }
 
-    private def validateFieldType(fieldValue: String, field: HL7SegmentField, segment: String, answerIndex: Int, lineNumber: Int, errors: ValidationErrors): (Boolean, String) = {
+    private def validateFieldType(fieldValue: String, field: HL7SegmentField, segment: String, answerIndex: Int, lineNumber: Int, columnsBefore: Int,  errors: ValidationErrors): (Boolean, String) = {
         field.dataType match {
             case "ST"|"IS"|"ID" =>
                 return (true, "All good!")
@@ -238,7 +277,8 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                             fieldValue.split(parser.HL7_SUBCOMPONENT_SEPARATOR)
                         else
                             fieldValue.split(parser.HL7_COMPONENT_SEPARATOR)
-                    validateSegment(newseg, fieldDefinitions.segments(x), split, lineNumber, errors)
+
+                    validateSegment(newseg, fieldDefinitions.segments(x), split, lineNumber, columnsBefore, errors)
                     (true, "all good")
                 } catch {
                     case e: NoSuchElementException =>

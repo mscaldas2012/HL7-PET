@@ -1,4 +1,4 @@
-import model.Profile
+import open.HL7PET.tools.model.Profile
 import org.scalatest.FlatSpec
 import org.codehaus.jackson.map.ObjectMapper
 import org.codehaus.jackson.annotate._

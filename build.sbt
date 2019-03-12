@@ -1,8 +1,38 @@
-name := "hl7_utils"
+name := "HL7-PET"
 
-organization:= "gov.cdc.ncezid.eip"
+organization:= "io.github.mscaldas2012"
+organizationName:= "mscaldas2012"
+scmInfo:= Some (
+  ScmInfo(
+    url("https://github.com/mscaldas2012/HL7-PET"),
+    "scm:git@github.com:mscaldas2012/HL7-PET.git"
+  )
+)
 
-version := "1.1.0-SNAPSHOT" 
+developers := List(
+  Developer(
+    id="mscaldas2012",
+    name="Marcelo Caldas",
+    email = "mscaldas@gmail.com",
+    url = url ("https:''github.com/mscaldas2012")
+  )
+)
+
+description := "this project is a library to Parse HL7 v2 messages"
+licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+homepage := Some(url("https://github.com/mscaldas2012/HL7-PET"))
+
+pomIncludeRepository := { _ => false }
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+publishMavenStyle := true
+
+useGpg := true
+
+version := "1.2.0-SNAPSHOT"
 
 scalaVersion := "2.12.2"
 
@@ -14,19 +44,7 @@ libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13"
 // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
 libraryDependencies += "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
 
-credentials += Credentials("Sonatype Nexus Repository Manager", "eip.sandbox.aimsplatform.net" , "admin", "admin123")
-
-publishMavenStyle := true
 //Do not append scala versions to the generated artifact
 crossPaths:= false
 
 publishArtifact in (Compile, packageSrc) := true
-publishMavenStyle := true
-publishTo := {
-  val nexus = "http://10.32.1.132:8381/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "repository/maven-snapshots")
-  else
-    Some("releases" at nexus + "repository/maven-releases")
-}
-

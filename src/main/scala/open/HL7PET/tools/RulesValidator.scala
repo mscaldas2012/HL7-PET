@@ -1,6 +1,6 @@
 package open.HL7PET.tools
 
-import model.ValidationRules
+import open.HL7PET.tools.model.ValidationRules
 import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
@@ -28,9 +28,8 @@ class RulesValidator(rulesFile: String) {
               val field = parser.getValue(e.field, seg)
               if (field.isEmpty) { //Error:
                 val classification = if ("R".equals(e.usage)) ERROR else WARNING
-                val entry = new ErrorEntry(k, 0, e.comment.replaceAll("\\*", (i+1) + ""), classification)
+                val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i+1) + ""), classification, "INVALID_PREDICATE")
                 entry.description = e.description
-                entry.category = "Invalid Predidate"
                 errors.addEntry(entry)
               }
             }
@@ -43,9 +42,8 @@ class RulesValidator(rulesFile: String) {
                 val field = parser.getValue(e.field, seg)
                 if (field.isEmpty) { //Error
                   val classification = if ("R".equals(e.usage)) ERROR else WARNING
-                  val entry = new ErrorEntry(k, 0, e.comment.replaceAll("\\*", (i + 1) + ""), classification)
+                  val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i + 1) + ""), classification, "INVALID_PREDICATE")
                   entry.description = e.description
-                  entry.category = "Invalid Predicate"
                   errors.addEntry(entry)
                 }
               }
@@ -72,9 +70,8 @@ class RulesValidator(rulesFile: String) {
             }
             if (!allmatch) { //
               val classification = if ("R".equals(e.usage)) ERROR else WARNING
-              val entry = new ErrorEntry(k, 0, e.comment.replaceAll("\\*", (i + 1) + ""), classification)
+              val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i + 1) + ""), classification, "INVALID_CONFORMANCE")
               entry.description = e.description
-              entry.category = "Invalid Conformance"
               errors.addEntry(entry)
             }
           }
@@ -88,9 +85,8 @@ class RulesValidator(rulesFile: String) {
                 }
                 if (!allmatch) { //
                   val classification = if ("R".equals(e.usage)) ERROR else WARNING
-                  val entry = new ErrorEntry(k, 0, e.comment.replaceAll("\\*", (i + 1) + ""), classification)
+                  val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i + 1) + ""), classification,"INVALID_CONFORMANCE")
                   entry.description = e.description
-                  entry.category = "Invalid Conformance"
                   errors.addEntry(entry)
                 }
               }
@@ -98,9 +94,8 @@ class RulesValidator(rulesFile: String) {
             val fieldValue = parser.getValue(e.field)
             if (fieldValue.isEmpty || fieldValue.get.length != 1 ) {
               val classification = if ("R".equals(e.usage)) ERROR else WARNING
-              val entry = new ErrorEntry(0, 0, e.comment, classification)
+              val entry = new ErrorEntry(0, 0, 1, e.comment, classification, "INVALID_CONFORMANCE")
               entry.description = e.description
-              entry.category = "Invalid Conformance"
               errors.addEntry(entry)
             }
         case _ => println("Unknown Rule...")

@@ -1,4 +1,4 @@
-package model
+package open.HL7PET.tools.model
 
 import org.codehaus.jackson.annotate.JsonAnySetter
 
