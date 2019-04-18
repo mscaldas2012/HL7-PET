@@ -3,7 +3,7 @@ package open.HL7PET.tools
 import java.text.ParseException
 import java.util.NoSuchElementException
 
-import open.HL7PET.tools.model.{HL7SegmentField, Profile}
+import open.HL7PET.tools.model.{HL7SegmentField, Profile, SegmentConfig}
 import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
@@ -38,11 +38,17 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
     def validateMessage(): ValidationErrors = {
         val errors:ValidationErrors = new ValidationErrors()
+        var segmentIndex = scala.collection.mutable.Map[String, Int]().withDefaultValue(0)
+
+        //make sure Message has all needed segments:
+        validateFile(errors)
+
         message.split(parser.NEW_LINE_FEED).zipWithIndex.foreach {
             case (line, index) =>
                 var segmentLine = line.split(parser.HL7_FIELD_SEPARATOR)
                 try {
-                    validateSegment(s"${segmentLine(0)}[$index]", profile.segments(segmentLine(0)), segmentLine, index + 1, 1, errors)
+                    segmentIndex(segmentLine(0)) += 1
+                    validateSegment(s"${segmentLine(0)}[${segmentIndex(segmentLine(0))}]", profile.getSegmentField(segmentLine(0)), segmentLine, index + 1, 1, errors)
                 } catch {
                     case e: NoSuchElementException =>
                     val entry = new ErrorEntry(index + 1, 1, segmentLine(0).length, segmentLine(0), ERROR, "INVALID_MESSAGE")
@@ -53,9 +59,52 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         errors
     }
 
-     def getFieldLocation(line: Array[String], fieldNumber: Int, columnsBefore: Int): (Int, Int) = {
+    private def validateFile(errors: ValidationErrors) = {
+        profile.file.fileSegments.foreach { t =>
+            val segments = parser.retrieveMultipleSegments(t._1)
+            t._2.cardinality match {
+                case "[0..1]" => // Optional, but only one
+                    if (!segments.isEmpty && segments.keySet.size > 1) {
+                        //val error = new ErrorEntry(segments.keySet.last, 1, segments(segments.keySet.last).foldLeft(0)( (acc, kv) => acc + kv.length + 1), t._1, ERROR, "INVALID_MESSAGE")
+                        val error = new ErrorEntry(segments.keySet.last, 1, 3, t._1, ERROR, "INVALID_MESSAGE")
+                        error.description = s"Multiple segments for ${t._1} found. Only 0 or 1 segments is allowed."
+                        errors.addEntry(error)
+                    }
+                case "[1..1]" => //Required, need one and Only one:
+                    if (segments.isEmpty) {
+                        val error = new ErrorEntry(0, 1, 0, t._1, ERROR, "INVALID_MESSAGE")
+                        error.description = s"Required segment ${t._1} missing."
+                        errors.addEntry(error)
+                    }
+                    else if (segments.keySet.size > 1) {
+                        val error = new ErrorEntry(segments.keySet.last, 1, 3, t._1, ERROR, "INVALID_MESSAGE")
+                        error.description = s"Multiple segments for ${t._1} found. Only  1 segment is allowed."
+                        errors.addEntry(error)
+                    }
+                case "[1..*]" => //Make sure at least on value is there!
+                    if (segments.isEmpty) {
+                        val error = new ErrorEntry(0, 1, 0, t._1, ERROR, "INVALID_MESSAGE")
+                        error.description = s"Required segment ${t._1} missing."
+                        errors.addEntry(error)
+                    }
+                case CARDINALITY_REGEX(min, max) =>
+                    println(s"validating card... $min to $max")
+                    if (segments.keySet.size < min.toInt || segments.keySet.size > max.toInt) {
+                        val error = new ErrorEntry(1, 1, 2, t._1, ERROR, "INVALID_MESSAGE")
+                        error.description = s"Multiple segments for ${t._1} found. Only  $min to $max segments are allowed."
+                        errors.addEntry(error)
+                    }
+                case "[0..*]" => //all good
+                case _ => //Invalid Profile
+                    throw HL7ParseError(s"Invalid Cardinality ${t._2.cardinality} on Profile Definition!", t._1)
+            }
+
+        }
+    }
+
+    def getFieldLocation(line: Array[String], fieldNumber: Int, columnsBefore: Int): (Int, Int) = {
         var beginCol = columnsBefore // where to start counting columns  for recursive calls.
-        for (idx <- 0 to fieldNumber-1) {
+        for (idx <- 0 until fieldNumber) {
             if (idx < line.length)
                 beginCol = beginCol + line(idx).length + 1 // +1 is the field delimiter, aka, the pipe ( \ )
         }
@@ -278,7 +327,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                         else
                             fieldValue.split(parser.HL7_COMPONENT_SEPARATOR)
 
-                    validateSegment(newseg, fieldDefinitions.segments(x), split, lineNumber, columnsBefore, errors)
+                    validateSegment(newseg, fieldDefinitions.getSegmentField(x), split, lineNumber, columnsBefore, errors)
                     (true, "all good")
                 } catch {
                     case e: NoSuchElementException =>

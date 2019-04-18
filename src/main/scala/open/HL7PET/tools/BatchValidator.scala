@@ -121,7 +121,7 @@ class BatchValidator(message: String, var profile: Profile ) {
       entry.description = "FHS must be the first line of the message."
       errors.addEntry(entry)
     }
-    structureValidator.validateSegment("FHS[1]", profile.segments("FHS"), fhsFields, 1, 1, errors)
+    structureValidator.validateSegment("FHS[1]", profile.getSegmentField("FHS"), fhsFields, 1, 1, errors)
   }
 
   private def validateFTS(errors: ValidationErrors, hasFTS: Int, nbrOfLines: Int): Unit = {
@@ -138,7 +138,7 @@ class BatchValidator(message: String, var profile: Profile ) {
           entry.description = "FTS must be the last entry on the message"
           errors.addEntry(entry)
         }
-        structureValidator.validateSegment("FTS[1]", profile.segments("FTS"), fields, line, 1, errors)
+        structureValidator.validateSegment("FTS[1]", profile.getSegmentField("FTS"), fields, line, 1, errors)
       case _ =>
         populateDuplicateErrors(errors, FILE_TRAILER_SEGMENT)
     }
@@ -155,7 +155,7 @@ class BatchValidator(message: String, var profile: Profile ) {
       entry.description = "BHS must be defined before messages"
       errors.addEntry(entry)
     }
-    structureValidator.validateSegment("BHS[1]", profile.segments("BHS"), bhsFields, line, 1, errors)
+    structureValidator.validateSegment("BHS[1]", profile.getSegmentField("BHS"), bhsFields, line, 1, errors)
   }
 
   private def validateBTS(errors: ValidationErrors, nbrOfLines: Int, nbrOfMessages: Int): Unit = {
@@ -176,7 +176,7 @@ class BatchValidator(message: String, var profile: Profile ) {
           entry.description = "BTS must be the last entry on the message or right before FTS if present"
           errors.addEntry(entry)
         }
-        structureValidator.validateSegment("BTS[1]", profile.segments("BTS"), btsFields, line, 1, errors)
+        structureValidator.validateSegment("BTS[1]", profile.getSegmentField("BTS"), btsFields, line, 1, errors)
 
           val isNumber = Try { btsFields(1).toInt }.isSuccess
           if (isNumber && btsFields(1).toInt != nbrOfMessages) {

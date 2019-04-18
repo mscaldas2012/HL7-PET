@@ -241,7 +241,6 @@ class HL7ParseUtils(message: String) {
         if (value.isDefined)
             return Some(getValue(path).get(0)(0))
         None
-
     }
 
 }

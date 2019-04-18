@@ -12,6 +12,7 @@ class ValidationErrors extends Serializable {
   def addEntry(entry: ErrorEntry) {
     if (entries == null)
       entries = new ArrayBuffer[ErrorEntry]()
+
     entries += entry
     entry.classification match {
       case ERROR => totalErrors += 1

@@ -22,8 +22,12 @@ class LoadProfileTest extends FlatSpec {
 
     val mapper:ObjectMapper = new ObjectMapper()
     val profile: Profile = mapper.readValue(content, classOf[Profile])
+  }
 
-
-
+  "PhinGuide" should "be loaded" in {
+    val content = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
+    val mapper = new ObjectMapper()
+    val profile = mapper.readValue(content, classOf[Profile])
+    println(profile)
   }
 }

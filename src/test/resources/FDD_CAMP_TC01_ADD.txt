@@ -1,7 +1,8 @@
 MSH|^~\&|SendAppName^2.16.840.1.114222.nnnn^|Sending-Facility^2.16.840.1.114222.nnnn^ISOT|PHINCDS^2.16.840.1.114222.4.3.2.10^ISO|PHIN^2.16.840.1.114222^ISO|20160126120030.12340500||ORU^R01^ORU_R01|MESSAGE CONTROL|D|2.5.1|||||||||NOTF_ORU_v3.0^PHINProfileID^2.16.840.1.114222.4.10.3^ISO~Generic_MMG_V2.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO~FDD_V1.0_MMG_MVPS_TR_20180316^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO
 NKD|1|Invalid Segment.
 PID|1||FDD_CPY_TC01^^^SendAppName&2.16.840.1.114222.nnnn&ISO||~^^^^^^S||ABCD|F||2028-9^Asian^|testVal^^^26^48201^^^^26163|||||||||||2186-5^Not Hispanic or Latino^CDCREC|||||||
-OBR|2||FDD_CPY_PC01^SendAppName^2.16.840.1.114222.^IST|68991-9^Epidemiologic Information^|||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
+PID|2||FDD_CPY_TC01^^^SendAppName&2.16.840.1.114222.nnnn&ISO||~^^^^^^S||ABCD|F||2028-9^Asian^|testVal^^^26^48201^^^^26163|||||||||||2186-5^Not Hispanic or Latino^CDCREC|||||||
+OBR|2||FDD_CPY_PC01^SendAppName^2.16.840.1.114222.^IST|68991-9^Epidemiologic Information^|||20170802111655||||G|||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
 OBR|1||FDD_CPY_PC01^SendAppName^2.16.840.1.114222^ISO||||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
 OBX|1|ST|32624-9^Other Race Text^LN||No other race||||||F
 OBX|2|CWE|78746-5^Country of Birth^^obx2_3_4^obx_2_3_5^||USA^UNITED STATES^ISO^obx4_1^obx4_2^||||||F
