@@ -30,7 +30,7 @@ publishTo := {
 }
 publishMavenStyle := true
 
-// useGpg := true
+useGpg := true
 
 version := "1.2.1-SNAPSHOT"
 
