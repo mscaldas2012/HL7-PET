@@ -30,15 +30,15 @@ publishTo := {
 }
 publishMavenStyle := true
 
-useGpg := true
+// useGpg := true
 
-version := "1.2.0-SNAPSHOT"
+version := "1.2.1-SNAPSHOT"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.13.0"
 
 mainClass := Some("hl7.DeIdentifierApp")
-
-libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.1" % "test"
+// https://mvnrepository.com/artifact/org.scalatest/scalatest
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
 // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl
 libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13"
 // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl

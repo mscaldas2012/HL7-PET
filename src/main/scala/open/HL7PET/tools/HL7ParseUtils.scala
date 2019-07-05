@@ -2,8 +2,9 @@ package open.HL7PET.tools
 
 import java.util.NoSuchElementException
 
-import scala.collection.immutable.ListMap
+import scala.collection.immutable.{ListMap, SortedMap}
 import scala.collection.mutable.ListBuffer
+import scala.language.postfixOps
 
 class HL7ParseUtils(message: String) {
     val FILE_HEADER_SEGMENT = "FHS"
@@ -21,8 +22,10 @@ class HL7ParseUtils(message: String) {
     val HL7_FIELD_REPETITION = "\\~"
     val HL7_SUBCOMPONENT_SEPARATOR = "\\&"
 
-    val PATH_REGEX = "([A-Z]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\.\\='\\- ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
-    val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-\\.]+)'".r
+    val PATH_REGEX = "([A-Z]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\.\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
+   // val CHILDREN_REGEX = s"$PATH_REGEX>$PATH_REGEX".r
+    val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
+    val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
 
 
     //Returns the Number of segments present of message:
@@ -47,7 +50,7 @@ class HL7ParseUtils(message: String) {
     }
 
     @throws(classOf[HL7ParseError])
-    def retrieveMultipleSegments(segment: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+    def retrieveMultipleSegments(segment: String): SortedMap[Int, Array[String]] = {
         var result = scala.collection.mutable.SortedMap[Int, Array[String]]()
 
         message.split(NEW_LINE_FEED).zipWithIndex.foreach {
@@ -60,6 +63,7 @@ class HL7ParseUtils(message: String) {
         t ++= result
         t
     }
+
 
     @throws(classOf[HL7ParseError])
     def retrieveFirstSegmentOf(segment: String): (Int, Array[String]) = {
@@ -132,7 +136,7 @@ class HL7ParseUtils(message: String) {
         try {
             nbr.toInt
         } catch {
-            case _:Throwable => default
+            case _:NumberFormatException => default
         }
     }
 
@@ -151,9 +155,68 @@ class HL7ParseUtils(message: String) {
     }
 
 
+    //Get values from a subset of Segment lines:
+    //Used internally when we need to search on a subset of the file...
+    private def getValue(path: String, segments: SortedMap[Int, Array[String]]): Option[Array[Array[String]]] = {
+        path match {
+            case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
+                getValue(seg, segIdx, safeToInt(field, 0), safeToInt(fieldIdx, 0), safeToInt(comp, 0), safeToInt(subcomp,0), segments)
+            }
+            case _ => None
+        }
+
+    }
+
+    private def processChildren(parentSegment: String, childPath: String, firstIndex: Int): Option[Array[Array[String]]]  = {
+        val parentSegments = retrieveMultipleSegments(parentSegment).filter(e => e._1 > firstIndex)
+        val secondIndex = if (parentSegments.nonEmpty) parentSegments.firstKey else message.split(NEW_LINE_FEED).length
+        childPath match {
+            case PATH_REGEX(seg, _, _, _, _, _, _, _, _, _, _, _, _) => {
+                val childrenSegments = retrieveMultipleSegments(seg).filter( e => e._1 > firstIndex && e._1 <= secondIndex)
+                return getValue(childPath, childrenSegments)
+            }
+        }
+        None
+    }
+
+    private def getChildrenValues(parent: String, child: String): Option[Array[Array[String]]]  = {
+        var result: Array[Array[String]] = new Array[Array[String]](0)
+        parent.trim() match {
+            case PATH_REGEX(seg, _, segIdx, _, _, _, _, _ , _, _, _, _, _ ) => {
+                val parentList = getListOfMatchingSegments(seg, segIdx)
+                var firstIndex = 0
+                var secondIndex = 0
+                for (((k, segment), i) <- parentList.zipWithIndex) {
+                    //Get Segments between the seg(k) and seg(k+1)
+                    if (i > 0) {
+                        firstIndex = secondIndex
+                        val e = processChildren(seg, child, firstIndex)
+                        if (e.isDefined) {
+                            result ++= e.get
+                        }
+                    }
+                    secondIndex = k
+                }
+                //Need to perform the last batch...
+                firstIndex = secondIndex
+                val e = processChildren(seg, child, firstIndex)
+                if (e.isDefined) {
+                    result ++= e.get
+                }
+                Option(result)
+            }
+            case _ => None
+        }
+
+
+    }
+    //main Entry - can be called out outside code to find values based on path
     def getValue(path: String): Option[Array[Array[String]]] = {
         //val EMPTY = new Array[String](0)
         path match {
+            case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
+               getChildrenValues(parent,child)
+            }
             case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
                 getValue(seg, segIdx, safeToInt(field, 0), safeToInt(fieldIdx, 0), safeToInt(comp, 0), safeToInt(subcomp,0))
             }
@@ -161,22 +224,22 @@ class HL7ParseUtils(message: String) {
         }
     }
 
+    //Gets values only from a single segment
     def getValue(path: String, segment: Array[String]): Option[Array[String]] = {
         path match {
             case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-                getValue(segment, seg, segIdx, safeToInt(field, 0), safeToInt(fieldIdx, 0), safeToInt(comp, 0), safeToInt(subcomp, 0))
+                getValue(segment, seg, segIdx, safeToInt(field, 0), safeToInt(fieldIdx, 0), safeToInt(comp, 0), safeToInt(subcomp,0))
             }
             case _ => None
         }
     }
 
-    def getValue(seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int): Option[Array[Array[String]]] = {
-        var segmentList = getListOfMatchingSegments(seg, segIdx)
-        //User wants a specific field:
+    //Get values for a subset of segments from the file, like children segments pre filtered before!
+    private def getValue(seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]]): Option[Array[Array[String]]] = {
         val offset = if ("MSH".equals(seg)) 1 else 0
         var result: Array[Array[String]] = new Array[Array[String]](0)
 
-        for (((k, segment), i) <- segmentList.zipWithIndex) {
+        for (((k, segment), i) <- segments.zipWithIndex) {
             val e =  getValue(segment, seg, segIdx, field, fieldIdx, comp, subcomp)
             if (e.isDefined) {
                 result :+= e.get
@@ -184,14 +247,20 @@ class HL7ParseUtils(message: String) {
 
         }
         //TODO::All results might be empty... better to return None if that Happens.
-        if (result isEmpty)
-            return None
-        else return Option(result)
+        return if (result isEmpty)
+             None
+        else  Option(result)
+    }
+
+    //Get values from segments matching seg and segIdx of entire file.
+    private def getValue(seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int): Option[Array[Array[String]]] = {
+        var segmentList = getListOfMatchingSegments(seg, segIdx)
+        return getValue(seg, segIdx, field, fieldIdx, comp, subcomp, segmentList)
     }
 
 
-
-    def getValue(segment: Array[String], seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int): Option[Array[String]] = {
+    //Gets values from a single Segment...
+    private def getValue(segment: Array[String], seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int): Option[Array[String]] = {
         var finalValue: String = segment.mkString("|")
         var fieldArray: Array[String] = new Array[String](0)
         val offset = if ("MSH".equals(seg)) 1 else 0
@@ -230,9 +299,9 @@ class HL7ParseUtils(message: String) {
         } else if (!"".equals(finalValue))
             fieldArray :+= finalValue
 
-        if (fieldArray isEmpty)
-            return None
-        else return Option(fieldArray)
+       return if (fieldArray isEmpty)
+             None
+        else  Option(fieldArray)
     }
 
 

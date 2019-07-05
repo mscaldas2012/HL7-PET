@@ -2,8 +2,9 @@ MSH|^~\&|SendAppName^2.16.840.1.114222.nnnn^|Sending-Facility^2.16.840.1.114222.
 NKD|1|Invalid Segment.
 PID|1||FDD_CPY_TC01^^^SendAppName&2.16.840.1.114222.nnnn&ISO||~^^^^^^S||ABCD|F||2028-9^Asian^|testVal^^^26^48201^^^^26163|||||||||||2186-5^Not Hispanic or Latino^CDCREC|||||||
 PID|2||FDD_CPY_TC01^^^SendAppName&2.16.840.1.114222.nnnn&ISO||~^^^^^^S||ABCD|F||2028-9^Asian^|testVal^^^26^48201^^^^26163|||||||||||2186-5^Not Hispanic or Latino^CDCREC|||||||
-OBR|2||FDD_CPY_PC01^SendAppName^2.16.840.1.114222.^IST|68991-9^Epidemiologic Information^|||20170802111655||||G|||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
-OBR|1||FDD_CPY_PC01^SendAppName^2.16.840.1.114222^ISO||||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
+OBR|1||FDD_CPY_PC01^SendAppName^2.16.840.1.114222.^IST|68991-9^Epidemiologic Information^|||20170802111655||||G|||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
+OBX|99|ST|32624-9^Other Race Text^LN||No other race||||||F
+OBR|2||FDD_CPY_PC02^SendAppName^2.16.840.1.114222^ISO||||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
 OBX|1|ST|32624-9^Other Race Text^LN||No other race||||||F
 OBX|2|CWE|78746-5^Country of Birth^^obx2_3_4^obx_2_3_5^||USA^UNITED STATES^ISO^obx4_1^obx4_2^||||||F
 OBX|3|ST|21842-0^Other Birth Place^LN||No other birth place||||||F
@@ -205,7 +206,7 @@ OBX|198|ST|85658-3^Current Occupation^LN|2|Medical Technologist||||||F
 OBX|199|CE|85659-1^Current Occupation Standardized^LN|2|3300^Clinical laboratory technologists and technicians^CDCOCCUPATION2010||||||F
 OBX|200|ST|85078-4^Current Industry^LN|2|Hospital lab||||||F
 OBX|201|CE|85657-5^Current  Industry Standardized^LN|2|8190^Hospitals^CDCINDUSTRY2010||||||F
-OBR|2||FDD_CPY_PC01^SendAppName^2.16.840.1.114222^ISO|888888-8^Something Else Information^^^^IST|||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
+OBR|3||FDD_CPY_PC01^SendAppName^2.16.840.1.114222^ISO|888888-8^Something Else Information^^^^IST|||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
 OBX|202|ST|11111-4^Current Industry^LN|2|Hospital lab||||||F
 OBX|203|CE|11111-5^Current  Industry Standardized^LN|2|8190^Hospitals^CDCINDUSTRY2010||||||F
 

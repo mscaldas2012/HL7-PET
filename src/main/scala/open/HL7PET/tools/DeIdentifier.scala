@@ -1,8 +1,7 @@
 package open.HL7PET.tools
 
-import utils.{CSVReader, CodeTimer, ConsoleProgress, FileUtils}
+import utils.{CSVReader, ConsoleProgress, FileUtils}
 
-import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
 /**
