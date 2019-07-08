@@ -23,16 +23,21 @@ licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2
 homepage := Some(url("https://github.com/mscaldas2012/HL7-PET"))
 
 pomIncludeRepository := { _ => false }
+
 publishTo := {
   val nexus = "https://oss.sonatype.org/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
+
+//credentials += Credentials ("~/.sbt/sonatype_credentials")
+credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "^fgAKRQ99:K^Vx4aCQGW")
 publishMavenStyle := true
 
-useGpg := true
 
-version := "1.2.1-SNAPSHOT"
+//useGpg := true
+
+version := "1.2.2"
 
 scalaVersion := "2.13.0"
 

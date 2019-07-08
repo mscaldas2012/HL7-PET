@@ -115,21 +115,25 @@ class HL7ParseUtils(message: String) {
         }
     }
 
-    private def getListOfMatchingSegments(seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
-        var segmentIndex = 0
-        if (segIdx != null && segIdx != "*" && !segIdx.startsWith("@"))
-            segmentIndex = segIdx.toInt
+   private def getListOfMatchingSegments(seg: String, segIdx: String, segments: SortedMap[Int, Array[String]]): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+     var segmentIndex = 0
+     var segmentList = segments
 
-        var segmentList = retrieveMultipleSegments(seg) //All segments for SEG
-        if (segIdx != null && segIdx.startsWith("@")) { //Filter Segments if filter is provided instead of Index...
-            val filteredList = segmentList filter {
-                case (_,v) => filterValues(segIdx, v)
-            }
-            segmentList = filteredList
-        } else  if (segmentIndex > 0) { //Get the single
-            segmentList = segmentList.slice(segmentIndex -1, segmentIndex)
-        }
-         segmentList
+     if (segIdx != null && segIdx != "*" && !segIdx.startsWith("@"))
+       segmentIndex = segIdx.toInt
+     if (segIdx != null && segIdx.startsWith("@")) { //Filter Segments if filter is provided instead of Index...
+       val filteredList = segments filter {
+         case (_,v) => filterValues(segIdx, v)
+       }
+       segmentList = filteredList
+     } else  if (segmentIndex > 0) { //Get the single
+       segmentList = segments.slice(segmentIndex -1, segmentIndex)
+     }
+     segmentList
+   }
+
+    private def getListOfMatchingSegments(seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+      getListOfMatchingSegments(seg, segIdx, retrieveMultipleSegments(seg))
     }
 
     private def safeToInt(nbr: String, default: Int):Int = {
@@ -171,9 +175,9 @@ class HL7ParseUtils(message: String) {
         val parentSegments = retrieveMultipleSegments(parentSegment).filter(e => e._1 > firstIndex)
         val secondIndex = if (parentSegments.nonEmpty) parentSegments.firstKey else message.split(NEW_LINE_FEED).length
         childPath match {
-            case PATH_REGEX(seg, _, _, _, _, _, _, _, _, _, _, _, _) => {
+            case PATH_REGEX(seg, _, segIdx, _, _, _, _, _, _, _, _, _, _) => {
                 val childrenSegments = retrieveMultipleSegments(seg).filter( e => e._1 > firstIndex && e._1 <= secondIndex)
-                return getValue(childPath, childrenSegments)
+                return getValue(childPath, getListOfMatchingSegments(seg, segIdx,childrenSegments))
             }
         }
         None

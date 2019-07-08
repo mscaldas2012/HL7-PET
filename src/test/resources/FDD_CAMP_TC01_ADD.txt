@@ -209,4 +209,5 @@ OBX|201|CE|85657-5^Current  Industry Standardized^LN|2|8190^Hospitals^CDCINDUSTR
 OBR|3||FDD_CPY_PC01^SendAppName^2.16.840.1.114222^ISO|888888-8^Something Else Information^^^^IST|||20170802111655|||||||||||||||20170802111655|||F||||||11020^Campylobacteriosis^NND
 OBX|202|ST|11111-4^Current Industry^LN|2|Hospital lab||||||F
 OBX|203|CE|11111-5^Current  Industry Standardized^LN|2|8190^Hospitals^CDCINDUSTRY2010||||||F
+OBX|204|CWE|FDD_Q_1110^Probable – Epi linked^PHINQUESTION||Y^Yes^HL70136||||||F
 
