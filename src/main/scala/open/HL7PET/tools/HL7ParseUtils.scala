@@ -173,10 +173,16 @@ class HL7ParseUtils(message: String) {
 
     private def processChildren(parentSegment: String, childPath: String, firstIndex: Int): Option[Array[Array[String]]]  = {
         val parentSegments = retrieveMultipleSegments(parentSegment).filter(e => e._1 > firstIndex)
-        val secondIndex = if (parentSegments.nonEmpty) parentSegments.firstKey else message.split(NEW_LINE_FEED).length
         childPath match {
             case PATH_REGEX(seg, _, segIdx, _, _, _, _, _, _, _, _, _, _) => {
-                val childrenSegments = retrieveMultipleSegments(seg).filter( e => e._1 > firstIndex && e._1 <= secondIndex)
+              val secondIndex =
+                if (parentSegments.nonEmpty)
+                  parentSegments.firstKey
+                else {
+                  retrieveMultipleSegments(seg).lastKey
+                  //message.split(NEW_LINE_FEED).length
+                }
+              val childrenSegments = retrieveMultipleSegments(seg).filter( e => e._1 > firstIndex && e._1 <= secondIndex)
                 return getValue(childPath, getListOfMatchingSegments(seg, segIdx,childrenSegments))
             }
         }
@@ -190,7 +196,7 @@ class HL7ParseUtils(message: String) {
                 val parentList = getListOfMatchingSegments(seg, segIdx)
                 var firstIndex = 0
                 var secondIndex = 0
-                for (((k, segment), i) <- parentList.zipWithIndex) {
+                for (((k, _), i) <- parentList.zipWithIndex) {
                     //Get Segments between the seg(k) and seg(k+1)
                     if (i > 0) {
                         firstIndex = secondIndex
@@ -311,7 +317,7 @@ class HL7ParseUtils(message: String) {
 
     def getFirstValue(path: String): Option[String] = {
         val value = getValue(path)
-        if (value.isDefined)
+        if (value.isDefined && !value.isEmpty)
             return Some(getValue(path).get(0)(0))
         None
     }

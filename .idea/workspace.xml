@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
+    <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_annotations_2_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_core_2_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_databind_2_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_13_2_10_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/ARLN_GC_DUB.hl7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/candida.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_core_asl_1_9_13_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_mapper_asl_1_9_13_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/exportedProducts/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/exportedProducts/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/exportedProducts/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/exportedProducts/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/project/project/target/" />
-    <ignored path="$PROJECT_DIR$/project/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -32,28 +72,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
-                <item name="sbt tasks" type="d9357504:SbtViewContributor$SbtTasksGroupNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -61,324 +79,18 @@
       </state>
     </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="7" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/ExampleApp.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="402">
-                <caret line="66" selection-start-line="66" selection-end-line="66" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="29" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="29" />
-              <folding>
-                <element signature="e#11448#20714#0" />
-                <element signature="e#20727#23866#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/FDD_CAMP_TC01_ADD.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3165">
-              <caret line="211" column="7" selection-start-line="211" selection-start-column="7" selection-end-line="211" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/FileBatchSingleMessage.hl7">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="90" selection-start-line="2" selection-start-column="83" selection-end-line="2" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2610">
-              <caret line="178" column="123" selection-start-line="178" selection-start-column="123" selection-end-line="178" selection-end-column="123" />
-              <folding>
-                <element signature="e#27#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="146" column="37" selection-start-line="146" selection-start-column="37" selection-end-line="146" selection-end-column="37" />
-              <folding>
-                <element signature="e#34#984#0" />
-                <element signature="e#48#341#0" />
-                <element signature="e#355#661#0" />
-                <element signature="e#675#974#0" />
-                <element signature="e#1001#1935#0" />
-                <element signature="e#1015#1306#0" />
-                <element signature="e#1320#1612#0" />
-                <element signature="e#1626#1925#0" />
-                <element signature="e#1951#2588#0" />
-                <element signature="e#1965#2270#0" />
-                <element signature="e#2284#2578#0" />
-                <element signature="e#2605#3557#0" />
-                <element signature="e#2619#2908#0" />
-                <element signature="e#2922#3228#0" />
-                <element signature="e#3242#3547#0" />
-                <element signature="e#5497#8350#0" />
-                <element signature="e#5511#5802#0" />
-                <element signature="e#5816#6102#0" />
-                <element signature="e#6116#6426#0" />
-                <element signature="e#6440#6741#0" />
-                <element signature="e#6755#7051#0" />
-                <element signature="e#7065#7385#0" />
-                <element signature="e#7399#7703#0" />
-                <element signature="e#7717#8031#0" />
-                <element signature="e#8045#8340#0" />
-                <element signature="e#8366#9612#0" />
-                <element signature="e#8380#8678#0" />
-                <element signature="e#8692#8985#0" />
-                <element signature="e#8999#9292#0" />
-                <element signature="e#9306#9602#0" />
-                <element signature="e#9628#12759#0" />
-                <element signature="e#9642#9931#0" />
-                <element signature="e#9945#10235#0" />
-                <element signature="e#10249#10547#0" />
-                <element signature="e#10561#10861#0" />
-                <element signature="e#10875#11174#0" />
-                <element signature="e#11188#11487#0" />
-                <element signature="e#11501#11794#0" />
-                <element signature="e#11808#12102#0" />
-                <element signature="e#12116#12421#0" />
-                <element signature="e#12435#12749#0" />
-                <element signature="e#12776#17148#0" />
-                <element signature="e#12790#13080#0" />
-                <element signature="e#13094#13383#0" />
-                <element signature="e#13397#13726#0" />
-                <element signature="e#13740#14025#0" />
-                <element signature="e#14039#14324#0" />
-                <element signature="e#14338#14647#0" />
-                <element signature="e#14661#14954#0" />
-                <element signature="e#14968#15271#0" />
-                <element signature="e#15285#15578#0" />
-                <element signature="e#15592#15891#0" />
-                <element signature="e#15905#16204#0" />
-                <element signature="e#16218#16513#0" />
-                <element signature="e#16527#16823#0" />
-                <element signature="e#16837#17138#0" />
-                <element signature="e#17165#21541#0" />
-                <element signature="e#17179#17472#0" />
-                <element signature="e#17486#17782#0" />
-                <element signature="e#17796#18081#0" />
-                <element signature="e#18095#18393#0" />
-                <element signature="e#18407#18699#0" />
-                <element signature="e#18713#19000#0" />
-                <element signature="e#19014#19305#0" />
-                <element signature="e#19319#19627#0" />
-                <element signature="e#19641#19940#0" />
-                <element signature="e#19954#20248#0" />
-                <element signature="e#20262#20595#0" />
-                <element signature="e#20609#20911#0" />
-                <element signature="e#20925#21221#0" />
-                <element signature="e#21235#21531#0" />
-                <element signature="e#21557#21896#0" />
-                <element signature="e#21571#21886#0" />
-                <element signature="e#21912#22250#0" />
-                <element signature="e#21926#22240#0" />
-                <element signature="e#22266#22630#0" />
-                <element signature="e#22280#22620#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>INVALID_MESSAGE</find>
-      <find>validateCar</find>
-      <find>default</find>
-      <find>rule</find>
-      <find>xtraValidation</find>
-      <find>safe</find>
-      <find>IsEmpt</find>
-      <find>I</find>
-      <find>toIntOptio</find>
-      <find>message</find>
-      <find>message.split</find>
-      <find>OBX</find>
-      <find>DateForSeconds</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/target/resources/Cancer.txt" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" />
-        <option value="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" />
-        <option value="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" />
-        <option value="$PROJECT_DIR$/project/build.properties" />
-        <option value="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" />
-        <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" />
-        <option value="$PROJECT_DIR$/src/test/resources/FDD_CAMP_TC01_ADD.txt" />
-        <option value="$PROJECT_DIR$/README.md" />
-      </list>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="13" />
-    <option name="y" value="68" />
-    <option name="width" value="1797" />
-    <option name="height" value="1037" />
-  </component>
+  <component name="ProjectId" id="1RhNI2mCjnJztfQ9idshZJVTfLX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HL7-PET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HL7-PET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -387,8 +99,11 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555620341977" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -405,19 +120,13 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.ExampleApp">
+  <component name="RunManager" selected="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -436,22 +145,8 @@
       <module name="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ExampleApp" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ExampleApp" />
-      <module name="HL7-PET" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FactApp" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="FactApp" />
       <module name="HL7-PET" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -471,58 +166,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.PhinGuide should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration name="LoadProfileTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
-      <setting name="path" value="LoadProfileTest" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <setting name="jrePath" value="" />
-      <envs />
-      <setting name="testKind" value="Test name" />
-      <setting name="path" value="LoadProfileTest" />
-      <setting name="testName" value="PhinGuide should be loaded" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StructureValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration name="LoadProfileTest.HL7Hierachy should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
-      <setting name="path" value="StructureValidatorTest" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <setting name="jrePath" value="" />
-      <envs />
-      <setting name="testKind" value="Class" />
-      <setting name="path" value="StructureValidatorTest" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="testName" value="HL7Hierachy should be loaded" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration name="LoadProfileTest.PhinGuide should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
-      <setting name="path" value="StructureValidatorTest" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <setting name="jrePath" value="" />
-      <envs />
-      <setting name="testKind" value="Test name" />
-      <setting name="path" value="StructureValidatorTest" />
-      <setting name="testName" value="SingleBatchedMessage must pass validation" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoadProfileTest.Profile should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -547,11 +267,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ExampleApp" />
-        <item itemvalue="Application.FactApp" />
-        <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
+        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded" />
+        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded" />
         <item itemvalue="ScalaTest.LoadProfileTest.PhinGuide should be loaded" />
-        <item itemvalue="ScalaTest.StructureValidatorTest" />
+        <item itemvalue="ScalaTest.LoadProfileTest.PhinGuide should be loaded" />
+        <item itemvalue="Application.ExampleApp" />
       </list>
     </recent_temporary>
   </component>
@@ -568,7 +288,7 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="hl7-pet [file:/Users/marcelo/projects/personal/HL7-PET/]" />
+                <option name="name" value="hl7-pet [file:/Users/m/projects/personal/HL7-PET/]" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -583,7 +303,8 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$/../../nlpProject/learningPlayground/scala-akka" value="1486158509000" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="1812272797" />
+        <entry key="$PROJECT_DIR$" value="3136020493294" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2794170814" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="3280644262" />
         <entry key="$PROJECT_DIR$/../../reactive-machine-learning-systems-master/chapter-4" value="1475437324000" />
       </map>
@@ -593,6 +314,18 @@
         <entry key="$PROJECT_DIR$/../nlp/Klasifikasyon/data" value="PREVIEW" />
         <entry key="$USER_HOME$/work/NCEZID/EIP/hl7-utils" value="PREVIEW" />
       </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -621,88 +354,30 @@
       <workItem from="1562353845012" duration="634000" />
       <workItem from="1562354527755" duration="7208000" />
       <workItem from="1562764297363" duration="394000" />
-      <workItem from="1562765099711" duration="929000" />
+      <workItem from="1562765099711" duration="1806000" />
+      <workItem from="1563378562378" duration="126000" />
+      <workItem from="1563378705363" duration="472000" />
+      <workItem from="1563550495767" duration="237000" />
+      <workItem from="1563551741851" duration="676000" />
+      <workItem from="1564180994348" duration="197000" />
+      <workItem from="1564182513405" duration="1023000" />
+      <workItem from="1565130257706" duration="224000" />
+      <workItem from="1570115287900" duration="662000" />
+      <workItem from="1570638578418" duration="602000" />
+      <workItem from="1573657260276" duration="14705000" />
+      <workItem from="1578080576075" duration="3895000" />
+      <workItem from="1579023944939" duration="11021000" />
+      <workItem from="1579115767889" duration="7660000" />
     </task>
+    <task id="LOCAL-00001" summary="adding documentation">
+      <created>1562788656016</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562788656016</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 15h 53m 41s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 15h 54m 12s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 15h 55m 11s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 15h 55m 30s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 16h 24m 09s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="StructureValidatorTest_SingleBatchedMessage_must_pass_validation - 2019.04.18 at 16h 35m 11s.xml">
-      <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="LoadProfileTest_PhinGuide_should_be_loaded - 2019.04.18 at 16h 35m 27s.xml">
-      <configuration name="LoadProfileTest.PhinGuide should be loaded" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="LoadProfileTest_PhinGuide_should_be_loaded - 2019.04.18 at 16h 35m 56s.xml">
-      <configuration name="LoadProfileTest.PhinGuide should be loaded" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="LoadProfileTest_PhinGuide_should_be_loaded - 2019.04.18 at 16h 36m 50s.xml">
-      <configuration name="LoadProfileTest.PhinGuide should be loaded" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="LoadProfileTest_PhinGuide_should_be_loaded - 2019.04.18 at 16h 38m 29s.xml">
-      <configuration name="LoadProfileTest.PhinGuide should be loaded" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77655000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14589989" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Learn" order="7" weight="0.329972" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32881662" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47244805" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.36946702" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.2728094" />
-      <window_info anchor="bottom" id="SBT Console" order="8" weight="0.32882166" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" weight="0.3730804" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.37850046" />
-      <window_info anchor="bottom" id="Docker" order="11" weight="0.3373102" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5005325" side_tool="true" weight="0.36946702" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.23757905" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32881662" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32979798" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="sbt" order="5" visible="true" weight="0.12832801" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Clojure Deps" order="7" />
-      <window_info anchor="right" id="Gradle" order="8" />
-      <window_info anchor="right" id="Database" order="9" />
-      <window_info anchor="right" id="Leiningen" order="10" />
-      <window_info anchor="right" id="Palette&#9;" order="11" />
-      <window_info anchor="right" id="Theme Preview" order="12" />
-      <window_info anchor="right" id="REPL" order="13" side_tool="true" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -717,30 +392,93 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding documentation" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579119638438">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1579119638438" />
+    <state width="1878" height="527" key="GridCell.Tab.0.bottom" timestamp="1579125132803">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132803" />
+    <state width="1878" height="527" key="GridCell.Tab.0.center" timestamp="1579125132802">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132802" />
+    <state width="1878" height="527" key="GridCell.Tab.0.left" timestamp="1579125132800">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132800" />
+    <state width="1878" height="527" key="GridCell.Tab.0.right" timestamp="1579125132802">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132802" />
+    <state width="1878" height="527" key="GridCell.Tab.1.bottom" timestamp="1579125134908">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134908" />
+    <state width="1878" height="527" key="GridCell.Tab.1.center" timestamp="1579125134905">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134905" />
+    <state width="1878" height="527" key="GridCell.Tab.1.left" timestamp="1579125134904">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134904" />
+    <state width="1878" height="527" key="GridCell.Tab.1.right" timestamp="1579125134906">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="1878" height="527" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134906" />
+    <state width="960" height="600" key="XDebugger.FullValuePopup" timestamp="1579120152356">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state width="960" height="600" key="XDebugger.FullValuePopup/0.23.1920.1141@0.23.1920.1141" timestamp="1579120152356" />
+    <state x="625" y="279" width="670" height="676" key="search.everywhere.popup" timestamp="1579029349308">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state x="625" y="279" width="670" height="676" key="search.everywhere.popup/0.23.1920.1141@0.23.1920.1141" timestamp="1579029349308" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala</url>
           <line>27</line>
-          <properties />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala</url>
+          <line>51</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
+          <line>55</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="ScalaTestRunConfiguration">
-        <watch expression="source.getLines" />
-        <watch expression="line(fieldNumber).length" />
-        <watch expression="segments.size" language="Scala" />
-        <watch expression="segments.asInstanceOf[Some].value.size" language="Scala" />
-        <watch expression="segments.asInstanceOf[Some].value.length" language="Scala" />
+        <watch expression="message" language="Scala" />
+        <watch expression="root_output" language="Scala" />
       </configuration>
       <configuration name="Application">
         <watch expression="CHILDREN_REGEX(pseg, _, psegIdx, _, _, pfield, _, pfieldIdx, _, _, pcomp, _, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
@@ -749,369 +487,6 @@
         <watch expression="parentSegments.firstKey" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="breakpointCondition">
-      <expression>
-        <expression-string>fieldNumber==7</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>fieldNumber -1 == 2</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="watch">
-      <expression>
-        <expression-string>CHILDREN_REGEX</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>segments.asInstanceOf[Some].value.length</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>segments.asInstanceOf[Some].value.size</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>segments.asInstanceOf[Some].value</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>segments.value.size</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>segments.size</expression-string>
-        <language-id>Scala</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.2-sources.jar!/scala/io/Source.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FDD_CAMP_TC01_ADD.txt" />
-    <entry file="file://$PROJECT_DIR$/target/test-classes/resources/Cancer.txt" />
-    <entry file="file://$PROJECT_DIR$/target/classes/resources/Cancer.txt" />
-    <entry file="file://$PROJECT_DIR$/target/resources/Cancer.txt" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.1-sources.jar!/org/scalatest/OutcomeOf.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.1-sources.jar!/org/scalatest/Transformer.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.1-sources.jar!/org/scalatest/TestSuite.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.1-sources.jar!/org/scalatest/FlatSpecLike.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.1-sources.jar!/org/scalatest/Engine.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DeIdentifierParams.yml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1953">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/RulesValidatorTests.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/temp.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#filterValues#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/Factorials.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
-          <folding>
-            <element signature="e#33#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/default_rules.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1542">
-          <caret line="198" column="40" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="40" />
-          <folding>
-            <element signature="e#27#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-          <folding>
-            <element signature="e#14#2605#0" />
-            <element signature="e#2618#3180#0" />
-            <element signature="e#3193#5991#0" />
-            <element signature="e#6004#6644#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#27#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2505">
-          <caret line="173" column="53" selection-start-line="173" selection-start-column="53" selection-end-line="173" selection-end-column="53" />
-          <folding>
-            <element signature="e#27#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/conformanceRules.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/predicateRules.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="7" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/ExampleApp.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="29" />
-          <folding>
-            <element signature="e#11448#20714#0" />
-            <element signature="e#20727#23866#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/FDD_CAMP_TC01_ADD.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3165">
-          <caret line="211" column="7" selection-start-line="211" selection-start-column="7" selection-end-line="211" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/FileBatchSingleMessage.hl7">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="90" selection-start-line="2" selection-start-column="83" selection-end-line="2" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="178" column="123" selection-start-line="178" selection-start-column="123" selection-end-line="178" selection-end-column="123" />
-          <folding>
-            <element signature="e#27#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="146" column="37" selection-start-line="146" selection-start-column="37" selection-end-line="146" selection-end-column="37" />
-          <folding>
-            <element signature="e#34#984#0" />
-            <element signature="e#48#341#0" />
-            <element signature="e#355#661#0" />
-            <element signature="e#675#974#0" />
-            <element signature="e#1001#1935#0" />
-            <element signature="e#1015#1306#0" />
-            <element signature="e#1320#1612#0" />
-            <element signature="e#1626#1925#0" />
-            <element signature="e#1951#2588#0" />
-            <element signature="e#1965#2270#0" />
-            <element signature="e#2284#2578#0" />
-            <element signature="e#2605#3557#0" />
-            <element signature="e#2619#2908#0" />
-            <element signature="e#2922#3228#0" />
-            <element signature="e#3242#3547#0" />
-            <element signature="e#5497#8350#0" />
-            <element signature="e#5511#5802#0" />
-            <element signature="e#5816#6102#0" />
-            <element signature="e#6116#6426#0" />
-            <element signature="e#6440#6741#0" />
-            <element signature="e#6755#7051#0" />
-            <element signature="e#7065#7385#0" />
-            <element signature="e#7399#7703#0" />
-            <element signature="e#7717#8031#0" />
-            <element signature="e#8045#8340#0" />
-            <element signature="e#8366#9612#0" />
-            <element signature="e#8380#8678#0" />
-            <element signature="e#8692#8985#0" />
-            <element signature="e#8999#9292#0" />
-            <element signature="e#9306#9602#0" />
-            <element signature="e#9628#12759#0" />
-            <element signature="e#9642#9931#0" />
-            <element signature="e#9945#10235#0" />
-            <element signature="e#10249#10547#0" />
-            <element signature="e#10561#10861#0" />
-            <element signature="e#10875#11174#0" />
-            <element signature="e#11188#11487#0" />
-            <element signature="e#11501#11794#0" />
-            <element signature="e#11808#12102#0" />
-            <element signature="e#12116#12421#0" />
-            <element signature="e#12435#12749#0" />
-            <element signature="e#12776#17148#0" />
-            <element signature="e#12790#13080#0" />
-            <element signature="e#13094#13383#0" />
-            <element signature="e#13397#13726#0" />
-            <element signature="e#13740#14025#0" />
-            <element signature="e#14039#14324#0" />
-            <element signature="e#14338#14647#0" />
-            <element signature="e#14661#14954#0" />
-            <element signature="e#14968#15271#0" />
-            <element signature="e#15285#15578#0" />
-            <element signature="e#15592#15891#0" />
-            <element signature="e#15905#16204#0" />
-            <element signature="e#16218#16513#0" />
-            <element signature="e#16527#16823#0" />
-            <element signature="e#16837#17138#0" />
-            <element signature="e#17165#21541#0" />
-            <element signature="e#17179#17472#0" />
-            <element signature="e#17486#17782#0" />
-            <element signature="e#17796#18081#0" />
-            <element signature="e#18095#18393#0" />
-            <element signature="e#18407#18699#0" />
-            <element signature="e#18713#19000#0" />
-            <element signature="e#19014#19305#0" />
-            <element signature="e#19319#19627#0" />
-            <element signature="e#19641#19940#0" />
-            <element signature="e#19954#20248#0" />
-            <element signature="e#20262#20595#0" />
-            <element signature="e#20609#20911#0" />
-            <element signature="e#20925#21221#0" />
-            <element signature="e#21235#21531#0" />
-            <element signature="e#21557#21896#0" />
-            <element signature="e#21571#21886#0" />
-            <element signature="e#21912#22250#0" />
-            <element signature="e#21926#22240#0" />
-            <element signature="e#22266#22630#0" />
-            <element signature="e#22280#22620#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="402">
-            <caret line="66" selection-start-line="66" selection-end-line="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

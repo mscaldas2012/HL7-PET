@@ -1,7 +1,9 @@
 package open.HL7PET.tools
 
+import com.fasterxml.jackson.databind.{DeserializationConfig, ObjectMapper}
 import open.HL7PET.tools.model.ValidationRules
-import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+//import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+import com.fasterxml.jackson.databind.DeserializationFeature
 
 import scala.io.Source
 
@@ -9,7 +11,7 @@ class RulesValidator(rulesFile: String) {
   val rules = {
     val content:String = Source.fromResource(rulesFile).getLines().mkString("\n")
     val mapper:ObjectMapper = new ObjectMapper()
-    mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     mapper.readValue(content, classOf[ValidationRules])
   }
 

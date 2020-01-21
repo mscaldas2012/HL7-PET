@@ -2,8 +2,10 @@ package open.HL7PET.tools
 
 import java.text.ParseException
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import open.HL7PET.tools.model.{HL7SegmentField, Profile}
-import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+//import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+import com.fasterxml.jackson.databind.DeserializationFeature
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -19,7 +21,7 @@ class BatchValidator(message: String, var profile: Profile ) {
   val structureValidator: StructureValidator = new StructureValidator(message, profile, null)
 
   val mapper:ObjectMapper = new ObjectMapper()
-  mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+  mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
   if (profile == null) {
     println("Using Default profile")

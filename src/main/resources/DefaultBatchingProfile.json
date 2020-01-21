@@ -1,283 +1,293 @@
 {
-    "FHS":  [
-      {
-        "fieldNumber": 1,
-        "name": "File Field Separator",
-        "dataType": "ST",
-        "maxLength": "1",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "|",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 2,
-        "name": "File Encoding Characters",
-        "dataType": "ST",
-        "maxLength": "4",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "^~\\&",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 3,
-        "name": "File Sending Application",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 4,
-        "name": "File Sending Facility",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 5,
-        "name": "File Receiving Application",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 6,
-        "name": "File Receiving Facility",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 7,
-        "name": "File Creation Date/Time",
-        "dataType": "TS",
-        "maxLength": "26",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 8,
-        "name": "File Security",
-        "dataType": "ST",
-        "maxLength": "40",
-        "usage": "X",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 9,
-        "name": "File Name/ID",
-        "dataType": "ST",
-        "maxLength": "20",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 10,
-        "name": "File Header Comment",
-        "dataType": "ST",
-        "maxLength": "80",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 11,
-        "name": "File Control ID",
-        "dataType": "ST",
-        "maxLength": "199",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      }
-    ],
-    "FTS": [
-      {
-        "fieldNumber": 1,
-        "name": "File Batch Count",
-        "dataType": "NM",
-        "maxLength": "10",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "1",
-        "notes": "The number of batches contained in this file. Since this interface is constrained to one batch per file, the number should always be 1."
-      },
-      {
-        "fieldNumber": 2,
-        "name": "File Trailer Comment",
-        "dataType": "ST",
-        "maxLength": "80",
-        "usage": "O",
-        "cardinality": "[0..1]"
-      }
-    ],
-    "BHS": [
-      {
-        "fieldNumber": 1,
-        "name": "Batch Field Separator",
-        "dataType": "ST",
-        "maxLength": "1",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "|",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 2,
-        "name": "Batch Encoding Characters",
-        "dataType": "ST",
-        "maxLength": "4",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "^~\\&",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 3,
-        "name": "Batch Sending Application",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 4,
-        "name": "Batch Sending Facility",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 5,
-        "name": "Batch Receiving Application",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 6,
-        "name": "Batch Receiving Facility",
-        "dataType": "HD",
-        "maxLength": "227",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 7,
-        "name": "Batch Creation Date/Time",
-        "dataType": "TS",
-        "maxLength": "26",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 8,
-        "name": "Batch Security",
-        "dataType": "ST",
-        "maxLength": "40",
-        "usage": "X",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 9,
-        "name": "Batch Name/ID",
-        "dataType": "ST",
-        "maxLength": "20",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 10,
-        "name": "Batch Header Comment",
-        "dataType": "ST",
-        "maxLength": "80",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 11,
-        "name": "Batch Control ID",
-        "dataType": "ST",
-        "maxLength": "20",
-        "usage": "O",
-        "cardinality": "[0..1]",
-        "default": "",
-        "notes": ""
-      },
-      {
-        "fieldNumber": 12,
-        "name": "Reference Batch Control ID",
-        "dataType": "ST",
-        "maxLength": "20",
-        "usage": "O",
-        "cardinality": "[0..1]"
-      }
-    ],
-    "BTS": [
-      {
-        "fieldNumber": 1,
-        "name": "Batch Message Count",
-        "dataType": "NM",
-        "maxLength": "10",
-        "usage": "R",
-        "cardinality": "[1..1]",
-        "notes": "The number of messages contained in the preceding batch."
-      },
-      {
-        "fieldNumber": 2,
-        "name": "Batch  Comment",
-        "dataType": "ST",
-        "maxLength": "80",
-        "usage": "O",
-        "cardinality": "[0..1]"
-      },
-      {
-        "fieldNumber": 3,
-        "name": "Batch Totals",
-        "dataType": " NM",
-        "maxLength": "100",
-        "usage": "X",
-        "cardinality": "[0..*]"
-      }
-    ]
+  "segmentDefinition": {
+    "FHS": {
+      "fields": [
+        {
+          "fieldNumber": 1,
+          "name": "File Field Separator",
+          "dataType": "ST",
+          "maxLength": "1",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "|",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 2,
+          "name": "File Encoding Characters",
+          "dataType": "ST",
+          "maxLength": "4",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "^~\\&",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 3,
+          "name": "File Sending Application",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 4,
+          "name": "File Sending Facility",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 5,
+          "name": "File Receiving Application",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 6,
+          "name": "File Receiving Facility",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 7,
+          "name": "File Creation Date/Time",
+          "dataType": "TS",
+          "maxLength": "26",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 8,
+          "name": "File Security",
+          "dataType": "ST",
+          "maxLength": "40",
+          "usage": "X",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 9,
+          "name": "File Name/ID",
+          "dataType": "ST",
+          "maxLength": "20",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 10,
+          "name": "File Header Comment",
+          "dataType": "ST",
+          "maxLength": "80",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 11,
+          "name": "File Control ID",
+          "dataType": "ST",
+          "maxLength": "199",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        }
+      ]
+    },
+    "FTS": {
+      "fields": [
+        {
+          "fieldNumber": 1,
+          "name": "File Batch Count",
+          "dataType": "NM",
+          "maxLength": "10",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "1",
+          "notes": "The number of batches contained in this file. Since this interface is constrained to one batch per file, the number should always be 1."
+        },
+        {
+          "fieldNumber": 2,
+          "name": "File Trailer Comment",
+          "dataType": "ST",
+          "maxLength": "80",
+          "usage": "O",
+          "cardinality": "[0..1]"
+        }
+      ]
+    },
+    "BHS": {
+      "fields": [
+        {
+          "fieldNumber": 1,
+          "name": "Batch Field Separator",
+          "dataType": "ST",
+          "maxLength": "1",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "|",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 2,
+          "name": "Batch Encoding Characters",
+          "dataType": "ST",
+          "maxLength": "4",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "^~\\&",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 3,
+          "name": "Batch Sending Application",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 4,
+          "name": "Batch Sending Facility",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 5,
+          "name": "Batch Receiving Application",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 6,
+          "name": "Batch Receiving Facility",
+          "dataType": "HD",
+          "maxLength": "227",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 7,
+          "name": "Batch Creation Date/Time",
+          "dataType": "TS",
+          "maxLength": "26",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 8,
+          "name": "Batch Security",
+          "dataType": "ST",
+          "maxLength": "40",
+          "usage": "X",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 9,
+          "name": "Batch Name/ID",
+          "dataType": "ST",
+          "maxLength": "20",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 10,
+          "name": "Batch Header Comment",
+          "dataType": "ST",
+          "maxLength": "80",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 11,
+          "name": "Batch Control ID",
+          "dataType": "ST",
+          "maxLength": "20",
+          "usage": "O",
+          "cardinality": "[0..1]",
+          "default": "",
+          "notes": ""
+        },
+        {
+          "fieldNumber": 12,
+          "name": "Reference Batch Control ID",
+          "dataType": "ST",
+          "maxLength": "20",
+          "usage": "O",
+          "cardinality": "[0..1]"
+        }
+      ]
+    },
+    "BTS": {
+      "fields": [
+        {
+          "fieldNumber": 1,
+          "name": "Batch Message Count",
+          "dataType": "NM",
+          "maxLength": "10",
+          "usage": "R",
+          "cardinality": "[1..1]",
+          "notes": "The number of messages contained in the preceding batch."
+        },
+        {
+          "fieldNumber": 2,
+          "name": "Batch  Comment",
+          "dataType": "ST",
+          "maxLength": "80",
+          "usage": "O",
+          "cardinality": "[0..1]"
+        },
+        {
+          "fieldNumber": 3,
+          "name": "Batch Totals",
+          "dataType": " NM",
+          "maxLength": "100",
+          "usage": "X",
+          "cardinality": "[0..*]"
+        }
+      ]
+    }
+  }
 }
 
 

@@ -1,6 +1,6 @@
 package open.HL7PET.tools.model
 
-import org.codehaus.jackson.annotate.JsonAnySetter
+import com.fasterxml.jackson.annotation.JsonAnySetter
 
 import scala.beans.BeanProperty
 

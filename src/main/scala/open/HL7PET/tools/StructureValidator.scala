@@ -3,8 +3,9 @@ package open.HL7PET.tools
 import java.text.ParseException
 import java.util.NoSuchElementException
 
-import open.HL7PET.tools.model.{HL7SegmentField, Profile, SegmentConfig}
-import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import open.HL7PET.tools.model.{HL7SegmentField, Profile}
+//import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
 
@@ -21,7 +22,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     val parser: HL7ParseUtils = new HL7ParseUtils(message)
 
     val mapper:ObjectMapper = new ObjectMapper()
-    mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
     if (profile == null) {
         println("Using Default profile")
@@ -60,7 +61,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     }
 
     private def validateFile(errors: ValidationErrors) = {
-        profile.file.fileSegments.foreach { t =>
+        profile.segmentDefinition.foreach { t =>
             val segments = parser.retrieveMultipleSegments(t._1)
             t._2.cardinality match {
                 case "[0..1]" => // Optional, but only one

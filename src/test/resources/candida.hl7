@@ -1,0 +1,21 @@
+MSH|^~\&#|CLIMS.NY.Stag^2.16.840.1.114222.4.3.3.2.17.2^ISO|NY.Wadsworth.Biggs^2.16.840.1.114222.4.1.131913^ISO|AIMS.INTEGRATION.STG^2.16.840.1.114222.4.3.15.2^ISO|CDC.ARLN.Candida^2.16.840.1.114222.4.1.219331^ISO|20190606125117.2104-0400||ORU^R01^ORU_R01|ARLN UAT ELR Candida 001 Valid|T|2.5.1|||||||||PHLabReport-NoAck^ELR251R1_Rcvr_Prof^2.16.840.1.113883.9.11^ISO
+SFT|Orion Health^D^^^^Orion Health&2.16.840.1.113883.3.89&ISO^XX^^^1|4.1.0.64168|Orion Rhapsody|4.1.0.64168
+PID|1||PT[0000058591]^^^CLIMS.NY.Stag&2.16.840.1.114222.4.3.3.2.17.2&ISO^MR||~^^^^^^S||19590203|M||2131-1^Other Race^HL70005|^^^VT
+NTE|1|P|This1 is a sample NTE segment~with multiple comments~embedded in it
+NTE|2|P|This2 is a sample NTE segmenttt~with multiple comments~embedded in itttt
+ORC|RE||FO10.0^^2.16.840.1.113883.3.72.5.20^ISO||||||||||||||||||University Hospital|^^^^^^^^42043|^^^^^^7771234
+OBR|1||FO10.0^^2.16.840.1.113883.3.72.5.20^ISO|PLT642^^PLT|||20140617|||||||||||||||201406180000-0500|||F
+NTE|1|P|This3 is a sample NTE segment~with multiple comments~embedded in it
+NTE|2|P|This4 is a sample NTE segmenttt~with multiple comments~embedded in itttt
+OBX|1|DT|PLT642^Date reported to submitter^PLT||201406||||||F||||||||201406180000-0500||||PHLIP-Test-Lab|^^^PA
+NTE|1|P|This5 is a sample NTE segment~with multiple comments~embedded in it
+NTE|2|P|This6 is a sample NTE segmenttt~with multiple comments~embedded in itttt
+OBX|2|DT|PLT642^Date reported to submitter^PLT||201406||||||F||||||||201406180000-0500||||PHLIP-Test-Lab|^^^PA
+NTE|1|P|This7 is a sample NTE segment~with multiple comments~embedded in it
+NTE|2|P|This8 is a sample NTE segmenttt~with multiple comments~embedded in itttt
+OBR|2||FO11.0^^2.16.840.1.113883.3.72.5.20^ISO|PLT642^^PLT|||20140617|||||||||||||||201406180000-0500|||F
+OBX|3|DT|PLT642^Date reported to submitter^PLT||201406||||||F||||||||201406180000-0500||||PHLIP-Test-Lab|^^^PA
+NTE|1|P|This9 is a sample NTE segment~with multiple comments~embedded in it
+OBX|4|DT|PLT642^Date reported to submitter^PLT||201406||||||F||||||||201406180000-0500||||PHLIP-Test-Lab|^^^PA
+NTE|1|P|This10 is a sample NTE segment~with multiple comments~embedded in it
+SPM|1|^SID10.0&&2.16.840.1.113883.3.72.5.20&ISO||119297000^Blood Specimen^SCT|||||||||||||20140617|20140618100038

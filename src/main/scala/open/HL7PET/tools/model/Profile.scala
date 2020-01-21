@@ -1,50 +1,58 @@
 package open.HL7PET.tools.model
 
-import org.codehaus.jackson.annotate.JsonAnySetter
+import com.fasterxml.jackson.annotation.JsonAnySetter
 
 import scala.beans.BeanProperty
 
-
-
-
-
 class Profile {
   @BeanProperty
-  var file =  new FileConfig()
+  var segmentDefinition: scala.collection.mutable.Map[String, SegmentConfig] =  scala.collection.mutable.Map()
 
-  @BeanProperty
-  var segments: Segment = new Segment()
+  @JsonAnySetter
+  def add(segmentName: String, segmentConfig: SegmentConfig) {
+    segmentDefinition += (segmentName -> segmentConfig)
+  }
 
   //Shortcut method to avoid profile.segments.segments call...
   def getSegmentField(segmentName: String): Array[HL7SegmentField] = {
-     this.segments.segments(segmentName)
-  }
-
-
-}
-
-class FileConfig {
-  var fileSegments: scala.collection.mutable.Map[String, SegmentConfig] =  scala.collection.mutable.Map()
-  @JsonAnySetter
-  def add(segmentName: String, segmentConfig: SegmentConfig) {
-    fileSegments += (segmentName -> segmentConfig)
+    //Need to go down to children to find segments...
+     this.segmentDefinition(segmentName).fields
   }
 }
-
-class Segment {
-  @BeanProperty
-  var segments: scala.collection.mutable.Map[String, Array[HL7SegmentField]] =  scala.collection.mutable.Map()
-
-  @JsonAnySetter
-  def add(segmentName: String, fields: Array[HL7SegmentField]) {
-    segments += (segmentName -> fields)
-  }
-}
+//
+//class FileConfig {
+//  var fileSegments: scala.collection.mutable.Map[String, SegmentConfig] =  scala.collection.mutable.Map()
+//  @JsonAnySetter
+//  def add(segmentName: String, segmentConfig: SegmentConfig) {
+//    fileSegments += (segmentName -> segmentConfig)
+//  }
+//}
+//
+//class Segment {
+//  @BeanProperty
+//  var segments: scala.collection.mutable.Map[String, Array[HL7SegmentField]] =  scala.collection.mutable.Map()
+//
+//  @JsonAnySetter
+//  def add(segmentName: String, fields: Array[HL7SegmentField]) {
+//    segments += (segmentName -> fields)
+//  }
+//}
 
 
 class SegmentConfig {
+
   @BeanProperty var cardinality: String = _
-  @BeanProperty var position: String = _
+  @BeanProperty var fields:  Array[HL7SegmentField] =  _
+//  @JsonManagedReference
+  @BeanProperty var children: scala.collection.mutable.Map[String, SegmentConfig] = scala.collection.mutable.Map()
+//  @JsonBackReference
+//  var parent: SegmentConfig = _
+
+  @JsonAnySetter
+  def add(segmentName: String, item: SegmentConfig) {
+    children += (segmentName -> item)
+//    item.parent = this
+  }
 }
 
 class HL7SegmentField {
