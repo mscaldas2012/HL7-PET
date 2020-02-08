@@ -44,13 +44,6 @@ scalaVersion := "2.13.0"
 mainClass := Some("hl7.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
-// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl
-// libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13"
-// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
-// libraryDependencies += "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-// libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.10.1"
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.1"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala

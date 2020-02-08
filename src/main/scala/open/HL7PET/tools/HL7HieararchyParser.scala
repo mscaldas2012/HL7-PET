@@ -21,7 +21,7 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
 
   def parseMessageHierarchy(): HL7Hierarchy = {
     var profilePointer = profile.segmentDefinition("MSH")
-    var root_output: HL7Hierarchy = new HL7Hierarchy("root")
+    var root_output: HL7Hierarchy = new HL7Hierarchy(0, "root")
     var output: HL7Hierarchy = root_output
     val stackProfile = scala.collection.mutable.Stack[SegmentConfig]()
 
@@ -35,7 +35,7 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
 
     message.split(NEW_LINE_FEED).zipWithIndex.foreach {
       case (line, index) if index == 0 => { //Initialize with MSH
-        output = new HL7Hierarchy(line)
+        output = new HL7Hierarchy(index+1, line)
         root_output.children.addOne(output)
         //output = root_output
       }
@@ -45,7 +45,7 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
         do {
           try {
             val found = profilePointer.children(segment) //Found it as child..
-            val newSeg = new HL7Hierarchy(line)
+            val newSeg = new HL7Hierarchy(index+1,line)
             stackOutput.push(output)
             stackProfile.push(profilePointer)
             output.children += newSeg

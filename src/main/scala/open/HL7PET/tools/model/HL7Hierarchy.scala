@@ -7,6 +7,6 @@ import scala.collection.mutable.ListBuffer
   * The profile identifies how to parse Parent-Child relationship and a simple List is built
   * based on that knowledge.
   */
-class HL7Hierarchy(val segment: String) {
+class HL7Hierarchy(val lineNbr: Int, val segment: String) {
     var children:  ListBuffer[HL7Hierarchy] = new ListBuffer[HL7Hierarchy]()
 }

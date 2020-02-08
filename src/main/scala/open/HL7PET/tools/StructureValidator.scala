@@ -19,7 +19,6 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     val CARDINALITY_REGEX = "\\[([0-9]+)\\.\\.([0-9]+)\\]".r
     val PREDICATE_REGEX = "C\\((RE?|O|X)\\/(RE?|O|X)\\)->(!)?([0-9]+)".r
 
-    val parser: HL7ParseUtils = new HL7ParseUtils(message)
 
     val mapper:ObjectMapper = new ObjectMapper()
    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
@@ -36,8 +35,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         fieldDefinitions = mapper.readValue(fieldDefContent, classOf[Profile])
     }
 
+  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile)
 
-    def validateMessage(): ValidationErrors = {
+
+  def validateMessage(): ValidationErrors = {
         val errors:ValidationErrors = new ValidationErrors()
         var segmentIndex = scala.collection.mutable.Map[String, Int]().withDefaultValue(0)
 
@@ -61,6 +62,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     }
 
     private def validateFile(errors: ValidationErrors) = {
+      //TODO::Need to recursively retrieve the children segments and validate them...
         profile.segmentDefinition.foreach { t =>
             val segments = parser.retrieveMultipleSegments(t._1)
             t._2.cardinality match {
