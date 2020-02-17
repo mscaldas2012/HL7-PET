@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterDir="false" />
@@ -22,12 +18,8 @@
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/ARLN_GC_DUB.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/ARLN_GC_DUB.hl7" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +203,6 @@
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
       <option name="testClassPath" value="LoadProfileTest" />
-      <option name="testName" value="HL7Hierachy should be loaded" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
@@ -315,8 +306,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$/../../nlpProject/learningPlayground/scala-akka" value="1486158509000" />
-        <entry key="$PROJECT_DIR$" value="4721458750757" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="2794170814" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2707145822" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="3280644262" />
         <entry key="$PROJECT_DIR$/project/plugins.sbt" value="2882515626" />
         <entry key="$PROJECT_DIR$/../../reactive-machine-learning-systems-master/chapter-4" value="1475437324000" />
@@ -382,7 +372,9 @@
       <workItem from="1579023944939" duration="11021000" />
       <workItem from="1579115767889" duration="9156000" />
       <workItem from="1579746948854" duration="94000" />
-      <workItem from="1581110085671" duration="14050000" />
+      <workItem from="1581110085671" duration="15301000" />
+      <workItem from="1581274071167" duration="269000" />
+      <workItem from="1581360910349" duration="2387000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -429,38 +421,38 @@
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
     <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1581114725551" />
-    <state width="1878" height="455" key="GridCell.Tab.0.bottom" timestamp="1581199093160">
+    <state width="1878" height="527" key="GridCell.Tab.0.bottom" timestamp="1581272925245">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="455" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1581199093160" />
-    <state width="1878" height="455" key="GridCell.Tab.0.center" timestamp="1581199093159">
+    <state width="1878" height="527" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925245" />
+    <state width="1878" height="527" key="GridCell.Tab.0.center" timestamp="1581272925243">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="455" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1581199093159" />
-    <state width="1878" height="455" key="GridCell.Tab.0.left" timestamp="1581199093158">
+    <state width="1878" height="527" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925243" />
+    <state width="1878" height="527" key="GridCell.Tab.0.left" timestamp="1581272925242">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="455" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1581199093158" />
-    <state width="1878" height="455" key="GridCell.Tab.0.right" timestamp="1581199093159">
+    <state width="1878" height="527" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925242" />
+    <state width="1878" height="527" key="GridCell.Tab.0.right" timestamp="1581272925244">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="455" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1581199093159" />
-    <state width="1878" height="477" key="GridCell.Tab.1.bottom" timestamp="1581198626656">
+    <state width="1878" height="527" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925244" />
+    <state width="1878" height="527" key="GridCell.Tab.1.bottom" timestamp="1581272925247">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1581198626656" />
-    <state width="1878" height="477" key="GridCell.Tab.1.center" timestamp="1581198626655">
+    <state width="1878" height="527" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925247" />
+    <state width="1878" height="527" key="GridCell.Tab.1.center" timestamp="1581272925246">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1581198626655" />
-    <state width="1878" height="477" key="GridCell.Tab.1.left" timestamp="1581198626655">
+    <state width="1878" height="527" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925246" />
+    <state width="1878" height="527" key="GridCell.Tab.1.left" timestamp="1581272925245">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1581198626655" />
-    <state width="1878" height="477" key="GridCell.Tab.1.right" timestamp="1581198626655">
+    <state width="1878" height="527" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925245" />
+    <state width="1878" height="527" key="GridCell.Tab.1.right" timestamp="1581272925246">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1581198626655" />
+    <state width="1878" height="527" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1581272925246" />
     <state width="960" height="600" key="XDebugger.FullValuePopup" timestamp="1579120152356">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
@@ -494,18 +486,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
-          <line>115</line>
+          <line>118</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
-          <line>221</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
-          <line>230</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

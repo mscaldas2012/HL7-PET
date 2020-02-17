@@ -22,6 +22,9 @@ class HL7ParseUtils(message: String, var profile: Profile = null) {
 
     profile = mapper.readValue(content, classOf[Profile])
   }
+  val parser = new HL7HieararchyParser(message, profile)
+  val msgHierarchy = parser.parseMessageHierarchy()
+
 
   val FILE_HEADER_SEGMENT = "FHS"
   val BATCH_HEADER_SEGMENT = "BHS"
@@ -190,7 +193,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null) {
   //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
   private def recursiveAction(seg: String, segIdx: String, hl7Hierarhy: HL7Hierarchy, result: ListBuffer[HL7Hierarchy]): Unit = {
     if (seg == hl7Hierarhy.segment.substring(0,3)) {
-      //Not ideal, but working for now.. TODO::Refacotr for a more streamlined process
+      //Not ideal, but working for now.. TODO::Refactor for a more streamlined process
       val matchParent = getListOfMatchingSegments(seg, segIdx)
       val count = matchParent.count  {
         case (k, _) => k == hl7Hierarhy.lineNbr
@@ -206,14 +209,12 @@ class HL7ParseUtils(message: String, var profile: Profile = null) {
 
   //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
   private def getChildrenValues(parent: String, child: String): Option[Array[Array[String]]] = {
-    val parser = new HL7HieararchyParser(message, profile)
-    val output = parser.parseMessageHierarchy()
     var children: Array[String] = new Array[String](0)
     var result: Array[Array[String]] = new Array[Array[String]](0)
     parent.trim() match {
       case PATH_REGEX(seg, _, segIdx, _, _, _, _, _, _, _, _, _, _) => {
         val parentList = ListBuffer[HL7Hierarchy]()
-        recursiveAction(seg, segIdx, output, parentList)
+        recursiveAction(seg, segIdx, msgHierarchy, parentList)
         parentList.foreach( { it =>
           children ++= Option(it.segment)
         })
