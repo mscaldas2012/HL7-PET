@@ -295,7 +295,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
     private def validateFieldType(fieldValue: String, field: HL7SegmentField, segment: String, answerIndex: Int, lineNumber: Int, columnsBefore: Int,  errors: ValidationErrors): (Boolean, String) = {
         field.dataType match {
-            case "ST"|"IS"|"ID" =>
+            case "ST"|"IS"|"ID"|"TX"|"FT" =>
                 return (true, "All good!")
             case "NM" =>
                 try{
@@ -315,6 +315,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                     case e: ParseException =>
                         return (false, s"Invalid value for date field $segment-${field.fieldNumber}[$answerIndex] (${field.name}). Date expected as 'yyyyMMddHHmmss', received: '$fieldValue'.")
                 }
+//            case "DTM" =>
+//              try {
+//
+//              }
             case x =>
                 try {
                     //MSH[1] -> MSH[1]-fieldNumber[answerIndex] and separate component.

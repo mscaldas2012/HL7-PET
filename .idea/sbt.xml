@@ -12,7 +12,7 @@
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
-        <option name="sbtVersion" value="1.2.7" />
+        <option name="sbtVersion" value="0.13.17" />
         <option name="useAutoImport" value="true" />
       </SbtProjectSettings>
     </option>

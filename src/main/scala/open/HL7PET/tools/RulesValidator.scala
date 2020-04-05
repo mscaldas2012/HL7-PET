@@ -23,11 +23,11 @@ class RulesValidator(rulesFile: String) {
         case "requiredIfEmpty" =>
           val segmentValues = parser.retrieveMultipleSegments(e.segment)
           for (((k, seg), i) <- segmentValues.zipWithIndex) {
-            val reference = parser.getValue(e.reference, seg)
+            val reference = parser.getValue(e.reference, seg, true)
             val parentField = e.reference.substring(0, e.reference.lastIndexOf("."))
-            val parentFieldValue = parser.getValue(parentField, seg)
+            val parentFieldValue = parser.getValue(parentField, seg, true)
             if ( parentFieldValue.isDefined && reference.isEmpty) {
-              val field = parser.getValue(e.field, seg)
+              val field = parser.getValue(e.field, seg, true)
               if (field.isEmpty) { //Error:
                 val classification = if ("R".equals(e.usage)) ERROR else WARNING
                 val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i+1) + ""), classification, "INVALID_PREDICATE")
@@ -39,9 +39,9 @@ class RulesValidator(rulesFile: String) {
         case "requiredIfNotEmpty" =>
           val segmentValues = parser.retrieveMultipleSegments(e.segment)
           for (((k, seg), i) <- segmentValues.zipWithIndex) {
-            val reference = parser.getValue(e.reference, seg)
+            val reference = parser.getValue(e.reference, seg, true)
               if (!reference.isEmpty) {
-                val field = parser.getValue(e.field, seg)
+                val field = parser.getValue(e.field, seg, true)
                 if (field.isEmpty) { //Error
                   val classification = if ("R".equals(e.usage)) ERROR else WARNING
                   val entry = new ErrorEntry(k, 0, 1, e.comment.replaceAll("\\*", (i + 1) + ""), classification, "INVALID_PREDICATE")
@@ -65,7 +65,7 @@ class RulesValidator(rulesFile: String) {
         case "regEx" =>
           val segmentValues = parser.retrieveMultipleSegments(e.segment)
           for (((k, seg), i) <- segmentValues.zipWithIndex) {
-            val fieldValue = parser.getValue(e.field, seg)
+            val fieldValue = parser.getValue(e.field, seg, true)
             var allmatch = true
             if (fieldValue.isDefined) {
               fieldValue.get.foreach(f => allmatch = allmatch && f.matches(e.reference))
@@ -80,7 +80,7 @@ class RulesValidator(rulesFile: String) {
         case "constant" =>
               val segmentValues = parser.retrieveMultipleSegments(e.segment)
               for (((k, seg), i) <- segmentValues.zipWithIndex) {
-                val fieldValue = parser.getValue(e.field, seg)
+                val fieldValue = parser.getValue(e.field, seg, true)
                 var allmatch = true
                 if (fieldValue.isDefined ) {
                   fieldValue.get.foreach( f => allmatch = allmatch && f.equals(e.reference))

@@ -14,40 +14,30 @@
         "SFT": {
           "cardinality": "[0..*]"
         },
-        "ORC": {
-          "cardinality": "[0..1]",
+        "OBR": {
+          "cardinality": "[1..*]",
           "children": {
-            "NTE": {
-              "cardinality": "[0..*]"
-            },
-            "OBR": {
-              "cardinality": "[1..*]",
+            "OBX": {
+              "cardinality": "[0..*]",
               "children": {
-                "OBX": {
-                  "cardinality": "[0..*]",
-                  "children": {
-                    "NTE": {
-                      "cardinality": "[0..*]"
-                    }
-                  }
-                },
-                "SPM": {
-                  "cardinality": "[0..*]",
-                  "children": {
-                    "NTE": {
-                      "cardinality": "[0..*]"
-                    }
-                  }
-                },
                 "NTE": {
                   "cardinality": "[0..*]"
                 }
               }
+            },
+            "SPM": {
+              "cardinality": "[0..*]",
+              "children": {
+                "NTE": {
+                  "cardinality": "[0..*]"
+                }
+              }
+            },
+            "NTE": {
+              "cardinality": "[0..*]"
             }
-
           }
         }
-
       }
     }
   },
@@ -1125,7 +1115,6 @@
         "notes": ""
       }
     ]
-
   }
 }
 

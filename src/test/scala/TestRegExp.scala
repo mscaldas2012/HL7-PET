@@ -7,6 +7,9 @@ class TestRegExp  extends FlatSpec {
   val myregExp = "OBX\\|([0-9]?)\\|TX\\|(19139)\\-5".r
   val myText = "OBX|9|TX|19139-5^PATHOLOGIST NAME^LN^500929^SIGNED^L|| Electronically signed:  "
 
+  //The Reg Ex below represents the following format: YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].
+  val anyDateRegEx = "\\d{4}(((\\d{2}){5}\\.\\d{1,4})|((\\d{2}){0,5}))([+-]\\d{4})?"
+
   "RegExp" should "display groups" in {
     println("match data...")
     val data = myregExp.findAllIn(myText).matchData foreach(m => {

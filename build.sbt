@@ -30,14 +30,15 @@ publishTo := {
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
+//credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials")
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "^fgAKRQ99:K^Vx4aCQGW")
 publishMavenStyle := true
 
 
-//useGpg := true
+useGpg := true
 
-version := "1.2.3"
+version := "1.2.3.1"
 
 scalaVersion := "2.13.0"
 
@@ -50,8 +51,6 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10
  libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.10.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
  libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.10.1" pomOnly()
-
-
 
 
 //Do not append scala versions to the generated artifact
