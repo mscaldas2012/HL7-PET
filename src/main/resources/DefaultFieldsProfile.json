@@ -1,5 +1,5 @@
 {
-    "segments": {
+    "segmentFields": {
         "HD": [
             {
                 "fieldNumber": 1,
@@ -703,7 +703,7 @@
         "ID": [
             {
                 "fieldNumber": 1,
-                "name": "Coded Value for HL7-Defnited Table",
+                "name": "Coded Value for HL7-Defined Table",
                 "dataType": "ST",
                 "maxLength": "199",
                 "usage": "R",
@@ -735,6 +735,99 @@
                 "conformance": "",
                 "notes": ": A non-negative integer in the form of a NM field"
             }
+        ],
+        "XON": [
+            {
+                "fieldNumber": 1,
+                "name": "Organization Name",
+                "dataType": "ST",
+                "maxLength": "50",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 2,
+                "name": "Organization Name Type Code",
+                "dataType": "IS",
+                "maxLength": "20",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 3,
+                "name": "Id Number",
+                "dataType": "NM",
+                "maxLength": "4",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 4,
+                "name": "Identifier Check Digit",
+                "dataType": "NM",
+                "maxLength": "4",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 5,
+                "name": "check Digit Scheme",
+                "dataType": "ID",
+                "maxLength": "3",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 6,
+                "name": "Assigning Authority",
+                "dataType": "HD",
+                "maxLength": "227",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 7,
+                "name": "Identifier Type Code",
+                "dataType": "ID",
+                "maxLength": "5",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 8,
+                "name": "Assigning Facility",
+                "dataType": "HD",
+                "maxLength": "227",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 9,
+                "name": "Name Representation Code",
+                "dataType": "ID",
+                "maxLength": "1",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            },
+            {
+                "fieldNumber": 10,
+                "name": "Organization Identifier",
+                "dataType": "ST",
+                "maxLength": "20",
+                "usage": "O",
+                "cardinality": "[0..1]",
+                "conformance": ""
+            }
+
         ]
     }
 }

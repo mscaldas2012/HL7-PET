@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_annotations_2_10_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_core_2_10_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_databind_2_10_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_13_2_10_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/ARLN_GC_DUB.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/candida.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_core_asl_1_9_13_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_codehaus_jackson_jackson_mapper_asl_1_9_13_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/compile/exportedProducts/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/exportedProducts/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
@@ -35,16 +34,6 @@
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +61,22 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HL7-PET" type="f1a62948:ProjectNode" />
+                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HL7-PET" type="f1a62948:ProjectNode" />
+                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HL7-PET" type="f1a62948:ProjectNode" />
+                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -89,7 +94,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -97,6 +101,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555620341977" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Properties" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -114,13 +119,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/target" />
       <recent name="$PROJECT_DIR$/target/classes" />
       <recent name="$PROJECT_DIR$/target/test-classes" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded">
+  <component name="RunManager" selected="ScalaTest.TestRegExp">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -145,14 +151,6 @@
       <module name="" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleApp" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ExampleApp" />
-      <module name="HL7-PET" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -164,6 +162,48 @@
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BatchValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="BatchValidatorTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7FileUtilsTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="HL7FileUtilsTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="LoadProfileTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
@@ -184,9 +224,10 @@
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.HL7Hierachy should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="RulesValidatorTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
@@ -198,16 +239,16 @@
       <option name="searchTest" value="Across module dependencies" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
-      <option name="testClassPath" value="LoadProfileTest" />
-      <option name="testName" value="HL7Hierachy should be loaded" />
+      <option name="testClassPath" value="RulesValidatorTests" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.PhinGuide should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="TestRegExp" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
@@ -219,16 +260,16 @@
       <option name="searchTest" value="Across module dependencies" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
-      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="testClassPath" value="TestRegExp" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.Profile should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
       <option name="envs">
@@ -239,12 +280,13 @@
       <option name="searchTest" value="Across module dependencies" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
-      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="testClassPath" value="" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
@@ -267,11 +309,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded" />
-        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded" />
-        <item itemvalue="ScalaTest.LoadProfileTest.PhinGuide should be loaded" />
-        <item itemvalue="ScalaTest.LoadProfileTest.PhinGuide should be loaded" />
-        <item itemvalue="Application.ExampleApp" />
+        <item itemvalue="ScalaTest.TestRegExp" />
+        <item itemvalue="ScalaTest.BatchValidatorTest" />
+        <item itemvalue="ScalaTest.HL7FileUtilsTest" />
+        <item itemvalue="ScalaTest.LoadProfileTest" />
+        <item itemvalue="ScalaTest.RulesValidatorTests" />
       </list>
     </recent_temporary>
   </component>
@@ -302,30 +344,16 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/../../nlpProject/learningPlayground/scala-akka" value="1486158509000" />
-        <entry key="$PROJECT_DIR$" value="3136020493294" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="2794170814" />
-        <entry key="$PROJECT_DIR$/project/build.properties" value="3280644262" />
-        <entry key="$PROJECT_DIR$/../../reactive-machine-learning-systems-master/chapter-4" value="1475437324000" />
+        <entry key="$PROJECT_DIR$" value="4750905412333" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2175832207" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="934637055" />
+        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="4110837262" />
       </map>
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$/../nlp/Klasifikasyon/data" value="PREVIEW" />
-        <entry key="$USER_HOME$/work/NCEZID/EIP/hl7-utils" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
-    </option>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -367,7 +395,17 @@
       <workItem from="1573657260276" duration="14705000" />
       <workItem from="1578080576075" duration="3895000" />
       <workItem from="1579023944939" duration="11021000" />
-      <workItem from="1579115767889" duration="7660000" />
+      <workItem from="1579115767889" duration="9156000" />
+      <workItem from="1579746948854" duration="94000" />
+      <workItem from="1581110085671" duration="15301000" />
+      <workItem from="1581274071167" duration="269000" />
+      <workItem from="1581360910349" duration="10993000" />
+      <workItem from="1583878374239" duration="3616000" />
+      <workItem from="1584367174979" duration="6591000" />
+      <workItem from="1586094006376" duration="1734000" />
+      <workItem from="1586125473904" duration="4274000" />
+      <workItem from="1586964446942" duration="1156000" />
+      <workItem from="1586966354803" duration="4241000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -380,7 +418,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -395,6 +433,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -410,46 +473,67 @@
     <option name="LAST_COMMIT_MESSAGE" value="adding documentation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579119638438">
+    <state x="1163" y="542" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586969430590">
+      <screen x="0" y="23" width="3200" height="1726" />
+    </state>
+    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1581114725551" />
+    <state x="1163" y="542" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.3200.1726@0.23.3200.1726" timestamp="1586969430590" />
+    <state x="100" y="123" width="1720" height="941" key="DiffContextDialog" timestamp="1586096641701">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1579119638438" />
-    <state width="1878" height="527" key="GridCell.Tab.0.bottom" timestamp="1579125132803">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state x="100" y="123" width="1720" height="941" key="DiffContextDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1586096641701" />
+    <state width="2371" height="350" key="GridCell.Tab.0.bottom" timestamp="1586970158091">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132803" />
-    <state width="1878" height="527" key="GridCell.Tab.0.center" timestamp="1579125132802">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544500" />
+    <state width="2371" height="350" key="GridCell.Tab.0.bottom/0.23.3200.1726@0.23.3200.1726" timestamp="1586970158091" />
+    <state width="2371" height="350" key="GridCell.Tab.0.center" timestamp="1586970158090">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132802" />
-    <state width="1878" height="527" key="GridCell.Tab.0.left" timestamp="1579125132800">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544499" />
+    <state width="2371" height="350" key="GridCell.Tab.0.center/0.23.3200.1726@0.23.3200.1726" timestamp="1586970158090" />
+    <state width="2371" height="350" key="GridCell.Tab.0.left" timestamp="1586970158090">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132800" />
-    <state width="1878" height="527" key="GridCell.Tab.0.right" timestamp="1579125132802">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544498" />
+    <state width="2371" height="350" key="GridCell.Tab.0.left/0.23.3200.1726@0.23.3200.1726" timestamp="1586970158090" />
+    <state width="2371" height="350" key="GridCell.Tab.0.right" timestamp="1586970158090">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1579125132802" />
-    <state width="1878" height="527" key="GridCell.Tab.1.bottom" timestamp="1579125134908">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544499" />
+    <state width="2371" height="350" key="GridCell.Tab.0.right/0.23.3200.1726@0.23.3200.1726" timestamp="1586970158090" />
+    <state width="2276" height="430" key="GridCell.Tab.1.bottom" timestamp="1586969226320">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134908" />
-    <state width="1878" height="527" key="GridCell.Tab.1.center" timestamp="1579125134905">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361225" />
+    <state width="2276" height="430" key="GridCell.Tab.1.bottom/0.23.3200.1726@0.23.3200.1726" timestamp="1586969226320" />
+    <state width="2276" height="430" key="GridCell.Tab.1.center" timestamp="1586969226320">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134905" />
-    <state width="1878" height="527" key="GridCell.Tab.1.left" timestamp="1579125134904">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361224" />
+    <state width="2276" height="430" key="GridCell.Tab.1.center/0.23.3200.1726@0.23.3200.1726" timestamp="1586969226320" />
+    <state width="2276" height="430" key="GridCell.Tab.1.left" timestamp="1586969226320">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134904" />
-    <state width="1878" height="527" key="GridCell.Tab.1.right" timestamp="1579125134906">
-      <screen x="0" y="23" width="1920" height="1141" />
+    <state width="1878" height="477" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361224" />
+    <state width="2276" height="430" key="GridCell.Tab.1.left/0.23.3200.1726@0.23.3200.1726" timestamp="1586969226320" />
+    <state width="2276" height="430" key="GridCell.Tab.1.right" timestamp="1586969226320">
+      <screen x="0" y="23" width="3200" height="1726" />
     </state>
-    <state width="1878" height="527" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1579125134906" />
+    <state width="1878" height="477" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361225" />
+    <state width="2276" height="430" key="GridCell.Tab.1.right/0.23.3200.1726@0.23.3200.1726" timestamp="1586969226320" />
     <state width="960" height="600" key="XDebugger.FullValuePopup" timestamp="1579120152356">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
     <state width="960" height="600" key="XDebugger.FullValuePopup/0.23.1920.1141@0.23.1920.1141" timestamp="1579120152356" />
+    <state x="637" y="444" key="com.intellij.ide.util.TipDialog" timestamp="1579787484546">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state x="637" y="444" key="com.intellij.ide.util.TipDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1579787484546" />
+    <state x="505" y="347" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586096540281">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state x="505" y="347" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.1141@0.23.1920.1141" timestamp="1586096540281" />
     <state x="625" y="279" width="670" height="676" key="search.everywhere.popup" timestamp="1579029349308">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>
@@ -465,13 +549,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala</url>
-          <line>51</line>
+          <line>54</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
           <line>55</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
+          <line>127</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala</url>
+          <line>57</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala</url>
+          <line>46</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala</url>
+          <line>20</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
+          <line>25</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala</url>
+          <line>14</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -485,6 +599,8 @@
         <watch expression="CHILDREN_REGEX(pseg, p2, psegIdx, p4, p5, pfield, p7, pfieldIdx, p8, p9, pcomp, p11, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
         <watch expression="CHILDREN_REGEX" language="Scala" />
         <watch expression="parentSegments.firstKey" />
+        <watch expression="hl7Hierary.segment.substring(0,3)" language="Scala" />
+        <watch expression="filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))" language="Scala" />
       </configuration>
     </watches-manager>
   </component>

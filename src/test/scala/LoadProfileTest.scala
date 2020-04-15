@@ -44,11 +44,11 @@ class LoadProfileTest extends FlatSpec {
   }
 
   "HL7Hierachy" should "be loaded" in {
-    val profileFile = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
+    val profileFile = Source.fromResource("COVID_ORC.json").getLines().mkString("\n")
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
     val profile = mapper.readValue(profileFile, classOf[Profile])
-    val message = scala.io.Source.fromFile("src/test/resources/ARLN_GC_DUB.hl7").mkString
+    val message = scala.io.Source.fromFile("src/test/resources/COVIDMSG.hl7").mkString
 
     val parser = new HL7HieararchyParser(message, profile)
     val output = parser.parseMessageHierarchy()

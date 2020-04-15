@@ -4,6 +4,7 @@ import java.text.ParseException
 import java.util.NoSuchElementException
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import open.HL7PET.tools.model.{HL7SegmentField, Profile}
 //import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
@@ -19,10 +20,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     val CARDINALITY_REGEX = "\\[([0-9]+)\\.\\.([0-9]+)\\]".r
     val PREDICATE_REGEX = "C\\((RE?|O|X)\\/(RE?|O|X)\\)->(!)?([0-9]+)".r
 
-    val parser: HL7ParseUtils = new HL7ParseUtils(message)
 
     val mapper:ObjectMapper = new ObjectMapper()
    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+  mapper.registerModule(DefaultScalaModule)
 
     if (profile == null) {
         println("Using Default profile")
@@ -36,8 +37,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         fieldDefinitions = mapper.readValue(fieldDefContent, classOf[Profile])
     }
 
+  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile,false)
 
-    def validateMessage(): ValidationErrors = {
+
+  def validateMessage(): ValidationErrors = {
         val errors:ValidationErrors = new ValidationErrors()
         var segmentIndex = scala.collection.mutable.Map[String, Int]().withDefaultValue(0)
 
@@ -61,6 +64,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
     }
 
     private def validateFile(errors: ValidationErrors) = {
+      //TODO::Need to recursively retrieve the children segments and validate them...
         profile.segmentDefinition.foreach { t =>
             val segments = parser.retrieveMultipleSegments(t._1)
             t._2.cardinality match {
@@ -293,7 +297,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
     private def validateFieldType(fieldValue: String, field: HL7SegmentField, segment: String, answerIndex: Int, lineNumber: Int, columnsBefore: Int,  errors: ValidationErrors): (Boolean, String) = {
         field.dataType match {
-            case "ST"|"IS"|"ID" =>
+            case "ST"|"IS"|"ID"|"TX"|"FT" =>
                 return (true, "All good!")
             case "NM" =>
                 try{
@@ -313,6 +317,10 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                     case e: ParseException =>
                         return (false, s"Invalid value for date field $segment-${field.fieldNumber}[$answerIndex] (${field.name}). Date expected as 'yyyyMMddHHmmss', received: '$fieldValue'.")
                 }
+//            case "DTM" =>
+//              try {
+//
+//              }
             case x =>
                 try {
                     //MSH[1] -> MSH[1]-fieldNumber[answerIndex] and separate component.

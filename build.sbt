@@ -30,35 +30,27 @@ publishTo := {
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
+//credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials")
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "^fgAKRQ99:K^Vx4aCQGW")
 publishMavenStyle := true
 
 
-//useGpg := true
+useGpg := true
 
-version := "1.2.2"
+version := "1.2.3.3"
 
 scalaVersion := "2.13.0"
 
 mainClass := Some("hl7.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
-// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl
-// libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13"
-// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl
-// libraryDependencies += "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13"
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-// libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.10.1"
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.1"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
  libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.10.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
  libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.10.1" pomOnly()
-
-
 
 
 //Do not append scala versions to the generated artifact

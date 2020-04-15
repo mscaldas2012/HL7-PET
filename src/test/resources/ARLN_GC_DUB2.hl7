@@ -2,8 +2,6 @@ MSH|^~\&#|STARLIMS.MD.Stag^2.16.840.1.1142222.4.3.3.2.6.2^ISO|MD.BALTIMORE.SPHL^
 SFT|Epic Systems Corporation|2010|Bridges|7.8.0.0|20120102|||||||||||||||||||||||||||||||
 PID|1||ARLN_GC_DupASTOBX4_ELR^^^LIMS.WI.Stag&2.16.840.1.114222.4.3.3.2.8.2&ISO^PI^WI.Madison.SPHL&2.16.840.1.114222.4.1.209842&ISO||~^^^^^^S|||M||2076-8^Native Hawaiian or Other Pacific Islander^CDCREC|555 North Road^^Anytown^CA^94133^^^^06075|||||||||||H^Hispanic^HL70189||||||||||||||
 NTE|1|Test note for PDI
-ORC|RE|201912^SF.SPHL^2.16.840.1.114222.4.1.77777.6^ISO|21MP000052^MD.BALTIMORE.SPHL^2.16.840.1.114222.4.1.95290^ISO|||||||||05D0643643 ^San Francisco Public Health Lab^^^^^^^CLIA&2.16.840.1.113883.4.7&ISO^^^^XX||^^^^^415^5542500|||||||San Francisco Public Health Lab^L^^^^CLIA&2.16.840.1.113883.4.7&ISO^XX^^^05D0643643 |101 Grove St^^San Francisco^CA^94102^USA^^^06075|^^^^^415^5542500|||||||||||||
-NTE|2|Test note for ORC
 OBR|1|201912^SF.SPHL^2.16.840.1.114222.4.1.77777.6^ISO|21MP000052^MD.BALTIMORE.SPHL^2.16.840.1.114222.4.1.95290^ISO|68991-9^Epidemiologically Important Information for public health reporting^LN~9999^second^ISO|||20170121|||||||||05D0643643 ^San Francisco Public Health Lab^^^^^^^CLIA&2.16.840.1.113883.4.7&ISO^^^^XX|^^^^^415^5542500|||||20170122265600.004-0600|||F|||||||||||20141111
 NTE|3|Test note for OBR-1
 OBX|1|CWE|PLT631^ARLN regional lab^PLT||MD^Maryland^FIPS5_2||||||F|||20170121|||||||||MD.BALTIMORE.SPHL|1770 Ashland Avenue^Central Laboratory in Baltimore^Baltimore^MD^21205^USA^B||||||||||||

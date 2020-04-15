@@ -10,10 +10,10 @@ class HL7ParserUtilsTest extends FlatSpec {
     "OBX|2|CWE|NOT109^Reporting State^PHINQUESTION||26^Michigan^FIPS5_2~13^Georgia^FIPS5_2||||||F\n" +
     "OBX|3|CWE|INV163^Case Class Status Code^PHINQUESTION||410605003^Confirmed present (qualifier value)^SCT||||||F\n" +
     "OBX|7|SN|77977-7^Illness Duration^LN||^13|^^ISO|||||F\n" +
-  "OBR|2||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND\n"
+  "OBR|2||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND"
 
-  var hl7Util = new HL7ParseUtils(testMessage)
   var batchValidator = new BatchValidator(testMessage, null)
+  var hl7Util = new HL7ParseUtils(testMessage)
 
   "Parser" should "split messages" in {
     var (line, msh) = hl7Util.retrieveSegment("MSH")
@@ -97,7 +97,7 @@ class HL7ParserUtilsTest extends FlatSpec {
                         "BHS|adsfasfasfadsf\n" +
                         "BTS|0\n" +
                         "FTS|1"
-    val emptyHL7Parser = new HL7ParseUtils(emptyMessage)
+    val emptyHL7Parser = new HL7ParseUtils(emptyMessage, null, false)
     val emptyBatchValidator = new BatchValidator(emptyMessage, null)
     val noMsg = emptyBatchValidator.debatchMessages()
     assert(noMsg.isEmpty)
@@ -138,7 +138,7 @@ class HL7ParserUtilsTest extends FlatSpec {
 
   "MHS has no OBR?"  must "flag error" in {
     var allLines: String = readFile("MSHNoOBR.hl7")
-    val hl7Utils = new HL7ParseUtils(allLines)
+    val hl7Utils = new HL7ParseUtils(allLines, null,false)
     try {
       val obr = hl7Utils.retrieveFirstSegmentOf("OBR")
       println(s"Line ${obr._1} ")
@@ -215,7 +215,7 @@ class HL7ParserUtilsTest extends FlatSpec {
   }
 
   "Paths with filters" should "be found" in {
-    assert(hl7Util.getValue("OBX[*]").get.length == 3)
+    assert(hl7Util.getValue("OBX[*]").get.length == 4)
     assert(hl7Util.getFirstValue("OBX[@3.1='NOT116']-5").get.equals("26^Michigan^FIPS5_2"))
     assert(hl7Util.getValue("MSH[@12='2.5.1']-21").get(0).length == 3)
     assert(hl7Util.getValue("MSH[@12.1='2.5.1']-21").get(0).length == 3)

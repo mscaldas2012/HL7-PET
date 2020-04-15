@@ -8,6 +8,9 @@ class Profile {
   @BeanProperty
   var segmentDefinition: scala.collection.mutable.Map[String, SegmentConfig] =  scala.collection.mutable.Map()
 
+  @BeanProperty
+  var segmentFields: scala.collection.mutable.Map[String, Array[HL7SegmentField]] =  scala.collection.mutable.Map()
+
   @JsonAnySetter
   def add(segmentName: String, segmentConfig: SegmentConfig) {
     segmentDefinition += (segmentName -> segmentConfig)
@@ -16,7 +19,7 @@ class Profile {
   //Shortcut method to avoid profile.segments.segments call...
   def getSegmentField(segmentName: String): Array[HL7SegmentField] = {
     //Need to go down to children to find segments...
-     this.segmentDefinition(segmentName).fields
+     this.segmentFields(segmentName)
   }
 }
 //
@@ -42,7 +45,7 @@ class Profile {
 class SegmentConfig {
 
   @BeanProperty var cardinality: String = _
-  @BeanProperty var fields:  Array[HL7SegmentField] =  _
+//  @BeanProperty var fields:  Array[HL7SegmentField] =  _
 //  @JsonManagedReference
   @BeanProperty var children: scala.collection.mutable.Map[String, SegmentConfig] = scala.collection.mutable.Map()
 //  @JsonBackReference
