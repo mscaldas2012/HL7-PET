@@ -1,7 +1,65 @@
 {
   "segmentDefinition": {
     "FHS": {
-      "fields": [
+        "cardinality": "[0..1]",
+        "children": {
+            "BHS": {
+              "cardinality": "[0..1]",
+              "children": {
+                "MSH": {
+                  "cardinality": "[1..1]",
+                  "children": {
+                    "PID": {
+                      "cardinality": "[1..1]",
+                      "children": {
+                        "NTE": {
+                          "cardinality": "[0..*]"
+                        }
+                      }
+                    },
+                    "SFT": {
+                      "cardinality": "[0..*]"
+                    },
+                    "OBR": {
+                      "cardinality": "[1..*]",
+                      "children": {
+                        "OBX": {
+                          "cardinality": "[0..*]",
+                          "children": {
+                            "NTE": {
+                              "cardinality": "[0..*]"
+                            }
+                          }
+                        },
+                        "SPM": {
+                          "cardinality": "[0..*]",
+                          "children": {
+                            "NTE": {
+                              "cardinality": "[0..*]"
+                            }
+                          }
+                        },
+                        "NTE": {
+                          "cardinality": "[0..*]"
+                        }
+                      }
+                    }
+
+                  }
+                },
+                "BTS": {
+                  "cardinality": "[0..1]"
+                }
+              }
+            },
+            "FTS": {
+              "cardinality": "[0..1]"
+            }
+        }
+    }
+  },
+  "segmentFields": {
+    "FHS": [
         {
           "fieldNumber": 1,
           "name": "File Field Separator",
@@ -112,10 +170,8 @@
           "default": "",
           "notes": ""
         }
-      ]
-    },
-    "FTS": {
-      "fields": [
+      ],
+    "FTS": [
         {
           "fieldNumber": 1,
           "name": "File Batch Count",
@@ -134,10 +190,8 @@
           "usage": "O",
           "cardinality": "[0..1]"
         }
-      ]
-    },
-    "BHS": {
-      "fields": [
+      ],
+    "BHS": [
         {
           "fieldNumber": 1,
           "name": "Batch Field Separator",
@@ -256,10 +310,8 @@
           "usage": "O",
           "cardinality": "[0..1]"
         }
-      ]
-    },
-    "BTS": {
-      "fields": [
+      ],
+    "BTS": [
         {
           "fieldNumber": 1,
           "name": "Batch Message Count",
@@ -287,7 +339,7 @@
         }
       ]
     }
-  }
 }
+
 
 

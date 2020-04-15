@@ -4,6 +4,7 @@ import java.text.ParseException
 import java.util.NoSuchElementException
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import open.HL7PET.tools.model.{HL7SegmentField, Profile}
 //import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
@@ -22,6 +23,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
     val mapper:ObjectMapper = new ObjectMapper()
    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+  mapper.registerModule(DefaultScalaModule)
 
     if (profile == null) {
         println("Using Default profile")
@@ -35,7 +37,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
         fieldDefinitions = mapper.readValue(fieldDefContent, classOf[Profile])
     }
 
-  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile)
+  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile,false)
 
 
   def validateMessage(): ValidationErrors = {

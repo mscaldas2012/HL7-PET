@@ -11,25 +11,29 @@ import scala.collection.mutable.ListBuffer
 import scala.io.Source
 import scala.language.postfixOps
 
-class HL7ParseUtils(message: String, var profile: Profile = null) {
+class HL7ParseUtils(message: String, var profile: Profile = null, val buildHierarchy: Boolean = true) {
 
   val mapper: ObjectMapper = new ObjectMapper()
   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
   mapper.registerModule(DefaultScalaModule)
 
+
+
   def this(message: String) {
-    this(message, null)
+    this(message, null, true)
   }
 
   if (profile == null) {
-    println("Using Default profile")
+    println("Using Default profile for hl7")
     val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
 
     profile = mapper.readValue(content, classOf[Profile])
   }
-  val parser = new HL7HieararchyParser(message, profile)
-  val msgHierarchy = parser.parseMessageHierarchy()
-
+    var msgHierarchy:HL7Hierarchy = null
+    if (buildHierarchy) {
+      val parser = new HL7HieararchyParser(message, profile)
+      msgHierarchy = parser.parseMessageHierarchy()
+    }
 
   val FILE_HEADER_SEGMENT = "FHS"
   val BATCH_HEADER_SEGMENT = "BHS"

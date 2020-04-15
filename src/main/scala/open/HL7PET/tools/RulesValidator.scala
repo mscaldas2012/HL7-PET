@@ -16,7 +16,7 @@ class RulesValidator(rulesFile: String) {
   }
 
   def validatePredicate(message: String): ValidationErrors = {
-    val parser: HL7ParseUtils = new HL7ParseUtils(message)
+    val parser: HL7ParseUtils = new HL7ParseUtils(message, null, false)
     val errors = new ValidationErrors()
     rules.rules("predicates").foreach { e =>
       e.name match {
@@ -58,7 +58,7 @@ class RulesValidator(rulesFile: String) {
   }
 
   def validateConformance(message: String): ValidationErrors = {
-    val parser: HL7ParseUtils = new HL7ParseUtils(message)
+    val parser: HL7ParseUtils = new HL7ParseUtils(message, null, false)
     val errors = new ValidationErrors()
     rules.rules("conformance").foreach { e =>
       e.name match {
