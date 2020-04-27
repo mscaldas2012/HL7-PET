@@ -48,7 +48,7 @@ class LoadProfileTest extends FlatSpec {
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
     val profile = mapper.readValue(profileFile, classOf[Profile])
-    val message = scala.io.Source.fromFile("src/test/resources/COVIDMSG.hl7").mkString
+    val message = scala.io.Source.fromFile("src/test/resources/covidMsg.hl7").mkString
 
     val parser = new HL7HieararchyParser(message, profile)
     val output = parser.parseMessageHierarchy()

@@ -1,4 +1,6 @@
 
+v.1.2.3.3.
+- Removed hierarchy buildout from Batch, Structure and Rule validation.
 
 v.1.2.3.1
 - Added constructor to HL7ParseUtils for non-scala code be able to call it without passing NULL as profile.

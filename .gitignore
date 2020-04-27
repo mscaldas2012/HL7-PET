@@ -5,6 +5,7 @@
 
 project/
 .idea/
+
 # Log file
 *.log
 

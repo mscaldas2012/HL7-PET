@@ -43,7 +43,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   val OBR_SEGMENT = "OBR"
   val OBX_SEGMENT = "OBX"
 
-  val NEW_LINE_FEED = "\\\r?\\\n"
+  val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
   val HL7_FIELD_SEPARATOR = "\\|"
   val HL7_COMPONENT_SEPARATOR = "\\^"
   val HL7_FIELD_REPETITION = "\\~"

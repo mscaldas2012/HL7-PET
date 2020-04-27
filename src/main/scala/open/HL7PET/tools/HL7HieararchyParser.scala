@@ -9,7 +9,7 @@ import scala.io.Source
 
 class HL7HieararchyParser(message: String, var profile: Profile) {
 
-  val NEW_LINE_FEED = "\\\r?\\\n"
+  val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
 
   if (profile == null) {
     println("Using Default profile")
@@ -42,6 +42,10 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
       case (line, index) if index > 0 => { //Process the rest of the file...
         var lineProcessed = false;
         val segment = line.substring(0, 3)
+        //backup state in case segment is not recognized...
+        val profilePointerBackup = profilePointer
+        val stackProfileBackup = scala.collection.mutable.Stack[SegmentConfig]()
+        val stackOutputBackup = scala.collection.mutable.Stack[HL7Hierarchy]()
         do {
           try {
             val found = profilePointer.children(segment) //Found it as child..
@@ -55,10 +59,23 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
           } catch {
             case e: NoSuchElementException => { //not children...
               if (stackProfile.isEmpty) { // Segment is not recognized as child of current segment.
-                throw new HL7ParseError("Unable to parse message hierarchy", segment)
+                //throw new HL7ParseError("Unable to parse message hierarchy", segment)
+                println("Unable to process segment " + line)
+
+                //Ingore Segment and go back to where we were...
+                lineProcessed = true
+                while (stackProfileBackup.nonEmpty) {
+                  stackProfile.push(stackProfileBackup.pop())
+                }
+                while (stackOutputBackup.nonEmpty) {
+                  stackOutput.push(stackOutputBackup.pop())
+                }
+                profilePointer = profilePointerBackup
               }
               profilePointer = stackProfile.pop() //Back Profile Pointer and try again
+              stackProfileBackup.push(profilePointer)
               output = stackOutput.pop()
+              stackOutputBackup.push(output)
               if (profilePointer == null)
                 println("error! Invalid message")
             }
