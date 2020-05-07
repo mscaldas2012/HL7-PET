@@ -33,7 +33,8 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
     val stackOutput = scala.collection.mutable.Stack[HL7Hierarchy]()
     stackOutput.push(root_output)
 
-    message.split(NEW_LINE_FEED).zipWithIndex.foreach {
+    message.split(NEW_LINE_FEED).filter{ it => !it.isBlank()}.zipWithIndex.foreach {
+      //case (line) if line._1.isBlank() => {} //ignore
       case (line, index) if index == 0 => { //Initialize with MSH
         output = new HL7Hierarchy(index+1, line)
         root_output.children.addOne(output)
@@ -60,8 +61,7 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
             case e: NoSuchElementException => { //not children...
               if (stackProfile.isEmpty) { // Segment is not recognized as child of current segment.
                 //throw new HL7ParseError("Unable to parse message hierarchy", segment)
-                println("Unable to process segment " + line)
-
+                println("Unable to process segment " + segment)
                 //Ingore Segment and go back to where we were...
                 lineProcessed = true
                 while (stackProfileBackup.nonEmpty) {

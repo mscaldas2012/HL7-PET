@@ -1,6 +1,13 @@
 
+v.1.2.4
+- Improved New Line to support \r, \n or both.
+- Create Factory method to create Profile object
+- Improving Structure Validation to be able to validate Batches.
+- Hierarchy building no longer throws exception if does not recognize segment. It simply ignores it.
+
+
 v.1.2.3.3.
-- Removed hierarchy buildout from Batch, Structure and Rule validation.
+- Disabled hierarchy build-out from Batch, Structure and Rule validation.
 
 v.1.2.3.1
 - Added constructor to HL7ParseUtils for non-scala code be able to call it without passing NULL as profile.

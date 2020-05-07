@@ -5,7 +5,7 @@ import java.util.NoSuchElementException
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.{HL7SegmentField, Profile}
+import open.HL7PET.tools.model.{HL7SegmentField, Profile, SegmentConfig}
 //import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
@@ -22,8 +22,8 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
 
     val mapper:ObjectMapper = new ObjectMapper()
-   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-  mapper.registerModule(DefaultScalaModule)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    mapper.registerModule(DefaultScalaModule)
 
     if (profile == null) {
         println("Using Default profile")
@@ -40,72 +40,104 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
   val parser: HL7ParseUtils = new HL7ParseUtils(message, profile,false)
 
 
-  def validateMessage(): ValidationErrors = {
-        val errors:ValidationErrors = new ValidationErrors()
-        var segmentIndex = scala.collection.mutable.Map[String, Int]().withDefaultValue(0)
+  private val BATCH_SEGMENTS = List("FHS", "BHS", "BTS", "FTS")
 
-        //make sure Message has all needed segments:
+  def validateMessage(): ValidationErrors = {
+      val errors:ValidationErrors = new ValidationErrors()
+      val segmentIndex = scala.collection.mutable.Map[String, Int]().withDefaultValue(0)
+
+      if (BATCH_SEGMENTS.contains(message.substring(0,3)))
+        validateBatchSegments(errors)
+      else
         validateFile(errors)
 
-        message.split(parser.NEW_LINE_FEED).zipWithIndex.foreach {
-            case (line, index) =>
-                var segmentLine = line.split(parser.HL7_FIELD_SEPARATOR)
-                try {
-                    segmentIndex(segmentLine(0)) += 1
-                    validateSegment(s"${segmentLine(0)}[${segmentIndex(segmentLine(0))}]", profile.getSegmentField(segmentLine(0)), segmentLine, index + 1, 1, errors)
-                } catch {
-                    case e: NoSuchElementException =>
-                    val entry = new ErrorEntry(index + 1, 1, segmentLine(0).length, segmentLine(0), ERROR, "INVALID_MESSAGE")
-                        entry.description = s"Segment ${segmentLine(0)} not supported"
-                        errors.addEntry(entry)
-                }
-        }
-        errors
-    }
 
-    private def validateFile(errors: ValidationErrors) = {
-      //TODO::Need to recursively retrieve the children segments and validate them...
-        profile.segmentDefinition.foreach { t =>
-            val segments = parser.retrieveMultipleSegments(t._1)
-            t._2.cardinality match {
-                case "[0..1]" => // Optional, but only one
-                    if (!segments.isEmpty && segments.keySet.size > 1) {
-                        //val error = new ErrorEntry(segments.keySet.last, 1, segments(segments.keySet.last).foldLeft(0)( (acc, kv) => acc + kv.length + 1), t._1, ERROR, "INVALID_MESSAGE")
-                        val error = new ErrorEntry(segments.keySet.last, 1, 3, t._1, ERROR, "INVALID_MESSAGE")
-                        error.description = s"Multiple segments for ${t._1} found. Only 0 or 1 segments is allowed."
-                        errors.addEntry(error)
-                    }
-                case "[1..1]" => //Required, need one and Only one:
-                    if (segments.isEmpty) {
-                        val error = new ErrorEntry(0, 1, 0, t._1, ERROR, "INVALID_MESSAGE")
-                        error.description = s"Required segment ${t._1} missing."
-                        errors.addEntry(error)
-                    }
-                    else if (segments.keySet.size > 1) {
-                        val error = new ErrorEntry(segments.keySet.last, 1, 3, t._1, ERROR, "INVALID_MESSAGE")
-                        error.description = s"Multiple segments for ${t._1} found. Only  1 segment is allowed."
-                        errors.addEntry(error)
-                    }
-                case "[1..*]" => //Make sure at least on value is there!
-                    if (segments.isEmpty) {
-                        val error = new ErrorEntry(0, 1, 0, t._1, ERROR, "INVALID_MESSAGE")
-                        error.description = s"Required segment ${t._1} missing."
-                        errors.addEntry(error)
-                    }
-                case CARDINALITY_REGEX(min, max) =>
-                    println(s"validating card... $min to $max")
-                    if (segments.keySet.size < min.toInt || segments.keySet.size > max.toInt) {
-                        val error = new ErrorEntry(1, 1, 2, t._1, ERROR, "INVALID_MESSAGE")
-                        error.description = s"Multiple segments for ${t._1} found. Only  $min to $max segments are allowed."
-                        errors.addEntry(error)
-                    }
-                case "[0..*]" => //all good
-                case _ => //Invalid Profile
-                    throw HL7ParseError(s"Invalid Cardinality ${t._2.cardinality} on Profile Definition!", t._1)
-            }
+      //TODO::Split MSHs before validating each message so that Segment cardinality matches.
+      message.split(parser.NEW_LINE_FEED).zipWithIndex.foreach {
+        case (line, index) =>
+          val segmentLine = line.split(parser.HL7_FIELD_SEPARATOR)
+          try {
+            segmentIndex(segmentLine(0)) += 1
+            validateSegment(s"${segmentLine(0)}[${segmentIndex(segmentLine(0))}]", profile.getSegmentField(segmentLine(0)), segmentLine, index + 1, 1, errors)
+          } catch {
+            case e: NoSuchElementException =>
+              val entry = new ErrorEntry(index + 1, 1, segmentLine(0).length, segmentLine(0), ERROR, "INVALID_MESSAGE")
+              entry.description = s"Segment ${segmentLine(0)} not supported"
+              errors.addEntry(entry)
+          }
+      }
 
+      errors
+  }
+
+
+
+  def checkSegmentCardinality(segmentConfig: (String, SegmentConfig), errors: ValidationErrors) = {
+    val segments = parser.retrieveMultipleSegments(segmentConfig._1)
+    segmentConfig._2.cardinality match {
+      case "[0..1]" => // Optional, but only one
+        if (!segments.isEmpty && segments.keySet.size > 1) {
+          //val error = new ErrorEntry(segments.keySet.last, 1, segments(segments.keySet.last).foldLeft(0)( (acc, kv) => acc + kv.length + 1), t._1, ERROR, "INVALID_MESSAGE")
+          val error = new ErrorEntry(segments.keySet.last, 1, 3, segmentConfig._1, ERROR, "INVALID_MESSAGE")
+          error.description = s"Multiple segments for ${segmentConfig._1} found. Only 0 or 1 segments is allowed."
+
+          errors.addEntry(error)
         }
+      case "[1..1]" => //Required, need one and Only one:
+        if (segments.isEmpty) {
+          val error = new ErrorEntry(0, 1, 0, segmentConfig._1, ERROR, "INVALID_MESSAGE")
+          error.description = s"Required segment ${segmentConfig._1} missing."
+          errors.addEntry(error)
+        }
+        else if (segments.keySet.size > 1) {
+          val error = new ErrorEntry(segments.keySet.last, 1, 3, segmentConfig._1, ERROR, "INVALID_MESSAGE")
+          error.description = s"Multiple segments for ${segmentConfig._1} found. Only  1 segment is allowed."
+          errors.addEntry(error)
+        }
+      case "[1..*]" => //Make sure at least on value is there!
+        if (segments.isEmpty) {
+          val error = new ErrorEntry(0, 1, 0, segmentConfig._1, ERROR, "INVALID_MESSAGE")
+          error.description = s"Required segment ${segmentConfig._1} missing."
+          errors.addEntry(error)
+        }
+      case CARDINALITY_REGEX(min, max) =>
+        if (segments.keySet.size < min.toInt || segments.keySet.size > max.toInt) {
+          val error = new ErrorEntry(1, 1, 2, segmentConfig._1, ERROR, "INVALID_MESSAGE")
+          error.description = s"Multiple segments for ${segmentConfig._1} found. Only  $min to $max segments are allowed."
+          errors.addEntry(error)
+        }
+      case "[0..*]" => //all good
+      case _ => //Invalid Profile
+        throw HL7ParseError(s"Invalid Cardinality ${segmentConfig._2.cardinality} on Profile Definition!", segmentConfig._1)
     }
+  }
+
+
+  private def recursiveBatchValidation(seg: (String, SegmentConfig), errors: ValidationErrors): Unit = {
+    checkSegmentCardinality(seg, errors)
+    seg._2.children.filter { it => BATCH_SEGMENTS.contains(it._1)}.foreach { it =>
+      recursiveBatchValidation(it, errors)
+    }
+  }
+
+  private def validateBatchSegments(errors: ValidationErrors) = {
+    profile.segmentDefinition.filter { it => BATCH_SEGMENTS.contains(it._1)}.foreach { it =>
+      recursiveBatchValidation(it, errors);
+    }
+  }
+
+
+  private def recursiveValidation(seg: (String, SegmentConfig), errors: ValidationErrors): Unit = {
+    checkSegmentCardinality(seg, errors)
+    seg._2.children.foreach { it =>
+      recursiveValidation(it, errors)
+    }
+  }
+  private def validateFile(errors: ValidationErrors) = {
+    profile.segmentDefinition.foreach { it =>
+      recursiveValidation(it, errors)
+    }
+  }
 
     def getFieldLocation(line: Array[String], fieldNumber: Int, columnsBefore: Int): (Int, Int) = {
         var beginCol = columnsBefore // where to start counting columns  for recursive calls.

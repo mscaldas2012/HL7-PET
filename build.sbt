@@ -51,6 +51,9 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10
  libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.10.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
  libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.10.1" pomOnly()
+// https://mvnrepository.com/artifact/com.google.code.gson/gson
+ libraryDependencies += "com.google.code.gson" % "gson" % "2.8.6"
+
 
 
 //Do not append scala versions to the generated artifact

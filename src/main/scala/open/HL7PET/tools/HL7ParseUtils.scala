@@ -37,11 +37,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
 
   val FILE_HEADER_SEGMENT = "FHS"
   val BATCH_HEADER_SEGMENT = "BHS"
-
   val MSH_SEGMENT = "MSH"
-  val PID_SEGMENT = "PID"
-  val OBR_SEGMENT = "OBR"
-  val OBX_SEGMENT = "OBX"
 
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
   val HL7_FIELD_SEPARATOR = "\\|"
