@@ -1,3 +1,4 @@
+import open.HL7PET.tools.model.Profile
 import open.HL7PET.tools.{BatchValidator, ValidationErrors}
 import org.scalatest.FlatSpec
 
@@ -27,7 +28,7 @@ class BatchValidatorTest extends FlatSpec {
 
   "InvalidBHSRepeat" must "fail validation" in {
     val errors = processHappyPathMessage("FileBatchInvalidRepeatBHS3.hl7")
-    assert(errors.totalErrors == 1)
+    assert(errors.totalErrors == 2)
     assert(errors.totalWarnings == 0)
   }
 
@@ -49,7 +50,7 @@ class BatchValidatorTest extends FlatSpec {
   }
   "Missing FTS" must "raise validation error" in {
     val errors = processHappyPathMessage("FileBatchNoFTS.hl7")
-    assert(errors.totalErrors > 1)
+    assert(errors.totalErrors >= 1)
   }
 
   "Multiple MSH without Batching info" must "pass validation" in {
@@ -94,7 +95,7 @@ class BatchValidatorTest extends FlatSpec {
 
   "Missing BTS"  must "flag error" in {
     val errors = processHappyPathMessage("FileBatchNoBTS.hl7")
-    assert(errors.totalErrors > 1)
+    assert(errors.totalErrors >= 1)
   }
 
   "Multiple FHS"  must "flag error" in {
@@ -138,9 +139,55 @@ class BatchValidatorTest extends FlatSpec {
     assert(errors.totalErrors > 0)
   }
 
+  "MSH Missing"  must "flag error" in {
+    val errors = processHappyPathMessage("FileBatchMissingMSH.hl7")
+    assert(errors.totalErrors > 0)
+  }
+
+  "Two MSH" must "flag two message" in {
+    val source = io.Source.fromResource("TwoMSH.hl7")
+    var allLines = ""
+    if (source != null) {
+      for (line <- source.getLines) {
+        allLines += line + "\n"
+      }
+    }
+    val validator:  BatchValidator = new BatchValidator(allLines,null)
+    val msgs = validator.debatchMessages()
+    assert(msgs.size == 2)
+  }
+
+  "Batches with empty lines" must "not bomb - just ignore empyt lines" in {
+    val errors = processHappyPathMessage("FileBatchEmptyLines.hl7")
+    val debatcher = getBatchValidator("FileBatchEmptyLines.hl7", false)
+    val msgList = debatcher.debatchMessages();
+    assert (msgList.size == 4)
+
+    assert(debatcher.parser.peek("FHS") == 1)
+    assert(debatcher.parser.peek("BHS") == 1)
+    assert(debatcher.parser.peek("BTS") == 1)
+    assert(debatcher.parser.peek("FTS") == 1)
+
+  }
+
+"test constructor" must "crdate profile" in {
+  val profile = new Profile()
+  println(profile)
+}
+
+
+
 
 
   def processHappyPathMessage(filename: String, verbose: Boolean = false): ValidationErrors = {
+    val validator: BatchValidator = getBatchValidator(filename, verbose)
+    val errors = validator.validateBatchingInfo()
+    println(errors)
+
+    errors
+  }
+
+  private def getBatchValidator(filename: String, verbose: Boolean): BatchValidator = {
     var allLines = ""
     val source = io.Source.fromResource(filename)
     if (verbose) println("Source is null? " + (source == null))
@@ -151,10 +198,7 @@ class BatchValidatorTest extends FlatSpec {
       }
     }
     //val parser: HL7ParseUtils = new HL7ParseUtils(allLines)
-    val validator:  BatchValidator = new BatchValidator(allLines, null)
-    val errors = validator.validateBatchingInfo()
-    println(errors)
-    errors
+    val validator: BatchValidator = new BatchValidator(allLines, null)
+    validator
   }
-
 }

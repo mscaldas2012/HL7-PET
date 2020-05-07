@@ -18,6 +18,9 @@ class BatchValidator(message: String, var profile: Profile ) {
   val BATCH_HEADER_SEGMENT = "BHS"
   val BATCH_TRAILER_SEGMENT = "BTS"
 
+
+  val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
+
   val mapper:ObjectMapper = new ObjectMapper()
   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
   mapper.registerModule(DefaultScalaModule)
@@ -30,7 +33,7 @@ class BatchValidator(message: String, var profile: Profile ) {
   }
 
 
-  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile, false)
+  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile, true)
   val structureValidator: StructureValidator = new StructureValidator(message, profile, null)
 
   val fieldDefContent = Source.fromResource("DefaultFieldsProfile.json").getLines().mkString("\n")
@@ -51,7 +54,7 @@ class BatchValidator(message: String, var profile: Profile ) {
     hasBatchSegments += BATCH_TRAILER_SEGMENT -> parser.peek(BATCH_TRAILER_SEGMENT)
 
     val nbrOfMessages = parser.peek(parser.MSH_SEGMENT)
-    val nbrOfLines = message.split("\n").length
+    val nbrOfLines = message.split(NEW_LINE_FEED).length
 
     //Either need all four segments (FHS, BHS, BTS, FTS) or None at all:
     if (hasBatchSegments.foldLeft(0)(_+_._2) > 0) {
@@ -201,7 +204,7 @@ class BatchValidator(message: String, var profile: Profile ) {
   def debatchMessages(): List[String] = {
     val result = new ListBuffer[String]()
     var newMessage = ""
-    message.split(parser.NEW_LINE_FEED).foreach {
+    message.split(parser.NEW_LINE_FEED).filter { it => !it.isBlank }.foreach {
       line => line.substring(0,3).toUpperCase() match {
         case FILE_HEADER_SEGMENT | BATCH_HEADER_SEGMENT | BATCH_TRAILER_SEGMENT | FILE_TRAILER_SEGMENT =>
         //Ignore line...

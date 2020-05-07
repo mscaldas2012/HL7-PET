@@ -12,11 +12,14 @@ class ValidationErrors extends Serializable {
   def addEntry(entry: ErrorEntry) {
     if (entries == null)
       entries = new ArrayBuffer[ErrorEntry]()
+    //If path already there, don't add .
+    if (!entries.exists{ it => it.path == entry.path}) {
+      entries += entry
+      entry.classification match {
+        case ERROR => totalErrors += 1
+        case WARNING => totalWarnings += 1
+      }
 
-    entries += entry
-    entry.classification match {
-      case ERROR => totalErrors += 1
-      case WARNING => totalWarnings += 1
     }
   }
 

@@ -2,9 +2,12 @@ package open.HL7PET.tools.model
 
 import com.fasterxml.jackson.annotation.JsonAnySetter
 
+import com.google.gson.{JsonObject, JsonParser}
+
 import scala.beans.BeanProperty
 
-class Profile {
+class Profile() {
+
   @BeanProperty
   var segmentDefinition: scala.collection.mutable.Map[String, SegmentConfig] =  scala.collection.mutable.Map()
 
@@ -76,3 +79,26 @@ class RuleValidation {
   @BeanProperty var category: String = _
   @BeanProperty var message: String = _
 }
+
+
+object ProfileFactory {
+   def apply(json: String):Profile = {
+     val profileJson = JsonParser.parseString(json).getAsJsonObject()
+     val profile = new Profile()
+     profile.segmentDefinition = processSegmentDefinition(profileJson.get("segmentDefinition").getAsJsonObject())
+     profile
+   }
+
+  def processSegmentDefinition(segments: JsonObject): scala.collection.mutable.Map[String, SegmentConfig] = {
+    val segMap: scala.collection.mutable.Map[String, SegmentConfig] = scala.collection.mutable.Map()
+    segments.entrySet().forEach { it => {
+        val seg = new SegmentConfig()
+        seg.cardinality = it.getValue().getAsJsonObject.get("catdinality").toString()
+        seg.children = processSegmentDefinition(it.getValue().getAsJsonObject.get("children").getAsJsonObject)
+        segMap += it.getKey -> seg
+      }
+    }
+    return segMap
+  }
+}
+

@@ -56,12 +56,32 @@
                 }
               }
             }
-
-
+          }
+        },
+        "OBR": {
+          "cardinality": "[1..*]",
+          "children": {
+            "OBX": {
+              "cardinality": "[0..*]",
+              "children": {
+                "NTE": {
+                  "cardinality": "[0..*]"
+                }
+              }
+            },
+            "SPM": {
+              "cardinality": "[0..*]",
+              "children": {
+                "OBX": {
+                  "cardinality": "[0..*]"
+                }
+              }
+            },
+            "NTE": {
+              "cardinality": "[0..*]"
+            }
           }
         }
-
-
       }
     }
   }

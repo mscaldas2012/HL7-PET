@@ -3,8 +3,10 @@ import java.util.NoSuchElementException
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.deser.overrides.MutableList
-import open.HL7PET.tools.{HL7ParseError, HL7HieararchyParser}
-import open.HL7PET.tools.model.{Profile, SegmentConfig}
+import com.google.gson.{JsonObject, JsonParser}
+import open.HL7PET.tools.model.ProfileFactory.processSegmentDefinition
+import open.HL7PET.tools.{HL7HieararchyParser, HL7ParseError}
+import open.HL7PET.tools.model.{Profile, ProfileFactory, SegmentConfig}
 import org.scalatest.FlatSpec
 
 import scala.collection.mutable
@@ -54,6 +56,29 @@ class LoadProfileTest extends FlatSpec {
     val output = parser.parseMessageHierarchy()
 
     println(output)
+  }
+
+  "Profile" should "be created with Factory" in {
+    val content =  Source.fromResource("COVID_ORC.json").getLines().mkString("\n")
+    //val profile = ProfileFactory(content)
+    val profileJson = JsonParser.parseString(content).getAsJsonObject()
+    val profile = new Profile()
+    profile.segmentDefinition = processSegmentDefinition(profileJson.get("segmentDefinition").getAsJsonObject())
+
+    println(profile)
+  }
+
+  def processSegmentDefinition(segments: JsonObject): scala.collection.mutable.Map[String, SegmentConfig] = {
+    val segMap: scala.collection.mutable.Map[String, SegmentConfig] = scala.collection.mutable.Map()
+    segments.entrySet().forEach { it => {
+      val seg = new SegmentConfig()
+      seg.cardinality = it.getValue().getAsJsonObject.get("cardinality").toString()
+      if (it.getValue().getAsJsonObject().get("children") != null)
+        seg.children = processSegmentDefinition(it.getValue().getAsJsonObject.get("children").getAsJsonObject)
+      segMap += it.getKey -> seg
+    }
+    }
+    return segMap
   }
 
 }
