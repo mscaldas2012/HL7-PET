@@ -12,7 +12,7 @@ import scala.collection.mutable.ListBuffer
 import scala.io.Source
 import scala.util.Try
 
-class BatchValidator(message: String, var profile: Profile ) {
+class BatchValidator(message: String, var profile: Profile, var buildHierarchy: Boolean = false  ) {
   val FILE_HEADER_SEGMENT = "FHS"
   val FILE_TRAILER_SEGMENT = "FTS"
   val BATCH_HEADER_SEGMENT = "BHS"
@@ -33,7 +33,7 @@ class BatchValidator(message: String, var profile: Profile ) {
   }
 
 
-  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile, true)
+  val parser: HL7ParseUtils = new HL7ParseUtils(message, profile, buildHierarchy )
   val structureValidator: StructureValidator = new StructureValidator(message, profile, null)
 
   val fieldDefContent = Source.fromResource("DefaultFieldsProfile.json").getLines().mkString("\n")

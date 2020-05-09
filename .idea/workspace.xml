@@ -20,32 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/FileBatchEmptyLines.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/FileBatchMissingMSH.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/TwoMSH.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/COVID_ORC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/COVID_ORC.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchExtraFHSFields.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchExtraFHSFields.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchInvalidFTSCount.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchInvalidFTSCount.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchInvalidRepeatBHS3.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchInvalidRepeatBHS3.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleBHS.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleBHS.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleBTS.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleBTS.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleFHS.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleFHS.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleMessages.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchMultipleMessages.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/FileBatchSingleMessage.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/FileBatchSingleMessage.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +117,7 @@
       <recent name="$PROJECT_DIR$/target/test-classes" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.StructureValidatorTest">
+  <component name="RunManager" selected="ScalaTest.BatchValidatorTest">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -174,6 +155,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BatchValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="BatchValidatorTest" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BatchValidatorTest.Batches with empty lines must not bomb - just ignore empyt lines" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
@@ -187,7 +189,6 @@
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
       <option name="testClassPath" value="BatchValidatorTest" />
-      <option name="testName" value="Batches with empty lines must not bomb - just ignore empyt lines" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
@@ -259,7 +260,7 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StructureValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="StructureValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
@@ -320,13 +321,45 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.StructureValidatorTest" />
+        <item itemvalue="ScalaTest.BatchValidatorTest" />
         <item itemvalue="ScalaTest.RulesValidatorTests" />
         <item itemvalue="ScalaTest.BatchValidatorTest.test constructor must crdate profile" />
         <item itemvalue="ScalaTest.BatchValidatorTest.Batches with empty lines must not bomb - just ignore empyt lines" />
         <item itemvalue="ScalaTest.LoadProfileTest.Profile should be created with Factory" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="HL7-PET" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="hl7-pet [file:/Users/m/projects/personal/HL7-PET/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="HL7-PET-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/build.sbt" value="3034790888" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="2620759781" />
+      </map>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -385,6 +418,7 @@
       <workItem from="1587943998510" duration="25220000" />
       <workItem from="1588283705456" duration="8047000" />
       <workItem from="1588882901282" duration="1493000" />
+      <workItem from="1588976752268" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -397,7 +431,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -439,17 +473,13 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="1" value="TOOL_WINDOW" />
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding documentation" />
@@ -468,28 +498,28 @@
     <state x="100" y="123" width="1720" height="941" key="DiffContextDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1586096641701" />
     <state x="167" y="174" width="2867" height="1424" key="DiffContextDialog/0.23.3200.1726@0.23.3200.1726" timestamp="1587991328374" />
     <state x="167" y="178" width="2867" height="1467" key="DiffContextDialog/0.23.3200.1777@0.23.3200.1777" timestamp="1588095582721" />
-    <state width="1820" height="337" key="GridCell.Tab.0.bottom" timestamp="1588884727281">
-      <screen x="0" y="23" width="3200" height="1777" />
+    <state width="1878" height="455" key="GridCell.Tab.0.bottom" timestamp="1588976957044">
+      <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544500" />
+    <state width="1878" height="455" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957044" />
     <state width="2198" height="408" key="GridCell.Tab.0.bottom/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
     <state width="1820" height="337" key="GridCell.Tab.0.bottom/0.23.3200.1777@0.23.3200.1777" timestamp="1588884727281" />
-    <state width="1820" height="337" key="GridCell.Tab.0.center" timestamp="1588884727281">
-      <screen x="0" y="23" width="3200" height="1777" />
+    <state width="1878" height="455" key="GridCell.Tab.0.center" timestamp="1588976957043">
+      <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544499" />
+    <state width="1878" height="455" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957043" />
     <state width="2198" height="408" key="GridCell.Tab.0.center/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
     <state width="1820" height="337" key="GridCell.Tab.0.center/0.23.3200.1777@0.23.3200.1777" timestamp="1588884727281" />
-    <state width="1820" height="337" key="GridCell.Tab.0.left" timestamp="1588884727281">
-      <screen x="0" y="23" width="3200" height="1777" />
+    <state width="1878" height="455" key="GridCell.Tab.0.left" timestamp="1588976957043">
+      <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544498" />
+    <state width="1878" height="455" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957042" />
     <state width="2198" height="408" key="GridCell.Tab.0.left/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457733" />
     <state width="1820" height="337" key="GridCell.Tab.0.left/0.23.3200.1777@0.23.3200.1777" timestamp="1588884727281" />
-    <state width="1820" height="337" key="GridCell.Tab.0.right" timestamp="1588884727281">
-      <screen x="0" y="23" width="3200" height="1777" />
+    <state width="1878" height="455" key="GridCell.Tab.0.right" timestamp="1588976957044">
+      <screen x="0" y="23" width="1920" height="1141" />
     </state>
-    <state width="1878" height="477" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1586096544499" />
+    <state width="1878" height="455" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957044" />
     <state width="2198" height="408" key="GridCell.Tab.0.right/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
     <state width="1820" height="337" key="GridCell.Tab.0.right/0.23.3200.1777@0.23.3200.1777" timestamp="1588884727281" />
     <state width="1820" height="778" key="GridCell.Tab.1.bottom" timestamp="1588884729374">
@@ -528,6 +558,10 @@
       <screen x="0" y="23" width="3200" height="1777" />
     </state>
     <state width="931" height="679" key="XDebugger.FullValuePopup/0.23.3200.1777@0.23.3200.1777" timestamp="1588884750195" />
+    <state x="637" y="426" key="com.intellij.ide.util.TipDialog" timestamp="1588976753039">
+      <screen x="0" y="23" width="1920" height="1141" />
+    </state>
+    <state x="637" y="426" key="com.intellij.ide.util.TipDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1588976753039" />
     <state x="505" y="347" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586096540281">
       <screen x="0" y="23" width="1920" height="1141" />
     </state>

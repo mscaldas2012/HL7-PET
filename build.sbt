@@ -36,9 +36,9 @@ credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.o
 publishMavenStyle := true
 
 
-useGpg := true
+//useGpg := true
 
-version := "1.2.4"
+version := "1.2.4.1"
 
 scalaVersion := "2.13.0"
 

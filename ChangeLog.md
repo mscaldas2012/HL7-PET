@@ -1,4 +1,7 @@
 
+v1.2.4.1
+- Added constructor param for disabling hierarchy on BatchValidator and defaulted to false.
+
 v.1.2.4
 - Improved New Line to support \r, \n or both.
 - Create Factory method to create Profile object
