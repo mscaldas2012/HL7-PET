@@ -1,16 +1,10 @@
-import java.util.NoSuchElementException
-
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.module.scala.deser.overrides.MutableList
 import com.google.gson.{JsonObject, JsonParser}
-import open.HL7PET.tools.model.ProfileFactory.processSegmentDefinition
-import open.HL7PET.tools.{HL7HieararchyParser, HL7ParseError}
-import open.HL7PET.tools.model.{Profile, ProfileFactory, SegmentConfig}
+import open.HL7PET.tools.HL7HierarchyParser
+import open.HL7PET.tools.model.{Profile, SegmentConfig}
 import org.scalatest.FlatSpec
 
-import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
 import scala.io.Source
 
 class LoadProfileTest extends FlatSpec {
@@ -50,9 +44,18 @@ class LoadProfileTest extends FlatSpec {
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
     val profile = mapper.readValue(profileFile, classOf[Profile])
-    val message = scala.io.Source.fromFile("src/test/resources/covidMsg.hl7").mkString
+    val message = Source.fromResource("covidMsg.hl7").mkString
 
-    val parser = new HL7HieararchyParser(message, profile)
+    val parser = new HL7HierarchyParser(message, profile)
+    val output = parser.parseMessageHierarchy()
+
+    println(output)
+  }
+
+  "HL7Hierarchy" should "be loaded iwth default profile" in {
+    val message = Source.fromResource("covidMsg.hl7").mkString
+
+    val parser = new HL7HierarchyParser(message, null)
     val output = parser.parseMessageHierarchy()
 
     println(output)

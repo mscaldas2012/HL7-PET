@@ -12,16 +12,19 @@ import scala.io.Source
 import scala.language.postfixOps
 
 class HL7ParseUtils(message: String, var profile: Profile = null, val buildHierarchy: Boolean = true) {
+  //If no Profile is passed, we assume no Hierarchy will be used.
+  def this(message: String) {
+    this(message, null, false)
+  }
+  //If a profile is passed, hierarchy is assumed to be ON!
+  def this(message: String, profile: Profile) {
+    this(message, profile, true)
+  }
 
   val mapper: ObjectMapper = new ObjectMapper()
   mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
   mapper.registerModule(DefaultScalaModule)
 
-
-
-  def this(message: String) {
-    this(message, null, true)
-  }
 
   if (profile == null) {
     println("Using Default profile for hl7")
@@ -31,7 +34,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
     var msgHierarchy:HL7Hierarchy = null
     if (buildHierarchy) {
-      val parser = new HL7HieararchyParser(message, profile)
+      val parser = new HL7HierarchyParser(message, profile)
       msgHierarchy = parser.parseMessageHierarchy()
     }
 

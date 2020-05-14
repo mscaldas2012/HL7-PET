@@ -3,12 +3,16 @@ package open.HL7PET.tools
 import java.util.NoSuchElementException
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import open.HL7PET.tools.model.{HL7Hierarchy, Profile, SegmentConfig}
 
 import scala.io.Source
 
-class HL7HieararchyParser(message: String, var profile: Profile) {
+class HL7HierarchyParser(message: String, var profile: Profile) {
 
+  def this(message: String) {
+    this(message, null)
+  }
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
 
   if (profile == null) {
@@ -16,6 +20,8 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
     val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
     val mapper: ObjectMapper = new ObjectMapper()
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    mapper.registerModule(DefaultScalaModule)
+
     profile = mapper.readValue(content, classOf[Profile])
   }
 
@@ -45,12 +51,13 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
         val segment = line.substring(0, 3)
         //backup state in case segment is not recognized...
         val profilePointerBackup = profilePointer
+        val outputBackup = output
         val stackProfileBackup = scala.collection.mutable.Stack[SegmentConfig]()
         val stackOutputBackup = scala.collection.mutable.Stack[HL7Hierarchy]()
         do {
           try {
             val found = profilePointer.children(segment) //Found it as child..
-            val newSeg = new HL7Hierarchy(index+1,line)
+            val newSeg = new HL7Hierarchy(index + 1,line)
             stackOutput.push(output)
             stackProfile.push(profilePointer)
             output.children += newSeg
@@ -71,21 +78,21 @@ class HL7HieararchyParser(message: String, var profile: Profile) {
                   stackOutput.push(stackOutputBackup.pop())
                 }
                 profilePointer = profilePointerBackup
+                output = outputBackup
+              } else { //Try next segment on stacks
+                profilePointer = stackProfile.pop() //Back Profile Pointer and try again
+                stackProfileBackup.push(profilePointer) //store profile on backup in case we can't fit the segment
+                output = stackOutput.pop() //same for the output...
+                stackOutputBackup.push(output)
+                if (profilePointer == null) //should never happen...
+                  println("error! Invalid message")
               }
-              profilePointer = stackProfile.pop() //Back Profile Pointer and try again
-              stackProfileBackup.push(profilePointer)
-              output = stackOutput.pop()
-              stackOutputBackup.push(output)
-              if (profilePointer == null)
-                println("error! Invalid message")
             }
           }
         } while (!lineProcessed)
 
       }
     }
-
-
     return root_output
   }
 }

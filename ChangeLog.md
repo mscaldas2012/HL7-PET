@@ -1,6 +1,9 @@
 
+v1.2.4.2
+- Fixed a bug on creating hierarchy and ignoning unknown segments.
+
 v1.2.4.1
-- Added constructor param for disabling hierarchy on BatchValidator and defaulted to false.
+- Added a constructor param for disabling hierarchy on BatchValidator and defaulted to false.
 
 v.1.2.4
 - Improved New Line to support \r, \n or both.

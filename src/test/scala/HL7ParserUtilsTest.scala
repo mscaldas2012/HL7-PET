@@ -1,5 +1,10 @@
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import open.HL7PET.tools.model.Profile
 import open.HL7PET.tools.{BatchValidator, HL7ParseError, HL7ParseUtils}
 import org.scalatest.FlatSpec
+
+import scala.io.Source
 
 
 class HL7ParserUtilsTest extends FlatSpec {
@@ -288,6 +293,22 @@ class HL7ParserUtilsTest extends FlatSpec {
     println("2.16.8.140".matches("[0-9](\\.[0-9]+)+"))
   }
 
+
+   "Hierarchy" must "be loaded" in {
+      val profile = getProfile()
+      val message = Source.fromResource("23zExample.hl7").getLines().mkString("\n")
+      val parser = new HL7ParseUtils(message, profile, true)
+      println(parser.getFirstValue("MSH-12"))
+   }
+
+
+  def getProfile(): Profile = {
+    val profileFile = Source.fromResource("COVID_ORC.json").getLines().mkString("\n")
+    val mapper = new ObjectMapper()
+    mapper.registerModule(DefaultScalaModule)
+    mapper.readValue(profileFile, classOf[Profile])
+
+  }
 }
 
 

@@ -4,7 +4,7 @@
       "cardinality": "[1..1]",
       "children": {
         "SFT": {
-          "cardinality": "[1..*]"
+          "cardinality": "[0..*]"
         },
         "PID": {
           "cardinality": "[1..1]",
@@ -27,40 +27,23 @@
           }
         },
         "ORC": {
-          "cardinality": "[0..*]",
-          "children": {
-            "NTE": {
-              "cardinality": "[0..*]"
-            },
-            "OBR": {
-              "cardinality": "[1..*]",
-              "children": {
-                "OBX": {
-                  "cardinality": "[0..*]",
-                  "children": {
-                    "NTE": {
-                      "cardinality": "[0..*]"
-                    }
-                  }
-                },
-                "SPM": {
-                  "cardinality": "[0..*]",
-                  "children": {
-                    "OBX": {
-                      "cardinality": "[0..*]"
-                    }
-                  }
-                },
-                "NTE": {
-                  "cardinality": "[0..*]"
-                }
-              }
-            }
-          }
+          "cardinality": "[0..*]"
         },
         "OBR": {
           "cardinality": "[1..*]",
           "children": {
+            "NTE": {
+              "cardinality": "[0..*]"
+            },
+            "TQ1": {
+              "cardinality": "[0..1]"
+            },
+            "TQ2": {
+              "cardinality": "[0..1]"
+            },
+            "CTD": {
+              "cardinality": "[0..1]"
+            },
             "OBX": {
               "cardinality": "[0..*]",
               "children": {
@@ -69,6 +52,12 @@
                 }
               }
             },
+            "FT1": {
+              "cardinality": "[0..*]"
+            },
+            "CTI": {
+              "cardinality": "[0..*]"
+            },
             "SPM": {
               "cardinality": "[0..*]",
               "children": {
@@ -76,11 +65,11 @@
                   "cardinality": "[0..*]"
                 }
               }
-            },
-            "NTE": {
-              "cardinality": "[0..*]"
             }
           }
+        },
+        "DSC": {
+          "cardinality": "[0..1]"
         }
       }
     }

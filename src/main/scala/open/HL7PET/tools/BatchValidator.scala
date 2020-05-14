@@ -1,22 +1,29 @@
 package open.HL7PET.tools
 
-import java.text.ParseException
-
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.{HL7SegmentField, Profile}
-//import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
+import open.HL7PET.tools.model.Profile
 import com.fasterxml.jackson.databind.DeserializationFeature
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 import scala.util.Try
 
+//BatchValidator does not need to use Hierarchy... so is always false.
+//But we let it be turned on in case someone needs it. Just Make sure the Profile supports it with all batch segments.
 class BatchValidator(message: String, var profile: Profile, var buildHierarchy: Boolean = false  ) {
   val FILE_HEADER_SEGMENT = "FHS"
   val FILE_TRAILER_SEGMENT = "FTS"
   val BATCH_HEADER_SEGMENT = "BHS"
   val BATCH_TRAILER_SEGMENT = "BTS"
+
+  def this(message: String) {
+    this(message, null, false)
+  }
+
+  def this(message: String, profile: Profile) {
+    this(message, profile, false)
+  }
 
 
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
@@ -204,7 +211,7 @@ class BatchValidator(message: String, var profile: Profile, var buildHierarchy: 
   def debatchMessages(): List[String] = {
     val result = new ListBuffer[String]()
     var newMessage = ""
-    message.split(parser.NEW_LINE_FEED).filter { it => !it.isBlank }.foreach {
+    message.split(parser.NEW_LINE_FEED).filter { it => !it.isBlank() }.foreach {
       line => line.substring(0,3).toUpperCase() match {
         case FILE_HEADER_SEGMENT | BATCH_HEADER_SEGMENT | BATCH_TRAILER_SEGMENT | FILE_TRAILER_SEGMENT =>
         //Ignore line...

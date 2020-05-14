@@ -170,6 +170,20 @@ class BatchValidatorTest extends FlatSpec {
 
   }
 
+  "Covid batch" must "pass"in {
+    val debatcher = getBatchValidator("FileBatchExtraSegs.hl7", false)
+    val msgList = debatcher.debatchMessages()
+    assert(msgList.size == 6)
+
+  }
+
+
+  "FTS" must "be ignored" in {
+    val debatcher = getBatchValidator("FileFTSONLY.hl7", true)
+    val msgList = debatcher.debatchMessages()
+    assert(msgList.size == 1)
+
+  }
 "test constructor" must "crdate profile" in {
   val profile = new Profile()
   println(profile)
@@ -198,7 +212,7 @@ class BatchValidatorTest extends FlatSpec {
       }
     }
     //val parser: HL7ParseUtils = new HL7ParseUtils(allLines)
-    val validator: BatchValidator = new BatchValidator(allLines, null)
+    val validator: BatchValidator = new BatchValidator(allLines, null, false)
     validator
   }
 }
