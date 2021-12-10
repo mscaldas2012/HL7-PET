@@ -413,7 +413,7 @@
         },
         {
           "fieldNumber": 2,
-          "name": "Batch  Comment",
+          "name": "Batch Comment",
           "dataType": "ST",
           "maxLength": "80",
           "usage": "O",

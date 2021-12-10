@@ -26,7 +26,8 @@ class HL7HieararchyParserBackup(message: String, var profile: Profile) {
     var stackProfile = scala.collection.mutable.Stack[SegmentConfig]()
 
     val rootProfile = new SegmentConfig()
-    rootProfile.children.addAll(profile.segmentDefinition)
+//    rootProfile.children.addAll(profile.segmentDefinition)
+    rootProfile.children ++= profile.segmentDefinition
     rootProfile.cardinality="[1..1]"
     stackProfile.push(rootProfile) //add root
 
@@ -35,7 +36,8 @@ class HL7HieararchyParserBackup(message: String, var profile: Profile) {
     message.split(NEW_LINE_FEED).zipWithIndex.foreach {
       case (line, index) if index == 0 => { //Initialize with MSH
         output = new HL7Hierarchy(index+1, line)
-        root_output.children.addOne(output)
+//        root_output.children.addOne(output)
+        root_output.children += output
         //output = root_output
       }
       case (line, index) if index > 0 => { //Process the rest of the file...

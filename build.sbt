@@ -38,9 +38,9 @@ publishMavenStyle := true
 
 //useGpg := true
 
-version := "1.2.4.2"
+version := "1.2.4.3"
 
-scalaVersion := "2.13.0"
+scalaVersion := "2.12.10"
 
 mainClass := Some("hl7.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest

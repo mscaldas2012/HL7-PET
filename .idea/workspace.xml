@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,23 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/23zExample.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/FileBatchExtraSegs.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/FileFTSONLY.hl7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Hierarchy.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_13_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_13_1_2_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_reflect_2_13_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_13_3_0_8_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_13_3_0_8_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/COVID_ORC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/COVID_ORC.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/oregonMessage.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/oregonMessage.hl7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +68,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET-build" type="2d1252cf:ModuleNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -86,7 +79,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1RhNI2mCjnJztfQ9idshZJVTfLX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -165,151 +158,90 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BatchValidatorTest.Covid batch must pass" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
-      </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
-      <option name="testClassPath" value="BatchValidatorTest" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HL7ParserUtilsTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
       </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
+      <option name="testKind" value="Class" />
       <option name="testClassPath" value="HL7ParserUtilsTest" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7ParserUtilsTest.Paths should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="Paths should be found" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7ParserUtilsTest.Paths with filters should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="Paths with filters should be found" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="LoadProfileTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
       </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
+      <option name="testKind" value="Class" />
       <option name="testClassPath" value="LoadProfileTest" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoadProfileTest.HL7Hierarchy should be loaded iwth default profile" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
-      </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
-      <option name="testClassPath" value="LoadProfileTest" />
-      <option name="testName" value="HL7Hierarchy should be loaded iwth default profile" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="RulesValidatorTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
       </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
+      <option name="testKind" value="Class" />
       <option name="testClassPath" value="RulesValidatorTests" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="StructureValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
       </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
+      <option name="testKind" value="Class" />
       <option name="testClassPath" value="StructureValidatorTest" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
-      </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
-      <option name="testClassPath" value="" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
-      <option name="workingDirectory" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
@@ -330,16 +262,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="ScalaTest.RulesValidatorTests" />
-        <item itemvalue="ScalaTest.LoadProfileTest" />
-        <item itemvalue="ScalaTest.HL7ParserUtilsTest" />
-        <item itemvalue="ScalaTest.BatchValidatorTest.Covid batch must pass" />
-        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierarchy should be loaded iwth default profile" />
-      </list>
-    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -399,6 +323,21 @@
       <workItem from="1588882901282" duration="1493000" />
       <workItem from="1588976752268" duration="329000" />
       <workItem from="1589487024101" duration="4063000" />
+      <workItem from="1614101971445" duration="505000" />
+      <workItem from="1614102511080" duration="6750000" />
+      <workItem from="1614177295465" duration="619000" />
+      <workItem from="1614177934599" duration="24000" />
+      <workItem from="1614177975746" duration="9255000" />
+      <workItem from="1614362736574" duration="614000" />
+      <workItem from="1614650943198" duration="155000" />
+      <workItem from="1626187873226" duration="3172000" />
+      <workItem from="1626202227823" duration="1883000" />
+      <workItem from="1627312969370" duration="921000" />
+      <workItem from="1630340418654" duration="3288000" />
+      <workItem from="1631907115233" duration="502000" />
+      <workItem from="1632679503009" duration="382000" />
+      <workItem from="1632746771457" duration="488000" />
+      <workItem from="1633526839893" duration="2891000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -411,7 +350,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -464,189 +403,27 @@
     <MESSAGE value="adding documentation" />
     <option name="LAST_COMMIT_MESSAGE" value="adding documentation" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="1163" y="557" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1589490191697">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state x="698" y="366" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1581114725551" />
-    <state x="1163" y="542" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.3200.1726@0.23.3200.1726" timestamp="1586969430590" />
-    <state x="1163" y="557" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.3200.1777@0.23.3200.1777" timestamp="1589490191697" />
-    <state x="167" y="178" width="2867" height="1467" key="DiffContextDialog" timestamp="1588095582721">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state x="100" y="123" width="1720" height="941" key="DiffContextDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1586096641701" />
-    <state x="167" y="174" width="2867" height="1424" key="DiffContextDialog/0.23.3200.1726@0.23.3200.1726" timestamp="1587991328374" />
-    <state x="167" y="178" width="2867" height="1467" key="DiffContextDialog/0.23.3200.1777@0.23.3200.1777" timestamp="1588095582721" />
-    <state width="2192" height="351" key="GridCell.Tab.0.bottom" timestamp="1589491898375">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.0.bottom/0.0.3200.1800@0.0.3200.1800" timestamp="1588985252236" />
-    <state width="1878" height="455" key="GridCell.Tab.0.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957044" />
-    <state width="2198" height="408" key="GridCell.Tab.0.bottom/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
-    <state width="2192" height="351" key="GridCell.Tab.0.bottom/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898375" />
-    <state width="2192" height="351" key="GridCell.Tab.0.center" timestamp="1589491898374">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.0.center/0.0.3200.1800@0.0.3200.1800" timestamp="1588985252233" />
-    <state width="1878" height="455" key="GridCell.Tab.0.center/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957043" />
-    <state width="2198" height="408" key="GridCell.Tab.0.center/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
-    <state width="2192" height="351" key="GridCell.Tab.0.center/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898374" />
-    <state width="2192" height="351" key="GridCell.Tab.0.left" timestamp="1589491898374">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.0.left/0.0.3200.1800@0.0.3200.1800" timestamp="1588985252228" />
-    <state width="1878" height="455" key="GridCell.Tab.0.left/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957042" />
-    <state width="2198" height="408" key="GridCell.Tab.0.left/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457733" />
-    <state width="2192" height="351" key="GridCell.Tab.0.left/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898374" />
-    <state width="2192" height="351" key="GridCell.Tab.0.right" timestamp="1589491898375">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.0.right/0.0.3200.1800@0.0.3200.1800" timestamp="1588985252235" />
-    <state width="1878" height="455" key="GridCell.Tab.0.right/0.23.1920.1141@0.23.1920.1141" timestamp="1588976957044" />
-    <state width="2198" height="408" key="GridCell.Tab.0.right/0.23.3200.1726@0.23.3200.1726" timestamp="1588012457734" />
-    <state width="2192" height="351" key="GridCell.Tab.0.right/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898375" />
-    <state width="2192" height="351" key="GridCell.Tab.1.bottom" timestamp="1589491898376">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.1.bottom/0.0.3200.1800@0.0.3200.1800" timestamp="1588985254468" />
-    <state width="1878" height="477" key="GridCell.Tab.1.bottom/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361225" />
-    <state width="2198" height="796" key="GridCell.Tab.1.bottom/0.23.3200.1726@0.23.3200.1726" timestamp="1588012427991" />
-    <state width="2192" height="351" key="GridCell.Tab.1.bottom/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898376" />
-    <state width="2192" height="351" key="GridCell.Tab.1.center" timestamp="1589491898375">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.1.center/0.0.3200.1800@0.0.3200.1800" timestamp="1588985254467" />
-    <state width="1878" height="477" key="GridCell.Tab.1.center/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361224" />
-    <state width="2198" height="796" key="GridCell.Tab.1.center/0.23.3200.1726@0.23.3200.1726" timestamp="1588012427991" />
-    <state width="2192" height="351" key="GridCell.Tab.1.center/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898375" />
-    <state width="2192" height="351" key="GridCell.Tab.1.left" timestamp="1589491898375">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.1.left/0.0.3200.1800@0.0.3200.1800" timestamp="1588985254466" />
-    <state width="1878" height="477" key="GridCell.Tab.1.left/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361224" />
-    <state width="2198" height="796" key="GridCell.Tab.1.left/0.23.3200.1726@0.23.3200.1726" timestamp="1588012427991" />
-    <state width="2192" height="351" key="GridCell.Tab.1.left/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898375" />
-    <state width="2192" height="351" key="GridCell.Tab.1.right" timestamp="1589491898376">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="3158" height="486" key="GridCell.Tab.1.right/0.0.3200.1800@0.0.3200.1800" timestamp="1588985254468" />
-    <state width="1878" height="477" key="GridCell.Tab.1.right/0.23.1920.1141@0.23.1920.1141" timestamp="1586096361225" />
-    <state width="2198" height="796" key="GridCell.Tab.1.right/0.23.3200.1726@0.23.3200.1726" timestamp="1588012427991" />
-    <state width="2192" height="351" key="GridCell.Tab.1.right/0.23.3200.1777@0.23.3200.1777" timestamp="1589491898376" />
-    <state x="1550" y="773" key="RollbackChangesDialog" timestamp="1587758926013">
-      <screen x="0" y="23" width="3200" height="1726" />
-    </state>
-    <state x="1550" y="773" key="RollbackChangesDialog/0.23.3200.1726@0.23.3200.1726" timestamp="1587758926013" />
-    <state x="1186" y="644" key="SettingsEditor" timestamp="1586978124962">
-      <screen x="0" y="23" width="3200" height="1726" />
-    </state>
-    <state x="1186" y="644" key="SettingsEditor/0.23.3200.1726@0.23.3200.1726" timestamp="1586978124962" />
-    <state width="931" height="679" key="XDebugger.FullValuePopup" timestamp="1588990554081">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state width="931" height="688" key="XDebugger.FullValuePopup/0.0.3200.1800@0.0.3200.1800" timestamp="1588985272750" />
-    <state width="931" height="679" key="XDebugger.FullValuePopup/0.23.3200.1777@0.23.3200.1777" timestamp="1588990554081" />
-    <state x="637" y="426" key="com.intellij.ide.util.TipDialog" timestamp="1588976753039">
-      <screen x="0" y="23" width="1920" height="1141" />
-    </state>
-    <state x="637" y="426" key="com.intellij.ide.util.TipDialog/0.23.1920.1141@0.23.1920.1141" timestamp="1588976753039" />
-    <state x="505" y="347" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586096540281">
-      <screen x="0" y="23" width="1920" height="1141" />
-    </state>
-    <state x="505" y="347" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1920.1141@0.23.1920.1141" timestamp="1586096540281" />
-    <state x="884" y="632" width="606" height="486" key="find.popup" timestamp="1588087944662">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state x="884" y="632" width="606" height="486" key="find.popup/0.23.3200.1777@0.23.3200.1777" timestamp="1588087944662" />
-    <state x="852" y="441" width="670" height="676" key="search.everywhere.popup" timestamp="1588089300562">
-      <screen x="0" y="23" width="3200" height="1777" />
-    </state>
-    <state x="852" y="441" width="670" height="676" key="search.everywhere.popup/0.23.3200.1777@0.23.3200.1777" timestamp="1588089300562" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala</url>
-          <line>78</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>57</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
-          <line>126</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala</url>
-          <line>95</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala</url>
-          <line>156</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala</url>
-          <line>61</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala</url>
-          <line>116</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>76</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala</url>
-          <line>175</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala</url>
-          <line>183</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala</url>
-          <line>300</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>66</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo typeName="open.HL7PET.tools.model.HL7Hierarchy" fieldName="segment" />
+        <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="ScalaTestRunConfiguration">
-        <watch expression="segment" language="Scala" />
-        <watch expression="profilePointer" language="Scala" />
-        <watch expression="stackProfile" language="Scala" />
-        <watch expression="stackProfileBackup" language="Scala" />
+        <watch expression="segment" />
+        <watch expression="profilePointer" />
+        <watch expression="stackProfile" />
+        <watch expression="stackProfileBackup" />
+        <watch expression="result.get" />
       </configuration>
       <configuration name="Application">
         <watch expression="CHILDREN_REGEX(pseg, _, psegIdx, _, _, pfield, _, pfieldIdx, _, _, pcomp, _, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
         <watch expression="CHILDREN_REGEX(pseg, p2, psegIdx, p4, p5, pfield, p7, pfieldIdx, p8, p9, pcomp, p11, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
-        <watch expression="CHILDREN_REGEX" language="Scala" />
+        <watch expression="CHILDREN_REGEX" />
         <watch expression="parentSegments.firstKey" />
-        <watch expression="hl7Hierary.segment.substring(0,3)" language="Scala" />
-        <watch expression="filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))" language="Scala" />
+        <watch expression="hl7Hierary.segment.substring(0,3)" />
+        <watch expression="filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))" />
       </configuration>
     </watches-manager>
   </component>

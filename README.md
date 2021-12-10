@@ -8,7 +8,7 @@ and Validate HL7 v2 messages.
 HL7 profiles can be defined in JSON and loaded to the appropriate classes to be used for better understanding.
 By default, if not specified, the current code loads the <code>PhinGuideProfile.json</code> with the <code>DefaultFieldsProfile.json</code>
 
-The validation is still a work in progress. But prime time, you can debatch messages and use the extractor
+The validation is still a work in puprogress. But prime time, you can debatch messages and use the extractor
 to retrieve values from specific fields of a given HL7 message natively, i.e., without having to transform
 the raw pipe-delimited message into another object oriented format. Because its using scala under the hood,
 this approach seems to be working very effectively and can return values very fast.

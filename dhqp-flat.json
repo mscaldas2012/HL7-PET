@@ -1,0 +1,1407 @@
+{
+  "arln_specimen_id": "",
+  "phl": "",
+  "datetimeofmessage": "",
+  "sendingapplication": "",
+  "sendingfacility": "",
+  "receivingapplication": "",
+  "program_or_pathogen": "",
+  "messagetype": "",
+  "message control id": "",
+  "patient_id": "",
+  "patient_id_assigner": "",
+  "patient_id_type": "",
+  "patient_dob": "",
+  "patient_sex": "",
+  "patient_race": "",
+  "patient_state": "",
+  "patient_county": "",
+  "patient_ethnicity": "",
+  "patient death date and time": "",
+  "patient death indicator": "",
+  "reglab_comment_pid": "",
+  "submitter_specimen_id": "",
+  "specimen_type": "",
+  "specimen_type_free_text": "",
+  "specimen_collection_date": "",
+  "specimen_received_date": "",
+  "submitter_facility_name": "",
+  "submitter_facility_state": "",
+  "submitter_facility_zipcode": "",
+  "submitter_facility_id": "",
+  "submitter_facility_id_assigner": "",
+  "result_status": "",
+  "date_result_released": "",
+  "placer_order_number": "",
+  "filler_order_number": "",
+  "universal_service_identifier": "",
+  "relevant clinical information": "",
+  "diagnostic_service_sect_id": "",
+  "reason for study": "",
+  "parent_result": "",
+  "parent_universal_service_identifier": "",
+  "reglab_comment_obr": "",
+  "patient_age": "",
+  "patient_age_unit": "",
+  "reported_to_submitter_date": "",
+  "clinical_sample_or_isolate": "",
+  "processing_laboratory_id": "",
+  "healthcare_facility_of_origin_id": "",
+  "healthcare_facility_of_origin_name": "",
+  "healthcare_facility_of_origin_state": "",
+  "healthcare_facility_of_origin_zipcode": "",
+  "isolate_forwarded_to_reglab": "",
+  "date_forwarded_to_reglab": "",
+  "reglab_comment_obx": "",
+  "organism_tested_test_performed": "OBX[@3.1:'PLT644||41852-5||76346-6']-3.2",
+  "organism_tested_observation_sub_id": "OBX[@3.1:'']-4",
+  "organism_tested_result": "OBX[@3.1:'']-5.1",
+  "organism_tested_test_method": "OBX[@3.1:'']-17.2",
+  "organism_tested_test_date": "OBX[@3.1:'']-19.1",
+  "confirmed_carbapenem_resistant_result": "OBX[@3.1:'PLT643']-5.1",
+  "imp_gene_test_performed_1": "OBX[@3.1:'85498-4||85824-1']-3.2",
+  "imp_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "imp_gene_result_1": "OBX[@3.1:'']-5.1",
+  "imp_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "imp_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "imp_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "imp_gene_test_performed_2": "OBX[@3.1:'85498-4||85824-1']-3.2",
+  "imp_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "imp_gene_result_2": "OBX[@3.1:'']-5.1",
+  "imp_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "imp_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "imp_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "kpc_gene_test_performed_1": "OBX[@3.1:'49617-4||85499-2||PLT603']-3.2",
+  "kpc_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "kpc_gene_result_1": "OBX[@3.1:'']-5.1",
+  "kpc_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "kpc_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "kpc_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "kpc_gene_test_performed_2": "OBX[@3.1:'49617-4||85499-2||PLT603']-3.2",
+  "kpc_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "kpc_gene_result_2": "OBX[@3.1:'']-5.1",
+  "kpc_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "kpc_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "kpc_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "mcr_1_gene_test_performed_1": "OBX[@3.1:'86221-9||PLT605']-3.2",
+  "mcr_1_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "mcr_1_gene_result_1": "OBX[@3.1:'']-5.1",
+  "mcr_1_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "mcr_1_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "mcr_1_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "mcr_1_gene_test_performed_2": "OBX[@3.1:'86221-9||PLT605']-3.2",
+  "mcr_1_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "mcr_1_gene_result_2": "OBX[@3.1:'']-5.1",
+  "mcr_1_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "mcr_1_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "mcr_1_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "mcr_2_gene_test_performed_1": "OBX[@3.1:'PLT733']-3.2",
+  "mcr_2_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "mcr_2_gene_result_1": "OBX[@3.1:'']-5.1",
+  "mcr_2_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "mcr_2_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "mcr_2_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "mcr_2_gene_test_performed_2": "OBX[@3.1:'PLT733']-3.2",
+  "mcr_2_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "mcr_2_gene_result_2": "OBX[@3.1:'']-5.1",
+  "mcr_2_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "mcr_2_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "mcr_2_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "mcr_3_gene_test_performed_1": "OBX[@3.1:'PLT2201']-3.2",
+  "mcr_3_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "mcr_3_gene_result_1": "OBX[@3.1:'']-5.1",
+  "mcr_3_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "mcr_3_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "mcr_3_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "mcr_3_gene_test_performed_2": "OBX[@3.1:'PLT2201']-3.2",
+  "mcr_3_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "mcr_3_gene_result_2": "OBX[@3.1:'']-5.1",
+  "mcr_3_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "mcr_3_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "mcr_3_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "mcr_4_gene_test_performed_1": "OBX[@3.1:'PLT2202']-3.2",
+  "mcr_4_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "mcr_4_gene_result_1": "OBX[@3.1:'']-5.1",
+  "mcr_4_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "mcr_4_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "mcr_4_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "mcr_4_gene_test_performed_2": "OBX[@3.1:'PLT2202']-3.2",
+  "mcr_4_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "mcr_4_gene_result_2": "OBX[@3.1:'']-5.1",
+  "mcr_4_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "mcr_4_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "mcr_4_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "ndm_gene_test_performed_1": "OBX[@3.1:'73982-1||85500-7||PLT604']-3.2",
+  "ndm_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "ndm_gene_result_1": "OBX[@3.1:'']-5.1",
+  "ndm_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "ndm_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "ndm_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "ndm_gene_test_performed_2": "OBX[@3.1:'73982-1||85500-7||PLT604']-3.2",
+  "ndm_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "ndm_gene_result_2": "OBX[@3.1:'']-5.1",
+  "ndm_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "ndm_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "ndm_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "OXA_48_like_gene_test_performed_1": "OBX[@3.1:'85503-1||86220-1']-3.2",
+  "OXA_48_like_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "OXA_48_like_gene_result_1": "OBX[@3.1:'']-5.1",
+  "OXA_48_like_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "OXA_48_like_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "OXA_48_like_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "OXA_48_like_gene_test_performed_2": "OBX[@3.1:'85503-1||86220-1']-3.2",
+  "OXA_48_like_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "OXA_48_like_gene_result_2": "OBX[@3.1:'']-5.1",
+  "OXA_48_like_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "OXA_48_like_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "OXA_48_like_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "OXA_24_40_gene_test_performed_1": "OBX[@3.1:'85826-6']-3.2",
+  "OXA_24_40_gene_observation_sub_id_1": "OBX[@3.1:'']-4",
+  "OXA_24_40_gene_result_1": "OBX[@3.1:'']-5.1",
+  "OXA_24_40_gene_observation_result_status_1": "OBX[@3.1:'']-11",
+  "OXA_24_40_gene_test_method_1": "OBX[@3.1:'']-17.2",
+  "OXA_24_40_gene_test_date_1": "OBX[@3.1:'']-19.1",
+  "OXA_24_40_gene_test_performed_2": "OBX[@3.1:'85826-6']-3.2",
+  "OXA_24_40_gene_observation_sub_id_2": "OBX[@3.1:'']-4",
+  "OXA_24_40_gene_result_2": "OBX[@3.1:'']-5.1",
+  "OXA_24_40_gene_observation_result_status_2": "OBX[@3.1:'']-11",
+  "OXA_24_40_gene_test_method_2": "OBX[@3.1:'']-17.2",
+  "OXA_24_40_gene_test_date_2": "OBX[@3.1:'']-19.1",
+  "oxa_58_gene_test_performed_1": "OBX[@3.1:'85828-2']-3.2",
+  "oxa_58_gene_observation_sub_id_1": "OBX[@3.1:,'85828-2']-4",
+  "oxa_58_gene_result_1": "OBX[@3.1:,'85828-2']-5.1",
+  "oxa_58_gene_observation_result_status_1": "OBX[@3.1:,'85828-2']-11",
+  "oxa_58_gene_test_method_1": "OBX[@3.1:,'85828-2']-17.2",
+  "oxa_58_gene_test_date_1": "OBX[@3.1:,'85828-2']-19.1",
+  "oxa_58_gene_test_performed": "OBX[@3.1:'85828-2']-3.2",
+  "oxa_58_gene_observation_sub_id_2": "OBX[@3.1:,'85828-2']-4",
+  "oxa_58_gene_result_2": "OBX[@3.1:,'85828-2']-5.1",
+  "oxa_58_gene_observation_result_status_2": "OBX[@3.1:,'85828-2']-11",
+  "oxa_58_gene_test_method_2": "OBX[@3.1:,'85828-2']-17.2",
+  "oxa_58_gene_test_date_2": "OBX[@3.1:,'85828-2']-19.1",
+  "oxa_235_gene_test_performed_1": "OBX[@3.1:'PLT2241']-3.2",
+  "oxa_235_gene_observation_sub_id_1": "OBX[@3.1:,'PLT2241']-4",
+  "oxa_235_gene_result_1": "OBX[@3.1:,'PLT2241']-5.1",
+  "oxa_235_gene_observation_result_status_1": "OBX[@3.1:,'PLT2241']-11",
+  "oxa_235_gene_test_method_1": "OBX[@3.1:,'PLT2241']-17.2",
+  "oxa_235_gene_test_date_1": "OBX[@3.1:,'PLT2241']-19.1",
+  "oxa_235_gene_test_performed_2": "OBX[@3.1:'PLT2241']-3.2",
+  "oxa_235_gene_observation_sub_id_2": "OBX[@3.1:,'PLT2241']-4",
+  "oxa_235_gene_result_2": "OBX[@3.1:,'PLT2241']-5.1",
+  "oxa_235_gene_observation_result_status_2": "OBX[@3.1:,'PLT2241']-11",
+  "oxa_235_gene_test_method_2": "OBX[@3.1:,'PLT2241']-17.2",
+  "oxa_235_gene_test_date_2": "OBX[@3.1:,'PLT2241']-19.1",
+  "oxa_23_gene_test_performed_1": "OBX[@3.1:'85825-8']-3.2",
+  "oxa_23_gene_observation_sub_id_1": "OBX[@3.1:,'85825-8']-4",
+  "oxa_23_gene_result_1": "OBX[@3.1:,'85825-8']-5.1",
+  "oxa_23_gene_observation_result_status_1": "OBX[@3.1:,'85825-8']-11",
+  "oxa_23_gene_test_method_1": "OBX[@3.1:,'85825-8']-17.2",
+  "oxa_23_gene_test_date_1": "OBX[@3.1:,'85825-8']-19.1",
+  "oxa_23_gene_test_performed_2": "OBX[@3.1:'85825-8']-3.2",
+  "oxa_23_gene_observation_sub_id_2": "OBX[@3.1:,'85825-8']-4",
+  "oxa_23_gene_result_2": "OBX[@3.1:,'85825-8']-5.1",
+  "oxa_23_gene_observation_result_status_2": "OBX[@3.1:,'85825-8']-11",
+  "oxa_23_gene_test_method_2": "OBX[@3.1:,'85825-8']-17.2",
+  "oxa_23_gene_test_date_2": "OBX[@3.1:,'85825-8']-19.1",
+  "vim_gene_test_performed_1": "OBX[@3.1:'85501-5||85830-8']-3.2",
+  "vim_gene_observation_sub_id_1": "OBX[@3.1:,'85501-5||85830-8']-4",
+  "vim_gene_result_1": "OBX[@3.1:,'85501-5||85830-8']-5.1",
+  "vim_gene_observation_result_status_1": "OBX[@3.1:,'85501-5||85830-8']-11",
+  "vim_gene_test_method_1": "OBX[@3.1:,'85501-5||85830-8']-17.2",
+  "vim_gene_test_date_1": "OBX[@3.1:,'85501-5||85830-8']-19.1",
+  "vim_gene_test_performed_2": "OBX[@3.1:'85501-5||85830-8']-3.2",
+  "vim_gene_observation_sub_id_2": "OBX[@3.1:,'85501-5||85830-8']-4",
+  "vim_gene_result_2": "OBX[@3.1:,'85501-5||85830-8']-5.1",
+  "vim_gene_observation_result_status_2": "OBX[@3.1:,'85501-5||85830-8']-11",
+  "vim_gene_test_method_2": "OBX[@3.1:,'85501-5||85830-8']-17.2",
+  "vim_gene_test_date_2": "OBX[@3.1:,'85501-5||85830-8']-19.1",
+  "other_gene_name_test_performed": "OBX[@3.1:'PLT625']-3.2",
+  "other_gene_name_observation_sub_id": "OBX[@3.1:,'PLT625']-4",
+  "other_gene_name_result": "OBX[@3.1:,'PLT625']-5.1",
+  "other_gene_name_observation_result_status": "OBX[@3.1:,'PLT625']-11",
+  "other_gene_name_test_method": "OBX[@3.1:,'PLT625']-17.2",
+  "other_gene_name_test_date": "OBX[@3.1:,'PLT625']-19.1",
+  "other_gene_result_test_performed": "OBX[@3.1:'PLT627']-3.2",
+  "other_gene_result_observation_sub_id": "OBX[@3.1:,'PLT627']-4",
+  "other_gene_result_result": "OBX[@3.1:,'PLT627']-5.1",
+  "other_gene_result_observation_result_status": "OBX[@3.1:,'PLT627']-11",
+  "other_gene_result_test_method": "OBX[@3.1:,'PLT627']-17.2",
+  "other_gene_result_test_date": "OBX[@3.1:,'PLT627']-19.1",
+  "aztreonam_mic_test_performed_1": "OBX[@3.1:'44-8||6982-3']-3.2",
+  "aztreonam_mic_observation_sub_id_1": "OBX[@3.1:'44-8||6982-3']-4",
+  "aztreonam_mic_sign_1": "OBX[@3.1:'44-8||6982-3']-5.1",
+  "aztreonam_mic_result_1": "OBX[@3.1:'44-8||6982-3']-5.2",
+  "aztreonam_mic_observation_result_status_1": "OBX[@3.1:'44-8||6982-3']-11",
+  "aztreonam_mic_test_method_1": "OBX[@3.1:'44-8||6982-3']-17.2",
+  "aztreonam_mic_test_date_1": "OBX[@3.1:'44-8||6982-3']-19.1",
+  "aztreonam_mic_test_performed_2": "OBX[@3.1:'44-8||6982-3']-3.2",
+  "aztreonam_mic_observation_sub_id_2": "OBX[@3.1:'44-8||6982-3']-4",
+  "aztreonam_mic_sign_2": "OBX[@3.1:'44-8||6982-3']-5.1",
+  "aztreonam_mic_result_2": "OBX[@3.1:'44-8||6982-3']-5.2",
+  "aztreonam_mic_observation_result_status_2": "OBX[@3.1:'44-8||6982-3']-11",
+  "aztreonam_mic_test_method_2": "OBX[@3.1:'44-8||6982-3']-17.2",
+  "aztreonam_mic_test_date_2": "OBX[@3.1:'44-8||6982-3']-19.1",
+  "aztreonam_zone_diameter_test_performed": "OBX[@3.1:'45-4']-3.2",
+  "aztreonam_zone_diameter_observation_sub_id": "OBX[@3.1:'45-4']-4",
+  "aztreonam_zone_diameter_sign": "OBX[@3.1:'45-4']-5.1",
+  "aztreonam_zone_diameter_result": "OBX[@3.1:'45-4']-5.2",
+  "aztreonam_zone_diameter_observation_result_status": "OBX[@3.1:'45-4']-11",
+  "aztreonam_zone_diameter_test_method": "OBX[@3.1:'45-4']-17.2",
+  "aztreonam_zone_diameter_test_date": "OBX[@3.1:'45-4']-19.1",
+  "cefepime_mic_test_performed": "OBX[@3.1:'6644-9||6987-2']-3.2",
+  "cefepime_mic_observation_sub_id": "OBX[@3.1:'6644-9||6987-2']-4",
+  "cefepime_mic_sign_1": "OBX[@3.1:'6644-9||6987-2']-5.1",
+  "cefepime_mic_result_1": "OBX[@3.1:'6644-9||6987-2']-5.2",
+  "cefepime_mic_observation_result_status_1": "OBX[@3.1:'6644-9||6987-2']-11",
+  "cefepime_mic_test_method_1": "OBX[@3.1:'6644-9||6987-2']-17.2",
+  "cefepime_mic_test_date_1": "OBX[@3.1:'6644-9||6987-2']-19.1",
+  "cefepime_mic_test_performed_2": "OBX[@3.1:'6644-9||6987-2']-3.2",
+  "cefepime_mic_observation_sub_id_2": "OBX[@3.1:'6644-9||6987-2']-4",
+  "cefepime_mic_sign_2": "OBX[@3.1:'6644-9||6987-2']-5.1",
+  "cefepime_mic_result_2": "OBX[@3.1:'6644-9||6987-2']-5.2",
+  "cefepime_mic_observation_result_status_2": "OBX[@3.1:'6644-9||6987-2']-11",
+  "cefepime_mic_test_method_2": "OBX[@3.1:'6644-9||6987-2']-17.2",
+  "cefepime_mic_test_date_2": "OBX[@3.1:'6644-9||6987-2']-19.1",
+  "cefepime_zone_diameter_test_performed": "OBX[@3.1:'8272-7']-3.2",
+  "cefepime_zone_diameter_observation_sub_id": "OBX[@3.1:'8272-7']-4",
+  "cefepime_zone_diameter_sign": "OBX[@3.1:'8272-7']-5.1",
+  "cefepime_zone_diameter_result": "OBX[@3.1:'8272-7']-5.2",
+  "cefepime_zone_diameter_observation_result_status": "OBX[@3.1:'8272-7']-11",
+  "cefepime_zone_diameter_test_method": "OBX[@3.1:'8272-7']-17.2",
+  "cefepime_zone_diameter_test_date": "OBX[@3.1:'8272-7']-19.1",
+  "ceftazidime_mic_test_performed_1": "OBX[@3.1:'133-9||6995-5']-3.2",
+  "ceftazidime_mic_observation_sub_id_1": "OBX[@3.1:'133-9||6995-5']-4",
+  "ceftazidime_mic_sign_1": "OBX[@3.1:'133-9||6995-5']-5.1",
+  "ceftazidime_mic_result_1": "OBX[@3.1:'133-9||6995-5']-5.2",
+  "ceftazidime_mic_observation_result_status_1": "OBX[@3.1:'133-9||6995-5']-11",
+  "ceftazidime_mic_test_method_1": "OBX[@3.1:'133-9||6995-5']-17.2",
+  "ceftazidime_mic_test_date_1": "OBX[@3.1:'133-9||6995-5']-19.1",
+  "ceftazidime_mic_test_performed_2": "OBX[@3.1:'133-9||6995-5']-3.2",
+  "ceftazidime_mic_observation_sub_id_2": "OBX[@3.1:'133-9||6995-5']-4",
+  "ceftazidime_mic_sign_2": "OBX[@3.1:'133-9||6995-5']-5.1",
+  "ceftazidime_mic_result_2": "OBX[@3.1:'133-9||6995-5']-5.2",
+  "ceftazidime_mic_observation_result_status_2": "OBX[@3.1:'133-9||6995-5']-11",
+  "ceftazidime_mic_test_method_2": "OBX[@3.1:'133-9||6995-5']-17.2",
+  "ceftazidime_mic_test_date_2": "OBX[@3.1:'133-9||6995-5']-19.1",
+  "ceftazidime_zone_diameter_test_performed": "OBX[@3.1:'134-7']-3.2",
+  "ceftazidime_zone_diameter_observation_sub_id": "OBX[@3.1:'134-7']-4",
+  "ceftazidime_zone_diameter_sign": "OBX[@3.1:'134-7']-5.1",
+  "ceftazidime_zone_diameter_result": "OBX[@3.1:'134-7']-5.2",
+  "ceftazidime_zone_diameter_observation_result_status": "OBX[@3.1:'134-7']-11",
+  "ceftazidime_zone_diameter_test_method": "OBX[@3.1:'134-7']-17.2",
+  "ceftazidime_zone_diameter_test_date": "OBX[@3.1:'134-7']-19.1",
+  "ceftriaxone_mic_test_performed_1": "OBX[@3.1:'141-2||6998-9']-3.2",
+  "ceftriaxone_mic_observation_sub_id_1": "OBX[@3.1:'141-2||6998-9']-4",
+  "ceftriaxone_mic_sign_1": "OBX[@3.1:'141-2||6998-9']-5.1",
+  "ceftriaxone_mic_result_1": "OBX[@3.1:'141-2||6998-9']-5.2",
+  "ceftriaxone_mic_observation_result_status_1": "OBX[@3.1:'141-2||6998-9']-11",
+  "ceftriaxone_mic_test_method_1": "OBX[@3.1:'141-2||6998-9']-17.2",
+  "ceftriaxone_mic_test_date_1": "OBX[@3.1:'141-2||6998-9']-19.1",
+  "ceftriaxone_mic_test_performed_2": "OBX[@3.1:'141-2||6998-9']-3.2",
+  "ceftriaxone_mic_observation_sub_id_2": "OBX[@3.1:'141-2||6998-9']-4",
+  "ceftriaxone_mic_sign_2": "OBX[@3.1:'141-2||6998-9']-5.1",
+  "ceftriaxone_mic_result_2": "OBX[@3.1:'141-2||6998-9']-5.2",
+  "ceftriaxone_mic_observation_result_status_2": "OBX[@3.1:'141-2||6998-9']-11",
+  "ceftriaxone_mic_test_method_2": "OBX[@3.1:'141-2||6998-9']-17.2",
+  "ceftriaxone_mic_test_date_2": "OBX[@3.1:'141-2||6998-9']-19.1",
+  "ceftriaxone_ast_diameter_test_performed_1": "OBX[@3.1:'142-0']-3.2",
+  "ceftriaxone_ast_observation_sub_id_1": "OBX[@3.1:'142-0']-4",
+  "ceftriaxone_ast_sign_1": "OBX[@3.1:'142-0']-5.1",
+  "ceftriaxone_ast_result_1": "OBX[@3.1:'142-0']-5.2",
+  "ceftriaxone_ast_observation_result_status_1": "OBX[@3.1:'142-0']-11",
+  "ceftriaxone_ast_test_method_1": "OBX[@3.1:'142-0']-17.2",
+  "ceftriaxone_ast_test_date_1": "OBX[@3.1:'142-0']-19.1",
+  "colistin_mic_test_performed_2": "OBX[@3.1:'205-5||33333-6']-3.2",
+  "colistin_mic_observation_sub_id_2": "OBX[@3.1:'205-5||33333-6']-4",
+  "colistin_mic_sign_2": "OBX[@3.1:'205-5||33333-6']-5.1",
+  "colistin_mic_result_2": "OBX[@3.1:'205-5||33333-6']-5.2",
+  "colistin_mic_observation_result_status_2": "OBX[@3.1:'205-5||33333-6']-11",
+  "colistin_mic_test_method_2": "OBX[@3.1:'205-5||33333-6']-17.2",
+  "colistin_mic_test_date_2": "OBX[@3.1:'205-5||33333-6']-19.1",
+  "colistin_mic_test_performed_1": "OBX[@3.1:'205-5||33333-6']-3.2",
+  "colistin_mic_observation_sub_id_1": "OBX[@3.1:'205-5||33333-6']-4",
+  "colistin_mic_sign_1": "OBX[@3.1:'205-5||33333-6']-5.1",
+  "colistin_mic_result_1": "OBX[@3.1:'205-5||33333-6']-5.2",
+  "colistin_mic_observation_result_status_1": "OBX[@3.1:'205-5||33333-6']-11",
+  "colistin_mic_test_method_1": "OBX[@3.1:'205-5||33333-6']-17.2",
+  "colistin_mic_test_date_1": "OBX[@3.1:'205-5||33333-6']-19.1",
+  "doripenem_mic_test_performed_2": "OBX[@3.1:'56031-8||58711-3']-3.2",
+  "doripenem_mic_observation_sub_id_2": "OBX[@3.1:'56031-8||58711-3']-4",
+  "doripenem_mic_sign_2": "OBX[@3.1:'56031-8||58711-3']-5.1",
+  "doripenem_mic_result_2": "OBX[@3.1:'56031-8||58711-3']-5.2",
+  "doripenem_mic_observation_result_status_2": "OBX[@3.1:'56031-8||58711-3']-11",
+  "doripenem_mic_test_method_2": "OBX[@3.1:'56031-8||58711-3']-17.2",
+  "doripenem_mic_test_date_2": "OBX[@3.1:'56031-8||58711-3']-19.1",
+  "doripenem_mic_test_performed": "OBX[@3.1:'56031-8||58711-3']-3.2",
+  "doripenem_mic_observation_sub_id": "OBX[@3.1:'56031-8||58711-3']-4",
+  "doripenem_mic_sign": "OBX[@3.1:'56031-8||58711-3']-5.1",
+  "doripenem_mic_result": "OBX[@3.1:'56031-8||58711-3']-5.2",
+  "doripenem_mic_observation_result_status": "OBX[@3.1:'56031-8||58711-3']-11",
+  "doripenem_mic_test_method": "OBX[@3.1:'56031-8||58711-3']-17.2",
+  "doripenem_mic_test_date": "OBX[@3.1:'56031-8||58711-3']-19.1",
+  "doripenem_zone_diameter_test_performed": "OBX[@3.1:'72893-1']-3.2",
+  "doripenem_zone_diameter_observation_sub_id": "OBX[@3.1:'72893-1']-4",
+  "doripenem_zone_diameter_sign": "OBX[@3.1:'72893-1']-5.1",
+  "doripenem_zone_diameter_result": "OBX[@3.1:'72893-1']-5.2",
+  "doripenem_zone_diameter_observation_result_status": "OBX[@3.1:'72893-1']-11",
+  "doripenem_zone_diameter_test_method": "OBX[@3.1:'72893-1']-17.2",
+  "doripenem_zone_diameter_test_date": "OBX[@3.1:'72893-1']-19.1",
+  "ertapenem_mic_test_performed_1": "OBX[@3.1:'35801-0||35800-2']-3.2",
+  "ertapenem_mic_observation_sub_id_1": "OBX[@3.1:'35801-0||35800-2']-4",
+  "ertapenem_mic_sign_1": "OBX[@3.1:'35801-0||35800-2']-5.1",
+  "ertapenem_mic_result_1": "OBX[@3.1:'35801-0||35800-2']-5.2",
+  "ertapenem_mic_observation_result_status_1": "OBX[@3.1:'35801-0||35800-2']-11",
+  "ertapenem_mic_test_method_1": "OBX[@3.1:'35801-0||35800-2']-17.2",
+  "ertapenem_mic_test_date_1": "OBX[@3.1:'35801-0||35800-2']-19.1",
+  "ertapenem_mic_test_performed_2": "OBX[@3.1:'35801-0||35800-2']-3.2",
+  "ertapenem_mic_observation_sub_id_2": "OBX[@3.1:'35801-0||35800-2']-4",
+  "ertapenem_mic_sign_2": "OBX[@3.1:'35801-0||35800-2']-5.1",
+  "ertapenem_mic_result_2": "OBX[@3.1:'35801-0||35800-2']-5.2",
+  "ertapenem_mic_observation_result_status_2": "OBX[@3.1:'35801-0||35800-2']-11",
+  "ertapenem_mic_test_method_2": "OBX[@3.1:'35801-0||35800-2']-17.2",
+  "ertapenem_mic_test_date_2": "OBX[@3.1:'35801-0||35800-2']-19.1",
+  "ertapenem_zone_diameter_test_performed": "OBX[@3.1:'35799-6']-3.2",
+  "ertapenem_zone_diameter_observation_sub_id": "OBX[@3.1:'35799-6']-4",
+  "ertapenem_zone_diameter_sign": "OBX[@3.1:'35799-6']-5.1",
+  "ertapenem_zone_diameter_result": "OBX[@3.1:'35799-6']-5.2",
+  "ertapenem_zone_diameter_observation_result_status": "OBX[@3.1:'35799-6']-11",
+  "ertapenem_zone_diameter_test_method": "OBX[@3.1:'35799-6']-17.2",
+  "ertapenem_zone_diameter_test_date": "OBX[@3.1:'35799-6']-19.1",
+  "imipenem_mic_test_performed_1": "OBX[@3.1:'279-0||7019-3']-3.2",
+  "imipenem_mic_observation_sub_id_1": "OBX[@3.1:'279-0||7019-3']-4",
+  "imipenem_mic_sign_1": "OBX[@3.1:'279-0||7019-3']-5.1",
+  "imipenem_mic_result_1": "OBX[@3.1:'279-0||7019-3']-5.2",
+  "imipenem_mic_observation_result_status_1": "OBX[@3.1:'279-0||7019-3']-11",
+  "imipenem_mic_test_method_1": "OBX[@3.1:'279-0||7019-3']-17.2",
+  "imipenem_mic_test_date_1": "OBX[@3.1:'279-0||7019-3']-19.1",
+  "imipenem_mic_test_performed_2": "OBX[@3.1:'279-0||7019-3']-3.2",
+  "imipenem_mic_observation_sub_id_2": "OBX[@3.1:'279-0||7019-3']-4",
+  "imipenem_mic_sign_2": "OBX[@3.1:'279-0||7019-3']-5.1",
+  "imipenem_mic_result_2": "OBX[@3.1:'279-0||7019-3']-5.2",
+  "imipenem_mic_observation_result_status_2": "OBX[@3.1:'279-0||7019-3']-11",
+  "imipenem_mic_test_method_2": "OBX[@3.1:'279-0||7019-3']-17.2",
+  "imipenem_mic_test_date_2": "OBX[@3.1:'279-0||7019-3']-19.1",
+  "imipenem_zone_diameter_test_performed": "OBX[@3.1:'280-8']-3.2",
+  "imipenem_zone_diameter_observation_sub_id": "OBX[@3.1:'280-8']-4",
+  "imipenem_zone_diameter_sign": "OBX[@3.1:'280-8']-5.1",
+  "imipenem_zone_diameter_result": "OBX[@3.1:'280-8']-5.2",
+  "imipenem_zone_diameter_observation_result_status": "OBX[@3.1:'280-8']-11",
+  "imipenem_zone_diameter_test_method": "OBX[@3.1:'280-8']-17.2",
+  "imipenem_zone_diameter_test_date": "OBX[@3.1:'280-8']-19.1",
+  "meropenem_mic_test_performed_1": "OBX[@3.1:'6652-2||7029-2']-3.2",
+  "meropenem_mic_observation_sub_id_1": "OBX[@3.1:'6652-2||7029-2']-4",
+  "meropenem_mic_sign_1": "OBX[@3.1:'6652-2||7029-2']-5.1",
+  "meropenem_mic_result_1": "OBX[@3.1:'6652-2||7029-2']-5.2",
+  "meropenem_mic_observation_result_status_1": "OBX[@3.1:'6652-2||7029-2']-11",
+  "meropenem_mic_test_method_1": "OBX[@3.1:'6652-2||7029-2']-17.2",
+  "meropenem_mic_test_date_1": "OBX[@3.1:'6652-2||7029-2']-19.1",
+  "meropenem_mic_test_performed_2": "OBX[@3.1:'6652-2||7029-2']-3.2",
+  "meropenem_mic_observation_sub_id_2": "OBX[@3.1:'6652-2||7029-2']-4",
+  "meropenem_mic_sign_2": "OBX[@3.1:'6652-2||7029-2']-5.1",
+  "meropenem_mic_result_2": "OBX[@3.1:'6652-2||7029-2']-5.2",
+  "meropenem_mic_observation_result_status_2": "OBX[@3.1:'6652-2||7029-2']-11",
+  "meropenem_mic_test_method_2": "OBX[@3.1:'6652-2||7029-2']-17.2",
+  "meropenem_mic_test_date_2": "OBX[@3.1:'6652-2||7029-2']-19.1",
+  "meropenem_ast_zone_diameter_test_performed": "OBX[@3.1:'6653-0']-3.2",
+  "meropenem_ast_observation_sub_id": "OBX[@3.1:'6653-0']-4",
+  "meropenem_ast_sign": "OBX[@3.1:'6653-0']-5.1",
+  "meropenem_ast_result": "OBX[@3.1:'6653-0']-5.2",
+  "meropenem_ast_observation_result_status": "OBX[@3.1:'6653-0']-11",
+  "meropenem_ast_test_method": "OBX[@3.1:'6653-0']-17.2",
+  "meropenem_ast_test_date": "OBX[@3.1:'6653-0']-19.1",
+  "other_3rdgen_cephalosporin_name_test_performed": "OBX[@3.1:'PLT626']-3.2",
+  "other_3rdgen_cephalosporin_name_observation_sub_id": "OBX[@3.1:'PLT626']-4",
+  "other_3rdgen_cephalosporin_name_result": "OBX[@3.1:'PLT626']-5",
+  "other_3rdgen_cephalosporin_name_observation_result_status": "OBX[@3.1:'PLT626']-11",
+  "other_3rdgen_cephalosporin_name_test_method": "OBX[@3.1:'PLT626']-17.2",
+  "other_3rdgen_cephalosporin_name_test_date": "OBX[@3.1:'PLT626']-19.1",
+  "other_3rdgen_cephalosporin_mic_test_performed_1": "OBX[@3.1:'PLT628']-3.2",
+  "other_3rdgen_cephalosporin_mic_observation_sub_id_1": "OBX[@3.1:'PLT628']-4",
+  "other_3rdgen_cephalosporin_mic_sign_1": "OBX[@3.1:'PLT628']-5.1",
+  "other_3rdgen_cephalosporin_mic_result_1": "OBX[@3.1:'PLT628']-5.2",
+  "other_3rdgen_cephalosporin_mic_observation_result_status_1": "OBX[@3.1:'PLT628']-11",
+  "other_3rdgen_cephalosporin_mic_test_method_1": "OBX[@3.1:'PLT628']-17.2",
+  "other_3rdgen_cephalosporin_mic_test_date_1": "OBX[@3.1:'PLT628']-19.1",
+  "other_3rdgen_cephalosporin_mic_test_performed_2": "OBX[@3.1:'PLT628']-3.2",
+  "other_3rdgen_cephalosporin_mic_observation_sub_id_2": "OBX[@3.1:'PLT628']-4",
+  "other_3rdgen_cephalosporin_mic_sign_2": "OBX[@3.1:'PLT628']-5.1",
+  "other_3rdgen_cephalosporin_mic_result_2": "OBX[@3.1:'PLT628']-5.2",
+  "other_3rdgen_cephalosporin_mic_observation_result_status_2": "OBX[@3.1:'PLT628']-11",
+  "other_3rdgen_cephalosporin_mic_test_method_2": "OBX[@3.1:'PLT628']-17.2",
+  "other_3rdgen_cephalosporin_mic_test_date_2": "OBX[@3.1:'PLT628']-19.1",
+  "other_3rdgen_cephalosporin_zone_diameter_test_performed": "OBX[@3.1:'PLT655']-3.2",
+  "other_3rdgen_cephalosporin_zone_diameter_observation_sub_id": "OBX[@3.1:'PLT655']-4",
+  "other_3rdgen_cephalosporin_zone_diameter_sign": "OBX[@3.1:'PLT655']-5.1",
+  "other_3rdgen_cephalosporin_zone_diameter_result": "OBX[@3.1:'PLT655']-5.2",
+  "other_3rdgen_cephalosporin_zone_diameter_observation_result_status": "OBX[@3.1:'PLT655']-11",
+  "other_3rdgen_cephalosporin_zone_diameter_test_method": "OBX[@3.1:'PLT655']-17.2",
+  "other_3rdgen_cephalosporin_zone_diameter_test_date": "OBX[@3.1:'PLT655']-19.1",
+  "piperacillin_tazobactam_mic_test_performed_1": "OBX[@3.1='412-7||7044-1']-3.2",
+  "piperacillin_tazobactam_mic_observation_sub_id_1": "OBX[@3.1='412-7||7044-1']-4",
+  "piperacillin_tazobactam_mic_sign_1": "OBX[@3.1='412-7||7044-1']-5.1",
+  "piperacillin_tazobactam_mic_result_1": "OBX[@3.1='412-7||7044-1']-5.2",
+  "piperacillin_tazobactam_mic_observation_result_status_1": "OBX[@3.1='412-7||7044-1']-11",
+  "piperacillin_tazobactam_mic_test_method_1": "OBX[@3.1='412-7||7044-1']-17.2",
+  "piperacillin_tazobactam_mic_test_date_1": "OBX[@3.1='412-7||7044-1']-19.1",
+  "piperacillin_tazobactam_mic_test_performed_2": "OBX[@3.1='412-7||7044-1']-3.2",
+  "piperacillin_tazobactam_mic_observation_sub_id_2": "OBX[@3.1='412-7||7044-1']-4",
+  "piperacillin_tazobactam_mic_sign_2": "OBX[@3.1='412-7||7044-1']-5.1",
+  "piperacillin_tazobactam_mic_result_2": "OBX[@3.1='412-7||7044-1']-5.2",
+  "piperacillin_tazobactam_mic_observation_result_status_2": "OBX[@3.1='412-7||7044-1']-11",
+  "piperacillin_tazobactam_mic_test_method_2": "OBX[@3.1='412-7||7044-1']-17.2",
+  "piperacillin_tazobactam_mic_test_date_2": "OBX[@3.1='412-7||7044-1']-19.1",
+  "piperacillin_tazobactam_zone_diameter_test_performed": "OBX[@3.1='413-5']-3.2",
+  "piperacillin_tazobactam_zone_diameter_observation_sub_id": "OBX[@3.1=,'413-5']-4",
+  "piperacillin_tazobactam_zone_diameter_sign": "OBX[@3.1='413-5']-5.1",
+  "piperacillin_tazobactam_zone_diameter_result": "OBX[@3.1='413-5']-5.2",
+  "piperacillin_tazobactam_zone_diameter_observation_result_status": "OBX[@3.1='413-5']-11",
+  "piperacillin_tazobactam_zone_diameter_test_method": "OBX[@3.1='413-5']-17.2",
+  "piperacillin_tazobactam_zone_diameter_test_date": "OBX[@3.1='413-5']-19.1",
+  "Amikacin_MIC
+  where
+  obx-3.1
+  =
+  6975-7,
+  or
+  obx-3.1
+  =
+  12-5
+  "
+
+
+
+
+
+
+  "Amikacin_MIC
+  where
+  obx-3.1
+  =
+  6975-7,
+  or
+  obx-3.1
+  =
+  12-5
+  "
+
+
+
+
+
+
+  "Amikacin_zone_diameter
+  where
+  obx-3.1
+  =
+  13-3
+  "
+
+
+
+
+
+  "Ciprofloxacin_MIC
+  where
+  obx-3.1
+  =
+  185-9,
+  or
+  obx-3.1
+  =
+  7002-9
+  "
+
+
+
+
+
+
+  "Ciprofloxacin_MIC
+  where
+  obx-3.1
+  =
+  185-9,
+  or
+  obx-3.1
+  =
+  7002-9
+  "
+
+
+
+
+
+
+  "Ciprofloxacin_zone_diameter
+  where
+  obx-3.1
+  =
+  186-7
+  "
+
+
+
+
+
+  "Doxycycline_MIC
+  where
+  obx-3.1
+  =
+  7008-6,
+  or
+  obx-3.1
+  =
+  225-3
+  "
+
+
+
+
+
+
+  "Doxycycline_MIC
+  where
+  obx-3.1
+  =
+  7008-6,
+  or
+  obx-3.1
+  =
+  225-3
+  "
+
+
+
+
+
+
+  "Doxycycline_zone_diameter
+  where
+  obx-3.1
+  =
+  226-1
+  "
+
+
+
+
+
+  "Gentamicin_MIC
+  where
+  obx-3.1
+  =
+  267-5,
+  or
+  obx-3.1
+  =
+  7016-9
+  "
+
+
+
+
+
+
+  "Gentamicin_MIC
+  where
+  obx-3.1
+  =
+  267-5,
+  or
+  obx-3.1
+  =
+  7016-9
+  "
+
+
+
+
+
+
+  "Gentamicin_zone_diameter
+  where
+  obx-3.1
+  =
+  268-3
+  "
+
+
+
+
+
+  "HP_Aztreonam_MIC
+  where
+  obx-3.1
+  =
+  PLT2236
+  "
+
+
+
+
+
+
+  "HP_Aztreonam_Avibactam_MIC
+  where
+  obx-3.1
+  =
+  PLT2237
+  "
+
+
+
+
+
+
+  "HP_Ceftazidime_Avibactam_MIC
+  where
+  obx-3.1
+  =
+  PLT2237
+  "
+
+
+
+
+
+
+  "HP_Ceftazidime_Aztreonam_Avibactam_MIC
+  where
+  obx-3.1
+  =
+  PLT2239
+  "
+
+
+
+
+
+
+  "Levofloxacin_MIC
+  where
+  obx-3.1
+  =
+  20396-8,
+  or
+  obx-3.1
+  =
+  7026-8
+  "
+
+
+
+
+
+
+  "Levofloxacin_MIC
+  where
+  obx-3.1
+  =
+  20396-8,
+  or
+  obx-3.1
+  =
+  7026-8
+  "
+
+
+
+
+
+
+  "Levofloxacin_zone_diameter
+  where
+  obx-3.1
+  =
+  21367-8
+  "
+
+
+
+
+
+  "Minocycline_MIC
+  where
+  obx-3.1
+  =
+  335-0,
+  or
+  obx-3.1
+  =
+  7032-6
+  "
+
+
+
+
+
+
+  "Minocycline_MIC
+  where
+  obx-3.1
+  =
+  335-0,
+  or
+  obx-3.1
+  =
+  7032-6
+  "
+
+
+
+
+
+
+  "Minocycline_zone_diameter
+  where
+  obx-3.1
+  =
+  336-8
+  "
+
+
+
+
+
+  "Polymixin_B_MIC
+  where
+  obx-3.1
+  =
+  35832-5,
+  or
+  obx-3.1
+  =
+  420-0
+  "
+
+
+
+
+
+
+  "Polymixin_B_MIC
+  where
+  obx-3.1
+  =
+  35832-5,
+  or
+  obx-3.1
+  =
+  420-0
+  "
+
+
+
+
+
+
+  "Polymixin_B_zone_diameter
+  where
+  obx-3.1
+  =
+  421-8
+  "
+
+
+
+
+
+  "Ticarcillin_Clavulanate_Constant2_MIC
+  where
+  obx-3.1
+  =
+  504-1,
+  or
+  obx-3.1
+  =
+  7054-0
+  "
+
+
+
+
+
+
+  "Ticarcillin_Clavulanate_Constant2_MIC
+  where
+  obx-3.1
+  =
+  504-1,
+  or
+  obx-3.1
+  =
+  7054-0
+  "
+
+
+
+
+
+
+  "Ticarcillin_Clavulanate_Constant2_zone_diameter
+  where
+  obx-3.1
+  =
+  505-8
+  "
+
+
+
+
+
+  "Tigecycline_MIC
+  where
+  obx-3.1
+  =
+  42354-1,
+  or
+  obx-3.1
+  =
+  7054-0
+  "
+
+
+
+
+
+
+  "Tigecycline_MIC
+  where
+  obx-3.1
+  =
+  42354-1,
+  or
+  obx-3.1
+  =
+  7054-0
+  "
+
+
+
+
+
+
+  "Tigecycline_zone_diameter
+  where
+  obx-3.1
+  =
+  42356-6
+  "
+
+
+
+
+
+  "Tobramycin_MIC
+  where
+  obx-3.1
+  =
+  7055-7,
+  or
+  obx-3.1
+  =
+  508-2
+  "
+
+
+
+
+
+
+  "Tobramycin_MIC
+  where
+  obx-3.1
+  =
+  7055-7,
+  or
+  obx-3.1
+  =
+  508-2
+  "
+
+
+
+
+
+
+  "Tobramycin_zone_diameter
+  where
+  obx-3.1
+  =
+  509-0
+  "
+
+
+
+
+
+  "Trimethoprim_Sulfamethoxazole_MIC
+  where
+  obx-3.1
+  =
+  516-5,
+  or
+  obx-3.1
+  =
+  7057-3
+  "
+
+
+
+
+
+
+  "Trimethoprim_Sulfamethoxazole_MIC
+  where
+  obx-3.1
+  =
+  516-5,
+  or
+  obx-3.1
+  =
+  7057-3
+  "
+
+
+
+
+
+
+  "Trimethoprim_Sulfamethoxazole_zone_diameter
+  where
+  obx-3.1
+  =
+  517-3
+  "
+
+
+
+
+
+  "Meropenem_Vaborbactam_MIC
+  where
+  obx-3.1
+  =
+  85427-3,
+  or
+  obx-3.1
+  =
+  90980-4
+  "
+
+
+
+
+
+
+  "Meropenem_Vaborbactam_MIC
+  where
+  obx-3.1
+  =
+  85427-3,
+  or
+  obx-3.1
+  =
+  90980-4
+  "
+
+
+
+
+
+
+  "Meropenem_Vaborbactam_zone_diameter
+  where
+  obx-3.1
+  =
+  PLT2242
+  "
+
+
+
+
+
+  "Ceftolozane_Tazobactam_MIC
+  where
+  obx-3.1
+  =
+  73624-9,
+  or
+  obx-3.1
+  =
+  87735-7
+  "
+
+
+
+
+
+
+  "Ceftolozane_Tazobactam_MIC
+  where
+  obx-3.1
+  =
+  73624-9,
+  or
+  obx-3.1
+  =
+  87735-7
+  "
+
+
+
+
+
+
+  "Ceftolozane_Tazobactam_zone_diameter
+  where
+  obx-3.1
+  =
+  73647-0
+  "
+
+
+
+
+
+  "Ceftazidime_Avibactam_MIC
+  where
+  obx-3.1
+  =
+  73625-6,
+  or
+  obx-3.1
+  =
+  87734-0
+  "
+
+
+
+
+
+
+  "Ceftazidime_Avibactam_MIC
+  where
+  obx-3.1
+  =
+  73625-6,
+  or
+  obx-3.1
+  =
+  87734-0
+  "
+
+
+
+
+
+
+  "Ceftazidime_Avibactam_zone_diameter
+  where
+  obx-3.1
+  =
+  73648-8
+  "
+
+
+
+
+
+  "Moxifloxacin_MIC
+  where
+  obx-3.1
+  =
+  31037-5,
+  or
+  obx-3.1
+  =
+  31043-3
+  "
+
+
+
+
+
+
+  "Moxifloxacin_MIC
+  where
+  obx-3.1
+  =
+  31037-5,
+  or
+  obx-3.1
+  =
+  31043-3
+  "
+
+
+
+
+
+
+  "Moxifloxacin_zone_diameter
+  where
+  obx-3.1
+  =
+  31041-7
+  "
+
+
+
+
+
+  "Fosfomycin_MIC
+  where
+  obx-3.1
+  =
+  25653-7,
+  or
+  obx-3.1
+  =
+  35809-3
+  "
+
+
+
+
+
+
+  "Fosfomycin_MIC
+  where
+  obx-3.1
+  =
+  25653-7,
+  or
+  obx-3.1
+  =
+  35809-3
+  "
+
+
+
+
+
+
+  "Fosfomycin_zone_diameter
+  where
+  obx-3.1
+  =
+  35810-1
+  "
+
+
+
+
+
+  "Ampicillin_Sulbac_MIC
+  where
+  obx-3.1
+  =
+  32-3,
+  or
+  obx-3.1
+  =
+  6980-7
+  "
+
+
+
+
+
+
+  "Ampicillin_Sulbac_MIC
+  where
+  obx-3.1
+  =
+  32-3,
+  or
+  obx-3.1
+  =
+  6980-7
+  "
+
+
+
+
+
+
+  "Ampicillin_Sulbac_zone_diameter
+  where
+  obx-3.1
+  =
+  33-1
+  "
+
+
+
+
+
+  "Cefotaxime_MIC
+  where
+  obx-3.1
+  =
+  108-1,
+  or
+  obx-3.1
+  =
+  6989-8
+  "
+
+
+
+
+
+
+  "Cefotaxime_MIC
+  where
+  obx-3.1
+  =
+  108-1,
+  or
+  obx-3.1
+  =
+  6989-8
+  "
+
+
+
+
+
+
+  "Cefotaxime_zone_diameter
+  where
+  obx-3.1
+  =
+  109-9
+  "
+
+
+
+
+
+  "Cefotaxime_Clavulanate_MIC
+  where
+  obx-3.1
+  =
+  35770-7,
+  or
+  obx-3.1
+  =
+  41671-9
+  "
+
+
+
+
+
+
+  "Cefotaxime_Clavulanate_MIC
+  where
+  obx-3.1
+  =
+  35770-7,
+  or
+  obx-3.1
+  =
+  41671-9
+  "
+
+
+
+
+
+
+  "Cefotaxime_Clavulanate_zone_diameter
+  where
+  obx-3.1
+  =
+  35769-9
+  "
+
+
+
+
+
+  "Ceftazidime_Clavulanate_MIC
+  where
+  obx-3.1
+  =
+  35775-6,
+  or
+  obx-3.1
+  =
+  42352-5
+  "
+
+
+
+
+
+
+  "Ceftazidime_Clavulanate_MIC
+  where
+  obx-3.1
+  =
+  35775-6,
+  or
+  obx-3.1
+  =
+  42352-5
+  "
+
+
+
+
+
+
+  "Ceftazidime_Clavulanate_zone_diameter
+  where
+  obx-3.1
+  =
+  35774-9
+  "
+
+
+
+
+
+
+  _test_performed
+  ":"
+  OBX[
+  @3.1
+  :
+  ''
+]-3.2",
+_observation_sub_id":"OBX[
+  @3.1
+  :
+  ''
+]-4",
+_sign":"OBX[
+  @3.1
+  :
+  ''
+]-5.1",
+_result":"OBX[
+  @3.1
+  :
+  ''
+]-5.2",
+_observation_result_status":"OBX[
+  @3.1
+  :
+  ''
+]-11",
+_test_method":"OBX[
+  @3.1
+  :
+  ''
+]-17.2" ,
+_test_date":"OBX[
+  @3.1
+  :
+  ''
+]-19.1",
+
+

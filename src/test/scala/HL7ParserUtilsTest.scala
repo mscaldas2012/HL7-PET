@@ -229,6 +229,26 @@ class HL7ParserUtilsTest extends FlatSpec {
   }
 
   "Paths with filters" should "be found" in {
+    println("Both NOT116 -> 109")
+    val result = hl7Util.getValue("OBX[@3.1='NOT116||NOT109']-5")
+    result.get.foreach (it => it.foreach { itt => println(itt)})
+    assert(result.get.length == 2)
+
+    println("109 second")
+    val result2 = hl7Util.getValue("OBX[@3.1='Invalid||NOT109']-5")
+    result2.get.foreach (it => it.foreach { itt => println(itt)})
+    assert(result2.get.length == 1)
+
+    println("NOT109 first")
+    val result3 = hl7Util.getValue("OBX[@3.1='NOT109||Invalid']-5")
+    result3.get.foreach (it => it.foreach { itt => println(itt)})
+    assert(result3.get.length == 1)
+
+    println("Neither")
+    val result4 = hl7Util.getValue("OBX[@3.1='Invalid1||Invalid2']-5")
+    assert(result4.isEmpty)
+
+
     assert(hl7Util.getValue("OBX[*]").get.length == 4)
     assert(hl7Util.getFirstValue("OBX[@3.1='NOT116']-5").get.equals("26^Michigan^FIPS5_2"))
     assert(hl7Util.getValue("MSH[@12='2.5.1']-21").get(0).length == 3)
