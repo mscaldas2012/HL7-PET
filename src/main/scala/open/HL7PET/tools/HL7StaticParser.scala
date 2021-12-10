@@ -8,34 +8,10 @@ import open.HL7PET.tools.model.{HL7Hierarchy, Profile}
 
 import scala.collection.immutable.{ListMap, SortedMap}
 import scala.collection.mutable.ListBuffer
-import scala.io.Source
+
 import scala.language.postfixOps
 
-class HL7ParseUtils(message: String, var profile: Profile = null, val buildHierarchy: Boolean = true) {
-  //If no Profile is passed, we assume no Hierarchy will be used.
-  def this(message: String) {
-    this(message, null, false)
-  }
-  //If a profile is passed, hierarchy is assumed to be ON!
-  def this(message: String, profile: Profile) {
-    this(message, profile, true)
-  }
-
-  if (profile == null) {
-    val mapper: ObjectMapper = new ObjectMapper()
-    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-    mapper.registerModule(DefaultScalaModule)
-
-//    println("Using Default profile for hl7")
-    val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
-
-    profile = mapper.readValue(content, classOf[Profile])
-  }
-    var msgHierarchy:HL7Hierarchy
-    if (buildHierarchy) {
-      msgHierarchy = HL7HierarchyParser.parseMessageHierarchy(message, profile)
-    }
-
+object HL7StaticParser {
   val FILE_HEADER_SEGMENT = "FHS"
   val BATCH_HEADER_SEGMENT = "BHS"
   val MSH_SEGMENT = "MSH"
@@ -49,23 +25,22 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\|\\.\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
   // val CHILDREN_REGEX = s"$PATH_REGEX>$PATH_REGEX".r
   val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
-//  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
+  //  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
   val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
 
-
   //Returns the Number of segments present of message:
-  def peek(segment: String): Int = {
+  def peek(msg: String, segment: String): Int = {
     try {
-      val result = retrieveMultipleSegments(segment)
+      val result = retrieveMultipleSegments(msg, segment)
       result.size
     } catch {
-      case e: HL7ParseError => 0
+      case _: HL7ParseError => 0
     }
   }
 
   @throws(classOf[HL7ParseError])
-  def retrieveSegment(segment: String): (Int, Array[String]) = {
-    val result = retrieveMultipleSegments(segment)
+  def retrieveSegment(msg: String, segment: String): (Int, Array[String]) = {
+    val result = retrieveMultipleSegments(msg, segment)
     if (result.nonEmpty && result.size > 1)
       throw HL7ParseError(s"Found multiple segments $segment when only one was expected", segment)
     if (result.nonEmpty)
@@ -75,10 +50,10 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
   @throws(classOf[HL7ParseError])
-  def retrieveMultipleSegments(segment: String): SortedMap[Int, Array[String]] = {
+  def retrieveMultipleSegments(msg: String, segment: String): SortedMap[Int, Array[String]] = {
     var result = scala.collection.mutable.SortedMap[Int, Array[String]]()
 
-    message.split(NEW_LINE_FEED).zipWithIndex.foreach {
+    msg.split(NEW_LINE_FEED).zipWithIndex.foreach {
       case (line, index) =>
         if (line.startsWith(segment + "|")) {
           result += (index + 1) -> line.split(HL7_FIELD_SEPARATOR)
@@ -91,10 +66,10 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
 
 
   @throws(classOf[HL7ParseError])
-  def retrieveFirstSegmentOf(segment: String): (Int, Array[String]) = {
+  def retrieveFirstSegmentOf(msg: String, segment: String): (Int, Array[String]) = {
     //Make sure the First segment is actually retrieved - the one with the smaller lineNumber!
     try {
-      ListMap(retrieveMultipleSegments(segment).toSeq.sortBy(_._1): _*).head
+      ListMap(retrieveMultipleSegments(msg, segment).toSeq.sortBy(_._1): _*).head
     } catch {
       case n: NoSuchElementException => throw HL7ParseError(s"No Segments available for $segment", segment)
     }
@@ -127,7 +102,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
         val offset = if ("MSH".equals(segment(0))) 1 else 0
 
         var valueToCompare = segment.lift(field.toInt - offset).getOrElse("")
-        if (comp != null && !valueToCompare.isEmpty) {
+        if (comp != null && valueToCompare.nonEmpty) {
           val compSplit = valueToCompare.split(HL7_COMPONENT_SEPARATOR)
           valueToCompare = compSplit.lift(comp.toInt - 1).getOrElse("")
           if (subcomp != null && valueToCompare != null) {
@@ -140,16 +115,16 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
         //constant.equals(valueToCompare)
         result
       }
-//      case s if s.matches("@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'") => {
-//        print("Matched! -> ")
-//        println(filter)
-//        true
-//      }
+      //      case s if s.matches("@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'") => {
+      //        print("Matched! -> ")
+      //        println(filter)
+      //        true
+      //      }
       case _ => false
     }
   }
 
-  private def getListOfMatchingSegments(seg: String, segIdx: String, segments: SortedMap[Int, Array[String]]): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+  private def getListOfMatchingSegments(segIdx: String, segments: SortedMap[Int, Array[String]]): scala.collection.immutable.SortedMap[Int, Array[String]] = {
     var segmentIndex = 0
     var segmentList = segments
 
@@ -166,8 +141,8 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
     segmentList
   }
 
-  private def getListOfMatchingSegments(seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
-    getListOfMatchingSegments(seg, segIdx, retrieveMultipleSegments(seg))
+  private def getListOfMatchingSegments(msg: String, seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+    getListOfMatchingSegments(segIdx, retrieveMultipleSegments(msg, seg))
   }
 
   private def safeToInt(nbr: String, default: Int = 0): Int = {
@@ -193,109 +168,110 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
 
-//  //Get values from a subset of Segment lines:
-//  //Used internally when we need to search on a subset of the file...
-//  private def getValue(path: String, segments: SortedMap[Int, Array[String]]): Option[Array[Array[String]]] = {
-//    path match {
-//      case PATH_REGEX(_, _, _, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-//        getValue(safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), segments)
+  //  //Get values from a subset of Segment lines:
+  //  //Used internally when we need to search on a subset of the file...
+  //  private def getValue(path: String, segments: SortedMap[Int, Array[String]]): Option[Array[Array[String]]] = {
+  //    path match {
+  //      case PATH_REGEX(_, _, _, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
+  //        getValue(safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), segments)
+  //      }
+  //      case _ => None
+  //    }
+  //
+  //  }
+
+//  //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
+//  private def recursiveAction(msg: String, seg: String, segIdx: String, hl7Hierarhy: HL7Hierarchy, result: ListBuffer[HL7Hierarchy]): Unit = {
+//    if (seg == hl7Hierarhy.segment.substring(0,3)) {
+//      //Not ideal, but working for now.. TODO::Refactor for a more streamlined process
+//      val matchParent = getListOfMatchingSegments(msg, seg, segIdx)
+//      val count = matchParent.count  {
+//        case (k, _) => k == hl7Hierarhy.lineNbr
 //      }
-//      case _ => None
+//      if (count > 0) {
+//        //        result.addAll(hl7Hierarhy.children) //Potential children... to be cleaned up later...
+//        result ++= hl7Hierarhy.children
+//      }
 //    }
-//
+//    hl7Hierarhy.children.foreach { it => // keep going recursively...
+//      recursiveAction(seg, segIdx, it, result)
+//    }
 //  }
 
   //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
-  private def recursiveAction(seg: String, segIdx: String, hl7Hierarhy: HL7Hierarchy, result: ListBuffer[HL7Hierarchy]): Unit = {
-    if (seg == hl7Hierarhy.segment.substring(0,3)) {
-      //Not ideal, but working for now.. TODO::Refactor for a more streamlined process
-      val matchParent = getListOfMatchingSegments(seg, segIdx)
-      val count = matchParent.count  {
-        case (k, _) => k == hl7Hierarhy.lineNbr
-      }
-      if (count > 0) {
-//        result.addAll(hl7Hierarhy.children) //Potential children... to be cleaned up later...
-        result ++= hl7Hierarhy.children
-      }
-    }
-    hl7Hierarhy.children.foreach { it => // keep going recursively...
-      recursiveAction(seg, segIdx, it, result)
-    }
-  }
-
-  //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
-  private def getChildrenValues(parent: String, child: String, removeEmpty: Boolean): Option[Array[Array[String]]] = {
-    var children: Array[String] = new Array[String](0)
-    var result: Array[Array[String]] = new Array[Array[String]](0)
-    parent.trim() match {
-      case PATH_REGEX(seg, _, segIdx, _, _, _, _, _, _, _, _, _, _) => {
-        val parentList = ListBuffer[HL7Hierarchy]()
-        recursiveAction(seg, segIdx, msgHierarchy, parentList)
-        parentList.foreach( { it =>
-          children ++= Option(it.segment)
-        })
-        //process children:
-          children.zipWithIndex.foreach({ case (it, i) => //zip in case we want a child by position - say first child.
-            child.trim() match {
-              case PATH_REGEX(cseg, _, csegIdx, _, _, cfield, _, cfieldIdx, _, _, ccomp, _, csubcomp) => {
-                if (cseg == it.substring(0, 3)) { //All children are here. we only want the children for a specific segment.
-                  //SegIDx can be 1) not present, 2) index/number, 3) filter
-                  var childMatch = csegIdx == null //1-> not present
-                  if (csegIdx != null && csegIdx != "*" && !csegIdx.startsWith("@")) { //2: index/number
-                      childMatch = csegIdx.toInt == i
-                  } else if (csegIdx != null && csegIdx.startsWith("@")) { //3: filter
-                    if (filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))) {
-                      childMatch = true
-                    }
-                  }
-                  if (childMatch) {
-                    result ++= getValue(it.split(HL7_FIELD_SEPARATOR), safeToInt(cfield), safeToInt(cfieldIdx), safeToInt(ccomp), safeToInt(csubcomp), removeEmpty)
-                  }
-                }
-            }
-              case _ => None
-          }})
-        Option(result)
-      }
-      case _ => None
-    }
-  }
+//  private def getChildrenValues(msg: String, parent: String, child: String, removeEmpty: Boolean): Option[Array[Array[String]]] = {
+//    var children: Array[String] = new Array[String](0)
+//    var result: Array[Array[String]] = new Array[Array[String]](0)
+//    parent.trim() match {
+//      case PATH_REGEX(seg, _, segIdx, _, _, _, _, _, _, _, _, _, _) => {
+//        val parentList = ListBuffer[HL7Hierarchy]()
+//        recursiveAction(seg, segIdx, msgHierarchy, parentList)
+//        parentList.foreach( { it =>
+//          children ++= Option(it.segment)
+//        })
+//        //process children:
+//        children.zipWithIndex.foreach({ case (it, i) => //zip in case we want a child by position - say first child.
+//          child.trim() match {
+//            case PATH_REGEX(cseg, _, csegIdx, _, _, cfield, _, cfieldIdx, _, _, ccomp, _, csubcomp) => {
+//              if (cseg == it.substring(0, 3)) { //All children are here. we only want the children for a specific segment.
+//                //SegIDx can be 1) not present, 2) index/number, 3) filter
+//                var childMatch = csegIdx == null //1-> not present
+//                if (csegIdx != null && csegIdx != "*" && !csegIdx.startsWith("@")) { //2: index/number
+//                  childMatch = csegIdx.toInt == i
+//                } else if (csegIdx != null && csegIdx.startsWith("@")) { //3: filter
+//                  if (filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))) {
+//                    childMatch = true
+//                  }
+//                }
+//                if (childMatch) {
+//                  result ++= getValue(msg, it.split(HL7_FIELD_SEPARATOR), safeToInt(cfield), safeToInt(cfieldIdx), safeToInt(ccomp), safeToInt(csubcomp), removeEmpty)
+//                }
+//              }
+//            }
+//            case _ => None
+//          }})
+//        Option(result)
+//      }
+//      case _ => None
+//    }
+//  }
 
   //Method to help non-scala code, because the default parameter value doesn't work
-  def getValue(path: String): Option[Array[Array[String]]] ={
-    return getValue(path, true)
+  def getValue(msg: String, path: String): Option[Array[Array[String]]] ={
+    getValue(msg: String, path, true)
   }
   //main Entry - can be called  outside code to find values based on path
-  def getValue(path: String, removeEmpty: Boolean = true): Option[Array[Array[String]]] = {
+  def getValue(msg: String, path: String, removeEmpty: Boolean = true): Option[Array[Array[String]]] = {
     //val EMPTY = new Array[String](0)
     path match {
-      case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
-        getChildrenValues(parent, child, removeEmpty)
-      }
+      //TODO:: see what to do with children!!!
+//      case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
+//        getChildrenValues(msg, parent, child, removeEmpty)
+//      }
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(seg, segIdx, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
+        getValue(msg, seg, segIdx, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
       }
       case _ => None
     }
   }
 
   //Gets values only from a single segment
-  def getValue(path: String, segment: Array[String], removeEmpty: Boolean): Option[Array[String]] = {
+  def getValue(msg: String, path: String, segment: Array[String], removeEmpty: Boolean): Option[Array[String]] = {
     path match {
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(segment, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
+        getValue(msg, segment, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
       }
       case _ => None
     }
   }
 
   //Get values for a subset of segments from the file, like children segments pre filtered before!
-  private def getValue( field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
+  private def getValue(msg: String,  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
     //val offset = if ("MSH".equals(seg)) 1 else 0
     var result: Array[Array[String]] = new Array[Array[String]](0)
 
     for (((k, segment), i) <- segments.zipWithIndex) {
-      val e = getValue(segment, field, fieldIdx, comp, subcomp, removeEmpty)
+      val e = getValue(msg, segment, field, fieldIdx, comp, subcomp, removeEmpty)
       if (e.isDefined) {
         result :+= e.get
       }
@@ -308,14 +284,14 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
   //Get values from segments matching seg and segIdx of entire file.
-  private def getValue(seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[Array[String]]] = {
-    var segmentList = getListOfMatchingSegments(seg, segIdx)
-    return getValue( field, fieldIdx, comp, subcomp, segmentList, removeEmpty)
+  private def getValue(msg: String, seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[Array[String]]] = {
+    var segmentList = getListOfMatchingSegments(msg, seg, segIdx)
+    return getValue(msg, field, fieldIdx, comp, subcomp, segmentList, removeEmpty)
   }
 
 
   //Gets values from a single Segment...
-  private def getValue(segment: Array[String],  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
+  private def getValue(msg: String, segment: Array[String],  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
     var finalValue: String = segment.mkString("|")
     var fieldArray: Array[String] = new Array[String](0)
     val offset = if ("MSH".equals(segment(0))) 1 else 0
@@ -361,16 +337,11 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
 
-  def getFirstValue(path: String): Option[String] = {
-    val value = getValue(path)
-    if (value.isDefined && !value.isEmpty)
-      return Some(getValue(path).get(0)(0))
+  def getFirstValue(msg: String, path: String): Option[String] = {
+    val value = getValue(msg, path)
+    if (value.isDefined && value.isDefined)
+      return Some(getValue(msg, path).get(0)(0))
     None
   }
 
 }
-
-object HL7ParseUtils {}
-
-
-

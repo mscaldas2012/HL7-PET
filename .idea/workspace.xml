@@ -23,23 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_13_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_13_1_2_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_reflect_2_13_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_13_3_0_8_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_13_3_0_8_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/oregonMessage.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/oregonMessage.hl7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +88,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,9 +96,6 @@
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../NCEZID/EIP/hl7-utils" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="open.HL7PET.tools" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -119,8 +103,12 @@
       <recent name="$PROJECT_DIR$/target/classes" />
       <recent name="$PROJECT_DIR$/target/test-classes" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="open.HL7PET.tools" />
+    </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.StructureValidatorTest">
+  <component name="RunManager" selected="ScalaTest.HL7StaticParserUtilsTest.Parser should split messages">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -158,15 +146,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7ParserUtilsTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.Parser should split messages" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="testKind" value="Class" />
+      <option name="testKind" value="Test name" />
       <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="Parser should split messages" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,7 +176,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7ParserUtilsTest.Paths with filters should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.bug should be fixed" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -196,35 +185,37 @@
       </option>
       <option name="testKind" value="Test name" />
       <option name="testClassPath" value="HL7ParserUtilsTest" />
-      <option name="testName" value="Paths with filters should be found" />
+      <option name="testName" value="bug should be fixed" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7StaticParserUtilsTest.Parser should split messages" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="testKind" value="Class" />
-      <option name="testClassPath" value="LoadProfileTest" />
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
+      <option name="testName" value="Parser should split messages" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RulesValidatorTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7StaticParserUtilsTest.Paths should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="testKind" value="Class" />
-      <option name="testClassPath" value="RulesValidatorTests" />
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
+      <option name="testName" value="Paths should be found" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,6 +253,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Parser should split messages" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Parser should split messages" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Paths should be found" />
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Paths should be found" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.bug should be fixed" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -338,6 +338,7 @@
       <workItem from="1632679503009" duration="382000" />
       <workItem from="1632746771457" duration="488000" />
       <workItem from="1633526839893" duration="2891000" />
+      <workItem from="1639168911448" duration="3165000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
