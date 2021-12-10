@@ -60,7 +60,7 @@ class BatchValidator(message: String, var profile: Profile, var buildHierarchy: 
     hasBatchSegments += BATCH_HEADER_SEGMENT -> parser.peek(BATCH_HEADER_SEGMENT)
     hasBatchSegments += BATCH_TRAILER_SEGMENT -> parser.peek(BATCH_TRAILER_SEGMENT)
 
-    val nbrOfMessages = parser.peek(parser.MSH_SEGMENT)
+    val nbrOfMessages = parser.peek(HL7StaticParser.MSH_SEGMENT)
     val nbrOfLines = message.split(NEW_LINE_FEED).length
 
     //Either need all four segments (FHS, BHS, BTS, FTS) or None at all:
@@ -211,11 +211,11 @@ class BatchValidator(message: String, var profile: Profile, var buildHierarchy: 
   def debatchMessages(): List[String] = {
     val result = new ListBuffer[String]()
     var newMessage = ""
-    message.split(parser.NEW_LINE_FEED).filter { it => !it.isBlank() }.foreach {
+    message.split(HL7StaticParser.NEW_LINE_FEED).filter { it => !it.isBlank() }.foreach {
       line => line.substring(0,3).toUpperCase() match {
         case FILE_HEADER_SEGMENT | BATCH_HEADER_SEGMENT | BATCH_TRAILER_SEGMENT | FILE_TRAILER_SEGMENT =>
         //Ignore line...
-        case parser.MSH_SEGMENT =>
+        case HL7StaticParser.MSH_SEGMENT =>
           //persiste previous message:
           if (!newMessage.isEmpty) {
             //not first message:

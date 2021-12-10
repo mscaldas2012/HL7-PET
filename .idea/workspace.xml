@@ -23,10 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/utils/IntUtils.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.HL7StaticParserUtilsTest.Parser should split messages">
+  <component name="RunManager" selected="ScalaTest.HL7ParserUtilsTest.Paths should be found">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -255,9 +255,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Parser should split messages" />
-        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Parser should split messages" />
         <item itemvalue="ScalaTest.HL7ParserUtilsTest.Paths should be found" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Parser should split messages" />
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Parser should split messages" />
         <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Paths should be found" />
         <item itemvalue="ScalaTest.HL7ParserUtilsTest.bug should be fixed" />
       </list>
@@ -338,7 +338,7 @@
       <workItem from="1632679503009" duration="382000" />
       <workItem from="1632746771457" duration="488000" />
       <workItem from="1633526839893" duration="2891000" />
-      <workItem from="1639168911448" duration="3165000" />
+      <workItem from="1639168911448" duration="6342000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>

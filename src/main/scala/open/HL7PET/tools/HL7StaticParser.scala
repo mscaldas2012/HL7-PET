@@ -2,14 +2,12 @@ package open.HL7PET.tools
 
 import java.util.NoSuchElementException
 
-import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.{HL7Hierarchy, Profile}
-
 import scala.collection.immutable.{ListMap, SortedMap}
 import scala.collection.mutable.ListBuffer
 
 import scala.language.postfixOps
+
+import utils.IntUtils.SafeInt
 
 object HL7StaticParser {
   val FILE_HEADER_SEGMENT = "FHS"
@@ -24,7 +22,7 @@ object HL7StaticParser {
 
   val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\|\\.\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
   // val CHILDREN_REGEX = s"$PATH_REGEX>$PATH_REGEX".r
-  val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
+//  val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
   //  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
   val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
 
@@ -96,7 +94,7 @@ object HL7StaticParser {
     }
   }
 
-  private def filterValues(filter: String, segment: Array[String]): Boolean = {
+  /* private */ def filterValues(filter: String, segment: Array[String]): Boolean = {
     filter match {
       case FILTER_REGEX(field, _, _, comp, _, subcomp, constant, _* ) => {
         val offset = if ("MSH".equals(segment(0))) 1 else 0
@@ -141,17 +139,17 @@ object HL7StaticParser {
     segmentList
   }
 
-  private def getListOfMatchingSegments(msg: String, seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
+  /* private */ def getListOfMatchingSegments(msg: String, seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
     getListOfMatchingSegments(segIdx, retrieveMultipleSegments(msg, seg))
   }
 
-  private def safeToInt(nbr: String, default: Int = 0): Int = {
-    try {
-      nbr.toInt
-    } catch {
-      case _: NumberFormatException => default
-    }
-  }
+//  private def safeToInt(nbr: String, default: Int = 0): Int = {
+//    try {
+//      nbr.toInt
+//    } catch {
+//      case _: NumberFormatException => default
+//    }
+//  }
 
   private def drillDownToComponent(comp: String, currentVal: String, subcomp: String): String = {
     var finalValue = currentVal
@@ -198,7 +196,7 @@ object HL7StaticParser {
 //    }
 //  }
 
-  //Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
+//  Used when retrieving specific children of a parent ( PARENT -> CHILDREN )
 //  private def getChildrenValues(msg: String, parent: String, child: String, removeEmpty: Boolean): Option[Array[Array[String]]] = {
 //    var children: Array[String] = new Array[String](0)
 //    var result: Array[Array[String]] = new Array[Array[String]](0)
@@ -249,7 +247,7 @@ object HL7StaticParser {
 //        getChildrenValues(msg, parent, child, removeEmpty)
 //      }
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(msg, seg, segIdx, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
+        getValue(msg, seg, segIdx, field.safeToInt(0), fieldIdx.safeToInt(0), comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
       }
       case _ => None
     }
@@ -259,19 +257,19 @@ object HL7StaticParser {
   def getValue(msg: String, path: String, segment: Array[String], removeEmpty: Boolean): Option[Array[String]] = {
     path match {
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(msg, segment, safeToInt(field), safeToInt(fieldIdx), safeToInt(comp), safeToInt(subcomp), removeEmpty)
+        getValue(segment, field.safeToInt(0), fieldIdx.safeToInt(0), comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
       }
       case _ => None
     }
   }
 
   //Get values for a subset of segments from the file, like children segments pre filtered before!
-  private def getValue(msg: String,  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
+  private def getValue(field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
     //val offset = if ("MSH".equals(seg)) 1 else 0
     var result: Array[Array[String]] = new Array[Array[String]](0)
 
     for (((k, segment), i) <- segments.zipWithIndex) {
-      val e = getValue(msg, segment, field, fieldIdx, comp, subcomp, removeEmpty)
+      val e = getValue(segment, field, fieldIdx, comp, subcomp, removeEmpty)
       if (e.isDefined) {
         result :+= e.get
       }
@@ -285,13 +283,13 @@ object HL7StaticParser {
 
   //Get values from segments matching seg and segIdx of entire file.
   private def getValue(msg: String, seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[Array[String]]] = {
-    var segmentList = getListOfMatchingSegments(msg, seg, segIdx)
-    return getValue(msg, field, fieldIdx, comp, subcomp, segmentList, removeEmpty)
+    val segmentList = getListOfMatchingSegments(msg, seg, segIdx)
+    getValue(field, fieldIdx, comp, subcomp, segmentList, removeEmpty)
   }
 
 
   //Gets values from a single Segment...
-  private def getValue(msg: String, segment: Array[String],  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
+  /* private */ def getValue(segment: Array[String],  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
     var finalValue: String = segment.mkString("|")
     var fieldArray: Array[String] = new Array[String](0)
     val offset = if ("MSH".equals(segment(0))) 1 else 0
