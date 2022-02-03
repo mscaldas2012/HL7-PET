@@ -53,9 +53,9 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
 
       //TODO::Split MSHs before validating each message so that Segment cardinality matches.
-      message.split(parser.NEW_LINE_FEED).zipWithIndex.foreach {
+      message.split(HL7StaticParser.NEW_LINE_FEED).zipWithIndex.foreach {
         case (line, index) =>
-          val segmentLine = line.split(parser.HL7_FIELD_SEPARATOR)
+          val segmentLine = line.split(HL7StaticParser.HL7_FIELD_SEPARATOR)
           try {
             segmentIndex(segmentLine(0)) += 1
             validateSegment(s"${segmentLine(0)}[${segmentIndex(segmentLine(0))}]", profile.getSegmentField(segmentLine(0)), segmentLine, index + 1, 1, errors)
@@ -195,7 +195,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                 }
                 //}
                 //Split multiple fileds:
-                val repeats:Array[String] = if (field.fieldNumber == 2) Array(fieldValue) else fieldValue.split(parser.HL7_FIELD_REPETITION)
+                val repeats:Array[String] = if (field.fieldNumber == 2) Array(fieldValue) else fieldValue.split(HL7StaticParser.HL7_FIELD_REPETITION)
                 var answerIndex = 1
                 for (aField <- repeats) {
                     var innerpath = s"$segment$pathSeparator${field.fieldNumber}"
@@ -364,9 +364,9 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
                             s"$segment.${field.fieldNumber}"
                     var split =
                         if (newseg.indexOf("].") > 0)
-                            fieldValue.split(parser.HL7_SUBCOMPONENT_SEPARATOR)
+                            fieldValue.split(HL7StaticParser.HL7_SUBCOMPONENT_SEPARATOR)
                         else
-                            fieldValue.split(parser.HL7_COMPONENT_SEPARATOR)
+                            fieldValue.split(HL7StaticParser.HL7_COMPONENT_SEPARATOR)
 
                     validateSegment(newseg, fieldDefinitions.getSegmentField(x), split, lineNumber, columnsBefore, errors)
                     (true, "all good")

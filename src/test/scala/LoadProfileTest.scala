@@ -46,19 +46,19 @@ class LoadProfileTest extends FlatSpec {
     val profile = mapper.readValue(profileFile, classOf[Profile])
     val message = Source.fromResource("covidMsg.hl7").mkString
 
-    val parser = new HL7HierarchyParser(message, profile)
-    val output = parser.parseMessageHierarchy()
+    val parser = HL7HierarchyParser.parseMessageHierarchy(message, profile)
+//    val output = parser.parseMessageHierarchy()
 
-    println(output)
+    println(parser)
   }
 
   "HL7Hierarchy" should "be loaded iwth default profile" in {
     val message = Source.fromResource("covidMsg.hl7").mkString
 
-    val parser = new HL7HierarchyParser(message, null)
-    val output = parser.parseMessageHierarchy()
+    val parser = HL7HierarchyParser.parseMessageHierarchy(message, null)
+//    val output = parser.parseMessageHierarchy()
 
-    println(output)
+    println(parser)
   }
 
   "Profile" should "be created with Factory" in {

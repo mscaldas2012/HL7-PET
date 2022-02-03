@@ -1,5 +1,6 @@
 package open.HL7PET.tools
 
+import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
 import utils.{CSVReader, ConsoleProgress, FileUtils}
 
 import scala.util.matching.Regex
@@ -37,6 +38,52 @@ class DeIdentifier() {
             val newFileName = filename.substring(0, filename.lastIndexOf(".")) + "_deidentified" + extension
             FileUtils.writeToFile(newFileName, cleanFile)
         }
+    }
+
+    def deIdentifyFile(messageFileName: String, rulesFileName: String): Unit = {
+        val rulesFile = FileUtils.readFile(rulesFileName)
+        var cleanFile = ""
+        FileUtils.using(io.Source.fromFile(messageFileName)) { bf =>
+            bf.getLines foreach (line => {
+                var subline = line
+                val rules = rulesFile.split(NEW_LINE_FEED)
+                rules.foreach( r => {
+                    val rule = r.split(",")
+                    val path = rule(0)
+                    val replacement = if (rule.length > 1) rule(1) else ""
+                    val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches soemthing
+                    if (matchLine.isDefined && matchLine.get.length >0) {
+                        if (replacement == "$REMOVE") {
+                            subline = ""
+                        } else {
+                            val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
+                            path match {
+                                case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
+                                    if (field != null && lineIndexed._2(field.toInt) != null) {
+                                        if (comp != null) {
+                                            val compArray = lineIndexed._2(field.toInt).split("\\^")
+                                            compArray(comp.toInt - 1) = replacement
+                                            lineIndexed._2(field.toInt) = compArray.mkString("^")
+                                        }
+                                        else
+                                            lineIndexed._2(field.toInt) = replacement
+                                        subline = lineIndexed._2.mkString("|")
+                                    } else {
+                                        subline = replacement //The whole segment shall be replaced!
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                })
+                if (!subline.isEmpty)
+                    cleanFile += subline + "\n"
+            })
+        }
+        val extension = messageFileName.substring(messageFileName.lastIndexOf("."))
+        val newFileName = messageFileName.substring(0, messageFileName.lastIndexOf(".")) + "_deidentified" + extension
+        FileUtils.writeToFile(newFileName, cleanFile)
     }
 
 }

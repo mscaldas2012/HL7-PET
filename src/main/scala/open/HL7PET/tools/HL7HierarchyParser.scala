@@ -8,24 +8,21 @@ import open.HL7PET.tools.model.{HL7Hierarchy, Profile, SegmentConfig}
 
 import scala.io.Source
 
-class HL7HierarchyParser(message: String, var profile: Profile) {
+object HL7HierarchyParser {
 
-  def this(message: String) {
-    this(message, null)
-  }
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
+//
+//  if (profile == null) {
+////    println("Using Default profile")
+//    val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
+//    val mapper: ObjectMapper = new ObjectMapper()
+//    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+//    mapper.registerModule(DefaultScalaModule)
+//
+//    profile = mapper.readValue(content, classOf[Profile])
+//  }
 
-  if (profile == null) {
-    println("Using Default profile")
-    val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
-    val mapper: ObjectMapper = new ObjectMapper()
-    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-    mapper.registerModule(DefaultScalaModule)
-
-    profile = mapper.readValue(content, classOf[Profile])
-  }
-
-  def parseMessageHierarchy(): HL7Hierarchy = {
+  def parseMessageHierarchy(message: String, profile: Profile): HL7Hierarchy = {
     var profilePointer = profile.segmentDefinition("MSH")
     var root_output: HL7Hierarchy = new HL7Hierarchy(0, "root")
     var output: HL7Hierarchy = root_output
@@ -41,7 +38,7 @@ class HL7HierarchyParser(message: String, var profile: Profile) {
     val stackOutput = scala.collection.mutable.Stack[HL7Hierarchy]()
     stackOutput.push(root_output)
 
-    message.split(NEW_LINE_FEED).filter{ it => !it.isBlank()}.zipWithIndex.foreach {
+    message.split(NEW_LINE_FEED).filter{ it => !it.isBlank}.zipWithIndex.foreach {
       //case (line) if line._1.isBlank() => {} //ignore
       case (line, index) if index == 0 => { //Initialize with MSH
         output = new HL7Hierarchy(index+1, line)

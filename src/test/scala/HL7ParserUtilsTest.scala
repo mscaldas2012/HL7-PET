@@ -18,8 +18,13 @@ class HL7ParserUtilsTest extends FlatSpec {
     "OBR|2||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND"
 
   var batchValidator = new BatchValidator(testMessage, null)
+
+
   var hl7Util = new HL7ParseUtils(testMessage, null, false)
 
+  def getParser() = {
+     new HL7ParseUtils(testMessage)
+  }
   "New line" should "split on any combination" in {
     val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
     var lines = testMessage.split(NEW_LINE_FEED)
@@ -178,53 +183,53 @@ class HL7ParserUtilsTest extends FlatSpec {
   }
   "bug" should "be fixed" in {
     //printResults(hl7Util.getValue("OBX[@3.1='NOT109']-5.2"))
-    printResults(hl7Util.getValue("OBX[4]-6.3"))
+    printResults(getParser().getValue("OBX[4]-6.3"))
 
   }
   "Paths" should "be found" in {
 
     println("Simple Evals...")
-    assert(hl7Util.getFirstValue("MSH").get.startsWith("MSH|"))
-    assert(hl7Util.getFirstValue("MSH-21[3].1").get.equals("Hepatitis_MMG_V1.0"))
-    assert(hl7Util.getFirstValue("OBR[1]-4[1]").get.equals("68991-9^Epidemiologic Information^LN"))
-    assert(hl7Util.getFirstValue("MSH[1]-9[1].3").get.equals("ORU_R01"))
-    assert(hl7Util.getFirstValue("PID-3.4.2").get.equals("2.16.840.1.114222.4.1.3660"))
-    assert(hl7Util.getFirstValue("MSH-12").get.equals("2.5.1"))
-    assert(hl7Util.getFirstValue("MSH-12.1").get.equals("2.5.1"))
-    assert(hl7Util.getFirstValue("MSH-12.1.1").get.equals("2.5.1"))
-    assert(hl7Util.getFirstValue("MSH[1]-12.1.1").get.equals("2.5.1"))
-    assert(hl7Util.getFirstValue("MSH-12[1].1.1").get.equals("2.5.1"))
-    assert(hl7Util.getFirstValue("MSH[1]-12[1].1.1").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH").get.startsWith("MSH|"))
+    assert(getParser().getFirstValue("MSH-21[3].1").get.equals("Hepatitis_MMG_V1.0"))
+    assert(getParser().getFirstValue("OBR[1]-4[1]").get.equals("68991-9^Epidemiologic Information^LN"))
+    assert(getParser().getFirstValue("MSH[1]-9[1].3").get.equals("ORU_R01"))
+    assert(getParser().getFirstValue("PID-3.4.2").get.equals("2.16.840.1.114222.4.1.3660"))
+    assert(getParser().getFirstValue("MSH-12").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH-12.1").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH-12.1.1").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH[1]-12.1.1").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH-12[1].1.1").get.equals("2.5.1"))
+    assert(getParser().getFirstValue("MSH[1]-12[1].1.1").get.equals("2.5.1"))
 
     println("\n\nOrder...")
-    assert(hl7Util.getFirstValue("OBX[1]").get.startsWith("OBX|1|CWE|NOT116^National Reporting Jurisdiction"))
-    assert(hl7Util.getFirstValue("OBX[2]").get.startsWith("OBX|2|CWE|NOT109^Reporting State"))
-    assert(hl7Util.getFirstValue("OBX[3]").get.startsWith("OBX|3|CWE|INV163^Case Class Status Code"))
+    assert(getParser().getFirstValue("OBX[1]").get.startsWith("OBX|1|CWE|NOT116^National Reporting Jurisdiction"))
+    assert(getParser().getFirstValue("OBX[2]").get.startsWith("OBX|2|CWE|NOT109^Reporting State"))
+    assert(getParser().getFirstValue("OBX[3]").get.startsWith("OBX|3|CWE|INV163^Case Class Status Code"))
 
 
     println("\n\nRepeats...")
-    assert(hl7Util.getValue("OBR[*]-4[1].1").get.length == 2)
-    assert(hl7Util.getValue("OBR-4[1]").get.length == 2)
-    assert(hl7Util.getValue("PID[1]-5[*]").get.length == 1)
+    assert(getParser().getValue("OBR[*]-4[1].1").get.length == 2)
+    assert(getParser().getValue("OBR-4[1]").get.length == 2)
+    assert(getParser().getValue("PID[1]-5[*]").get.length == 1)
 
 
     println("\n\nEmpty or no match evals")
     // All those are beyond possible indexes.. should return None!
-    assert(hl7Util.getValue("MSH[2]-9").isEmpty)
-    assert(hl7Util.getValue("OBR[1]-4[2]").isEmpty)
-    assert(hl7Util.getValue("MSH[1]-9[1].4").isEmpty)
-    assert(hl7Util.getValue("PID[1]-3[1].4.4").isEmpty)
-    assert(hl7Util.getValue("INV[1]").isEmpty) //Invalid Segment altogether!
-    assert(hl7Util.getFirstValue("MSH-99").isEmpty)
-    assert(hl7Util.getFirstValue("MSH[2]-9").isEmpty)
-    assert(hl7Util.getFirstValue("OBR[1]-4[2]").isEmpty)
-    assert(hl7Util.getFirstValue("MSH[1]-9[1].4").isEmpty)
-    assert(hl7Util.getFirstValue("PID[1]-3[1].4.4").isEmpty)
-    assert(hl7Util.getFirstValue("INV[1]").isEmpty) //Invalid Segment altogether!
+    assert(getParser().getValue("MSH[2]-9").isEmpty)
+    assert(getParser().getValue("OBR[1]-4[2]").isEmpty)
+    assert(getParser().getValue("MSH[1]-9[1].4").isEmpty)
+    assert(getParser().getValue("PID[1]-3[1].4.4").isEmpty)
+    assert(getParser().getValue("INV[1]").isEmpty) //Invalid Segment altogether!
+    assert(getParser().getFirstValue("MSH-99").isEmpty)
+    assert(getParser().getFirstValue("MSH[2]-9").isEmpty)
+    assert(getParser().getFirstValue("OBR[1]-4[2]").isEmpty)
+    assert(getParser().getFirstValue("MSH[1]-9[1].4").isEmpty)
+    assert(getParser().getFirstValue("PID[1]-3[1].4.4").isEmpty)
+    assert(getParser().getFirstValue("INV[1]").isEmpty) //Invalid Segment altogether!
 
     //empty results...
-    assert(hl7Util.getValue("OBR[*]-4.1.2").isEmpty)
-    assert(hl7Util.getValue("OBR[*].4.1.badpath").isEmpty)
+    assert(getParser().getValue("OBR[*]-4.1.2").isEmpty)
+    assert(getParser().getValue("OBR[*].4.1.badpath").isEmpty)
 
   }
 

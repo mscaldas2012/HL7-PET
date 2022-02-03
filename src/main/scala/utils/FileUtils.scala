@@ -1,6 +1,7 @@
 package utils
 
 import java.io.{File, FileWriter, PrintWriter}
+import scala.io.Source
 
 /**
   *
@@ -64,6 +65,15 @@ object FileUtils {
         } else {
             List[File]()
         }
+    }
+
+    def readResourceFile(fileName: String): String = {
+        val content: String = Source.fromResource(fileName).getLines().mkString("\n")
+        content
+    }
+    def readFile(fileName: String): String = {
+        val content: String = Source.fromFile(fileName).getLines().mkString("\n")
+        content
     }
 
 }
