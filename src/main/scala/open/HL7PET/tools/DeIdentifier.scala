@@ -16,6 +16,8 @@ import scala.util.matching.Regex
   */
 
 class DeIdentifier() {
+    val FN_REMOVE = "$REMOVE"
+
     def deidentifyFile(filename: String, rules: List[Rule]): Unit = {
         var cleanFile = ""
         FileUtils.using(io.Source.fromFile(filename)) { bf =>
@@ -53,29 +55,46 @@ class DeIdentifier() {
                     val replacement = if (rule.length > 1) rule(1) else ""
                     val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches soemthing
                     if (matchLine.isDefined && matchLine.get.length >0) {
-                        if (replacement == "$REMOVE") {
-                            subline = ""
-                        } else {
-                            val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
-                            path match {
-                                case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-                                    if (field != null && lineIndexed._2(field.toInt) != null) {
-                                        if (comp != null) {
-                                            val compArray = lineIndexed._2(field.toInt).split("\\^")
-                                            compArray(comp.toInt - 1) = replacement
-                                            lineIndexed._2(field.toInt) = compArray.mkString("^")
+                        replacement match {
+                            case FN_REMOVE => subline = ""
+                            case _ => {
+                                val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
+                                path match {
+                                    case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
+                                        if (field != null && lineIndexed._2(field.toInt) != null) {
+                                            //Get repeats:
+                                            val repeats = lineIndexed._2(field.toInt).split("\\~")
+                                            repeats.zipWithIndex.foreach {
+                                                case (elem, i) => {
+//                                                    if (fieldIdx == null) {
+                                                        if (comp != null) {
+                                                            val compArray = elem.split("\\^")
+                                                            if (compArray.length >= comp.toInt)
+                                                                compArray(comp.toInt - 1) = replacement
+                                                            if (fieldIdx == null || fieldIdx.toInt == i+1)
+                                                                repeats(i) = compArray.mkString("^")
+                                                            else
+                                                                repeats(i) = elem
+                                                        }
+                                                        else {
+                                                            if (!repeats(i).isEmpty)
+                                                                repeats(i) = replacement
+                                                        }
+//                                                    } else { //replace a single fieldIdx
+//
+//                                                    }
+                                                }
+                                                lineIndexed._2(field.toInt) = repeats.mkString("~")
+                                            }
+                                            subline = lineIndexed._2.mkString("|")
+                                        } else {
+                                            subline = replacement //The whole segment will be replaced!
                                         }
-                                        else
-                                            lineIndexed._2(field.toInt) = replacement
-                                        subline = lineIndexed._2.mkString("|")
-                                    } else {
-                                        subline = replacement //The whole segment shall be replaced!
                                     }
                                 }
                             }
                         }
                     }
-
                 })
                 if (!subline.isEmpty)
                     cleanFile += subline + "\n"

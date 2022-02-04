@@ -31,8 +31,7 @@ class TestDeidentifer extends FlatSpec{
                     val compArray = lineIndexed._2(field.toInt).split("\\^")
                     compArray(comp.toInt-1) = path(1)
                     lineIndexed._2(field.toInt) = compArray.mkString("^")
-                  }
-                  else
+                  } else
                     lineIndexed._2(field.toInt) = path(1)
                   subline = lineIndexed._2.mkString("|")
                 }

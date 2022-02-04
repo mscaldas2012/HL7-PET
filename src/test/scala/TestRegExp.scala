@@ -88,6 +88,22 @@ class TestRegExp  extends FlatSpec {
       case _ => println("case match not found")
     }
   }
+
+
+  "arrays" should "behave" in {
+    val test = Array("a", "b", "c", "d")
+    val third = test.drop(3-1).take(1)
+    println(third.foreach (i => println(i)))
+
+    val testOne = Array("a")
+    val single = testOne.drop(1-1).take(1)
+    println(single.foreach (i => println(i)))
+
+//    invalid:
+     val noItem = test.drop(5-1).take(1)
+    println(noItem.foreach (i => println(i)))
+
+  }
 }
 
 
