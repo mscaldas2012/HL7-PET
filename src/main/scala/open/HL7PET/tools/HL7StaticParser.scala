@@ -20,11 +20,11 @@ object HL7StaticParser {
   val HL7_FIELD_REPETITION = "\\~"
   val HL7_SUBCOMPONENT_SEPARATOR = "\\&"
 
-  val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\|\\.\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
+  val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\|\\.!><\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
   // val CHILDREN_REGEX = s"$PATH_REGEX>$PATH_REGEX".r
 //  val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
   //  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
-  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
+  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?([!><\\=]{1,2})'(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
 
   //Returns the Number of segments present of message:
   def peek(msg: String, segment: String): Int = {
@@ -96,7 +96,7 @@ object HL7StaticParser {
 
   /* private */ def filterValues(filter: String, segment: Array[String]): Boolean = {
     filter match {
-      case FILTER_REGEX(field, _, _, comp, _, subcomp, constant, _* ) => {
+      case FILTER_REGEX(field, _, _, comp, _, subcomp, comparison, constant, _* ) => {
         val offset = if ("MSH".equals(segment(0))) 1 else 0
 
         var valueToCompare = segment.lift(field.toInt - offset).getOrElse("")
@@ -109,7 +109,17 @@ object HL7StaticParser {
           }
         }
         var result = false
-        constant.split("\\|\\|").foreach { it => result = result || it.equals(valueToCompare)}
+        constant.split("\\|\\|").foreach { it =>
+          comparison match {
+            case "=" => result = result || it.equals(valueToCompare)
+            case "!=" => result = result || !it.equals(valueToCompare)
+            case ">" => result = result || valueToCompare.toInt > it.toInt
+            case ">=" => result = result || valueToCompare.toInt >= it.toInt
+            case "<" => result = result || valueToCompare.toInt < it.toInt
+            case "<=" => result = result || valueToCompare.toInt <= it.toInt
+          }
+
+        }
         //constant.equals(valueToCompare)
         result
       }

@@ -118,11 +118,11 @@ object HL7FileUtilsApp  {
         if (args.length < 1) {
             showUsage()
         }
-        var messageFile = args(0)
+        val messageFile = args(0)
         var outDir = "./gen"
         var file = messageFile.substring(messageFile.lastIndexOf("/") + 1, messageFile.indexOf("."))
         if (args.length > 1) {
-            //Need 3 or 5 parameters:
+            //If more than one arg, need 3 or 5 parameters:
             if (!(args.length == 3 || args.length == 5)) {
                 showUsage()
             }
@@ -140,11 +140,10 @@ object HL7FileUtilsApp  {
 
         }
         ConsoleProgress.showProgress( {
-            var hl7Utils = new HL7FileUtils()
+            val hl7Utils = new HL7FileUtils()
             hl7Utils.splitMessages(messageFile, outDir, file)
-            hl7Utils.cleanAllFiles(outDir)
+//            hl7Utils.cleanAllFiles(outDir)
         })
     }
-
 }
 

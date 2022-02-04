@@ -53,11 +53,11 @@ class DeIdentifier() {
                     val rule = r.split(",")
                     val path = rule(0)
                     val replacement = if (rule.length > 1) rule(1) else ""
-                    val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches soemthing
+                    val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches something
                     if (matchLine.isDefined && matchLine.get.length >0) {
                         replacement match {
                             case FN_REMOVE => subline = ""
-                            case _ => {
+                            case _ =>
                                 val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
                                 path match {
                                     case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
@@ -66,25 +66,25 @@ class DeIdentifier() {
                                             val repeats = lineIndexed._2(field.toInt).split("\\~")
                                             repeats.zipWithIndex.foreach {
                                                 case (elem, i) => {
-//                                                    if (fieldIdx == null) {
-                                                        if (comp != null) {
-                                                            val compArray = elem.split("\\^")
-                                                            if (compArray.length >= comp.toInt)
-                                                                compArray(comp.toInt - 1) = replacement
-                                                            if (fieldIdx == null || fieldIdx.toInt == i+1)
-                                                                repeats(i) = compArray.mkString("^")
-                                                            else
-                                                                repeats(i) = elem
-                                                        }
-                                                        else {
-                                                            if (!repeats(i).isEmpty)
-                                                                repeats(i) = replacement
-                                                        }
-//                                                    } else { //replace a single fieldIdx
-//
-//                                                    }
+                                                    //                                                    if (fieldIdx == null) {
+                                                    if (comp != null) {
+                                                        val compArray = elem.split("\\^")
+                                                        if (compArray.length >= comp.toInt)
+                                                            compArray(comp.toInt - 1) = replacement
+                                                        if (fieldIdx == null || fieldIdx.toInt == i + 1)
+                                                            repeats(i) = compArray.mkString("^")
+                                                        else
+                                                            repeats(i) = elem
+                                                    }
+                                                    else {
+                                                        if (!repeats(i).isEmpty)
+                                                            repeats(i) = replacement
+                                                    }
+                                                    //                                                    } else { //replace a single fieldIdx
+                                                    //
+                                                    //                                                    }
                                                 }
-                                                lineIndexed._2(field.toInt) = repeats.mkString("~")
+                                                    lineIndexed._2(field.toInt) = repeats.mkString("~")
                                             }
                                             subline = lineIndexed._2.mkString("|")
                                         } else {
@@ -92,7 +92,7 @@ class DeIdentifier() {
                                         }
                                     }
                                 }
-                            }
+
                         }
                     }
                 })
@@ -112,7 +112,7 @@ object DeIdentifier {
 }
 
 object DeIdentifierApp {
-    val DEFAULT_RULES_FILE = "default_rules.txt"
+    val DEFAULT_RULES_FILE = "deid_rules.txt"
 
     def showUsage() = {
         println("Pass the file you want to translate and the file with rules.")
@@ -126,17 +126,17 @@ object DeIdentifierApp {
         if (args.length < 0 || args.length > 2)
             showUsage()
 
-        val configRules: List[Array[String]] =
-            if (args.length == 1)
-                CSVReader.readFileFromResource(DEFAULT_RULES_FILE)
-            else
-                CSVReader.readFileFromPath(args(1))
+//        val configRules: List[Array[String]] =
+//            if (args.length == 1)
+//                CSVReader.readFileFromResource(DEFAULT_RULES_FILE)
+//            else
+//                CSVReader.readFileFromPath(args(1))
 
-        var deid = new DeIdentifier
+        val deid = new DeIdentifier
         ConsoleProgress.showProgress {
             //convert configRules to Regex:
-            var allRules = configRules.map(c => Rule(c(0), c(1)))
-            deid.deidentifyFile(args(0), allRules)
+//            var allRules = configRules.map(c => Rule(c(0), c(1)))
+            deid.deIdentifyFile(args(0), args(1))
         }
 
     }

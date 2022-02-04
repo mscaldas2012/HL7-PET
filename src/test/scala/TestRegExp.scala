@@ -1,3 +1,4 @@
+import open.HL7PET.tools.HL7StaticParser
 import org.scalatest.FlatSpec
 
 import scala.collection.immutable.ListMap
@@ -9,10 +10,13 @@ class TestRegExp  extends FlatSpec {
 
   //The Reg Ex below represents the following format: YYYY[MM[DD[HH[MM[SS[.S[S[S[S]]]]]]]]][+/-ZZZZ].
   val anyDateRegEx = "\\d{4}(((\\d{2}){5}\\.\\d{1,4})|((\\d{2}){0,5}))([+-]\\d{4})?"
+  val indexRegEx = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?([!><\\=]{1,2})'(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
+//  val indexRegEx = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
 
   "RegExp" should "display groups" in {
     println("match data...")
-    val data = myregExp.findAllIn(myText).matchData foreach(m => {
+    val path = "@1>='2'"
+    val data = indexRegEx.findAllIn(path).matchData foreach(m => {
       println(s".  $m")
       println(s"Group count: ${m.groupCount}")
       println("\tsubgroups..")
@@ -24,7 +28,14 @@ class TestRegExp  extends FlatSpec {
     })
 
     println("toList...")
-    myregExp.findAllIn(myText).toList foreach(m => println(m))
+    indexRegEx.findAllIn(path).toList foreach(m => println(m))
+    path match {
+      case indexRegEx(field, _, _, comp, _, subcomp, comparison, constant, _*) => {
+        println(field)
+        println(comparison)
+        println(constant)
+      }
+    }
   }
 
   "String " should "not throw NumberFormatExcpetion" in {

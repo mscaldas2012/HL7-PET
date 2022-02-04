@@ -15,9 +15,13 @@ class HL7StaticParserUtilsTest extends FlatSpec {
     "OBX|2|CWE|NOT109^Reporting State^PHINQUESTION||26^Michigan^FIPS5_2~13^Georgia^FIPS5_2||||||F\r\n" +
     "OBX|3|CWE|INV163^Case Class Status Code^PHINQUESTION||410605003^Confirmed present (qualifier value)^SCT||||||F\r" +
     "OBX|7|SN|77977-7^Illness Duration^LN||^13|^^ISO|||||F\n" +
-    "OBR|2||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND"
+    "OBR|2||xyz^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND\n\r" +
+    "OBX|8|CWE|NOT116^National Reporting Jurisdiction^PHINQUESTION||26^Michigan^FIPS5_2||||||F\n\r" +
+    "OBR|3||abc^MDCH^2.16.840.1.114222.4.1.3660^ISO|68991-9^Epidemiologic Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||10110^Hepatitis A^NND\n\r" +
+    "OBX|9|CWE|NOT116^National Reporting Jurisdiction^PHINQUESTION||26^Michigan^FIPS5_2||||||F\n\r"
 
-//  var batchValidator = new BatchValidator(testMessage, null)
+
+  //  var batchValidator = new BatchValidator(testMessage, null)
 
   "New line" should "split on any combination" in {
     val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
@@ -227,7 +231,26 @@ class HL7StaticParserUtilsTest extends FlatSpec {
     assert(HL7StaticParser.getValue(testMessage, "OBR[*].4.1.badpath").isEmpty)
 
   }
-//
+
+  "Paths with inequalities" should "be found" in {
+
+    println("Simple Evals...")
+    val hl7p = new HL7ParseUtils(testMessage, null, true)
+    val maybeString = hl7p.getValue("OBR[@1>='2']->OBX", true)
+    printResults(maybeString)
+    //assert(maybeString.get.startsWith("OBR"))
+  }
+
+  def printResults(maybeStrings: Option[Array[Array[String]]]) = {
+    println(s"results ")
+    if (maybeStrings.isDefined) {
+      maybeStrings.get foreach {
+        v => v.foreach(f => println(s"\t--> $f"))
+      }
+    }
+    println("---")
+  }
+    //
 //  "Paths with filters" should "be found" in {
 //    println("Both NOT116 -> 109")
 //    val result = hl7Util.getValue("OBX[@3.1='NOT116||NOT109']-5")
