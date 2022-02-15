@@ -25,6 +25,27 @@ class HL7FileUtils {
     }
     val MSH = "MSH"
 
+
+    def splitBatches(filename: String, outputDir: String, outputFileNamePrefix: String): Unit = {
+        //Make sure the outputDir exists:
+        FileUtils.mkdirs(outputDir.split("/"))
+        var newFile = 1
+        var newMessage = ""
+
+        //val bufferedSource = io.Source.fromFile(filename)
+        FileUtils.using(io.Source.fromFile(filename)) {
+            bufferedSource => {
+                val allLines = bufferedSource.mkString
+                //This method does not cope with the string MSH being used anywhere else in the code and not as a Field Header.
+                //But then again, it should'n't be used, right!?
+                allLines.split("FHS").zipWithIndex.foreach {
+                    case (l, i)  =>
+                        if (!l.isEmpty)
+                            FileUtils.writeToFile(generateFileName(outputDir, outputFileNamePrefix,  i), "FHS" + l)
+                }
+            }
+        }
+    }
     def splitMessages(filename: String, outputDir: String, outputFileNamePrefix: String): Unit = {
         //Make sure the outputDir exists:
         FileUtils.mkdirs(outputDir.split("/"))
@@ -106,11 +127,13 @@ object HL7FileUtilsApp  {
     def showUsage(): Unit = {
         println("You must pass at least the name of the file you would like to split")
         println("\nUsage: ")
-        println("java open.HL7PET.tools.HL7FileUtilsApp <fileName> [-o outputDirectory] [-p filePrefix]")
+        println("java open.HL7PET.tools.HL7FileUtilsApp <fileName> [-b] [-o outputDirectory] [-p filePrefix]")
         println("\n\nwhere:")
         println("\t<fileName> is the name of the file with all HL7 Messages to be split")
+        println("\t[-b] split batches instead of single messages")
         println("\t[-o outputDirectory] is an optional parameter to specify the output directory where files should be created. Default current directory.")
         println("\t[-p filePrefix] is an optiona parameter to specify the prefix of the generated files. Default to fileName")
+
         System.exit(1)
     }
 
@@ -119,19 +142,23 @@ object HL7FileUtilsApp  {
             showUsage()
         }
         val messageFile = args(0)
+        var splitBatch = false
+
         var outDir = "./gen"
         var file = messageFile.substring(messageFile.lastIndexOf("/") + 1, messageFile.indexOf("."))
         if (args.length > 1) {
             //If more than one arg, need 3 or 5 parameters:
-            if (!(args.length == 3 || args.length == 5)) {
-                showUsage()
-            }
+//            if (!(args.length == 3 || args.length == 5)) {
+//                showUsage()
+//            }
             var index = 1
             while (index < args.length) {
                 if (args(index).equalsIgnoreCase("-o")) {
                     outDir = args(index + 1)
                 } else if (args(index).equalsIgnoreCase("-p")) {
                     file = args(index + 1)
+                } else if (args(index).equalsIgnoreCase("-b")) {
+                    splitBatch = true
                 } else {
                     showUsage()
                 }
@@ -141,7 +168,11 @@ object HL7FileUtilsApp  {
         }
         ConsoleProgress.showProgress( {
             val hl7Utils = new HL7FileUtils()
-            hl7Utils.splitMessages(messageFile, outDir, file)
+            if (splitBatch) {
+                hl7Utils.splitBatches(messageFile, outDir, file)
+            } else {
+                hl7Utils.splitMessages(messageFile, outDir, file)
+            }
 //            hl7Utils.cleanAllFiles(outDir)
         })
     }

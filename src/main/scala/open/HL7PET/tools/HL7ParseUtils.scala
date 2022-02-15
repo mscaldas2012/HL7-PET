@@ -112,7 +112,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
                   }
                 }
                 if (childMatch) {
-                  result ++= HL7StaticParser.getValue(it.split(HL7StaticParser.HL7_FIELD_SEPARATOR), cfield.safeToInt(0), cfieldIdx.safeToInt(0), ccomp.safeToInt(0), csubcomp.safeToInt(0), removeEmpty)
+                  result ++= HL7StaticParser.getValue(it.split(HL7StaticParser.HL7_FIELD_SEPARATOR), cfield.safeToInt(0), cfieldIdx, ccomp.safeToInt(0), csubcomp.safeToInt(0), removeEmpty)
                 }
               }
             }

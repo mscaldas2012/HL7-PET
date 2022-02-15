@@ -20,12 +20,13 @@ object HL7StaticParser {
   val HL7_FIELD_REPETITION = "\\~"
   val HL7_SUBCOMPONENT_SEPARATOR = "\\&"
 
-  val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9]+|\\*|(@[0-9A-Za-z\\|\\.!><\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
+  val PATH_REGEX = "([A-Z0-9]{3})(\\[([0-9a-zA-Z\\$]+|\\*|(@[0-9A-Za-z\\|\\.!><\\='\\-_ ]*))\\])?(\\-([0-9]+)(\\[([0-9a-zA-Z\\$]+|\\*)\\])?((\\.([0-9]+))(\\.([0-9]+))?)?)?".r
   // val CHILDREN_REGEX = s"$PATH_REGEX>$PATH_REGEX".r
 //  val CHILDREN_REGEX = "(.*) *\\-> *(.*)".r
   //  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-_\\.]+)'".r
   val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?([!><\\=]{1,2})'(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'".r
 
+  val LAST_INDEX = "$LAST"
   //Returns the Number of segments present of message:
   def peek(msg: String, segment: String): Int = {
     try {
@@ -96,16 +97,21 @@ object HL7StaticParser {
 
   /* private */ def filterValues(filter: String, segment: Array[String]): Boolean = {
     filter match {
+//      case FILTER_REGEX(field, _*) => {
+//
+//      }
       case FILTER_REGEX(field, _, _, comp, _, subcomp, comparison, constant, _* ) => {
         val offset = if ("MSH".equals(segment(0))) 1 else 0
 
         var valueToCompare = segment.lift(field.toInt - offset).getOrElse("")
         if (comp != null && valueToCompare.nonEmpty) {
           val compSplit = valueToCompare.split(HL7_COMPONENT_SEPARATOR)
-          valueToCompare = compSplit.lift(comp.toInt - 1).getOrElse("")
+          val compInt = (if (comp == LAST_INDEX) compSplit.size else comp.toInt) - 1
+          valueToCompare = compSplit.lift(compInt).getOrElse("")
           if (subcomp != null && valueToCompare != null) {
             val subcompSplit = valueToCompare.split(HL7_SUBCOMPONENT_SEPARATOR)
-            valueToCompare = subcompSplit.lift(subcomp.toInt - 1).getOrElse("")
+            val subcompInt = (if (subcomp == LAST_INDEX) subcompSplit.size else subcomp.toInt) - 1
+            valueToCompare = subcompSplit.lift(subcompInt).getOrElse("")
           }
         }
         var result = false
@@ -120,7 +126,6 @@ object HL7StaticParser {
           }
 
         }
-        //constant.equals(valueToCompare)
         result
       }
       //      case s if s.matches("@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='(([A-Za-z0-9\\-_\\.]+(\\|\\|)?)+)'") => {
@@ -136,14 +141,15 @@ object HL7StaticParser {
     var segmentIndex = 0
     var segmentList = segments
 
-    if (segIdx != null && segIdx != "*" && !segIdx.startsWith("@"))
-      segmentIndex = segIdx.toInt
+    if (segIdx != null && segIdx != "*" && !segIdx.startsWith("@")) {
+      segmentIndex = if (segIdx == LAST_INDEX) segments.size else segIdx.toInt
+    }
     if (segIdx != null && segIdx.startsWith("@")) { //Filter Segments if filter is provided instead of Index...
       val filteredList = segments filter {
         case (_, v) => filterValues(segIdx, v)
       }
       segmentList = filteredList
-    } else if (segmentIndex > 0) { //Get the single
+    } else if (segmentIndex > 0 ){ //Get the single
       segmentList = segments.slice(segmentIndex - 1, segmentIndex)
     }
     segmentList
@@ -152,14 +158,6 @@ object HL7StaticParser {
   /* private */ def getListOfMatchingSegments(msg: String, seg: String, segIdx: String): scala.collection.immutable.SortedMap[Int, Array[String]] = {
     getListOfMatchingSegments(segIdx, retrieveMultipleSegments(msg, seg))
   }
-
-//  private def safeToInt(nbr: String, default: Int = 0): Int = {
-//    try {
-//      nbr.toInt
-//    } catch {
-//      case _: NumberFormatException => default
-//    }
-//  }
 
   private def drillDownToComponent(comp: String, currentVal: String, subcomp: String): String = {
     var finalValue = currentVal
@@ -257,7 +255,7 @@ object HL7StaticParser {
 //        getChildrenValues(msg, parent, child, removeEmpty)
 //      }
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(msg, seg, segIdx, field.safeToInt(0), fieldIdx.safeToInt(0), comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
+        getValue(msg, seg, segIdx, field.safeToInt(0), fieldIdx, comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
       }
       case _ => None
     }
@@ -267,14 +265,14 @@ object HL7StaticParser {
   def getValue(msg: String, path: String, segment: Array[String], removeEmpty: Boolean): Option[Array[String]] = {
     path match {
       case PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-        getValue(segment, field.safeToInt(0), fieldIdx.safeToInt(0), comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
+        getValue(segment, field.safeToInt(0), fieldIdx, comp.safeToInt(0), subcomp.safeToInt(0), removeEmpty)
       }
       case _ => None
     }
   }
 
   //Get values for a subset of segments from the file, like children segments pre filtered before!
-  private def getValue(field: Int, fieldIdx: Int, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
+  private def getValue(field: Int, fieldIdx: String, comp: Int, subcomp: Int, segments: SortedMap[Int, Array[String]], removeEmpty: Boolean): Option[Array[Array[String]]] = {
     //val offset = if ("MSH".equals(seg)) 1 else 0
     var result: Array[Array[String]] = new Array[Array[String]](0)
 
@@ -292,14 +290,14 @@ object HL7StaticParser {
   }
 
   //Get values from segments matching seg and segIdx of entire file.
-  private def getValue(msg: String, seg: String, segIdx: String, field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[Array[String]]] = {
+  private def getValue(msg: String, seg: String, segIdx: String, field: Int, fieldIdx: String, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[Array[String]]] = {
     val segmentList = getListOfMatchingSegments(msg, seg, segIdx)
     getValue(field, fieldIdx, comp, subcomp, segmentList, removeEmpty)
   }
 
 
   //Gets values from a single Segment...
-  /* private */ def getValue(segment: Array[String],  field: Int, fieldIdx: Int, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
+  /* private */ def getValue(segment: Array[String],  field: Int, fieldIdx: String, comp: Int, subcomp: Int, removeEmpty: Boolean): Option[Array[String]] = {
     var finalValue: String = segment.mkString("|")
     var fieldArray: Array[String] = new Array[String](0)
     val offset = if ("MSH".equals(segment(0))) 1 else 0
@@ -308,8 +306,9 @@ object HL7StaticParser {
     if (field > 0) {
       val fieldValue: String = segment.lift(field.toInt - offset).getOrElse("")
       val fieldValueSplit = fieldValue.split(HL7_FIELD_REPETITION)
-      if (fieldIdx > 0) {
-        finalValue = fieldValueSplit.lift(fieldIdx - 1).getOrElse("")
+      val fieldIdxInt = if (fieldIdx == LAST_INDEX) fieldValueSplit.size else fieldIdx.safeToInt(0)
+      if (fieldIdxInt > 0) {
+        finalValue = fieldValueSplit.lift(fieldIdxInt - 1).getOrElse("")
         if (comp > 0) {
           val compSplit = finalValue.split(HL7_COMPONENT_SEPARATOR)
           finalValue = compSplit.lift(comp.toInt - 1).getOrElse("")

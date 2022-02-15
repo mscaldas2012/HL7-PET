@@ -15,7 +15,7 @@ class HL7StaticParserUtilsTest extends FlatSpec {
     "OBX|2|CWE|NOT109^Reporting State^PHINQUESTION||26^Michigan^FIPS5_2~13^Georgia^FIPS5_2||||||F\r\n" +
     "OBX|3|CWE|INV163^Case Class Status Code^PHINQUESTION||410605003^Confirmed present (qualifier value)^SCT||||||F\r" +
     "OBX|7|SN|77977-7^Illness Duration^LN||^13|^^ISO|||||F\n" +
-    "OBR|2||xyz^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND\n\r" +
+    "OBR|5||xyz^MDCH^2.16.840.1.114222.4.1.3660^ISO|777777-9^LAB Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||12345^Hepatitis A^NND\n\r" +
     "OBX|8|CWE|NOT116^National Reporting Jurisdiction^PHINQUESTION||26^Michigan^FIPS5_2||||||F\n\r" +
     "OBR|3||abc^MDCH^2.16.840.1.114222.4.1.3660^ISO|68991-9^Epidemiologic Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||10110^Hepatitis A^NND\n\r" +
     "OBX|9|CWE|NOT116^National Reporting Jurisdiction^PHINQUESTION||26^Michigan^FIPS5_2||||||F\n\r"
@@ -236,8 +236,22 @@ class HL7StaticParserUtilsTest extends FlatSpec {
 
     println("Simple Evals...")
     val hl7p = new HL7ParseUtils(testMessage, null, true)
-    val maybeString = hl7p.getValue("OBR[@1>='2']->OBX", true)
+    val maybeString = hl7p.getValue("OBR[@1>'2']", true)
     printResults(maybeString)
+    //assert(maybeString.get.startsWith("OBR"))
+  }
+
+  "$LAST Index" should "return last entry" in {
+
+    val hl7p = new HL7ParseUtils(testMessage, null, true)
+    val maybeString = hl7p.getValue("MSH-21[$LAST]", true)
+    printResults(maybeString)
+    val maybeStringOBR = hl7p.getValue("OBR[$LAST]->OBX", true)
+    printResults(maybeStringOBR)
+
+    val maybeStringOBX = hl7p.getValue("OBX[@3.1='NOT109']-5[$LAST]", true)
+    printResults(maybeStringOBX)
+
     //assert(maybeString.get.startsWith("OBR"))
   }
 

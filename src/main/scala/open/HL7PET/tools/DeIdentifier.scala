@@ -3,6 +3,7 @@ package open.HL7PET.tools
 import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
 import utils.{CSVReader, ConsoleProgress, FileUtils}
 
+import java.util.Objects.hash
 import scala.util.matching.Regex
 
 /**
@@ -17,6 +18,7 @@ import scala.util.matching.Regex
 
 class DeIdentifier() {
     val FN_REMOVE = "$REMOVE"
+    val FN_HASH   = "$HASH"
 
     def deidentifyFile(filename: String, rules: List[Rule]): Unit = {
         var cleanFile = ""
@@ -52,7 +54,7 @@ class DeIdentifier() {
                 rules.foreach( r => {
                     val rule = r.split(",")
                     val path = rule(0)
-                    val replacement = if (rule.length > 1) rule(1) else ""
+                    var replacement = if (rule.length > 1) rule(1) else ""
                     val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches something
                     if (matchLine.isDefined && matchLine.get.length >0) {
                         replacement match {
@@ -70,25 +72,21 @@ class DeIdentifier() {
                                                     if (comp != null) {
                                                         val compArray = elem.split("\\^")
                                                         if (compArray.length >= comp.toInt)
-                                                            compArray(comp.toInt - 1) = replacement
+                                                            compArray(comp.toInt - 1) = getReplacementValue(replacement, compArray(comp.toInt -1))
                                                         if (fieldIdx == null || fieldIdx.toInt == i + 1)
                                                             repeats(i) = compArray.mkString("^")
                                                         else
                                                             repeats(i) = elem
-                                                    }
-                                                    else {
+                                                    } else {
                                                         if (!repeats(i).isEmpty)
-                                                            repeats(i) = replacement
+                                                            repeats(i) = getReplacementValue(replacement, elem)
                                                     }
-                                                    //                                                    } else { //replace a single fieldIdx
-                                                    //
-                                                    //                                                    }
                                                 }
                                                     lineIndexed._2(field.toInt) = repeats.mkString("~")
                                             }
                                             subline = lineIndexed._2.mkString("|")
                                         } else {
-                                            subline = replacement //The whole segment will be replaced!
+                                            subline = getReplacementValue(replacement, subline) //The whole segment will be replaced!
                                         }
                                     }
                                 }
@@ -103,6 +101,13 @@ class DeIdentifier() {
         val extension = messageFileName.substring(messageFileName.lastIndexOf("."))
         val newFileName = messageFileName.substring(0, messageFileName.lastIndexOf(".")) + "_deidentified" + extension
         FileUtils.writeToFile(newFileName, cleanFile)
+    }
+
+    def getReplacementValue(replacement: String, originalValue: String): String = {
+        replacement match {
+            case FN_HASH => Math.abs(originalValue.hashCode).toString
+            case _ => replacement
+        }
     }
 
 }

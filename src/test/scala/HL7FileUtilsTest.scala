@@ -10,7 +10,12 @@ import org.scalatest.FlatSpec
 class HL7FileUtilsTest extends FlatSpec {
     "HL7FileUtils" should "split messages" in {
         var msgSplitter = new HL7FileUtils()
-        msgSplitter.splitMessages("src/test/resources/Cancer.txt", "temp", "cancerMSG")
+        msgSplitter.splitMessages("src/test/resources/Cancer.txt", "target/temp", "cancerMSG")
+    }
+
+    "Batch Files" should "split batches" in {
+        var msgSplitter = new HL7FileUtils()
+        msgSplitter.splitBatches("src/test/resources/FileBatchSplit.txt", "target/temp", "testMSG")
     }
 
 }

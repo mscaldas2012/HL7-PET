@@ -23,17 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/FileBatchSplit.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND_deidentified.hl7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DeIdentifierApp">
+  <component name="RunManager" selected="ScalaTest.HL7StaticParserUtilsTest.$LAST Index should return last entry">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -187,6 +187,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HL7FileUtilsTest.Batch Files should split batches" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7FileUtilsTest" />
+      <option name="testName" value="Batch Files should split batches" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7StaticParserUtilsTest.$LAST Index should return last entry" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
+      <option name="testName" value="$LAST Index should return last entry" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HL7StaticParserUtilsTest.Paths with inequalities should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
@@ -231,36 +261,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDeidentifer.Deidentifier should remove pid value" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="TestDeidentifer" />
-      <option name="testName" value="Deidentifier should remove pid value" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRegExp.RegExp should display groups" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="TestRegExp" />
-      <option name="testName" value="RegExp should display groups" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -281,11 +281,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DeIdentifierApp" />
-        <item itemvalue="ScalaTest.TestDeidentifer.DeIdentifier should clean data" />
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.$LAST Index should return last entry" />
         <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Paths with inequalities should be found" />
-        <item itemvalue="ScalaTest.TestRegExp.RegExp should display groups" />
-        <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should remove pid value" />
+        <item itemvalue="ScalaTest.TestDeidentifer.DeIdentifier should clean data" />
+        <item itemvalue="ScalaTest.HL7FileUtilsTest.Batch Files should split batches" />
+        <item itemvalue="Application.DeIdentifierApp" />
       </list>
     </recent_temporary>
   </component>
@@ -452,48 +452,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
-          <line>73</line>
+          <line>75</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>113</line>
-          <option name="timeStamp" value="27" />
+          <line>293</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala</url>
+          <line>238</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>114</line>
-          <option name="timeStamp" value="28" />
+          <line>108</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>115</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>110</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala</url>
-          <line>138</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>116</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>117</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
-          <line>118</line>
-          <option name="timeStamp" value="35" />
+          <line>105</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -503,13 +483,6 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <configuration name="ScalaTestRunConfiguration">
-        <watch expression="matchLine.isDefined" language="Scala" />
-        <watch expression="repeats.mkString(&quot;~&quot;)" language="Scala" />
-        <watch expression="it.toInt" language="Scala" />
-        <watch expression="it.toInt &gt; valueToCompare.toInt" language="Scala" />
-        <watch expression="valueToCompare.toInt" language="Scala" />
-      </configuration>
       <configuration name="Application">
         <watch expression="CHILDREN_REGEX(pseg, _, psegIdx, _, _, pfield, _, pfieldIdx, _, _, pcomp, _, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
         <watch expression="CHILDREN_REGEX(pseg, p2, psegIdx, p4, p5, pfield, p7, pfieldIdx, p8, p9, pcomp, p11, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
