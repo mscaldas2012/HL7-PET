@@ -1,6 +1,0 @@
-MSH.*,"MSH|^~\&|CDC-NLP-Project|LABCORP^34D0655059^CLIA|Cancer Registry|State|201706010938|State006|ORU^R01|2017060107093839521000|P|2.3.1"
-PID.*,"PID|1||^^^^SS^~12345678^^^^PI^|ALTERNATE ID|TEST^PATIENT^A||19500601|M||2054-5^Black or African American^CDC^^^|1234 Test Road^^ALBANY^NY^12201||^^^^^222^1234567|||||||"
-NK1.*,"NK1|1|TEST^PATIENT^A^||1234 TEST ROAD^^ALBANY^NY^12201^|^^^^^222^1234567|"
-ORC.*,"ORC|RE||111A1111111||||||||||||||||||Ordering Facility Name^^L|2222 W. Test Road^^Test^TX^77025|^^^^^111^1234567||"
-OBR.*,"OBR|1||111A1111111|^^^111111^Pathology Report^L|||201705301335|||||||20090115||Ordering Provider Name||||||20170530|||F|||||||"
-OBX\|([0-9]?)\|TX\|(19139)\-5,"OBX|$GROUP(1)|TX|19139-5^PATHOLOGIST NAME^LN^500929^SIGNED^L|| Electronically signed:$GROUP(1)-$GROUP(2)                                          .Pathologist name, Pathologist||||||F|||20090119090808|45D0663318^LabCorp Houston^CLIA|||"
