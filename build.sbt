@@ -40,7 +40,7 @@ publishMavenStyle := true
 
 version := "1.2.6"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.12.8"
 
 mainClass := Some("open.HL7PET.tools.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
@@ -54,10 +54,10 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
  libraryDependencies += "com.google.code.gson" % "gson" % "2.8.6"
 
-assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-  case x => MergeStrategy.first
-}
+//assemblyMergeStrategy in assembly := {
+//  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}
 
 //Do not append scala versions to the generated artifact
 crossPaths:= false
