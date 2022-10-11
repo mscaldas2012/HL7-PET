@@ -1,17 +1,23 @@
-import open.HL7PET.tools.HL7StaticParser.{NEW_LINE_FEED, PATH_REGEX}
-import open.HL7PET.tools.{DeIdentifier, HL7ParseUtils, HL7StaticParser}
+//import open.HL7PET.tools.HL7StaticParser.{NEW_LINE_FEED, PATH_REGEX}
+import open.HL7PET.tools.DeIdentifier
+import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
 import org.scalatest.FlatSpec
 import utils.FileUtils
 
-class TestDeidentifer extends FlatSpec{
-
-
+class TestDeidentifer extends FlatSpec {
 
   "DeIdentifier" should "clean data" in {
     val d = new DeIdentifier()
     d.deIdentifyFile( "src/test/resources/DHQP_SPM_OTH_SECOND.hl7", "src/main/resources/deid_rules.txt")
   }
 
+  "Deidentifier" should "generate report" in {
+    val d = new DeIdentifier()
+    val msg = FileUtils.readFile("src/test/resources/DHQP_SPM_OTH_SECOND.hl7")
+    val rules = FileUtils.readFile("src/main/resources/deid_rules.txt").split(NEW_LINE_FEED)
+    val (redactedMessage, report) = d.deIdentifyMessage(msg, rules)
+    println(report)
+  }
 
   "sbustring" should "be found" in {
     val testLine = "PID|1||PID00753334^^^TN.Nashville.SPHL&2.16.840.1.114222.4.1.175791&ISO^PI||~^^^^^^U|||F|||^^^TN^^USA^C^^47055"

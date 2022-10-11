@@ -32,7 +32,7 @@ publishTo := {
 
 //credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials")
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
-credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "^fgAKRQ99:K^Vx4aCQGW")
+credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "")
 publishMavenStyle := true
 
 
@@ -40,26 +40,26 @@ publishMavenStyle := true
 
 version := "1.2.6"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.13.8"
 
 mainClass := Some("open.HL7PET.tools.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.1"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
- libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.10.1"
+ libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.13.4"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
- libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.10.1" pomOnly()
+ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.13.4" pomOnly()
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
- libraryDependencies += "com.google.code.gson" % "gson" % "2.8.6"
+ libraryDependencies += "com.google.code.gson" % "gson" % "2.9.0"
 
-assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-  case x => MergeStrategy.first
-}
+//assemblyMergeStrategy in assembly := {
+//  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}
 
 //Do not append scala versions to the generated artifact
-crossPaths:= false
+crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true

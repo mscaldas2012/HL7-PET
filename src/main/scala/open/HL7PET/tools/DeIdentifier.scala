@@ -1,11 +1,11 @@
 package open.HL7PET.tools
 
 import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
-import utils.{CSVReader, ConsoleProgress, FileUtils}
+import utils.{ConsoleProgress, FileUtils}
 
-import java.util.Objects.hash
 import scala.util.matching.Regex
 
+case class RedactInfo( path: String, rule: String, lineNumber: Int)
 /**
   * This is a simple De-identifier of HL7 messages where it replaces entire Lines that can potentially have PII data
   * It uses a comma delimited file to configure which lines need to be replaced and the values to replace with.
@@ -44,60 +44,88 @@ class DeIdentifier() {
         }
     }
 
-    def deIdentifyFile(messageFileName: String, rulesFileName: String): Unit = {
-        val rulesFile = FileUtils.readFile(rulesFileName)
-        var cleanFile = ""
-        FileUtils.using(io.Source.fromFile(messageFileName)) { bf =>
-            bf.getLines foreach (line => {
-                var subline = line
-                val rules = rulesFile.split(NEW_LINE_FEED)
-                rules.foreach( r => {
-                    val rule = r.split(",")
-                    val path = rule(0)
-                    var replacement = if (rule.length > 1) rule(1) else ""
-                    val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches something
-                    if (matchLine.isDefined && matchLine.get.length >0) {
-                        replacement match {
-                            case FN_REMOVE => subline = ""
-                            case _ =>
-                                val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
-                                path match {
-                                    case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
-                                        if (field != null && lineIndexed._2(field.toInt) != null) {
-                                            //Get repeats:
-                                            val repeats = lineIndexed._2(field.toInt).split("\\~")
-                                            repeats.zipWithIndex.foreach {
-                                                case (elem, i) => {
-                                                    //                                                    if (fieldIdx == null) {
+
+    /**
+      * Method to deidentify one message with given rules.
+      * Returns the de-id message + a list of Redacted fields.
+      */
+    def deIdentifyMessage(message: String, rules: Array[String]) = {
+        var cleanMessage = ""
+        val report = scala.collection.mutable.ArrayBuffer.empty[RedactInfo]
+        message.split(NEW_LINE_FEED).zipWithIndex.foreach { case(line, lineNbr) => {
+            var subline = line
+            rules.foreach( r => {
+                val rule = r.split(",")
+                val path = rule(0)
+                val replacement = if (rule.length > 1) rule(1) else ""
+                val matchLine = HL7StaticParser.getValue(subline, path) //Make sure the path matches something
+                if (matchLine.isDefined && matchLine.get.length > 0) {
+                    replacement match {
+                        case FN_REMOVE => {
+                            subline = ""
+                            report += RedactInfo(path, rule(1), lineNbr+1)
+                        }
+                        case _ =>
+                            val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
+                            path match {
+                                case HL7StaticParser.PATH_REGEX(seg, _, segIdx, _, _, field, _, fieldIdx, _, _, comp, _, subcomp) => {
+                                    if (field != null && lineIndexed._2(field.toInt) != null   ) {
+                                        //Get repeats:
+                                        val repeats = lineIndexed._2(field.toInt).split("\\~")
+                                        repeats.zipWithIndex.foreach {
+                                            case (elem, i) => {
+                                                var redacted = false
+                                                if (fieldIdx == null || fieldIdx.toInt ==i+1) {
                                                     if (comp != null) {
                                                         val compArray = elem.split("\\^")
-                                                        if (compArray.length >= comp.toInt)
-                                                            compArray(comp.toInt - 1) = getReplacementValue(replacement, compArray(comp.toInt -1))
+                                                        if (compArray.length >= comp.toInt) {
+                                                            redacted = !compArray(comp.toInt -1).equals(replacement)
+                                                            compArray(comp.toInt - 1) = getReplacementValue(replacement, compArray(comp.toInt - 1))
+
+                                                        }
                                                         if (fieldIdx == null || fieldIdx.toInt == i + 1)
                                                             repeats(i) = compArray.mkString("^")
-                                                        else
+
+                                                        else {
                                                             repeats(i) = elem
+                                                            redacted = !elem.equals(replacement)
+                                                        }
+                                                        if (redacted)
+                                                            report += RedactInfo(path, replacement, lineNbr + 1)
                                                     } else {
-                                                        if (!repeats(i).isEmpty)
+                                                        if (!repeats(i).isEmpty && !replacement.equals(elem)) {
                                                             repeats(i) = getReplacementValue(replacement, elem)
+                                                            report += RedactInfo(path, replacement, lineNbr + 1)
+                                                        }
                                                     }
                                                 }
-                                                    lineIndexed._2(field.toInt) = repeats.mkString("~")
                                             }
-                                            subline = lineIndexed._2.mkString("|")
-                                        } else {
-                                            subline = getReplacementValue(replacement, subline) //The whole segment will be replaced!
+                                                lineIndexed._2(field.toInt) = repeats.mkString("~")
                                         }
-                                    }
-                                }
+                                        subline = lineIndexed._2.mkString("|")
 
-                        }
+                                    } else {
+                                        subline = getReplacementValue(replacement, subline) //The whole segment will be replaced!
+                                        report += RedactInfo(path, replacement, lineNbr+1)
+                                    }
+
+                                }
+                            }
+
                     }
-                })
-                if (!subline.isEmpty)
-                    cleanFile += subline + "\n"
+                }
             })
-        }
+            if (!subline.isEmpty)
+                cleanMessage += subline + "\n"
+        }}
+        (cleanMessage, report.toList)
+
+    }
+    def deIdentifyFile(messageFileName: String, rulesFileName: String): Unit = {
+        val rulesFile = FileUtils.readFile(rulesFileName)
+        val message = FileUtils.readFile(messageFileName)
+        val (cleanFile, report) = deIdentifyMessage(message, rulesFile.split(NEW_LINE_FEED))
+
         val extension = messageFileName.substring(messageFileName.lastIndexOf("."))
         val newFileName = messageFileName.substring(0, messageFileName.lastIndexOf(".")) + "_deidentified" + extension
         FileUtils.writeToFile(newFileName, cleanFile)
