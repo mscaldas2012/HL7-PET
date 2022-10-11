@@ -5,6 +5,7 @@
 
 project/
 .idea/
+.bsp/
 
 # Log file
 *.log

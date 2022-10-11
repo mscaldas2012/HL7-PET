@@ -25,26 +25,27 @@ homepage := Some(url("https://github.com/mscaldas2012/HL7-PET"))
 pomIncludeRepository := { _ => false }
 
 publishTo := {
-  val nexus = "https://oss.sonatype.org/"
+  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  else Some("releases" at nexus + "")
 }
 
-//credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials")
+
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
-credentials += Credentials ("Sonatype Nexus Repository Manager", "oss.sonatype.org", "mscaldas2019", "")
+//credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
+credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 publishMavenStyle := true
 
 
 //useGpg := true
 
-version := "1.2.6"
+version := "1.2.7"
 
 scalaVersion := "2.13.8"
 
 mainClass := Some("open.HL7PET.tools.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala

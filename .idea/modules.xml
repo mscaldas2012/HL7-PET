@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HL7-PET.iml" filepath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" filepath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.HL7-PET-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project.HL7-PET-build.iml" />
     </modules>
   </component>
 </project>

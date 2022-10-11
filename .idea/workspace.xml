@@ -23,22 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_annotations_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_core_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_databind_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hl7-pet-1.2.3.2.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +88,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="ezdx-aks-dev" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -365,8 +368,6 @@
       <workItem from="1632679503009" duration="382000" />
       <workItem from="1632746771457" duration="488000" />
       <workItem from="1633526839893" duration="2891000" />
-      <workItem from="1663697007606" duration="10025000" />
-      <workItem from="1665080279511" duration="1783000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
