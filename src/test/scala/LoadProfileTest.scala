@@ -1,8 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.google.gson.{JsonObject, JsonParser}
-import open.HL7PET.tools.HL7HierarchyParser
-import open.HL7PET.tools.model.{Profile, SegmentConfig}
+import gov.cdc.hl7.HL7HierarchyParser
+import gov.cdc.hl7.model.{Profile, SegmentConfig}
 import org.scalatest.FlatSpec
 
 import scala.io.Source

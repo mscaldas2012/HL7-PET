@@ -1,9 +1,8 @@
-package open.HL7PET.tools
+package gov.cdc.hl7
 
-import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.Profile
-import com.fasterxml.jackson.databind.DeserializationFeature
+import gov.cdc.hl7.model.Profile
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source

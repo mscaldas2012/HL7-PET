@@ -23,15 +23,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
-      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseError.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hl7-pet-1.2.3.2.pom" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/BatchValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7FileUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HieararchyParserBackup.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseError.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/RulesValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/ValidationErrors.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/HL7Hierarchy.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/Profile.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/ValidationRules.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/CSVReader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/CSVReader.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/CodeTimer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/CodeTimer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/ConsoleProgress.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/ConsoleProgress.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/FileUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/IntUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/IntUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/RulesValidatorTests.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/RulesValidatorTests.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/TestBugs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestBugs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +104,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Class" />
+        <option value="Scala Object" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -89,7 +124,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/BatchValidator.scala" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">
@@ -368,6 +403,7 @@
       <workItem from="1632679503009" duration="382000" />
       <workItem from="1632746771457" duration="488000" />
       <workItem from="1633526839893" duration="2891000" />
+      <workItem from="1665579984368" duration="3572000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -454,42 +490,42 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7pet/HL7StaticParser.scala</url>
           <line>108</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7pet/HL7StaticParser.scala</url>
           <line>105</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>71</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>96</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>77</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>78</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>85</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala</url>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
           <line>89</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>

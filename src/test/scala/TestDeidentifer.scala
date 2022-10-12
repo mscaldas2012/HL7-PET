@@ -1,8 +1,9 @@
 //import open.HL7PET.tools.HL7StaticParser.{NEW_LINE_FEED, PATH_REGEX}
-import open.HL7PET.tools.DeIdentifier
-import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
+
+import gov.cdc.hl7.DeIdentifier
+import gov.cdc.hl7.HL7StaticParser.NEW_LINE_FEED
+import gov.cdc.utils.FileUtils
 import org.scalatest.FlatSpec
-import utils.FileUtils
 
 class TestDeidentifer extends FlatSpec {
 

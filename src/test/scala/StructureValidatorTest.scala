@@ -1,7 +1,7 @@
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.Profile
-import open.HL7PET.tools.{BatchValidator, StructureValidator, ValidationErrors}
+import gov.cdc.hl7.{BatchValidator, StructureValidator, ValidationErrors}
+import gov.cdc.hl7.model.Profile
 import org.scalatest.FlatSpec
 
 import scala.io.Source

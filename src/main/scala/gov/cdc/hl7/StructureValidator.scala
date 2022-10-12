@@ -1,11 +1,10 @@
-package open.HL7PET.tools
-
-import java.text.ParseException
-import java.util.NoSuchElementException
+package gov.cdc.hl7
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.{HL7SegmentField, Profile, SegmentConfig}
+import gov.cdc.hl7.model.{HL7SegmentField, Profile, SegmentConfig}
+
+import java.text.ParseException
 //import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 
 import scala.io.Source
@@ -355,13 +354,13 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 //              }
             case x =>
                 try {
-                    //MSH[1] -> MSH[1]-fieldNumber[answerIndex] and separate component.
-                    //MSH[1]-F[1] -> MSH[1]-F[1].1 and separate subcomponent:
-                    var newseg: String =
-                        if (segment.indexOf('-') < 0)
-                            s"$segment-${field.fieldNumber}[$answerIndex]"
-                         else
-                            s"$segment.${field.fieldNumber}"
+                  //MSH[1] -> MSH[1]-fieldNumber[answerIndex] and separate component.
+                  //MSH[1]-F[1] -> MSH[1]-F[1].1 and separate subcomponent:
+                  val newseg: String =
+                  if (segment.indexOf('-') < 0)
+                    s"$segment-${field.fieldNumber}[$answerIndex]"
+                  else
+                    s"$segment.${field.fieldNumber}"
                     var split =
                         if (newseg.indexOf("].") > 0)
                             fieldValue.split(HL7StaticParser.HL7_SUBCOMPONENT_SEPARATOR)

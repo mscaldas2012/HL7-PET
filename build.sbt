@@ -1,33 +1,33 @@
 name := "HL7-PET"
 
-organization:= "io.github.mscaldas2012"
-organizationName:= "mscaldas2012"
+organization:= "gov.cdc.hl7"
+organizationName:= "CDC"
 scmInfo:= Some (
   ScmInfo(
-    url("https://github.com/mscaldas2012/HL7-PET"),
-    "scm:git@github.com:mscaldas2012/HL7-PET.git"
+    url("https://github.com/cdcent/hl7-pet"),
+    "scm:git@github.com/cdcent/hl7-pet.git"
   )
 )
 
 developers := List(
   Developer(
-    id="mscaldas2012",
+    id="mcq1",
     name="Marcelo Caldas",
-    email = "mscaldas@gmail.com",
-    url = url ("https://github.com/mscaldas2012")
+    email = "mcq1@cdc.com",
+    url = url ("https://github.com/cdcent/hl7-pet")
   )
 )
 
 description := "this project is a library to Parse HL7 v2 messages"
 licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
-homepage := Some(url("https://github.com/mscaldas2012/HL7-PET"))
+homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
 publishTo := {
   val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "")
+  else Some("releases" at nexus + "/")
 }
 
 
@@ -43,7 +43,7 @@ version := "1.2.7"
 
 scalaVersion := "2.13.8"
 
-mainClass := Some("open.HL7PET.tools.DeIdentifierApp")
+mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4"

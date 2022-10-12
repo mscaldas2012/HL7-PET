@@ -1,4 +1,4 @@
-import open.HL7PET.tools.HL7StaticParser
+import gov.cdc.hl7.HL7StaticParser
 import org.scalatest.FlatSpec
 
 import scala.collection.immutable.ListMap

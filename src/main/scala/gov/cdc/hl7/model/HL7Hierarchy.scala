@@ -1,4 +1,4 @@
-package open.HL7PET.tools.model
+package gov.cdc.hl7.model
 
 import scala.collection.mutable.ListBuffer
 

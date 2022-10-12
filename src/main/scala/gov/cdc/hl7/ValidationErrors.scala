@@ -1,4 +1,4 @@
-package open.HL7PET.tools
+package gov.cdc.hl7
 
 import scala.collection.mutable.ArrayBuffer
 

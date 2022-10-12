@@ -1,4 +1,4 @@
-package utils
+package gov.cdc.utils
 
 import scala.language.implicitConversions
 

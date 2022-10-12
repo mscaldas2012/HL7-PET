@@ -1,6 +1,6 @@
-import open.HL7PET.tools.{RulesValidator, ValidationErrors}
+import gov.cdc.hl7.{RulesValidator, ValidationErrors}
+import gov.cdc.utils.ConsoleProgress
 import org.scalatest.FlatSpec
-import utils.ConsoleProgress
 
 class RulesValidatorTests extends FlatSpec  {
 

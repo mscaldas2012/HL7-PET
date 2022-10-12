@@ -1,7 +1,7 @@
-package open.HL7PET.tools
+package gov.cdc.hl7
 
-import open.HL7PET.tools.HL7StaticParser.NEW_LINE_FEED
-import utils.{ConsoleProgress, FileUtils}
+import gov.cdc.hl7.HL7StaticParser.NEW_LINE_FEED
+import gov.cdc.utils.{ConsoleProgress, FileUtils}
 
 import scala.util.matching.Regex
 

@@ -1,4 +1,4 @@
-import open.HL7PET.tools.HL7FileUtils
+import gov.cdc.hl7.HL7FileUtils
 import org.scalatest.FlatSpec
 
 /**

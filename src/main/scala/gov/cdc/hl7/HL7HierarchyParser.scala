@@ -1,26 +1,20 @@
-package open.HL7PET.tools
+package gov.cdc.hl7
 
-import java.util.NoSuchElementException
-
-import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import open.HL7PET.tools.model.{HL7Hierarchy, Profile, SegmentConfig}
-
-import scala.io.Source
+import gov.cdc.hl7.model.{HL7Hierarchy, Profile, SegmentConfig}
 
 object HL7HierarchyParser {
 
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
-//
-//  if (profile == null) {
-////    println("Using Default profile")
-//    val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
-//    val mapper: ObjectMapper = new ObjectMapper()
-//    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-//    mapper.registerModule(DefaultScalaModule)
-//
-//    profile = mapper.readValue(content, classOf[Profile])
-//  }
+  //
+  //  if (profile == null) {
+  ////    println("Using Default profile")
+  //    val content: String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
+  //    val mapper: ObjectMapper = new ObjectMapper()
+  //    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+  //    mapper.registerModule(DefaultScalaModule)
+  //
+  //    profile = mapper.readValue(content, classOf[Profile])
+  //  }
 
   def parseMessageHierarchy(message: String, profile: Profile): HL7Hierarchy = {
     var profilePointer = profile.segmentDefinition("MSH")
@@ -29,20 +23,20 @@ object HL7HierarchyParser {
     val stackProfile = scala.collection.mutable.Stack[SegmentConfig]()
 
     val rootProfile = new SegmentConfig()
-//    rootProfile.children.addAll(profile.segmentDefinition)
+    //    rootProfile.children.addAll(profile.segmentDefinition)
     rootProfile.children ++= profile.segmentDefinition
-    rootProfile.cardinality="[1..1]"
+    rootProfile.cardinality = "[1..1]"
 
     stackProfile.push(rootProfile) //add root
 
     val stackOutput = scala.collection.mutable.Stack[HL7Hierarchy]()
     stackOutput.push(root_output)
 
-    message.split(NEW_LINE_FEED).filter{ it => !it.isBlank}.zipWithIndex.foreach {
+    message.split(NEW_LINE_FEED).filter { it => !it.isBlank }.zipWithIndex.foreach {
       //case (line) if line._1.isBlank() => {} //ignore
       case (line, index) if index == 0 => { //Initialize with MSH
-        output = new HL7Hierarchy(index+1, line)
-//        root_output.children.addOne(output)
+        output = new HL7Hierarchy(index + 1, line)
+        //        root_output.children.addOne(output)
         root_output.children += output
         //output = root_output
 
@@ -58,7 +52,7 @@ object HL7HierarchyParser {
         do {
           try {
             val found = profilePointer.children(segment) //Found it as child..
-            val newSeg = new HL7Hierarchy(index + 1,line)
+            val newSeg = new HL7Hierarchy(index + 1, line)
             stackOutput.push(output)
             stackProfile.push(profilePointer)
             output.children += newSeg
@@ -97,5 +91,3 @@ object HL7HierarchyParser {
     return root_output
   }
 }
-
-

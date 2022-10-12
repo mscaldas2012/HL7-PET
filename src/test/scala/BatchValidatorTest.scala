@@ -1,5 +1,5 @@
-import open.HL7PET.tools.model.Profile
-import open.HL7PET.tools.{BatchValidator, ValidationErrors}
+import gov.cdc.hl7.{BatchValidator, ValidationErrors}
+import gov.cdc.hl7.model.Profile
 import org.scalatest.FlatSpec
 
 

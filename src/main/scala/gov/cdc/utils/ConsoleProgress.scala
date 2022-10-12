@@ -1,4 +1,4 @@
-package utils
+package gov.cdc.utils
 
 /**
   * This class simply keeps printing a dot (.) on the console to let the user know

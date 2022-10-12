@@ -1,9 +1,7 @@
-package open.HL7PET.tools
-
-import java.util.NoSuchElementException
+package gov.cdc.hl7
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
-import open.HL7PET.tools.model.{HL7Hierarchy, Profile, SegmentConfig}
+import gov.cdc.hl7.model.{HL7Hierarchy, Profile, SegmentConfig}
 
 import scala.io.Source
 

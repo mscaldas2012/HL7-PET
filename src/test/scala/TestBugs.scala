@@ -1,4 +1,4 @@
-import open.HL7PET.tools.HL7ParseUtils
+import gov.cdc.hl7.HL7ParseUtils
 import org.scalatest.FlatSpec
 
 import scala.io.Source

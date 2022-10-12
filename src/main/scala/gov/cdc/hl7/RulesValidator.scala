@@ -1,7 +1,7 @@
-package open.HL7PET.tools
+package gov.cdc.hl7
 
-import com.fasterxml.jackson.databind.{DeserializationConfig, ObjectMapper}
-import open.HL7PET.tools.model.ValidationRules
+import com.fasterxml.jackson.databind.ObjectMapper
+import gov.cdc.hl7.model.ValidationRules
 //import org.codehaus.jackson.map.{DeserializationConfig, ObjectMapper}
 import com.fasterxml.jackson.databind.DeserializationFeature
 
