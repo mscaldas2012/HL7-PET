@@ -1,5 +1,6 @@
 import gov.cdc.hl7.HL7FileUtils
-import org.scalatest.FlatSpec
+
+import org.scalatest.flatspec.AnyFlatSpec
 
 /**
   *
@@ -7,7 +8,7 @@ import org.scalatest.FlatSpec
   * @Created - 6/2/17
   * @Author Marcelo Caldas mcq1@cdc.gov
   */
-class HL7FileUtilsTest extends FlatSpec {
+class HL7FileUtilsTest extends AnyFlatSpec {
     "HL7FileUtils" should "split messages" in {
         var msgSplitter = new HL7FileUtils()
         msgSplitter.splitMessages("src/test/resources/Cancer.txt", "target/temp", "cancerMSG")

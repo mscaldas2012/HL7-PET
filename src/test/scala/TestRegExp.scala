@@ -1,10 +1,9 @@
-import gov.cdc.hl7.HL7StaticParser
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
 import scala.collection.immutable.ListMap
 import scala.util.Try
 
-class TestRegExp  extends FlatSpec {
+class TestRegExp  extends AnyFlatSpec {
   val myregExp = "OBX\\|([0-9]?)\\|TX\\|(19139)\\-5".r
   val myText = "OBX|9|TX|19139-5^PATHOLOGIST NAME^LN^500929^SIGNED^L|| Electronically signed:  "
 

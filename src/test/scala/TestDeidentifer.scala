@@ -3,9 +3,10 @@
 import gov.cdc.hl7.DeIdentifier
 import gov.cdc.hl7.HL7StaticParser.NEW_LINE_FEED
 import gov.cdc.utils.FileUtils
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+//import org.scalatest.FlatSpec
 
-class TestDeidentifer extends FlatSpec {
+class TestDeidentifer extends AnyFlatSpec {
 
   "DeIdentifier" should "clean data" in {
     val d = new DeIdentifier()

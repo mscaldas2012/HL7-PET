@@ -39,21 +39,28 @@ publishMavenStyle := true
 
 //useGpg := true
 
-version := "1.2.7"
+version := "1.2.7.1"
 
-scalaVersion := "2.13.8"
+//scalaVersion := "2.12.17"
+scalaVersion:= "2.13.10"
 
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
-// https://mvnrepository.com/artifact/org.scalatest/scalatest
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.14"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
+
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14.0"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
- libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.13.4"
+ libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
- libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.13.4" pomOnly()
+ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
- libraryDependencies += "com.google.code.gson" % "gson" % "2.9.0"
+ libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
+// https://mvnrepository.com/artifact/org.scalatest/scalatest-flatspec
+//libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
+
 
 //assemblyMergeStrategy in assembly := {
 //  case PathList("META-INF", xs @ _*) => MergeStrategy.discard

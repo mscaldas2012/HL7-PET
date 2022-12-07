@@ -2,7 +2,8 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import gov.cdc.hl7.{BatchValidator, StructureValidator, ValidationErrors}
 import gov.cdc.hl7.model.Profile
-import org.scalatest.FlatSpec
+
+import org.scalatest.flatspec.AnyFlatSpec
 
 import scala.io.Source
 
@@ -12,7 +13,7 @@ import scala.io.Source
   * @Created - 2019-02-08
   * @Author Marcelo Caldas mcq1@cdc.gov
   */
-class StructureValidatorTest extends FlatSpec {
+class StructureValidatorTest extends AnyFlatSpec {
     "SingleBatchedMessage" must "pass validation" in {
         val errors = processHappyPathMessage("FDD_CAMP_TC01_ADD.txt")
 //        assert(errors.totalErrors == 0)

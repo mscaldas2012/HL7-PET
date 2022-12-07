@@ -1,9 +1,10 @@
 import gov.cdc.hl7.HL7ParseUtils
-import org.scalatest.FlatSpec
+
+import org.scalatest.flatspec.AnyFlatSpec
 
 import scala.io.Source
 
-class TestBugs extends FlatSpec {
+class TestBugs extends AnyFlatSpec {
 
   def readResourceFile(fileName: String): String = {
     val content: String = Source.fromResource(fileName).getLines().mkString("\n")

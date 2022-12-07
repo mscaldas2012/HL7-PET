@@ -1,9 +1,10 @@
 import gov.cdc.hl7.{BatchValidator, ValidationErrors}
 import gov.cdc.hl7.model.Profile
-import org.scalatest.FlatSpec
+
+import org.scalatest.flatspec.AnyFlatSpec
 
 
-class BatchValidatorTest extends FlatSpec {
+class BatchValidatorTest extends AnyFlatSpec {
 
   //Happy Path:
   "SingleBatchedMessage" must "pass validation" in {

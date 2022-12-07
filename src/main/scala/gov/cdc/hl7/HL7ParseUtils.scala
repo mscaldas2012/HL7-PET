@@ -127,7 +127,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
 
   //Method to help non-scala code, because the default parameter value doesn't work
   def getValue(path: String): Option[Array[Array[String]]] = {
-    HL7StaticParser.getValue(message, path)
+    this.getValue(path, true)
   }
 
   //main Entry - can be called  outside code to find values based on path
@@ -148,7 +148,10 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
   def getFirstValue(path: String): Option[String] = {
-    HL7StaticParser.getFirstValue(message, path)
+    val value = getValue( path)
+    if (value.isDefined && value.isDefined)
+      return Some(value.get(0)(0))
+    None
   }
 }
 
