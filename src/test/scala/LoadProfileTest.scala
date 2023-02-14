@@ -41,13 +41,13 @@ class LoadProfileTest extends AnyFlatSpec {
   }
 
   "HL7Hierachy" should "be loaded" in {
-    val profileFile = Source.fromResource("COVID_ORC.json").getLines().mkString("\n")
-    val mapper = new ObjectMapper()
-    mapper.registerModule(DefaultScalaModule)
-    val profile = mapper.readValue(profileFile, classOf[Profile])
-    val message = Source.fromResource("covidMsg.hl7").mkString
+    val profileFile = Source.fromFile("src/test/resources/BasicProfile.json").getLines().mkString("\n")
+//    val mapper = new ObjectMapper()
+//    mapper.registerModule(DefaultScalaModule)
+//    val profile = mapper.readValue(profileFile, classOf[Profile])
+    val message = Source.fromFile("src/test/resources/DHQP_SPM_OTH_SECOND.hl7").mkString
 
-    val parser = HL7HierarchyParser.parseMessageHierarchy(message, profile)
+    val parser = HL7HierarchyParser.parseMessageHierarchyFromJson(message, profileFile)
 //    val output = parser.parseMessageHierarchy()
 
     println(parser)

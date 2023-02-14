@@ -1,9 +1,12 @@
 package gov.cdc.hl7
 
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.google.gson.Gson
 import gov.cdc.hl7.model.{HL7Hierarchy, Profile, SegmentConfig}
 
 object HL7HierarchyParser {
-
+  val gson = new Gson()
   val NEW_LINE_FEED = "\\\r\\\n|\\\n\\\r|\\\r|\\\n"
   //
   //  if (profile == null) {
@@ -89,5 +92,12 @@ object HL7HierarchyParser {
       }
     }
     return root_output
+  }
+
+  def parseMessageHierarchyFromJson(message: String, profile: String): HL7Hierarchy = {
+      val mapper = new ObjectMapper()
+      mapper.registerModule(DefaultScalaModule)
+      val profileObj:Profile = mapper.readValue(profile, classOf[Profile])
+    return parseMessageHierarchy(message, profileObj)
   }
 }

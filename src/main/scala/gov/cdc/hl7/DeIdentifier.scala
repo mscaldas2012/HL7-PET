@@ -3,6 +3,7 @@ package gov.cdc.hl7
 import gov.cdc.hl7.HL7StaticParser.NEW_LINE_FEED
 import gov.cdc.utils.{ConsoleProgress, FileUtils}
 
+import scala.jdk.CollectionConverters._
 import scala.util.matching.Regex
 
 case class RedactInfo( path: String, rule: String, lineNumber: Int)
@@ -118,7 +119,7 @@ class DeIdentifier() {
             if (!subline.isEmpty)
                 cleanMessage += subline + "\n"
         }}
-        (cleanMessage, report.toList)
+        (cleanMessage, report.asJava)
 
     }
     def deIdentifyFile(messageFileName: String, rulesFileName: String): Unit = {
