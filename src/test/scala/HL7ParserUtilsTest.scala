@@ -357,6 +357,13 @@ class HL7ParserUtilsTest extends AnyFlatSpec  {
     val obrs = hl7Parser.getFirstValue("OBR[4]->OBX-3.2")
     println(obrs.get)
   }
+
+  "HL7Parser" should "be created with factory method" in {
+    val msg = Source.fromFile("src/test/resources/DHQP_SPM_OTH_SECOND.hl7").getLines().mkString("\n")
+    val parser = HL7ParseUtils.getParser(msg, "COVID_ORC.json")
+
+    printResults(parser.getValue("OBR[1]"))
+  }
 }
 
 

@@ -203,9 +203,10 @@ class HL7StaticParserUtilsTest extends AnyFlatSpec {
 
 
     println("\n\nRepeats...")
-    assert(HL7StaticParser.getValue(testMessage, "OBR[*]-4[1].1").get.length == 2)
+    assert(HL7StaticParser.getValue(testMessage, "OBR[*]-4[1].1").get.length == 3)
     assert(HL7StaticParser.getValue(testMessage, "OBR-4[1]").get.length == 2)
     assert(HL7StaticParser.getValue(testMessage, "PID[1]-5[*]").get.length == 1)
+
 
 
     println("\n\nEmpty or no match evals")

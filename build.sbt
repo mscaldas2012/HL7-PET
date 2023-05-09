@@ -39,7 +39,7 @@ publishMavenStyle := true
 
 //useGpg := true
 
-version := "1.2.7.2"
+version := "1.2.7.3"
 
 //scalaVersion := "2.12.17"
 scalaVersion:= "2.13.10"

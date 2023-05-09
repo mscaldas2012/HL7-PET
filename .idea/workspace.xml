@@ -23,12 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/PhinGuideProfile.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +68,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
                 <item name="HL7-PET" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HL7-PET" type="f1a62948:ProjectNode" />
+                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
+                <item name="sbt commands" type="5c424813:SbtViewContributor$SbtCommandsGroupNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -116,24 +129,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/_projects/ocio/ede/data-exchange-hl7&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50229883&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;sbt.project.settings.configurable&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/_projects/personal/HL7-PET/src/main/scala/open/HL7PET/tools&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/_projects/ocio/ede/hl7-pet/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50229883",
+    "settings.editor.selected.configurable": "sbt.project.settings.configurable",
+    "two.files.diff.last.used.folder": "C:/_projects/personal/HL7-PET/src/main/scala/open/HL7PET/tools",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\_projects\ocio\ede\hl7-pet\src\main\resources" />
@@ -149,7 +163,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.TestDeidentifer.Deidentifier should generate report">
+  <component name="RunManager" selected="ScalaTest.HL7ParserUtilsTest.Parser should split single message">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -174,6 +188,36 @@
       <module name="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="169a236b-508f-4f10-a5e8-f3581ee48d04" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -187,7 +231,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7ParserUtilsTest.PathRegEx should match children" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.FilterRegEx should match these" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -196,12 +240,12 @@
       </option>
       <option name="testKind" value="Test name" />
       <option name="testClassPath" value="HL7ParserUtilsTest" />
-      <option name="testName" value="PathRegEx should match children" />
+      <option name="testName" value="FilterRegEx should match these" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7ParserUtilsTest.PathRegEx should match first child" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.HL7Parser should be created with factory method" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -210,12 +254,12 @@
       </option>
       <option name="testKind" value="Test name" />
       <option name="testClassPath" value="HL7ParserUtilsTest" />
-      <option name="testName" value="PathRegEx should match first child" />
+      <option name="testName" value="HL7Parser should be created with factory method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.HL7Hierachy should be loaded" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.Parser should split single message" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -223,13 +267,13 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="LoadProfileTest" />
-      <option name="testName" value="HL7Hierachy should be loaded" />
+      <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="Parser should split single message" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadProfileTest.HL7Hierarchy should be loaded iwth default profile" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="HL7ParserUtilsTest.Paths with filters should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -237,8 +281,22 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="LoadProfileTest" />
-      <option name="testName" value="HL7Hierarchy should be loaded iwth default profile" />
+      <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="Paths with filters should be found" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7ParserUtilsTest.regex should match" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="HL7ParserUtilsTest" />
+      <option name="testName" value="regex should match" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,20 +311,6 @@
       <option name="testKind" value="Class" />
       <option name="testClassPath" value="StructureValidatorTest" />
       <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDeidentifer.Deidentifier should generate report" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="TestDeidentifer" />
-      <option name="testName" value="Deidentifier should generate report" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -291,11 +335,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
-        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierachy should be loaded" />
-        <item itemvalue="ScalaTest.LoadProfileTest.HL7Hierarchy should be loaded iwth default profile" />
-        <item itemvalue="ScalaTest.HL7ParserUtilsTest.PathRegEx should match first child" />
-        <item itemvalue="ScalaTest.HL7ParserUtilsTest.PathRegEx should match children" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Parser should split single message" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.HL7Parser should be created with factory method" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.Paths with filters should be found" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.FilterRegEx should match these" />
+        <item itemvalue="ScalaTest.HL7ParserUtilsTest.regex should match" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +428,11 @@
       <workItem from="1672938892014" duration="1240000" />
       <workItem from="1673374348853" duration="6435000" />
       <workItem from="1675950332136" duration="3775000" />
-      <workItem from="1676319699636" duration="2460000" />
+      <workItem from="1676319699636" duration="3837000" />
+      <workItem from="1677775983005" duration="2679000" />
+      <workItem from="1682427119680" duration="685000" />
+      <workItem from="1683033529645" duration="2172000" />
+      <workItem from="1683642655331" duration="4981000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -415,7 +463,6 @@
         <entry key="1">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -434,6 +481,7 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
@@ -459,7 +507,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>61</line>
+          <line>62</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
