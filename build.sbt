@@ -1,11 +1,15 @@
-name := "HL7-PET"
+name:= "HL7-PET"
+
+githubOwner := "cdcgov"
+githubRepository := "HL7-PET"
+githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
 scmInfo:= Some (
   ScmInfo(
-    url("https://github.com/cdcent/hl7-pet"),
-    "scm:git@github.com/cdcent/hl7-pet.git"
+    url("https://github.com/cdcgov/hl7-pet"),
+    "scm:git@github.com/cdcgov/hl7-pet.git"
   )
 )
 
@@ -14,7 +18,7 @@ developers := List(
     id="mcq1",
     name="Marcelo Caldas",
     email = "mcq1@cdc.com",
-    url = url ("https://github.com/cdcent/hl7-pet")
+    url = url ("https://github.com/cdcgov/hl7-pet")
   )
 )
 
@@ -24,16 +28,17 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := {
-  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "/")
-}
-
-
+publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet");
+  
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+credentials += Credentials(
+  "GitHub Package Registry",
+  "maven.pkg.github.com",
+  "cdcgov",
+  System.getenv("GITHUB_TOKEN")
+);
+
 publishMavenStyle := true
 
 
