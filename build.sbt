@@ -1,15 +1,11 @@
-name:= "HL7-PET"
-
-githubOwner := "cdcgov"
-githubRepository := "HL7-PET"
-githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
+name := "HL7-PET"
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
 scmInfo:= Some (
   ScmInfo(
-    url("https://github.com/cdcgov/hl7-pet"),
-    "scm:git@github.com/cdcgov/hl7-pet.git"
+    url("https://github.com/cdcent/hl7-pet"),
+    "scm:git@github.com/cdcent/hl7-pet.git"
   )
 )
 
@@ -18,7 +14,7 @@ developers := List(
     id="mcq1",
     name="Marcelo Caldas",
     email = "mcq1@cdc.com",
-    url = url ("https://github.com/cdcgov/hl7-pet")
+    url = url ("https://github.com/cdcent/hl7-pet")
   )
 )
 
@@ -28,17 +24,16 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet");
-  
+publishTo := {
+  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "/")
+}
+
+
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-credentials += Credentials(
-  "GitHub Package Registry",
-  "maven.pkg.github.com",
-  "cdcgov",
-  System.getenv("GITHUB_TOKEN")
-);
-
+credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 publishMavenStyle := true
 
 
@@ -58,11 +53,11 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14.0"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
- libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
+libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
- libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
+libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
- libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
+libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 // https://mvnrepository.com/artifact/org.scalatest/scalatest-flatspec
 //libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
 

@@ -66,7 +66,7 @@ object HL7HierarchyParser {
             case e: NoSuchElementException => { //not children...
               if (stackProfile.isEmpty) { // Segment is not recognized as child of current segment.
                 //throw new HL7ParseError("Unable to parse message hierarchy", segment)
-                println("Unable to process segment " + segment)
+//                println("Unable to process segment " + segment)
                 //Ingore Segment and go back to where we were...
                 lineProcessed = true
                 while (stackProfileBackup.nonEmpty) {
