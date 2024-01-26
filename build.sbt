@@ -24,6 +24,7 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
+<<<<<<< HEAD
 publishTo := {
   val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
@@ -34,24 +35,34 @@ publishTo := {
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+=======
+publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
+credentials += Credentials(
+  "GitHub Package Registry",
+  "maven.pkg.github.com",
+  "cdcgov",
+  System.getenv("GITHUB_TOKEN")
+)
+
+>>>>>>> a34297ddf8384bd748876031aec1d62324a17f2c
 publishMavenStyle := true
 
-
-//useGpg := true
-
-version := "1.2.7.3"
-
-//scalaVersion := "2.12.17"
+version := "1.2.7.4"
 scalaVersion:= "2.13.10"
 
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
+Global / excludeLintKeys += mainClass
+
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.14"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % "test"
 libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
-
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14.0"
+libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
+libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
+libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 
+<<<<<<< HEAD
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
 libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
@@ -68,6 +79,8 @@ libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 //}
 
 //Do not append scala versions to the generated artifact
+=======
+>>>>>>> a34297ddf8384bd748876031aec1d62324a17f2c
 crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true

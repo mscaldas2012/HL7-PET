@@ -13,6 +13,20 @@ to retrieve values from specific fields of a given HL7 message natively, i.e., w
 the raw pipe-delimited message into another object oriented format. Because its using scala under the hood,
 this approach seems to be working very effectively and can return values very fast.
 
+# Build Instructions
+## Prerequisites
+- Java Development Kit (JDK) 11
+- Scala (Version) 2.13.10
+- SBT (Scala Build Tool)
+- GitHub Personal Access Token
+  
+## Installation
+- Clone the repository: https://github.com/CDCgov/hl7-pet.git
+- Create GITHUB_TOKEN from your personal GithHub Settings>Developer Settings->Personal Access Tokens>Generate New Token(with any scope), set it as environment variable and update the build.sbt file accordingly
+- Build the project
+- from sbt terminal run 'package' command for jar file to be generated
+  
+
 # Extracting Values from a HL7 message.
 
 For a code example on how to initialize the parser, look intot he ExampleApp under test/scala. 
