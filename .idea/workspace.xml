@@ -23,21 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" />
+>>>>>>> 0eb13b8307565d2d12db25582ab60787ec119cbd
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/project/plugins.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
+>>>>>>> 0eb13b8307565d2d12db25582ab60787ec119cbd
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +134,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.DeIdentifierApp.executor": "Run",
@@ -150,8 +158,27 @@
     "settings.editor.selected.configurable": "sbt.project.settings.configurable",
     "two.files.diff.last.used.folder": "C:/_projects/personal/HL7-PET/src/main/scala/open/HL7PET/tools",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/_projects/ocio/ede/hl7-pet/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.50229883&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;sbt.project.settings.configurable&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/_projects/personal/HL7-PET/src/main/scala/open/HL7PET/tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 0eb13b8307565d2d12db25582ab60787ec119cbd
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\_projects\ocio\ede\hl7-pet\src\main\resources" />
@@ -443,11 +470,17 @@
       <workItem from="1682427119680" duration="685000" />
       <workItem from="1683033529645" duration="2172000" />
       <workItem from="1683642655331" duration="4981000" />
+<<<<<<< HEAD
       <workItem from="1705951638199" duration="216000" />
       <workItem from="1705951890715" duration="5520000" />
       <workItem from="1706281365919" duration="1590000" />
       <workItem from="1706290471886" duration="7669000" />
       <workItem from="1706559019293" duration="16542000" />
+=======
+      <workItem from="1683720894027" duration="694000" />
+      <workItem from="1683894124581" duration="541000" />
+      <workItem from="1684168614225" duration="594000" />
+>>>>>>> 0eb13b8307565d2d12db25582ab60787ec119cbd
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
