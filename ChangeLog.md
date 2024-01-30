@@ -1,9 +1,28 @@
 
+v1.2.9 - 2024-01-30
+- DeIdentification: Changed rules from Allowed Values to a "condition" that needs to be met.
+      if an optional conditional statement is present, it will be evaluated to identify if
+      the rule needs to be redacted or not.
+      Condition format supported is : 
+          HL7-PATH<space>COMPARATOR<space>VALUE(s)
+           Where:
+              - HL7-PATH is any valid HL7 Path to extract info from message.
+              - Comparator is one of =, !=, IN, !IN
+              - Value(s) is one value or a list of values separated by ; (semicolon)
+- Improved the RedactInfo.rule to contain a full description of the redaction.
+    Ex.:
+     -  Redacted PID-11 with empty value.
+     -  Redacted PID-13.1 with value 'REDACTED'
+     -  Redacted PID-3.1 with value 'REDACTED' when PID-3.5 !IN (PI;PT;AN;MB)
+
+v1.2.8 - 2024-01-26
+- DeIdentification: Added ability to declare allowed values for a given rule that do not need to be redacted.
+
 v1.2.4.2
-- Fixed a bug on creating hierarchy and ignoning unknown segments.
+- Fixed a bug on creating hierarchy and ignoring unknown segments.
 
 v1.2.4.1
-- Added a constructor param for disabling hierarchy on BatchValidator and defaulted to false.
+- Added a constructor param for disabling hierarchy on BatchValidator (default to false).
 
 v.1.2.4
 - Improved New Line to support \r, \n or both.

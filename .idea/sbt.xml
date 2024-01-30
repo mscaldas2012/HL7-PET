@@ -5,7 +5,6 @@
     <option name="customVMPath" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk/Contents/Home" />
     <option name="linkedExternalProjectsSettings">
       <SbtProjectSettings>
-        <option name="allowSbtVersionOverride" value="true" />
         <option name="converterVersion" value="1" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">

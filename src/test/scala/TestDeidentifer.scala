@@ -19,6 +19,8 @@ class TestDeidentifer extends AnyFlatSpec {
     val rules = FileUtils.readFile("src/main/resources/deid_rules.txt").split(NEW_LINE_FEED)
     val (redactedMessage, report) = d.deIdentifyMessage(msg, rules)
     println(report)
+    println("\n\n\n")
+    println(redactedMessage)
   }
 
   "sbustring" should "be found" in {

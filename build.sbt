@@ -2,7 +2,7 @@ name:= "HL7-PET"
 
 githubOwner := "cdcgov"
 githubRepository := "HL7-PET"
-githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
+//githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
@@ -28,19 +28,27 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
-credentials += Credentials(
-  "GitHub Package Registry",
-  "maven.pkg.github.com",
-  "cdcgov",
-  System.getenv("GITHUB_TOKEN")
-)
+//publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
+//credentials += Credentials(
+//  "GitHub Package Registry",
+//  "maven.pkg.github.com",
+//  "cdcgov",
+//  System.getenv("GITHUB_TOKEN")
+//)
+
+publishTo := {
+  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "/")
+}
+credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
 publishMavenStyle := true
 
-version := "1.2.7.4"
+version := "1.2.9"
 scalaVersion:= "2.13.10"
 
+//mainClass in assembly := Some("gov.cdc.hl7pet.DeIdentifierApp")
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 Global / excludeLintKeys += mainClass
 
