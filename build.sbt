@@ -38,9 +38,9 @@ publishMavenStyle := true
 
 //useGpg := true
 
-version := "1.2.6"
+version := "1.2.7"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.11.5"
 
 mainClass := Some("open.HL7PET.tools.DeIdentifierApp")
 // https://mvnrepository.com/artifact/org.scalatest/scalatest
