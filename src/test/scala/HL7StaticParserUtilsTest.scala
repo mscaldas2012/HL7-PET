@@ -181,6 +181,12 @@ class HL7StaticParserUtilsTest extends AnyFlatSpec {
 //    printResults(hl7Util.getValue("OBX[4]-6.3"))
 //
 //  }
+
+  "PID-5" should "return empty values" in {
+    val pid5 = HL7StaticParser.getValue(testMessage, "PID-5", false)
+    printResults(pid5)
+  }
+
   "Paths" should "be found" in {
 
     println("Simple Evals...")
