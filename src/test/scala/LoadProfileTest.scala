@@ -3,11 +3,12 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.google.gson.{JsonObject, JsonParser}
 import gov.cdc.hl7.HL7HierarchyParser
 import gov.cdc.hl7.model.{Profile, SegmentConfig}
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+//import org.scalatest.FlatSpec
 
 import scala.io.Source
 
-class LoadProfileTest extends FlatSpec {
+class LoadProfileTest extends AnyFlatSpec {
 
   "Profile" should "be loaded" in {
     val content: String = Source.fromResource("DefaultBatchingProfile.json").getLines().mkString("\n")

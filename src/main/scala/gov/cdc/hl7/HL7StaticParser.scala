@@ -319,8 +319,8 @@ object HL7StaticParser {
         if (!"".equals(finalValue))
           fieldArray :+= finalValue
       } else {
-        for ((onefield, j) <- fieldValueSplit.zipWithIndex) {
-          finalValue = onefield
+        for (onefield <- fieldValueSplit.zipWithIndex) {
+          finalValue = onefield._1
           if (comp > 0) {
             val compSplit = finalValue.split(HL7_COMPONENT_SEPARATOR)
             finalValue = compSplit.lift(comp.toInt - 1).getOrElse("")
@@ -329,7 +329,7 @@ object HL7StaticParser {
               finalValue = subCompSplit.lift(subcomp.toInt - 1).getOrElse("")
             }
           }
-          if (!"".equals(finalValue))
+          if (!"".equals(finalValue) || !removeEmpty)
             fieldArray :+= finalValue
         }
       }

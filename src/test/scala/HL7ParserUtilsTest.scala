@@ -2,12 +2,13 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import gov.cdc.hl7.{BatchValidator, HL7ParseError, HL7ParseUtils}
 import gov.cdc.hl7.model.Profile
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+
 
 import scala.io.Source
 
 
-class HL7ParserUtilsTest extends FlatSpec {
+class HL7ParserUtilsTest extends AnyFlatSpec {
   private val testMessage = "MSH|^~\\&|MDSS^2.16.840.1.114222.4.3.2.2.3.161.1.1000.1^ISO|MDCH^2.16.840.1.114222.4.1.3660^ISO|PHINCDS^2.16.840.1.114222.4.3.2.10^ISO|PHIN^2.16.840.1.114222^ISO|20150632162510||ORU^R01^ORU_R01|5276074519_20150626162510529|P|2.5.1|||||||||NOTF_ORU_v3.0^PHINProfileID^2.16.840.1.114222.4.10.3^ISO~Generic_MMG_V2.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO~Hepatitis_MMG_V1.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO\r" +
     "PID|1||5276074529^^^MDCH&2.16.840.1.114222.4.1.3660&ISO||~^^^^^^S||19600101|F||2106-3^Caucasian^CDCREC~1002-5^American Indian^CDCREC|^^ANN ARBOR^26^48105^USA^^^26161|||||||||||2135-2^Hispanic or Latino^CDCREC|||||||20141031\r" +
     "OBR|1||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|68991-9^Epidemiologic Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||10110^Hepatitis A^NND\r" +

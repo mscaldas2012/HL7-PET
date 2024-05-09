@@ -1,9 +1,10 @@
 import gov.cdc.hl7.HL7ParseUtils
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+//import org.scalatest.FlatSpec
 
 import scala.io.Source
 
-class TestBugs extends FlatSpec {
+class TestBugs extends AnyFlatSpec {
 
   def readResourceFile(fileName: String): String = {
     val content: String = Source.fromResource(fileName).getLines().mkString("\n")
@@ -11,7 +12,7 @@ class TestBugs extends FlatSpec {
   }
 
   "Children SPM" should "bring children when adding [1]" in {
-    val testMessage = readResourceFile("DHQP_SPM_OTH_SECOND.hl7")
+    val testMessage = readResourceFile("ORU_SampleOne.hl7")
     val hl7Util = new HL7ParseUtils(testMessage, null, true)
 
     val path = "OBR[4]->SPM-4"

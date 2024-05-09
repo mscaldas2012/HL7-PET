@@ -1,8 +1,9 @@
 import gov.cdc.hl7.{RulesValidator, ValidationErrors}
 import gov.cdc.utils.ConsoleProgress
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
+//import org.scalatest.FlatSpec
 
-class RulesValidatorTests extends FlatSpec  {
+class RulesValidatorTests extends AnyFlatSpec  {
 
   "PredicateRules" must "validate" in {
 

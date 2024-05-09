@@ -13,9 +13,12 @@ import scala.util.matching.Regex
 
 class HL7ParseUtils(message: String, var profile: Profile = null, val buildHierarchy: Boolean = true) {
   //If no Profile is passed, we assume no Hierarchy will be used.
+  var profileName = "DefaultProfile.json"
+
   def this(message: String) {
     this(message, null, false)
   }
+
 
   //If a profile is passed, hierarchy is assumed to be ON!
   def this(message: String, profile: Profile) {
@@ -127,19 +130,19 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
 
   //Method to help non-scala code, because the default parameter value doesn't work
   def getValue(path: String): Option[Array[Array[String]]] = {
-    HL7StaticParser.getValue(message, path)
+    this.getValue(path, true)
   }
 
   //main Entry - can be called  outside code to find values based on path
   def getValue(path: String, removeEmpty: Boolean = true): Option[Array[Array[String]]] = {
-      //val EMPTY = new Array[String](0)
-      path match {
-        //TODO:: see what to do with children!!!
-        case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
-          getChildrenValues(parent, child, removeEmpty)
+      if (buildHierarchy) {
+        path match {
+          case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
+            getChildrenValues(parent, child, removeEmpty)
+          }
+          case _ => HL7StaticParser.getValue(message, path, removeEmpty)
         }
-        case _ => HL7StaticParser.getValue(message, path, removeEmpty)
-      }
+      } else HL7StaticParser.getValue(message, path, removeEmpty)
     }
 
   //Gets values only from a single segment
@@ -148,11 +151,25 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
   }
 
   def getFirstValue(path: String): Option[String] = {
-    HL7StaticParser.getFirstValue(message, path)
+    val value = getValue(path)
+    if (value.isDefined && value.isDefined)
+      return Some(value.get(0)(0))
+    None
   }
 }
 
-object HL7ParseUtils {}
+object HL7ParseUtils {
+
+  def getParser(message: String, profileFilename: String): HL7ParseUtils = {
+    val profileFile = Source.fromResource(profileFilename).getLines().mkString("\n")
+    val mapper = new ObjectMapper()
+    mapper.registerModule(DefaultScalaModule)
+    val profile: Profile = mapper.readValue(profileFile, classOf[Profile])
+
+    new HL7ParseUtils(message, profile, true)
+
+  }
+}
 
 
 

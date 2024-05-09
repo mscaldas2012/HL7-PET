@@ -10,8 +10,5 @@
         <module name="HL7-PET" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="HL7-PET" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

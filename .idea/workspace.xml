@@ -23,33 +23,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseError.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DefaultProfile.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/DemoUseCases.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/BatchValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/BatchValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7FileUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HieararchyParserBackup.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HieararchyParserBackup.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7HierarchyParser.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseError.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/HL7StaticParser.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/RulesValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/RulesValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/ValidationErrors.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/ValidationErrors.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/HL7Hierarchy.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/HL7Hierarchy.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/Profile.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/Profile.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/open/HL7PET/tools/model/ValidationRules.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/model/ValidationRules.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/CSVReader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/CSVReader.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/CodeTimer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/CodeTimer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/ConsoleProgress.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/ConsoleProgress.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/FileUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/utils/IntUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/utils/IntUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deid_rules.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7ParseUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/DHQP_SPM_OTH_SECOND_deidentified.hl7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7FileUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7ParserUtilsTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
@@ -59,6 +59,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestBugs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestBugs.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestRegExp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +90,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="HL7-PET" type="2d1252cf:ModuleNode" />
-                <item name="sbt tasks" type="d9357504:SbtViewContributor$SbtTasksGroupNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -124,6 +119,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/io/github/mscaldas2012/hl7-pet/1.2.6/hl7-pet-1.2.6-sources.jar!/open/HL7PET/tools/HL7ParseUtils.scala" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/io/github/mscaldas2012/hl7-pet/1.2.6/hl7-pet-1.2.6-sources.jar!/open/HL7PET/tools/HL7StaticParser.scala" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/BatchValidator.scala" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -139,32 +136,51 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="1RhNI2mCjnJztfQ9idshZJVTfLX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/_projects/ocio/ede/data-exchange-hl7&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50229883&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/_projects/HL7-PET/src&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DeIdentifierApp.executor": "Run",
+    "Application.ExampleApp.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "ScalaTest.BatchValidatorTest.SingleBatchedMessageNoBHS must pass validation.executor": "Run",
+    "ScalaTest.DemoUseCases.executor": "Run",
+    "ScalaTest.DemoUseCases.static hl7-pet-demo should query data.executor": "Run",
+    "ScalaTest.HL7StaticParserUtilsTest.Paths should be found.executor": "Run",
+    "ScalaTest.HL7StaticParserUtilsTest.executor": "Run",
+    "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data.executor": "Run",
+    "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo should query data.executor": "Debug",
+    "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo static should query data.executor": "Run",
+    "ScalaTest.TestBugs.Children SPM should bring children when adding [1].executor": "Run",
+    "ScalaTest.TestDeidentifer.DeIdentifier should clean data.executor": "Run",
+    "ScalaTest.TestDeidentifer.Deidentifier should generate report.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/m/projects/personal/HL7-PET/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50229883",
+    "two.files.diff.last.used.folder": "/Users/m/projects/work/libs/hl7-pet/src",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\_projects\ocio\ede\hl7-pet\src\test\resources" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/target" />
       <recent name="$PROJECT_DIR$/target/classes" />
     </key>
@@ -175,7 +191,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.TestDeidentifer.Deidentifier should generate report">
+  <component name="RunManager" selected="ScalaTest.DemoUseCases.static hl7-pet-demo should query data">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -200,6 +216,45 @@
       <module name="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="fd7ed7a2-c57b-48b5-9728-2aa14ff830c3" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -213,89 +268,161 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7StaticParserUtilsTest.$LAST Index should return last entry" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="DemoUseCases" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
-      <option name="testName" value="$LAST Index should return last entry" />
-      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
+      <option name="testKind" value="Class" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="DemoUseCases" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HL7StaticParserUtilsTest.Paths with inequalities should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="DemoUseCases.static hl7-pet-demo should query data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="DemoUseCases" />
+      <option name="testName" value="static hl7-pet-demo should query data" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7StaticParserUtilsTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <option name="testClassPath" value="HL7StaticParserUtilsTest" />
-      <option name="testName" value="Paths with inequalities should be found" />
-      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
+      <option name="testName" value="hl7-pet-demo hierarchy should query data" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="StructureValidatorTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <option name="testKind" value="Class" />
+      <option name="workingDirectory" value="C:/_projects/ocio/ede/hl7-pet" />
       <option name="testClassPath" value="StructureValidatorTest" />
-      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDeidentifer.DeIdentifier should clean data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="TestDeidentifer" />
-      <option name="testName" value="DeIdentifier should clean data" />
-      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
+      <option name="workingDirectory" value="C:/_projects/ocio/ede/hl7-pet" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="TestDeidentifer.Deidentifier should generate report" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <option name="testClassPath" value="TestDeidentifer" />
       <option name="testName" value="Deidentifier should generate report" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDeidentifer.sbustring should be found" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="TestDeidentifer" />
-      <option name="testName" value="sbustring should be found" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -309,24 +436,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="ScalaTest.StructureValidatorTest" />
+      <item itemvalue="ScalaTest.DemoUseCases" />
+      <item itemvalue="ScalaTest.DemoUseCases.static hl7-pet-demo should query data" />
+      <item itemvalue="ScalaTest.HL7StaticParserUtilsTest" />
+      <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" />
+      <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.DemoUseCases.static hl7-pet-demo should query data" />
+        <item itemvalue="ScalaTest.DemoUseCases" />
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest" />
         <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
-        <item itemvalue="ScalaTest.TestDeidentifer.DeIdentifier should clean data" />
-        <item itemvalue="ScalaTest.TestDeidentifer.sbustring should be found" />
-        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.$LAST Index should return last entry" />
-        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.Paths with inequalities should be found" />
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -404,6 +538,12 @@
       <workItem from="1632746771457" duration="488000" />
       <workItem from="1633526839893" duration="2891000" />
       <workItem from="1665579984368" duration="3572000" />
+      <workItem from="1670338830351" duration="2478000" />
+      <workItem from="1672944245974" duration="597000" />
+      <workItem from="1706289217933" duration="1176000" />
+      <workItem from="1710540330662" duration="599000" />
+      <workItem from="1711056987794" duration="290000" />
+      <workItem from="1714580548562" duration="12816000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -434,7 +574,6 @@
         <entry key="1">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -453,6 +592,7 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
@@ -472,62 +612,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/TestBugs.scala</url>
-          <line>21</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/TestRegExp.scala</url>
-          <line>110</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala</url>
-          <line>238</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7pet/HL7StaticParser.scala</url>
-          <line>108</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7pet/HL7StaticParser.scala</url>
-          <line>105</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>71</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>96</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>77</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>78</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>85</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>89</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/src/test/scala/DemoUseCases.scala</url>
+          <line>17</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -538,7 +625,7 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="ScalaTestRunConfiguration">
-        <watch expression="compArray(comp.toInt - 1)" language="Scala" />
+        <watch expression="compArray(comp.toInt - 1)" />
       </configuration>
       <configuration name="Application">
         <watch expression="CHILDREN_REGEX(pseg, _, psegIdx, _, _, pfield, _, pfieldIdx, _, _, pcomp, _, psubcomp, cseg, c15 ,c16, c17, c18, c19, c20, c21, c22 )" />
