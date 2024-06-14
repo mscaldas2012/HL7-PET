@@ -55,4 +55,11 @@ class TestDeidentifer extends AnyFlatSpec {
     Source.fromResource(fileName).getLines().mkString("\n")
   }
 
+  "array get" should "get values" in {
+    val r: Option[Array[Array[Boolean]]] = Some(Array(Array(false, false)))
+
+    val v1 = r.get(0).reduce(_ || _)
+//    val v1 = a2.reduce(_ || _)
+  println(v1)
+  }
 }

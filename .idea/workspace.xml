@@ -23,23 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
-      <change afterPath="$PROJECT_DIR$/src/test/scala/DemoRedaction.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile_NoORC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile_NoORC.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/redaction_rules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/ORU_SampleOne.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/ORU_SampleOne.hl7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/DemoUseCases.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/DemoUseCases.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,6 +131,7 @@
     "ScalaTest.TestBugs.Children SPM should bring children when adding [1].executor": "Run",
     "ScalaTest.TestDeidentifer.DeIdentifier should clean data.executor": "Run",
     "ScalaTest.TestDeidentifer.Deidentifier should generate report.executor": "Run",
+    "ScalaTest.TestDeidentifer.array get should get values.executor": "Run",
     "ScalaTest.TestDeidentifer.hl7-pet should redact message.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
@@ -238,14 +225,6 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExampleApp" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ExampleApp" />
-      <module name="HL7-PET" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -370,6 +349,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestDeidentifer.array get should get values" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="TestDeidentifer" />
+      <option name="testName" value="array get should get values" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDeidentifer.hl7-pet should redact message" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="VMParameters" value="" />
@@ -407,9 +413,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ExampleApp" />
       <item itemvalue="ScalaTest.StructureValidatorTest" />
       <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
+      <item itemvalue="ScalaTest.TestDeidentifer.array get should get values" />
       <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
       <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
       <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
@@ -417,10 +423,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
+        <item itemvalue="ScalaTest.TestDeidentifer.array get should get values" />
         <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
         <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
         <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
-        <item itemvalue="Application.ExampleApp" />
       </list>
     </recent_temporary>
   </component>
@@ -515,7 +521,7 @@
       <workItem from="1711056987794" duration="290000" />
       <workItem from="1714580548562" duration="28173000" />
       <workItem from="1715694142266" duration="10456000" />
-      <workItem from="1716382746475" duration="934000" />
+      <workItem from="1716382746475" duration="5778000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -587,6 +593,27 @@
           <url>file://$PROJECT_DIR$/src/test/scala/DemoUseCases.scala</url>
           <line>31</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <condition expression="subline.startsWith(&quot;PID&quot;)" language="Scala" />
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
+          <line>77</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
+          <line>158</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
+          <line>161</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
+          <line>151</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
