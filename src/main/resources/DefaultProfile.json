@@ -41,7 +41,6 @@
             }
           }
         }
-
       }
     }
   },
@@ -567,7 +566,7 @@
     "dataType": "TS",
     "maxLength": "26",
     "usage": "X",
-    "cardinality": "[)..1]",
+    "cardinality": "[0..1]",
     "conformance": "",
     "notes": ""
   },
@@ -1115,6 +1114,36 @@
         "maxLength": "60",
         "usage": "O",
         "cardinality": "[0..1]",
+        "conformance": "",
+        "notes": ""
+      }
+    ],
+    "SPM": [
+      {
+        "fieldNumber": 1,
+        "name": "Set ID",
+        "dataType": "SI",
+        "maxLength": "4",
+        "usage": "O",
+        "cardinality": "[0..1]",
+        "conformance": "",
+        "notes": ""
+      },
+      {
+        "fieldNumber": 2,
+        "name": "Specimen ID",
+        "dataType": "EIP",
+        "usage": "O",
+        "cardinality": "[0..1]",
+        "conformance": "",
+        "notes": ""
+      },
+      {
+        "fieldNumber": 3,
+        "name": "Specimen Parent IDs",
+        "dataType": "EIP",
+        "usage": "O",
+        "cardinality": "[0..*]",
         "conformance": "",
         "notes": ""
       }

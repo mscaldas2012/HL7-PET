@@ -543,7 +543,7 @@
               "dataType": "TS",
               "maxLength": "26",
               "usage": "X",
-              "cardinality": "[)..1]",
+              "cardinality": "[0..1]",
               "conformance": "",
               "notes": ""
             },

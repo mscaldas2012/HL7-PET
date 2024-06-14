@@ -7,48 +7,49 @@ import org.scalatest.flatspec.AnyFlatSpec
 import scala.io.Source
 
 class DemoUseCases extends AnyFlatSpec {
+
   "static hl7-pet-demo " should "query data" in {
-    //load mesage from file into String var
-    val testMsg = Source.fromResource("covid19_elr.hl7").getLines().mkString("\n")
+    //load message from file into String var
+    val testMessage = loadFile("covid19_elr.hl7")
     //query message
-    val matchfound = HL7StaticParser.getValue(testMsg, "MSH")
+    val results = HL7StaticParser.getValue(testMessage, "OBR[1] -> OBX")
     //show results
-    printResults(matchfound)
+    printResults(results)
   }
 
   "hierarchical hl7-pet-demo " should "query data" in {
-    //load mesage from file into String var
-    val testMsg = Source.fromResource("covid19_elr.hl7").getLines().mkString("\n")
+    //load message from file into String var
+    val testMsg = loadFile("covid19_elr.hl7")
 
+    //init profile and Hl7 Parser
     val profile = getProfile("DefaultProfile.json")
-    var hl7Util = new HL7ParseUtils(testMsg, profile, true)
-    //declare PATH to query
-    val PATH = "OBR[2]->OBX"
+    val hl7Util = new HL7ParseUtils(testMsg, profile, true )
 
     //query message
-    val matchfound = hl7Util.getValue(PATH)
-
-    //show rresults
-    printResults(matchfound)
+    val results = hl7Util.getFirstValue("PID[1]-10[2].2")
+    println(s"First Value is ${results.get}")
+    //show results
+    //printResults(results)
   }
-
 
   private def printResults(resultSet: Option[Array[Array[String]]]) = {
     println(s"results ")
     if (resultSet.isDefined) {
-      resultSet.get foreach {
-        v => v.foreach(f => println(s"\t--> $f"))
-      }
+      val flat = resultSet.get.flatten
+        flat.foreach (v => println(s"\t--> $v"))
     }
     println("---")
   }
 
   private def getProfile(fileName: String): Profile = {
-    val profileFile = Source.fromResource(fileName).getLines().mkString("\n")
+    val profileFile = loadFile(fileName)
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
     mapper.readValue(profileFile, classOf[Profile])
+  }
 
+  private def loadFile(fileName: String): String = {
+    Source.fromResource(fileName).getLines().mkString("\n")
   }
 
 }

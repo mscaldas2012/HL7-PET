@@ -22,7 +22,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation" />
+    <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
+      <change afterPath="$PROJECT_DIR$/src/test/scala/DemoRedaction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultBatchingProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultFieldsProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DefaultProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DefaultProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile_NoORC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinGuideProfile_NoORC.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PhinProfileFlat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/deid_rules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/redaction_rules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/StructureValidator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/ORU_SampleOne.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/ORU_SampleOne.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/DemoUseCases.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/DemoUseCases.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/ExampleApp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/StructureValidatorTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,17 +132,23 @@
     "Application.ExampleApp.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "ScalaTest.BatchValidatorTest.SingleBatchedMessageNoBHS must pass validation.executor": "Run",
+    "ScalaTest.DemoRedaction.hl7-pet should redact message.executor": "Run",
     "ScalaTest.DemoUseCases.executor": "Run",
-    "ScalaTest.DemoUseCases.static hl7-pet-demo should query data.executor": "Debug",
+    "ScalaTest.DemoUseCases.hierarchical hl7-pet-demo should query data.executor": "Run",
+    "ScalaTest.DemoUseCases.static hl7-pet-demo should query data.executor": "Run",
     "ScalaTest.HL7StaticParserUtilsTest.Paths should be found.executor": "Run",
     "ScalaTest.HL7StaticParserUtilsTest.executor": "Run",
     "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data.executor": "Run",
     "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo should query data.executor": "Debug",
     "ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo static should query data.executor": "Run",
+    "ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation.executor": "Run",
     "ScalaTest.TestBugs.Children SPM should bring children when adding [1].executor": "Run",
     "ScalaTest.TestDeidentifer.DeIdentifier should clean data.executor": "Run",
     "ScalaTest.TestDeidentifer.Deidentifier should generate report.executor": "Run",
+    "ScalaTest.TestDeidentifer.hl7-pet should redact message.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
+    "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/m/projects/personal/HL7-PET/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -153,7 +178,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.DemoUseCases.static hl7-pet-demo should query data">
+  <component name="RunManager" selected="ScalaTest.TestDeidentifer.hl7-pet should redact message">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -217,6 +242,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExampleApp" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ExampleApp" />
+      <module name="HL7-PET" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -230,33 +263,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoUseCases" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="VMParameters" value="" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="alternativeJrePath" />
-      <option name="alternativeJrePathEnabled" value="false" />
-      <option name="classpathModifications">
-        <list />
-      </option>
-      <option name="envs">
-        <map />
-      </option>
-      <option name="passParentEnvs" value="true" />
-      <option name="programParameters" value="" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Class" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <option name="testClassPath" value="DemoUseCases" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DemoUseCases.static hl7-pet-demo should query data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="DemoRedaction.hl7-pet should redact message" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
@@ -276,61 +283,8 @@
       </option>
       <option name="testKind" value="Test name" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <option name="testClassPath" value="DemoUseCases" />
-      <option name="testName" value="static hl7-pet-demo should query data" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HL7StaticParserUtilsTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="VMParameters" value="" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="alternativeJrePath" />
-      <option name="alternativeJrePathEnabled" value="false" />
-      <option name="classpathModifications">
-        <list />
-      </option>
-      <option name="envs">
-        <map />
-      </option>
-      <option name="passParentEnvs" value="true" />
-      <option name="programParameters" value="" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Class" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="VMParameters" value="" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="alternativeJrePath" />
-      <option name="alternativeJrePathEnabled" value="false" />
-      <option name="classpathModifications">
-        <list />
-      </option>
-      <option name="envs">
-        <map />
-      </option>
-      <option name="passParentEnvs" value="true" />
-      <option name="programParameters" value="" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
-      <option name="testName" value="hl7-pet-demo hierarchy should query data" />
+      <option name="testClassPath" value="DemoRedaction" />
+      <option name="testName" value="hl7-pet should redact message" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -362,6 +316,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="StructureValidatorTest" />
+      <option name="testName" value="SingleBatchedMessage must pass validation" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDeidentifer.Deidentifier should generate report" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="HL7-PET" />
       <option name="VMParameters" value="" />
@@ -389,6 +370,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestDeidentifer.hl7-pet should redact message" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="TestDeidentifer" />
+      <option name="testName" value="hl7-pet should redact message" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -399,20 +407,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ExampleApp" />
       <item itemvalue="ScalaTest.StructureValidatorTest" />
-      <item itemvalue="ScalaTest.DemoUseCases" />
-      <item itemvalue="ScalaTest.DemoUseCases.static hl7-pet-demo should query data" />
-      <item itemvalue="ScalaTest.HL7StaticParserUtilsTest" />
-      <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" />
       <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
+      <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
+      <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
+      <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.DemoUseCases.static hl7-pet-demo should query data" />
-        <item itemvalue="ScalaTest.DemoUseCases" />
-        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest" />
+        <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
         <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
-        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" />
+        <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
+        <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
+        <item itemvalue="Application.ExampleApp" />
       </list>
     </recent_temporary>
   </component>
@@ -505,7 +513,9 @@
       <workItem from="1706289217933" duration="1176000" />
       <workItem from="1710540330662" duration="599000" />
       <workItem from="1711056987794" duration="290000" />
-      <workItem from="1714580548562" duration="14361000" />
+      <workItem from="1714580548562" duration="28173000" />
+      <workItem from="1715694142266" duration="10456000" />
+      <workItem from="1716382746475" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -571,6 +581,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="adding documentation" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala/DemoUseCases.scala</url>
+          <line>31</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo />

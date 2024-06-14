@@ -16,7 +16,7 @@ object ExampleApp {
 
   def main(args:Array[String]) = {
 
-    var filename = args.lift(0).getOrElse("ARLN_GC_DUB.hl7")
+    var filename = args.lift(0).getOrElse("covid19_elr.hl7")
     val source = io.Source.fromResource(filename)
     var allLines = ""
     for (line <- source.getLines) {
