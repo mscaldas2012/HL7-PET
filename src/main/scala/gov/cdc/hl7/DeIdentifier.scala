@@ -20,8 +20,9 @@ case class RedactInfo(path: String,  var rule:  String, @transient condition: St
 /**
   * This is a simple De-identifier of HL7 messages where it replaces entire Lines that can potentially have PII data
   * It uses a comma delimited file to configure which lines need to be replaced and the values to replace with.
-  * The first column on the config file, should be a regular expression to match the text
-  * The second column on the config file, is the text to replace the entire line with.
+  * The first column on the config file, should be a HL7 path to find the information to be redacted
+  * The second column on the config file, is the text to replace value of the matching path.
+  * An optional third column on the config file can provide a special condition of whether to redact or not.
   *
   * Created - 6/2/17
   * Author Marcelo Caldas mcq1@cdc.gov
@@ -177,7 +178,7 @@ object DeIdentifier {
 }
 
 object DeIdentifierApp {
-    val DEFAULT_RULES_FILE = "deid_rules.txt"
+    val DEFAULT_RULES_FILE = "redaction_rules.txt"
 
     def showUsage() = {
         println("Pass the file you want to translate and the file with rules.")

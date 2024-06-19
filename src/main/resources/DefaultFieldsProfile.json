@@ -970,6 +970,22 @@
                 "conformance": ""
             }
 
+        ],
+        "EIP": [
+            {
+                "fieldNumber": 1,
+                "name": "Place Assigned Identifier",
+                "dataType": "EI",
+                "usage": "O",
+                "cardinality": "[0..1]"
+            },
+            {
+                "fieldNumber": 2,
+                "name": "Filler Assigned Identfier",
+                "dataType": "EI",
+                "usage": "O",
+                "cardinality": "[0..1]"
+            }
         ]
     }
 }

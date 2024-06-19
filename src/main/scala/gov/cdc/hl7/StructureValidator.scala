@@ -26,7 +26,7 @@ class StructureValidator(message: String, var profile: Profile, var fieldDefinit
 
     if (profile == null) {
         println("Using Default profile")
-        val content:String = Source.fromResource("PhinGuideProfile.json").getLines().mkString("\n")
+        val content:String = Source.fromResource("DefaultProfile.json").getLines().mkString("\n")
 
         profile = mapper.readValue(content, classOf[Profile])
     }

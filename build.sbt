@@ -79,6 +79,7 @@ publishMavenStyle := true
 version := "1.2.9"
 scalaVersion:= "2.13.10"
 
+<<<<<<< HEAD
 //mainClass in assembly := Some("gov.cdc.hl7pet.DeIdentifierApp")
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 Global / excludeLintKeys += mainClass
@@ -93,6 +94,9 @@ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" %
 libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 =======
 version := "1.2.9.1"
+=======
+version := "1.2.10"
+>>>>>>> 5320168fb9083e67d0257221fc839c243cbc5dab
 
 scalaVersion := "2.13.10"
 //scalaVersion := "2.12.10"
