@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 import org.scalatest.flatspec.AnyFlatSpec
-=======
-import gov.cdc.hl7.HL7StaticParser
-import org.scalatest.flatspec.AnyFlatSpec
-//import org.scalatest.FlatSpec
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
-
 import scala.collection.immutable.ListMap
 import scala.util.Try
 

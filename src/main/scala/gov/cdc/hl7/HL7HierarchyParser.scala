@@ -98,10 +98,6 @@ object HL7HierarchyParser {
       val mapper = new ObjectMapper()
       mapper.registerModule(DefaultScalaModule)
       val profileObj:Profile = mapper.readValue(profile, classOf[Profile])
-<<<<<<< HEAD
     return parseMessageHierarchy(message, profileObj)
-=======
-     return parseMessageHierarchy(message, profileObj)
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
   }
 }

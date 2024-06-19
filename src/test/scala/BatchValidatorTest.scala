@@ -3,11 +3,6 @@ import gov.cdc.hl7.model.Profile
 
 import org.scalatest.flatspec.AnyFlatSpec
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 class BatchValidatorTest extends AnyFlatSpec {
 
   //Happy Path:

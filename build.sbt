@@ -29,80 +29,9 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-//publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
-//credentials += Credentials(
-//  "GitHub Package Registry",
-//  "maven.pkg.github.com",
-//  "cdcgov",
-//  System.getenv("GITHUB_TOKEN")
-//)
->>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
-publishTo := {
-  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "/")
-}
-<<<<<<< HEAD
-=======
-//publishTo := {
-//  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
-//  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-//  else Some("releases" at nexus + "/")
-//}
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
-=======
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
->>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
-
-
-//credentials += Credentials ("~/.sbt/sonatype_credentials")
-//credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-<<<<<<< HEAD
-=======
-//credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
-publishMavenStyle := true
->>>>>>> migrate
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a34297ddf8384bd748876031aec1d62324a17f2c
-=======
-//publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
-//credentials += Credentials(
-//  "GitHub Package Registry",
-//  "maven.pkg.github.com",
-//  "cdcgov",
-//  System.getenv("GITHUB_TOKEN")
-//)
->>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
 publishMavenStyle := true
 
-version := "1.2.9"
-scalaVersion:= "2.13.10"
-
-<<<<<<< HEAD
-//mainClass in assembly := Some("gov.cdc.hl7pet.DeIdentifierApp")
-mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
-Global / excludeLintKeys += mainClass
-
-libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.14"
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % "test"
-libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.14.0"
-libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
-libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
-libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
-=======
-version := "1.2.9.1"
-=======
 version := "1.2.10"
->>>>>>> 5320168fb9083e67d0257221fc839c243cbc5dab
-
 scalaVersion := "2.13.10"
 //scalaVersion := "2.12.10"
 
@@ -111,26 +40,11 @@ mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.18"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.17.0"
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
-<<<<<<< HEAD
-=======
->>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
-libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
-libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
-libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
-//libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
-
-=======
- libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.17.0"
+libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.17.0"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
- libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.17.1" pomOnly()
+libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.17.1" pomOnly()
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
- libraryDependencies += "com.google.code.gson" % "gson" % "2.10.1"
->>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
+libraryDependencies += "com.google.code.gson" % "gson" % "2.10.1"
 
 //assemblyMergeStrategy in assembly := {
 //  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
