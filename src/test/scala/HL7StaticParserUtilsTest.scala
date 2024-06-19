@@ -1,10 +1,27 @@
+<<<<<<< HEAD
 import gov.cdc.hl7.{HL7ParseError, HL7ParseUtils, HL7StaticParser}
 import org.scalatest.flatspec.AnyFlatSpec
+=======
+import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import gov.cdc.hl7.{BatchValidator, HL7ParseError, HL7ParseUtils, HL7StaticParser}
+import gov.cdc.hl7.model.Profile
+import org.scalatest.flatspec.AnyFlatSpec
+
+import java.sql.ResultSet
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 //import org.scalatest.FlatSpec
 
 
+<<<<<<< HEAD
 class HL7StaticParserUtilsTest extends AnyFlatSpec {
   private val testMessage = "MSH|^~\\&|MDSS^2.16.840.1.114222.4.3.2.2.3.161.1.1000.1^ISO|MDCH^2.16.840.1.114222.4.1.3660^ISO|PHINCDS^2.16.840.1.114222.4.3.2.10^ISO|PHIN^2.16.840.1.114222^ISO|20150632162510||ORU^R01^ORU_R01|5276074519_20150626162510529|P|2.5.1|||||||||NOTF_ORU_v3.0^PHINProfileID^2.16.840.1.114222.4.10.3^ISO~Generic_MMG_V2.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO~Hepatitis_MMG_V1.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO\r" +
+=======
+
+class HL7StaticParserUtilsTest extends AnyFlatSpec {
+  private val testMessage =
+    "MSH|^~\\&|MDSS^2.16.840.1.114222.4.3.2.2.3.161.1.1000.1^ISO|MDCH^2.16.840.1.114222.4.1.3660^ISO|PHINCDS^2.16.840.1.114222.4.3.2.10^ISO|PHIN^2.16.840.1.114222^ISO|20150632162510||ORU^R01^ORU_R01|5276074519_20150626162510529|P|2.5.1|||||||||NOTF_ORU_v3.0^PHINProfileID^2.16.840.1.114222.4.10.3^ISO~Generic_MMG_V2.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO~Hepatitis_MMG_V1.0^PHINMsgMapID^2.16.840.1.114222.4.10.4^ISO\r" +
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
     "PID|1||5276074529^^^MDCH&2.16.840.1.114222.4.1.3660&ISO||~^^^^^^S||19600101|F||2106-3^Caucasian^CDCREC~1002-5^American Indian^CDCREC|^^ANN ARBOR^26^48105^USA^^^26161|||||||||||2135-2^Hispanic or Latino^CDCREC|||||||20141031\r" +
     "OBR|1||5276074519^MDCH^2.16.840.1.114222.4.1.3660^ISO|68991-9^Epidemiologic Information^LN|||20150626162510|||||||||||||||20150626162510|||F||||||10110^Hepatitis A^NND\r" +
     "OBX|1|CWE|NOT116^National Reporting Jurisdiction^PHINQUESTION||26^Michigan^FIPS5_2||||||F\n\r" +
@@ -25,7 +42,7 @@ class HL7StaticParserUtilsTest extends AnyFlatSpec {
     lines.foreach { it =>
       println(" --> " + it)
     }
-    assert(lines.size == 8)
+    assert(lines.size == 11)
   }
 
   "Parser" should "split messages" in {
@@ -204,7 +221,11 @@ class HL7StaticParserUtilsTest extends AnyFlatSpec {
 
     println("\n\nRepeats...")
     assert(HL7StaticParser.getValue(testMessage, "OBR[*]-4[1].1").get.length == 3)
+<<<<<<< HEAD
     assert(HL7StaticParser.getValue(testMessage, "OBR-4[1]").get.length == 2)
+=======
+    assert(HL7StaticParser.getValue(testMessage, "OBR-4[1]").get.length == 3)
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
     assert(HL7StaticParser.getValue(testMessage, "PID[1]-5[*]").get.length == 1)
 
 
@@ -252,115 +273,24 @@ class HL7StaticParserUtilsTest extends AnyFlatSpec {
     //assert(maybeString.get.startsWith("OBR"))
   }
 
-  def printResults(maybeStrings: Option[Array[Array[String]]]) = {
+  def printResults(resultSet: Option[Array[Array[String]]]) = {
     println(s"results ")
-    if (maybeStrings.isDefined) {
-      maybeStrings.get foreach {
+    if (resultSet.isDefined) {
+      resultSet.get foreach {
         v => v.foreach(f => println(s"\t--> $f"))
       }
     }
     println("---")
   }
-    //
-//  "Paths with filters" should "be found" in {
-//    println("Both NOT116 -> 109")
-//    val result = hl7Util.getValue("OBX[@3.1='NOT116||NOT109']-5")
-//    result.get.foreach (it => it.foreach { itt => println(itt)})
-//    assert(result.get.length == 2)
-//
-//    println("109 second")
-//    val result2 = hl7Util.getValue("OBX[@3.1='Invalid||NOT109']-5")
-//    result2.get.foreach (it => it.foreach { itt => println(itt)})
-//    assert(result2.get.length == 1)
-//
-//    println("NOT109 first")
-//    val result3 = hl7Util.getValue("OBX[@3.1='NOT109||Invalid']-5")
-//    result3.get.foreach (it => it.foreach { itt => println(itt)})
-//    assert(result3.get.length == 1)
-//
-//    println("Neither")
-//    val result4 = hl7Util.getValue("OBX[@3.1='Invalid1||Invalid2']-5")
-//    assert(result4.isEmpty)
-//
-//
-//    assert(hl7Util.getValue("OBX[*]").get.length == 4)
-//    assert(hl7Util.getFirstValue("OBX[@3.1='NOT116']-5").get.equals("26^Michigan^FIPS5_2"))
-//    assert(hl7Util.getValue("MSH[@12='2.5.1']-21").get(0).length == 3)
-//    assert(hl7Util.getValue("MSH[@12.1='2.5.1']-21").get(0).length == 3)
-//    assert(hl7Util.getValue("MSH[@12.2='2.5.1']-21").isEmpty)
-//    assert(hl7Util.getValue("MSH[@99='2.5.1']-21").isEmpty)
-//    assert(hl7Util.getValue("OBX[@BADFILTER]").isEmpty)
-//  }
-//
-//
-//  "PathRegEx" should "match these" in {
-//    val segmentName = "OBX[@3.1='77990-0']-5[1].2.3"
-//
-//    PATH_REGEX.findAllIn(segmentName).foreach(println)
-//    println("groups:")
-//
-//    val matched = PATH_REGEX.findFirstMatchIn(segmentName)
-//    matched match {
-//      case Some(m) => println("matched - " + m.groupCount)
-//      //      println(s"${m.group(1)} .. ${m.group(2)} .. ${m.group(3)}.. ${m.group(4)}.. ${m.group(5)}.. ${m.group(6)}.. ${m.group(7)}.. ${m.group(8)}.. ${m.group(9)}.. ${m.group(10)}.. ${m.group(11)}.. ${m.group(12)}.. ${m.group(13)}")
-//      case None => println("No matched!")
-//    }
-//
-//    printGroups("OBX[@3.1='77990-0']-5[1].2.3")
-//    println("----")
-//    printGroups("OBX[179]-5[1].2.3")
-//
-//  }
-//  def printGroups(segmentName: String) = {
-//    segmentName match {
-//      case PATH_REGEX(one, _, three, _, five, _, seven, _, _, ten, _, twelv) =>
-//        println(s"12: $one .. $three .. $five ..  $seven ..  $ten ..  $twelv")
-//
-//      case PATH_REGEX(one, two, three, four, five, six, seven, eight, nine, ten, elev, twelv, thir ) =>
-//        println(s"13: $one .. $two .. $three .. $four .. $five .. $six .. $seven .. $eight .. $nine ..  $ten .. $elev ..  $twelv .. $thir")
-//      case PATH_REGEX(one) =>
-//        println(s"1: $one")
-//      case FILTER_REGEX(one, _, _, four, _, six, seven) => println(s"12: $one .. $four .. $six ..  $seven")
-//      case _ => println(" No match!")
-//    }
-//  }
-//
-//  val FILTER_REGEX = "@([0-9]+)((\\.([0-9]+))(\\.([0-9]+))?)?\\='([A-Za-z0-9\\-]+)'".r
-//  "FilterRegEx" should "match these" in {
-//    val segmentName = "@3.1.2='77990-0'"
-//
-//    FILTER_REGEX.findAllIn(segmentName).foreach(println)
-//    println("groups:")
-//
-//    val matched = FILTER_REGEX.findFirstMatchIn(segmentName)
-//    matched match {
-//      case Some(m) => println("matched - " + m.groupCount)
-//            println(s"${m.group(1)} .. ${m.group(2)} .. ${m.group(3)} .. ${m.group(4)} .. ${m.group(5)} .. ${m.group(6)} .. ${m.group(7)} ")//.. ${m.group(8)}.. ${m.group(9)}.. ${m.group(10)}.. ${m.group(11)}.. ${m.group(12)}.. ${m.group(13)}")
-//      case None => println("No matched!")
-//    }
-//    printGroups("@3.1.2='77990-0'")
-//    println("----")
-//    printGroups("@4='abc'")
-//  }
-//
-//  "regex" should "match" in {
-//    println("2.16.8.140".matches("[0-9](\\.[0-9]+)+"))
-//  }
-//
-//
-//   "Hierarchy" must "be loaded" in {
-//      val profile = getProfile()
-//      val message = Source.fromResource("23zExample.hl7").getLines().mkString("\n")
-//      val parser = new HL7ParseUtils(message, profile, true)
-//      println(parser.getFirstValue("MSH-12"))
-//   }
-//
-//
-//  def getProfile(): Profile = {
-//    val profileFile = Source.fromResource("COVID_ORC.json").getLines().mkString("\n")
-//    val mapper = new ObjectMapper()
-//    mapper.registerModule(DefaultScalaModule)
-//    mapper.readValue(profileFile, classOf[Profile])
-//
-//  }
+
+  def getProfile(fileName: String): Profile = {
+    val profileFile = Source.fromResource(fileName).getLines().mkString("\n")
+    val mapper = new ObjectMapper()
+    mapper.registerModule(DefaultScalaModule)
+    mapper.readValue(profileFile, classOf[Profile])
+
+  }
+
+
+
 }

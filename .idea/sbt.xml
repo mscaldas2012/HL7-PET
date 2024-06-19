@@ -5,8 +5,12 @@
     <option name="customVMPath" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk/Contents/Home" />
     <option name="linkedExternalProjectsSettings">
       <SbtProjectSettings>
+<<<<<<< HEAD
         <option name="allowSbtVersionOverride" value="true" />
         <option name="converterVersion" value="1" />
+=======
+        <option name="converterVersion" value="2" />
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
@@ -14,7 +18,10 @@
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
+<<<<<<< HEAD
         <option name="resolveSbtClassifiers" value="true" />
+=======
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
         <option name="sbtVersion" value="1.8.0" />
       </SbtProjectSettings>
     </option>

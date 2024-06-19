@@ -375,7 +375,7 @@
     "dataType": "ST",
     "maxLength": "0",
     "usage": "X",
-    "cardinality": "[0..1]",
+    "cardinality": "[0..q]",
     "conformance": "",
     "notes": ""
   },
@@ -477,7 +477,7 @@
     "usage": "RE",
     "cardinality": "[0..*]",
     "conformance": "",
-    "notes": "This field further defines the patient's ancestry. HL7 allows this field to repeat."
+    "notes": "This field further defnies the patient's ancestry. HL7 allows this field to repeat."
   },
   {
     "fieldNumber": 23,
@@ -567,7 +567,7 @@
     "dataType": "TS",
     "maxLength": "26",
     "usage": "X",
-    "cardinality": "[0..1]",
+    "cardinality": "[)..1]",
     "conformance": "",
     "notes": ""
   },
@@ -857,7 +857,7 @@
   },
   {
     "fieldNumber": 34,
-    "name": "Technician",
+    "name": "Tecghnician",
     "dataType": "ST",
     "maxLength": "200",
     "usage": "X",

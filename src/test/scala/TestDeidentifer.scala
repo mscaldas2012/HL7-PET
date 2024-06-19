@@ -10,12 +10,12 @@ class TestDeidentifer extends AnyFlatSpec {
 
   "DeIdentifier" should "clean data" in {
     val d = new DeIdentifier()
-    d.deIdentifyFile( "src/test/resources/DHQP_SPM_OTH_SECOND.hl7", "src/main/resources/deid_rules.txt")
+    d.deIdentifyFile( "src/test/resources/ORU_SampleOne.hl7", "src/main/resources/deid_rules.txt")
   }
 
   "Deidentifier" should "generate report" in {
     val d = new DeIdentifier()
-    val msg = FileUtils.readFile("src/test/resources/DHQP_SPM_OTH_SECOND.hl7")
+    val msg = FileUtils.readFile("src/test/resources/ORU_SampleOne.hl7")
     val rules = FileUtils.readFile("src/main/resources/deid_rules.txt").split(NEW_LINE_FEED)
     val (redactedMessage, report) = d.deIdentifyMessage(msg, rules)
     println(report)

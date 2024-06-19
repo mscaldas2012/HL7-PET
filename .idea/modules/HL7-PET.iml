@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <module external.linked.project.id="hl7-pet [file:/C:/_projects/ocio/ede/hl7-pet/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="MavenCustomPomFilePath">
     <option name="mavenPomFileUrl" value="file://$MODULE_DIR$/../../hl7-pet-1.2.3.2.pom" />
@@ -41,4 +42,10 @@
     <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-wordspec_2.13:3.2.14:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.13:3.2.14:jar" level="project" />
   </component>
+=======
+<module version="4">
+  <component name="MavenCustomPomFilePath">
+    <option name="mavenPomFileUrl" value="file://$MODULE_DIR$/../../hl7-pet-1.2.3.2.pom" />
+  </component>
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 </module>

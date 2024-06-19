@@ -13,7 +13,11 @@ import scala.util.matching.Regex
 
 class HL7ParseUtils(message: String, var profile: Profile = null, val buildHierarchy: Boolean = true) {
   //If no Profile is passed, we assume no Hierarchy will be used.
+<<<<<<< HEAD
   var profileName = "PhinGuideProfile.json"
+=======
+  var profileName = "DefaultProfile.json"
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 
   def this(message: String) {
     this(message, null, false)
@@ -135,6 +139,7 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
 
   //main Entry - can be called  outside code to find values based on path
   def getValue(path: String, removeEmpty: Boolean = true): Option[Array[Array[String]]] = {
+<<<<<<< HEAD
     //val EMPTY = new Array[String](0)
     path match {
       //TODO:: see what to do with children!!!
@@ -142,6 +147,16 @@ class HL7ParseUtils(message: String, var profile: Profile = null, val buildHiera
         getChildrenValues(parent, child, removeEmpty)
       }
       case _ => HL7StaticParser.getValue(message, path, removeEmpty)
+=======
+      if (buildHierarchy) {
+        path match {
+          case CHILDREN_REGEX(parent, child) => { //Tried implementing a full RegEx, but run into a 22 limit of fields. Breaking down into multiple regex then...
+            getChildrenValues(parent, child, removeEmpty)
+          }
+          case _ => HL7StaticParser.getValue(message, path, removeEmpty)
+        }
+      } else HL7StaticParser.getValue(message, path, removeEmpty)
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
     }
   }
 

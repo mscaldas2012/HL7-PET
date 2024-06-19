@@ -3,8 +3,13 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.google.gson.{JsonObject, JsonParser}
 import gov.cdc.hl7.HL7HierarchyParser
 import gov.cdc.hl7.model.{Profile, SegmentConfig}
+<<<<<<< HEAD
 
 import org.scalatest.flatspec.AnyFlatSpec
+=======
+import org.scalatest.flatspec.AnyFlatSpec
+//import org.scalatest.FlatSpec
+>>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 
 import scala.io.Source
 

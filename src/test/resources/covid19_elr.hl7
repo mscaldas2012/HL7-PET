@@ -1,0 +1,23 @@
+MSH|^~\&|SendingApp|SendingFac|ReceivingApp|ReceivingFac|20240502120000||ORU^R01|MSG000001|P|2.3|
+PID|1|123456789|123456789|Doe^John^Q^Jr.||19700101|M|||2106-3^Caucasian^CDCREC~1002-5^American Indian^CDCREC|123 Main St^^Anytown^CA^12345^USA||(555)555-5555|
+OBR|1|123456|COVID-19 PCR^COVID-19 Polymerase Chain Reaction^LN|||20240502080000|20240502110000|||||||||F||||
+OBX|1|CE|94500-6^SARS-CoV-2 RNA Pnl Respiratory|1|Detected^Detected^LN|||||F||
+OBX|2|ST|94308-4^SARS-CoV-2 RNA^LN||Positive|||F||
+OBX|3|CE|94503-0^SARS-CoV-2 RNA Detectable|1|Present^Present^LN|||||F||
+OBX|4|ST|94533-7^COVID-19 Nucleic acid amplification with probe detection|Positive|||F||
+OBX|5|ST|94759-7^SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection|Detected|||F||
+NTE|1|L|This test confirms the presence of SARS-CoV-2 RNA in the respiratory specimen.|
+SPM|1|^Respiratory^^^|Nasopharyngeal Swab^NPS^LN|
+OBR|22|123457|COVID-19 Antigen^COVID-19 Antigen Test^LN|||20240502083000|20240502103000|||||||||F||||
+OBX|6|CE|94508-9^SARS-CoV-2 Ag Respiratory|Rapid Test^Rapid Test^LN||||||F||
+OBX|7|ST|94758-9^SARS-CoV-2 Ag [Presence] in Respiratory specimen by Rapid test|Detected|||F||
+OBX|8|ST|94678-0^SARS-CoV-2 Ag [Presence] in Respiratory specimen by Rapid test|Positive|||F||
+NTE|2|L|This rapid test confirms the presence of SARS-CoV-2 antigen in the respiratory specimen.|
+SPM|2|^Respiratory^^^|Nasopharyngeal Swab^NPS^LN|
+OBR|33|123458|COVID-19 Antibody^COVID-19 Antibody Test^LN|||20240502090000|20240502100000|||||||||F||||
+OBX|9|CE|94531-1^SARS-CoV-2 Ab Ser/Plas|1|IgG^IgG^LN|||||F||
+OBX|10|ST|94530-3^SARS-CoV-2 Ab [Presence] in Serum or Plasma|Positive|||F||
+OBX|11|CE|94531-1^SARS-CoV-2 Ab Ser/Plas|2|IgM^IgM^LN|||||F||
+OBX|12|ST|94530-3^SARS-CoV-2 Ab [Presence] in Serum or Plasma|Negative|||F||
+NTE|3|L|The presence of IgG antibodies indicates a past infection, while the absence of IgM antibodies suggests no recent exposure.|
+SPM|3|^Serum^^^|Blood^BLD^LN|
