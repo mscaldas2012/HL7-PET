@@ -1,3 +1,6 @@
+v1.2.10 -2024-06-19
+- Enhancing the Redaction to be able to redact fields with repeat values.
+
 v1.2.9 - 2024-01-30
 
 - DeIdentification: Changed rules from Allowed Values to a "condition" that needs to be met. if an optional conditional statement is present, it will be evaluated to identify if the rule needs to be redacted or not. Condition format supported is : HL7-PATHCOMPARATORVALUE(s) Where: - HL7-PATH is any valid HL7 Path to extract info from message. - Comparator is one of =, !=, IN, !IN - Value(s) is one value or a list of values separated by ; (semicolon)

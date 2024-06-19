@@ -49,6 +49,15 @@ class TestDeidentifer extends AnyFlatSpec {
     println(s"redacted message:\n$redactedMessage")
   }
 
+  "hl7-pet" should "redact celr message" in {
+    val d = new DeIdentifier()
+    val msg = loadFile("HL7_2.5_New HHS Fields1.txt")
+    val rules = loadFile("CELR-config.txt").split(NEW_LINE_FEED)
+    val (redactedMessage, report) = d.deIdentifyMessage(msg, rules)
+    printReport(report)
+    println(s"redacted message:\n$redactedMessage")
+  }
+
   private def printReport(report: util.List[RedactInfo]): Unit = {
     report.forEach( i => println(s"${i.lineNumber}) ${i.path}: ${i.rule}"))
   }
@@ -57,4 +66,11 @@ class TestDeidentifer extends AnyFlatSpec {
     Source.fromResource(fileName).getLines().mkString("\n")
   }
 
+  "array get" should "get values" in {
+    val r: Option[Array[Array[Boolean]]] = Some(Array(Array(false, false)))
+
+    val v1 = r.get(0).reduce(_ || _)
+//    val v1 = a2.reduce(_ || _)
+  println(v1)
+  }
 }

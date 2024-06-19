@@ -61,6 +61,11 @@ credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
+<<<<<<< HEAD
+=======
+//credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+publishMavenStyle := true
+>>>>>>> migrate
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,7 +127,7 @@ libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 =======
  libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.17.0"
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
- libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.17.0" pomOnly()
+ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.17.1" pomOnly()
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
  libraryDependencies += "com.google.code.gson" % "gson" % "2.10.1"
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d

@@ -1,5 +1,5 @@
 MSH|^~\&|SendingApp|SendingFac|ReceivingApp|ReceivingFac|20240502120000||ORU^R01|MSG000001|P|2.3|
-PID|1|123456789|123456789^^^^AN~123456789^^^^AA|Doe^John^Q^Jr.||19700101|M|||2106-3^Caucasian^CDCREC~1002-5^American Indian^CDCREC|123 Main St^^Anytown^CA^12345^USA||(555)555-5555|t|
+PID|1|123456789|123456789^^^^AA~123456789^^^^AA|Doe^John^Q^Jr.||19700101|M|||2106-3^Caucasian^CDCREC~1002-5^American Indian^CDCREC|123 Main St^^Anytown^CA^12345^USA||(555)555-5555|t|
 OBR|1|123456|COVID-19 PCR^COVID-19 Polymerase Chain Reaction^LN|||20240502080000|20240502110000|||||||||F||||
 OBX|1|CE|94500-6^SARS-CoV-2 RNA Pnl Respiratory|1|Detected^Detected^LN|||||F||
 OBX|2|ST|94308-4^SARS-CoV-2 RNA^LN||Positive|||F||
