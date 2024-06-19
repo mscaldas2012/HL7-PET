@@ -24,16 +24,16 @@ homepage := Some(url("https://github.com/cdcent/hl7-pet"))
 
 pomIncludeRepository := { _ => false }
 
-publishTo := {
-  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
-  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "/")
-}
+//publishTo := {
+//  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
+//  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+//  else Some("releases" at nexus + "/")
+//}
 
 
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+//credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 publishMavenStyle := true
 
 
