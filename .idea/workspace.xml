@@ -23,9 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/covid19_elr.hl7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +58,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="HL7-PET" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="HL7-PET" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -90,6 +90,12 @@
     <setting file="jar://$MAVEN_REPOSITORY$/io/github/mscaldas2012/hl7-pet/1.2.6/hl7-pet-1.2.6-sources.jar!/open/HL7PET/tools/HL7StaticParser.scala" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/BatchValidator.scala" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/scala/BatchValidatorTest.scala" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KotlinScriptingSettings">
+    <scriptDefinition className="org.jetbrains.kotlin.idea.core.script.StandardIdeScriptDefinition" definitionName="Kotlin Script">
+      <order>2147483647</order>
+      <autoReloadConfigurations>true</autoReloadConfigurations>
+    </scriptDefinition>
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="ezdx-aks-dev" />
@@ -132,10 +138,12 @@
     "ScalaTest.TestDeidentifer.DeIdentifier should clean data.executor": "Run",
     "ScalaTest.TestDeidentifer.Deidentifier should generate report.executor": "Run",
     "ScalaTest.TestDeidentifer.array get should get values.executor": "Run",
+    "ScalaTest.TestDeidentifer.hl7-pet should redact celr message.executor": "Run",
     "ScalaTest.TestDeidentifer.hl7-pet should redact message.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
     "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
+    "git-widget-placeholder": "redact__repeats",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/m/projects/personal/HL7-PET/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -165,7 +173,7 @@
       <recent name="open.HL7PET.tools" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.TestDeidentifer.hl7-pet should redact message">
+  <component name="RunManager" selected="ScalaTest.TestDeidentifer.hl7-pet should redact celr message">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -261,10 +269,10 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <option name="testClassPath" value="DemoRedaction" />
       <option name="testName" value="hl7-pet should redact message" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,36 +296,9 @@
         <list />
       </option>
       <option name="testKind" value="Class" />
-      <option name="workingDirectory" value="C:/_projects/ocio/ede/hl7-pet" />
+      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
       <option name="testClassPath" value="StructureValidatorTest" />
-      <option name="workingDirectory" value="C:/_projects/ocio/ede/hl7-pet" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StructureValidatorTest.SingleBatchedMessage must pass validation" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="HL7-PET" />
-      <option name="VMParameters" value="" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="alternativeJrePath" />
-      <option name="alternativeJrePathEnabled" value="false" />
-      <option name="classpathModifications">
-        <list />
-      </option>
-      <option name="envs">
-        <map />
-      </option>
-      <option name="passParentEnvs" value="true" />
-      <option name="programParameters" value="" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
-      <option name="testClassPath" value="StructureValidatorTest" />
-      <option name="testName" value="SingleBatchedMessage must pass validation" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\ocio\ede\hl7-pet" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -341,10 +322,10 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <option name="testClassPath" value="TestDeidentifer" />
       <option name="testName" value="Deidentifier should generate report" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -368,10 +349,37 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <option name="testClassPath" value="TestDeidentifer" />
       <option name="testName" value="array get should get values" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeidentifer.hl7-pet should redact celr message" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="HL7-PET" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
+      <option name="testClassPath" value="TestDeidentifer" />
+      <option name="testName" value="hl7-pet should redact celr message" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -395,10 +403,10 @@
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <option name="testClassPath" value="TestDeidentifer" />
       <option name="testName" value="hl7-pet should redact message" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="workingDirectory" value="C:\_projects\HL7-PET" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -414,19 +422,19 @@
     </configuration>
     <list>
       <item itemvalue="ScalaTest.StructureValidatorTest" />
+      <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact celr message" />
       <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
       <item itemvalue="ScalaTest.TestDeidentifer.array get should get values" />
       <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
-      <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
       <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact celr message" />
         <item itemvalue="ScalaTest.TestDeidentifer.hl7-pet should redact message" />
         <item itemvalue="ScalaTest.TestDeidentifer.array get should get values" />
         <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
         <item itemvalue="ScalaTest.DemoRedaction.hl7-pet should redact message" />
-        <item itemvalue="ScalaTest.StructureValidatorTest.SingleBatchedMessage must pass validation" />
       </list>
     </recent_temporary>
   </component>
@@ -522,6 +530,7 @@
       <workItem from="1714580548562" duration="28173000" />
       <workItem from="1715694142266" duration="10456000" />
       <workItem from="1716382746475" duration="5778000" />
+      <workItem from="1718745016005" duration="10495000" />
     </task>
     <task id="LOCAL-00001" summary="adding documentation">
       <created>1562788656016</created>
@@ -602,18 +611,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>158</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>161</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/DeIdentifier.scala</url>
-          <line>151</line>
-          <option name="timeStamp" value="19" />
+          <line>94</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

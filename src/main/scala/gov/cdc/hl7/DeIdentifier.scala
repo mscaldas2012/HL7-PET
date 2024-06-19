@@ -6,10 +6,10 @@ import gov.cdc.utils.{ConsoleProgress, FileUtils}
 import scala.jdk.CollectionConverters._
 import scala.util.matching.Regex
 
-case class RedactInfo(path: String, fieldIndex: Option[Int],  var rule:  String, @transient condition: String, lineNumber: Int) {
+case class RedactInfo(path: String, fieldIndex: Int,  var rule:  String, @transient condition: String, lineNumber: Int) {
    @transient var rulemsg = s"Redacted $path"
-    if (fieldIndex != null && fieldIndex.nonEmpty && fieldIndex.get > 0 )
-        rulemsg += s" (repeating value ${fieldIndex.get + 1})"
+    if ( fieldIndex > 1 )
+        rulemsg += s" (repeating value $fieldIndex)"
     rulemsg += " with "
 
     if (rule == null || rule.isEmpty)
@@ -81,7 +81,7 @@ class DeIdentifier() {
                         replacement match {
                             case FN_REMOVE => {
                                 subline = ""
-                                report += RedactInfo(path, null, replacement, condition, lineNbr + 1)
+                                report += RedactInfo(path, 0, replacement, condition, lineNbr + 1)
                             }
                             case _ =>
                                 val lineIndexed = HL7StaticParser.retrieveFirstSegmentOf(subline, path.substring(0, 3))
@@ -92,33 +92,34 @@ class DeIdentifier() {
                                             val repeats = lineIndexed._2(field.toInt).split("\\~")
                                             repeats.zipWithIndex.foreach {
                                                 case (elem, i) => {
-                                                    if (matchBools(i)) {
-                                                        var redacted = false
-                                                        if (fieldIdx == null || fieldIdx.toInt == i + 1) {
-                                                            if (comp != null) {
-                                                                val compArray = elem.split("\\^")
-                                                                if (compArray.length >= comp.toInt) {
-                                                                    redacted = !compArray(comp.toInt - 1).equals(replacement)
-                                                                    compArray(comp.toInt - 1) = getReplacementValue(replacement, compArray(comp.toInt - 1))
+                                                    if (elem.nonEmpty)
+                                                        if ((matchBools.length == 1 && matchBools(0) ) || matchBools(i)) {
+                                                            var redacted = false
+                                                            if (fieldIdx == null || fieldIdx.toInt == i + 1) {
+                                                                if (comp != null) {
+                                                                    val compArray = elem.split("\\^")
+                                                                    if (compArray.length >= comp.toInt && compArray(comp.toInt - 1).nonEmpty) {
+                                                                        redacted =  !compArray(comp.toInt - 1).equals(replacement)
+                                                                        compArray(comp.toInt - 1) = getReplacementValue(replacement, compArray(comp.toInt - 1))
 
-                                                                }
-                                                                if (fieldIdx == null || fieldIdx.toInt == i + 1)
-                                                                    repeats(i) = compArray.mkString("^")
+                                                                    }
+                                                                    if (fieldIdx == null || fieldIdx.toInt == i + 1)
+                                                                        repeats(i) = compArray.mkString("^")
 
-                                                                else {
-                                                                    repeats(i) = elem
-                                                                    redacted = !elem.equals(replacement)
-                                                                }
-                                                                if (redacted)
-                                                                    report += RedactInfo(path, Some(i), replacement, condition, lineNbr + 1)
-                                                            } else {
-                                                                if (!repeats(i).isEmpty && !replacement.equals(elem)) {
-                                                                    repeats(i) = getReplacementValue(replacement, elem)
-                                                                    report += RedactInfo(path, Some(i), replacement, condition, lineNbr + 1)
+                                                                    else {
+                                                                        repeats(i) = elem
+                                                                        redacted = !elem.equals(replacement)
+                                                                    }
+                                                                    if (redacted)
+                                                                        report += RedactInfo(path, (i +1), replacement, condition, lineNbr + 1)
+                                                                } else {
+                                                                    if (repeats(i).nonEmpty && !replacement.equals(elem)) {
+                                                                        repeats(i) = getReplacementValue(replacement, elem)
+                                                                        report += RedactInfo(path, (i +1), replacement, condition, lineNbr + 1)
+                                                                    }
                                                                 }
                                                             }
                                                         }
-                                                    }
                                                 }
                                                     lineIndexed._2(field.toInt) = repeats.mkString("~")
                                             }
@@ -126,7 +127,7 @@ class DeIdentifier() {
 
                                         } else {
                                             subline = getReplacementValue(replacement, subline) //The whole segment will be replaced!
-                                            report += RedactInfo(path, null, replacement, condition, lineNbr + 1)
+                                            report += RedactInfo(path, 0, replacement, condition, lineNbr + 1)
                                         }
                                     }
                                 }
@@ -145,8 +146,8 @@ class DeIdentifier() {
         if (condition == null || condition.isEmpty)
             return Array(true) //empty condition -> Redact!
         val condParts = condition.split(" ") //get PATH<space>Comparator<space>Value
-        val msgValues = HL7StaticParser.getValue(msg, condParts(0))//we only support single cardinality for now.
-        if (msgValues == null || msgValues == None || msgValues.get.isEmpty)
+        val msgValues = HL7StaticParser.getValue(msg, condParts(0), removeEmpty = false)//we only support single cardinality for now.
+        if (msgValues == null || msgValues.isEmpty || msgValues.get.isEmpty)
             return Array(false) //don't redact
         //We eval line by line, so the first array will always have one entry. the second array will possibly have repeats
         val anyRepeatMatches = msgValues.get(0)
