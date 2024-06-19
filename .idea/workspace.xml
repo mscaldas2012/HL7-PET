@@ -3,33 +3,32 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation">
       <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" />
+=======
+    <list default="true" id="460b119b-a4f7-4de1-bb8f-cba5bc28164e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler_indices_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
       <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HL7-PET.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/plugins.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7HierarchyParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala" afterDir="false" />
     </list>
 =======
     <list default="true" id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="adding documentation" />
@@ -39,17 +38,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+<<<<<<< HEAD
   <component name="ExternalProjectsManager">
     <system id="SBT">
       <state>
@@ -115,21 +109,34 @@
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="ezdx-aks-dev" />
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="ScalaTestRunConfiguration" name="HL7StaticParserUtilsTest.PID-5 should return empty values" />
+    </enabled-run-configurations>
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
+<<<<<<< HEAD
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="1RhNI2mCjnJztfQ9idshZJVTfLX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2bzvQr9C4siGGILLMDdwOlJFJPx" />
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -137,20 +144,16 @@
 <<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ScalaTest.HL7StaticParserUtilsTest.PID-5 should return empty values.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/_projects/ocio/ede/hl7-pet/src/main/resources&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50229883&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;sbt.project.settings.configurable&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/_projects/personal/HL7-PET/src/main/scala/open/HL7PET/tools&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
 =======
   <component name="PropertiesComponent"><![CDATA[{
@@ -184,6 +187,7 @@
     "vue.rearranger.settings.migration": "true"
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
   }
+<<<<<<< HEAD
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -404,6 +408,11 @@
 =======
     <configuration name="HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
+=======
+}</component>
+  <component name="RunManager">
+    <configuration name="HL7StaticParserUtilsTest.PID-5 should return empty values" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
       <module name="HL7-PET" />
       <option name="VMParameters" value="" />
       <option name="allowRunningInParallel" value="false" />
@@ -423,6 +432,7 @@
       </option>
       <option name="testKind" value="Test name" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <option name="testClassPath" value="HL7ParserUtilsTest" />
       <option name="testName" value="Paths with filters should be found" />
 =======
@@ -431,10 +441,15 @@
       <option name="testName" value="hl7-pet-demo hierarchy should query data" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
+=======
+      <option name="testClassPath" value="HL7StaticParserUtilsTest" />
+      <option name="testName" value="PID-5 should return empty values" />
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <configuration name="HL7ParserUtilsTest.regex should match" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
 =======
@@ -540,6 +555,11 @@
         <item itemvalue="ScalaTest.TestDeidentifer.Deidentifier should generate report" />
         <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.hl7-pet-demo hierarchy should query data" />
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="ScalaTest.HL7StaticParserUtilsTest.PID-5 should return empty values" />
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
       </list>
     </recent_temporary>
   </component>
@@ -552,15 +572,13 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="96069d6f-916f-482b-8409-7ae5392c5018" name="Default Changelist" comment="" />
-      <created>1549680316443</created>
+      <changelist id="460b119b-a4f7-4de1-bb8f-cba5bc28164e" name="Changes" comment="" />
+      <created>1707230713987</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1549680316443</updated>
       <workItem from="1549680320722" duration="15079000" />
       <workItem from="1552076842509" duration="5936000" />
@@ -661,84 +679,35 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1562788656016</updated>
+=======
+      <updated>1707230713987</updated>
+      <workItem from="1707230720031" duration="3502000" />
+      <workItem from="1707332641362" duration="1111000" />
+      <workItem from="1707932587696" duration="1155000" />
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
     </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="1">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="roots">
-                    <value>
-                      <list>
-                        <option value="$PROJECT_DIR$" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-            </State>
-          </value>
-        </entry>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding documentation" />
   </component>
   <component name="XDebuggerManager">
 <<<<<<< HEAD
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/src/test/scala/HL7StaticParserUtilsTest.scala</url>
+          <line>186</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/LoadProfileTest.scala</url>
-          <line>62</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/TestDeidentifer.scala</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/src/main/scala/gov/cdc/hl7/HL7StaticParser.scala</url>
+          <line>304</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+<<<<<<< HEAD
 =======
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
     <pin-to-top-manager>
@@ -759,5 +728,7 @@
         <watch expression="filterValues(csegIdx, it.split(HL7_FIELD_SEPARATOR))" />
       </configuration>
     </watches-manager>
+=======
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
   </component>
 </project>

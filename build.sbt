@@ -1,4 +1,9 @@
-name := "HL7-PET"
+name:= "HL7-PET"
+
+//githubOwner := "cdc.gov"
+//githubRepository := "HL7-PET"
+//githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
+
 
 organization:= "gov.cdc.hl7"
 organizationName:= "CDC"
@@ -26,11 +31,22 @@ pomIncludeRepository := { _ => false }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
+//credentials += Credentials(
+//  "GitHub Package Registry",
+//  "maven.pkg.github.com",
+//  "cdcgov",
+//  System.getenv("GITHUB_TOKEN")
+//)
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
 publishTo := {
   val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "/")
 }
+<<<<<<< HEAD
 =======
 //publishTo := {
 //  val nexus = "https://imagehub.cdc.gov/repository/maven-ede/"
@@ -38,27 +54,32 @@ publishTo := {
 //  else Some("releases" at nexus + "/")
 //}
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
+=======
+credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
 
 
 //credentials += Credentials ("~/.sbt/sonatype_credentials")
 //credentials += Credentials ("CDC Nexus Repository Manager", "https://imagehub.cdc.gov/", "mcq1", "")
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
-=======
-publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
-credentials += Credentials(
-  "GitHub Package Registry",
-  "maven.pkg.github.com",
-  "cdcgov",
-  System.getenv("GITHUB_TOKEN")
-)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a34297ddf8384bd748876031aec1d62324a17f2c
+=======
+//publishTo := Some("GitHub cdcgov Apache Maven Packages" at "https://maven.pkg.github.com/cdcgov/hl7-pet")
+//credentials += Credentials(
+//  "GitHub Package Registry",
+//  "maven.pkg.github.com",
+//  "cdcgov",
+//  System.getenv("GITHUB_TOKEN")
+//)
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
 publishMavenStyle := true
 
-version := "1.2.7.4"
+version := "1.2.9"
 scalaVersion:= "2.13.10"
 
+//mainClass in assembly := Some("gov.cdc.hl7pet.DeIdentifierApp")
 mainClass := Some("gov.cdc.hl7pet.DeIdentifierApp")
 Global / excludeLintKeys += mainClass
 
@@ -84,14 +105,14 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.17
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
 <<<<<<< HEAD
+=======
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
 libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.1"
-// https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-modules-base
 libraryDependencies += "com.fasterxml.jackson.module" % "jackson-modules-base" % "2.14.0" pomOnly()
-// https://mvnrepository.com/artifact/com.google.code.gson/gson
 libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
-// https://mvnrepository.com/artifact/org.scalatest/scalatest-flatspec
 //libraryDependencies += "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
 
 =======
@@ -107,9 +128,6 @@ libraryDependencies += "com.google.code.gson" % "gson" % "2.10"
 //  case x => MergeStrategy.first
 //}
 
-//Do not append scala versions to the generated artifact
-=======
->>>>>>> a34297ddf8384bd748876031aec1d62324a17f2c
 crossPaths:= true
 
 publishArtifact in (Compile, packageSrc) := true

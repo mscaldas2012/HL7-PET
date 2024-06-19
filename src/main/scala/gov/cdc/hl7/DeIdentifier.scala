@@ -1,5 +1,6 @@
 package gov.cdc.hl7
 
+
 import gov.cdc.hl7.HL7StaticParser.NEW_LINE_FEED
 import gov.cdc.utils.{ConsoleProgress, FileUtils}
 

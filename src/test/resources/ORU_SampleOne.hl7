@@ -1,12 +1,18 @@
 MSH|^~\&|UT LabWare.Prod^2.16.840.1.114222.4.3.3.8.2.1^ISO|UT.SaltLakeCity.SPHL^2.16.840.1.114222.4.1.3684^ISO|AIMS.INTEGRATION.PRD^2.16.840.1.114222.4.3.15.1^ISO|ViralExDHQPDiagMicro^2.16.840.1.114222.4.1.213285^ISO|20220112165046-0600||ORU^R01^ORU_R01|202201121650469078|P|2.5.1|||NE|NE|||||PHLabReport-NoAck^phLabResultsELRv251^2.16.840.1.113883.9.11^ISO 
 SFT|Abbott Informatics|STARLIMS v11|STARLIMS11.Clin.Prod|CL-439 
+<<<<<<< HEAD:src/test/resources/ORU_SampleOne.hl7
 <<<<<<< HEAD:src/test/resources/DHQP_SPM_OTH_SECOND.hl7
 PID|1||PID00753334^^^TN.Nashville.SPHL&2.16.840.1.114222.4.1.175791&ISO^PI||~^^^^^^S|||F|||^^^TN^1234^USA^C^^47055~^^^GA^33333^YSA
 =======
 PID|1||PID00753334^^^TN.Nashville.SPHL&2.16.840.1.114222.4.1.175791&ISO^AA||~^^^^^^S|||F|||^^^TN^99999^USA^C^^47055~^^^GA^33333^YSA
 >>>>>>> 78c370b53da9a444962a2178ee2c33f169faea8d:src/test/resources/ORU_SampleOne.hl7
+=======
+PID|1||PID00753334^^^TN.Nashville.SPHL&2.16.840.1.114222.4.1.175791&ISO^PI||^^^^^^U~^^^^^^s|Public Value||F|||^^^TN^1234^USA^C^^47055~^^^GA^33333^YSA
+PID|1||PID00753334^^^TN.Nashville.SPHL&2.16.840.1.114222.4.1.175791&ISO^NOT VALID||^^^^^^U~^^^^^^s|Public Value||F|||^^^TN^1234^USA^C^^47055~^^^GA^33333^YSA
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1:src/test/resources/DHQP_SPM_OTH_SECOND.hl7
 PV1|1|To be Removed
-NK1|1|here we go|this should disapear and keep NK1
+NK1|1||one^thow^three^four^NOT EMR||||||||||thrirteen field
+NK1|2||one^thow^three^four^EMR||||||||||thrirteen field
 NTE|1|To be removed
 ORC|RE||N21E305368-01^STARLIMS.TN.PROD^2.16.840.1.114222.4.3.3.2.34.2^ISO||CM|D||||||||^WPN^PH^^^901^5238990|||||||V.A. Medical Center|1030 Jefferson Ave.^^Memphis^TN^38104^USA^L|^WPN^PH^^^901^5238990 
 OBR|1||N21E305368-01^STARLIMS.TN.PROD^2.16.840.1.114222.4.3.3.2.34.2^ISO|68991-9^Epidemiologically important information for public health reporting panel^LN^ARLN CRE^ARLN CRE^L|||20211217||||||||||^WPN^PH^^^901^5238990|||||20220112165000-0600|||P||||||PHC1122^Routine^CDCPHINVS^^^^^^Regular 

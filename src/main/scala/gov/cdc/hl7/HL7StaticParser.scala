@@ -320,7 +320,11 @@ object HL7StaticParser {
           fieldArray :+= finalValue
       } else {
         for (onefield <- fieldValueSplit.zipWithIndex) {
+<<<<<<< HEAD
           finalValue = onefield._1
+=======
+          finalValue = onefield
+>>>>>>> 11b2a2b225555e8a9ef99bc7f4a42303b34960f1
           if (comp > 0) {
             val compSplit = finalValue.split(HL7_COMPONENT_SEPARATOR)
             finalValue = compSplit.lift(comp.toInt - 1).getOrElse("")
